@@ -185,7 +185,7 @@ function healthPanel(P) { const st = D.status || { state: 'ok' };
 function draw(keep) { const P = document.getElementById('panel'); const had = keep && document.activeElement && document.activeElement.id === 'q'; const pos = had ? document.activeElement.selectionStart : 0; P.textContent = '';
   ({ bets: betsPanel, games: gamesPanel, health: healthPanel })[state.tab](P); document.querySelectorAll('.tab').forEach(t => t.classList.toggle('on', t.dataset.tab === state.tab)); if (had) { const q = document.getElementById('q'); q.focus(); q.setSelectionRange(pos, pos); } }
 function footer() { const F = document.getElementById('foot'); F.textContent = '';
-  F.append($('div', { text: 'Limits: nflverse data (free) + ESPN public lines/injuries; no weather forecast source (roof only); injuries from the final official report (no Sunday inactives); no key-number model. Research tool, not betting advice.' }));
+  F.append($('div', { text: 'Limits: nflverse data (free) + ESPN public lines/injuries; no weather forecast source (roof only); injuries from the final official report (no Sunday inactives); no key-number model.' }));
   if (LIVE) { const btn = $('button', { text: 'Refresh now (re-runs the model, ~30-90 s)' }), msg = $('span', { class: 'small mut', style: 'margin-left:8px' });
     btn.onclick = async () => { btn.disabled = true; msg.textContent = 'running...'; try { const r = await fetch('../refresh', { method: 'POST' }); const j = await r.json(); msg.textContent = j.message || 'done'; if (j.ok) setTimeout(() => location.reload(), 500); else btn.disabled = false; } catch (e) { msg.textContent = 'refresh failed: ' + e; btn.disabled = false; } };
     F.append($('div', { style: 'margin-top:8px' }, btn, msg)); } }

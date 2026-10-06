@@ -243,7 +243,7 @@ function draw(keepFocus) {
 
 function footer() {
   const F = document.getElementById('foot'); F.textContent = '';
-  F.append($('div', { text: 'Limits: points-only ratings (no PPA/SP+, transfers, weather); injuries from official conference reports for conference games, a partial third-party list for the rest, none for some games (INJ-UNKNOWN); no depth charts (backups inferred from box-score usage). Research tool - not betting advice.' }));
+  F.append($('div', { text: 'Limits: points-only ratings (no PPA/SP+, transfers, weather); injuries from official conference reports for conference games, a partial third-party list for the rest, none for some games (INJ-UNKNOWN); no depth charts (backups inferred from box-score usage).' }));
   if (LIVE) {
     const btn = $('button', { text: 'Refresh now (re-runs the model, ~15-60 s)' }); const msg = $('span', { class: 'small mut', style: 'margin-left:8px' });
     btn.onclick = async () => { btn.disabled = true; msg.textContent = 'running...'; try { const r = await fetch('../refresh', { method: 'POST' }); const j = await r.json(); msg.textContent = j.message || 'done'; if (j.ok) setTimeout(() => location.reload(), 500); else btn.disabled = false; } catch (e) { msg.textContent = 'refresh failed: ' + e; btn.disabled = false; } };

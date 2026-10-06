@@ -190,7 +190,7 @@ function healthPanel(P) { UI.statusAlert(P, D.status);
   if (D.warnings.length) { P.append($('h3', { text: 'Warnings' })); const ul = $('ul'); for (const w of D.warnings) ul.append($('li', { text: w })); P.append(ul); } }
 function draw(keep) { const P = document.getElementById('panel'); const had = keep && document.activeElement && document.activeElement.id === 'q'; const pos = had ? document.activeElement.selectionStart : 0; P.textContent = '';
   ({ rows: rowsPanel, games: gamesPanel, health: healthPanel })[state.tab](P); document.querySelectorAll('.tab').forEach(t => t.classList.toggle('on', t.dataset.tab === state.tab)); if (had) { const q = document.getElementById('q'); q.focus(); q.setSelectionRange(pos, pos); } }
-document.getElementById('foot').textContent = 'Limits: Sunday inactives are not in free data; injury status from the official report when published (else ESPN game-status feed); backups from depth chart + snaps + role history; research tool, not betting advice.';
+document.getElementById('foot').textContent = 'Limits: Sunday inactives are not in free data; injury status from the official report when published (else ESPN game-status feed); backups from depth chart + snaps + role history.';
 document.querySelectorAll('.tab').forEach(t => t.onclick = () => { state.tab = t.dataset.tab; draw(); });
 header(); topPlays(); draw();
 UI.autoReload(300000);      // 5-minute auto-refresh of the published page
