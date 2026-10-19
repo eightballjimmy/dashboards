@@ -1,0 +1,134 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NBA games</title><style>
+:root{color-scheme:dark;--bg:#0b0f14;--bg2:#10161e;--card:#141c26;--card2:#1a2430;--line:#243040;--ink:#e8edf2;--mut:#8796a8;--acc:#4f9dff;
+--ok:#3ddc97;--okbg:rgba(61,220,151,.13);--warn:#ff7b72;--warnbg:rgba(255,123,114,.13);--amber:#f5b942;--amberbg:rgba(245,185,66,.13);--blue:#6cb2ff;--bluebg:rgba(108,178,255,.13)}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+a{color:var(--blue)}h2,h3{font-weight:650}h3{font-size:14px;margin:16px 0 6px}
+.topbar{position:sticky;top:0;z-index:30;background:rgba(11,15,20,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topbar .in{max-width:1200px;margin:0 auto;padding:9px 14px 2px}
+.brand{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.brand h1{font-size:18px;line-height:1.25;margin:0;font-weight:700;letter-spacing:-.01em}
+.hmeta{display:flex;flex-wrap:wrap;gap:2px 12px;color:var(--mut);font-size:12.5px}.hmeta span:empty{display:none}
+nav.sports{display:flex;gap:6px;overflow-x:auto;max-width:1200px;margin:0 auto;padding:6px 14px 9px;scrollbar-width:none}nav.sports::-webkit-scrollbar{display:none}
+nav.sports a{flex:0 0 auto;padding:4px 11px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--mut);text-decoration:none;font-size:13px}
+nav.sports a.on{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
+main.wrap{max-width:1200px;margin:0 auto;padding:10px 14px 40px}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:8px;font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--mut);margin:16px 0 8px;font-weight:600}
+.sec-h small{text-transform:none;letter-spacing:0;font-weight:400}
+.alert{margin:10px 0;padding:9px 12px;border-radius:10px;border:1px solid var(--amber);background:var(--amberbg);color:var(--ink);font-size:13px}.alert b{color:var(--amber)}
+.alert.bad{border-color:var(--warn);background:var(--warnbg)}.alert.bad b{color:var(--warn)}
+.status-pill{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11px;font-weight:700;background:var(--amberbg);color:var(--amber)}
+.plays{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:640px){.plays{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(min-width:1000px){.plays{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.play{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;min-width:0}
+.play .top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}.play .badges{display:flex;gap:5px;align-items:center;flex:0 0 auto}
+.play .pick{font-weight:700;font-size:16px;line-height:1.3;overflow-wrap:anywhere}.play .game{color:var(--mut);font-size:12.5px;margin-top:1px}
+.play .nums{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin-top:9px;font-size:13.5px;font-variant-numeric:tabular-nums}
+.play .k{color:var(--mut);font-size:11.5px;margin-right:3px}.play .bk{color:var(--mut);font-size:12px}
+.play .note{color:var(--mut);font-size:12px;margin-top:7px;line-height:1.4}
+.empty{color:var(--mut);font-size:13px;padding:12px;border:1px dashed var(--line);border-radius:12px}
+.edge{display:inline-block;padding:2px 9px;border-radius:999px;font-weight:700;font-size:12.5px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.edge.pos{background:var(--okbg);color:var(--ok)}.edge.neg{background:var(--warnbg);color:var(--warn)}.edge.sus{background:var(--amberbg);color:var(--amber)}.edge.neu{background:var(--card2);color:var(--mut)}
+.tabs{display:flex;gap:4px;overflow-x:auto;margin:18px 0 8px;padding:3px;background:var(--bg2);border:1px solid var(--line);border-radius:11px;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}
+.tabs .tab,.tabs button{flex:0 0 auto;padding:6px 12px;border:0;border-radius:8px;background:transparent;color:var(--mut);font:inherit;font-size:13px;cursor:pointer;white-space:nowrap}
+.tabs .tab.on,.tabs button.on{background:var(--card2);color:var(--ink);font-weight:600}
+.panel,.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tools{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin:2px 0 10px}.tools label{font-size:12px;color:var(--mut);display:flex;gap:5px;align-items:center}
+select,input,button{font:inherit;font-size:13px;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg2);color:var(--ink)}
+input[type=checkbox]{padding:0;accent-color:var(--acc)}button{cursor:pointer}button:disabled{opacity:.5;cursor:default}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:7px 9px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--card2);color:var(--mut);font-size:11.5px;font-weight:600;white-space:nowrap;user-select:none;cursor:pointer}th:hover{color:var(--ink)}
+tr:nth-child(even)>td{background:rgba(255,255,255,.028)}tr.bet>td,tr.row>td{white-space:nowrap}tr.bet,tr.row{cursor:pointer}tr.bet:hover>td,tr.row:hover>td{background:rgba(79,157,255,.08)}
+tr.detail>td,tr.sub>td{background:var(--bg2);font-size:12.5px;color:var(--mut)}tr.detail b,tr.sub b{color:var(--ink)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.pill{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11px;font-weight:700;white-space:nowrap;background:var(--card2);color:var(--mut)}
+.pill.SUSPECT,.pill.INJ-UNKNOWN{background:var(--warnbg);color:var(--warn)}.pill.HOLD,.pill.LOWCONF,.pill.MODEL-ONLY-LOWCONF,.pill.LOW-FLAGGED{background:var(--amberbg);color:var(--amber)}
+.pill.FORWARD-TEST{background:var(--bluebg);color:var(--blue)}
+.grade{display:inline-block;min-width:22px;text-align:center;padding:1px 7px;border-radius:6px;font-size:12px;font-weight:700;cursor:help}
+.grade.A{background:var(--okbg);color:var(--ok);border:1px solid rgba(61,220,151,.45)}.grade.B{background:var(--amberbg);color:var(--amber);border:1px solid rgba(245,185,66,.45)}.grade.C{background:var(--warnbg);color:var(--warn);border:1px solid rgba(255,123,114,.45)}.grade.NA{background:transparent;color:var(--mut);border:1px dashed var(--line)}
+.chip{display:inline-block;margin:1px 3px 1px 0;padding:0 7px;border-radius:999px;background:var(--card2);color:var(--mut);font-size:11px;white-space:nowrap;cursor:help}
+.flag{display:inline-block;margin:2px 4px 2px 0;padding:1px 7px;border-radius:6px;background:var(--amberbg);color:var(--amber);font-size:11.5px}
+.legend{margin:4px 0 10px;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--bg2);color:var(--mut);font-size:12px}.legend .row{margin:3px 0}
+.legend summary{cursor:pointer}
+.ok{color:var(--ok)}.deg,.warn{color:var(--amber)}.bad,.fail{color:var(--warn)}.mut,.muted,.info{color:var(--mut)}.neg{color:var(--warn)}.pos{color:var(--ok)}
+.small,small{font-size:12px}small{color:var(--mut)}.mk{font-size:11px;font-weight:700;color:var(--mut)}
+ul.tight{margin:4px 0 0 18px;padding:0}ul.tight li{margin:2px 0}
+details.info{margin:26px 0 0;padding:8px 12px;border:1px solid var(--line);border-radius:12px;background:var(--bg2);color:var(--mut);font-size:12.5px}
+details.info>summary{cursor:pointer;color:var(--mut);font-size:12.5px}details.info[open]>summary{margin-bottom:8px}
+details.info .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:10px;margin:8px 0}
+details.info .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;overflow-x:auto}
+details.info .card h2{margin:0 0 6px;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut)}
+details.info p,details.info .para{margin:4px 0}
+#slate-line{background:var(--bg2)!important;color:var(--mut)!important;font:500 12px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif!important;padding:4px 14px!important;border-bottom:1px solid var(--line)!important}
+#slate-line[style*="fde2e1"]{background:var(--warnbg)!important;color:var(--warn)!important}
+.sec-h{flex-wrap:wrap}
+footer.foot{max-width:1200px;margin:0 auto;padding:0 14px 28px;color:var(--mut);font-size:12px}
+.pct{font-weight:700;font-variant-numeric:tabular-nums}.gcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:8px 0}
+.gcard h3{margin:0 0 4px;font-size:15px}.gcard .meta{color:var(--mut);font-size:12.5px}.gcard table{margin-top:6px}.mut{color:var(--mut)}</style></head><body>
+<header class="topbar"><div class="in"><div class="brand"><h1 id="title">NBA games</h1><span id="hstatus"></span></div><div class="hmeta"><span id="slate"></span><span id="updated"></span></div></div><nav class="sports" aria-label="Sports"><a href="../">All</a><a href="../nfl/">NFL</a><a href="../nfl-td/">NFL TD</a><a href="../nfl-props/">NFL Props</a><a href="../cfb/">CFB</a><a href="../mlb/">MLB</a><a href="../nhl/">NHL</a><a href="../nhl-props/">NHL Props</a><a href="../nba/" class="on" aria-current="page">NBA</a><a href="../nba-props/">NBA Props</a><a href="../nba-first-basket/">NBA First Basket</a><a href="../tennis/">Tennis</a></nav></header>
+<main class="wrap"><div id="alerts"></div><div class="sec-h">Top plays <small>model chance beats the best price's break-even</small></div><div id="top"></div>
+<div class="sec-h">Games</div><div id="games"></div>
+<details class="legend"><summary>How to read this</summary>
+<div class="row"><b>Chance</b>: model probability blended with the no-vig market (average of the books). <b>Fair</b>: the price that matches that chance. <b>Edge</b>: expected return at the best price.</div>
+<div class="row"><b>Model line</b>: player-based team ratings (current rosters and projected minutes, injuries from the official NBA report), rest, back-to-backs, travel and altitude.</div></details>
+<details class="info"><summary>Data sources</summary><div id="hl"></div></details>
+</main>
+<script>
+const UI = (() => {
+  const h = (t, a, ...k) => { const e = document.createElement(t); if (a) for (const [x, v] of Object.entries(a)) { if (v == null) continue; if (x === 'class') e.className = v; else if (x === 'text') e.textContent = v; else e.setAttribute(x, v); } for (const c of k.flat()) if (c != null && c !== '') e.append(c.nodeType ? c : document.createTextNode(String(c))); return e; };
+  // 'STANDARD' is the default label on every priced row, so it is not shown as a pill.
+  const lab = l => (l == null || l === 'STANDARD') ? '' : String(l);
+  const labPill = (l, title) => { const t = lab(l); return t ? h('span', { class: 'pill ' + t, title: title || null, text: t }) : null; };
+  let ctF = null; try { ctF = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Chicago', weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }); } catch (e) { ctF = null; }
+  const ct = iso => { if (!iso) return ''; const d = new Date(iso); if (!ctF || isNaN(d)) return String(iso); return ctF.format(d).replace(/,/g, '') + ' CT'; };
+  const edgeCls = (v, suspect) => suspect ? 'sus' : (v == null ? 'neu' : v > 0 ? 'pos' : v < 0 ? 'neg' : 'neu');
+  function card(o) {
+    const nums = h('div', { class: 'nums' });
+    if (o.price) nums.append(h('span', null, h('span', { class: 'k', text: 'Price' }), o.price, o.book ? h('span', { class: 'bk', text: ' ' + o.book }) : null));
+    if (o.model != null && o.model !== '') nums.append(h('span', null, h('span', { class: 'k', text: o.modelK || 'Model' }), o.model));
+    if (o.market != null && o.market !== '') nums.append(h('span', null, h('span', { class: 'k', text: o.marketK || 'Market' }), o.market));
+    if (o.edge) nums.append(h('span', { class: 'edge ' + edgeCls(o.edgeVal, o.suspect), title: o.edgeTitle || 'model minus market', text: o.edge }));
+    const notes = (o.notes || []).filter(Boolean);
+    return h('div', { class: 'play' },
+      h('div', { class: 'top' }, h('div', { style: 'min-width:0' }, h('div', { class: 'pick', text: o.pick || '' }), h('div', { class: 'game', text: [o.sub, o.when].filter(Boolean).join(' \u00b7 ') })),
+        h('div', { class: 'badges' }, o.label ? labPill(o.label) : null, o.grade || null)),
+      nums, notes.length ? h('div', { class: 'note', text: notes.join(' \u00b7 ') }) : null);
+  }
+  function plays(root, items, empty) { root.textContent = ''; if (!items.length) { root.append(h('div', { class: 'empty', text: empty || 'No plays on this slate.' })); return; } const g = h('div', { class: 'plays' }); items.forEach(x => g.append(card(x))); root.append(g); }
+  function head(o) { const s = document.getElementById('slate'), u = document.getElementById('updated'), st = document.getElementById('hstatus');
+    if (s && o.slate) s.textContent = 'Slate: ' + o.slate; if (u && o.updated) u.textContent = 'Updated ' + o.updated;
+    if (st) { st.textContent = ''; const x = o.status || {}; if (x.state && x.state !== 'ok') st.append(h('span', { class: 'status-pill', text: x.state === 'stale' ? 'STALE' : 'RUN FAILED' })); } }
+  function statusAlert(root, st, extra) { st = st || { state: 'ok' }; if (!root || st.state === 'ok' || !st.state) return;
+    root.append(h('div', { class: 'alert' + (st.state === 'stale' ? '' : ' bad') }, h('b', { text: st.state === 'stale' ? 'Stale data: the latest run failed; showing the last good run. ' : 'Run failed: no fresh data. ' }), st.message || '', extra || null)); }
+  // click-to-sort for plain tables whose first row holds the headers (used for the small static tables)
+  function sortTable(t) { const rows = () => Array.from(t.querySelectorAll('tr')).slice(1); const hr = t.querySelector('tr'); if (!hr) return t;
+    Array.from(hr.children).forEach((th, i) => { let dir = 1; th.onclick = () => { const v = r => { const c = r.children[i]; const s = c ? c.textContent.trim() : ''; const n = parseFloat(s.replace(/[%,+]/g, '')); return isNaN(n) ? s.toLowerCase() : n; };
+      const rs = rows().sort((a, b) => { const x = v(a), y = v(b); return (x < y ? -1 : x > y ? 1 : 0) * dir; }); dir = -dir; rs.forEach(r => r.parentNode.append(r)); }; }); return t; }
+  // reload the page every `ms` when served over http(s) (GitHub Pages / local server); a hidden tab reloads as soon as it is shown again
+  function autoReload(ms) { if (!/^https?:$/.test(location.protocol)) return; const t0 = Date.now(); const due = () => Date.now() - t0 >= ms;
+    setInterval(() => { if (due() && document.visibilityState !== 'hidden') location.reload(); }, 15000);
+    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && due()) location.reload(); }); }
+  return { h, lab, labPill, ct, card, plays, head, statusAlert, sortTable, edgeCls, autoReload };
+})();
+
+const P={"generated_utc": "2026-10-19T05:34:44+00:00", "generated_central": "Mon Oct 19, 2026 12:34 AM CT", "slate_date": "2026-10-20", "is_today": false, "n_games": 3, "runtime_s": 7.6, "injury_report": {"official_ok": true, "stamp": "10/19/26 01:30 AM", "not_submitted": ["NY", "BOS", "PHI", "SA", "OKC", "DET"], "n_listed": 92}, "status": {"state": "ok"}, "health": {"game lines": "The Odds API [cache] cache hit (18 min old, ttl 180 min); quota remaining 19871 (used 129, reserve 500)", "player props": "The Odds API [cache] cached quotes (live pulls start a few hours before tip): 1 games in window: 0 fetched live (0 credits), 1 cache, 0 stale, 0 not fetched; quota remaining 19871 (used 129, reserve 500)", "first basket": "The Odds API [cache] cached quotes (live pulls start a few hours before tip): 1 games in window: 0 fetched live (0 credits), 1 cache, 0 stale, 0 not fetched; quota remaining 19871 (used 129, reserve 500)", "injuries": "NBA official report 10/19/26 01:30 AM ET; ESPN injuries 92 rows"}, "games": [{"game_id": "401909088", "matchup": "BOS @ DET", "home": "DET", "away": "BOS", "start": "2026-10-20T19:00Z", "state": "pre", "detail": "10/20 - 3:00 PM EDT", "model_margin": -1.89, "model_total": 224.8, "rest": {"home": {"rest": 7, "b2b": 0, "three": 0, "km": 0.0, "tz": 0.0}, "away": {"rest": 7, "b2b": 0, "three": 0, "km": 985.0, "tz": 0.0}}, "injuries": {"DET": [], "BOS": ["Devin Carter (Out)"]}, "plays": [], "market": {"spread_home": -0.5, "total": 222.0, "novig_home_ml": 0.49804004449467615, "n_books": 10, "fair_margin": 0.36, "fair_total": 222.0}, "candidates": [{"market": "spread", "pick": "DET -0.5", "p": 0.4957633057053157, "dec": 1.89, "book": "BetRivers", "novig": 0.5, "ev": -0.06300735221695342, "american": -112, "fair_american": 102, "beats_price": false}, {"market": "spread", "pick": "BOS +0.5", "p": 0.5042366942946843, "dec": 1.89, "book": "BetRivers", "novig": 0.5, "ev": -0.04699264778304668, "american": -112, "fair_american": -102, "beats_price": false}, {"market": "total", "pick": "Over 222", "p": 0.5, "dec": 1.91, "book": "Bovada", "novig": 0.5, "ev": -0.04500000000000004, "american": -110, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 222", "p": 0.5, "dec": 1.91, "book": "Bovada", "novig": 0.5, "ev": -0.04500000000000004, "american": -110, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "DET ML", "p": 0.49377141424459764, "dec": 1.95, "book": "BetMGM", "novig": 0.49804004449467615, "ev": -0.03714574222303457, "american": -105, "fair_american": 103, "beats_price": false}, {"market": "moneyline", "pick": "BOS ML", "p": 0.5062285857554023, "dec": 1.91, "book": "FanDuel", "novig": 0.5019599555053238, "ev": -0.03310340120718169, "american": -110, "fair_american": -103, "beats_price": false}]}, {"game_id": "401909089", "matchup": "PHI @ NY", "home": "NY", "away": "PHI", "start": "2026-10-20T23:00Z", "state": "pre", "detail": "10/20 - 7:00 PM EDT", "model_margin": 3.19, "model_total": 226.4, "rest": {"home": {"rest": 7, "b2b": 0, "three": 0, "km": 2543.0, "tz": 1.0}, "away": {"rest": 7, "b2b": 0, "three": 0, "km": 137.0, "tz": 0.0}}, "injuries": {"NY": ["Josh Hart (Day-To-Day)"], "PHI": ["Anfernee Simons (Day-To-Day)", "Dominick Barlow (Day-To-Day)", "Dean Wade (Day-To-Day)", "Adem Bona (Day-To-Day)", "Ariel Hukporti (Out)"]}, "plays": [], "market": {"spread_home": -5.0, "total": 231.5, "novig_home_ml": 0.6240409194353281, "n_books": 10, "fair_margin": 4.89, "fair_total": 231.5}, "candidates": [{"market": "spread", "pick": "NY -5", "p": 0.4967919159363074, "dec": 1.95, "book": "Caesars", "novig": 0.4947643979057592, "ev": -0.0312557639242006, "american": -105, "fair_american": 101, "beats_price": false}, {"market": "spread", "pick": "PHI +5", "p": 0.5032080840636926, "dec": 1.94, "book": "LowVig.ag", "novig": 0.5052356020942408, "ev": -0.023776316916436446, "american": -106, "fair_american": -101, "beats_price": false}, {"market": "total", "pick": "Over 231.5", "p": 0.5, "dec": 1.95, "book": "FanDuel", "novig": 0.49825479930191974, "ev": -0.025000000000000022, "american": -105, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 231.5", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5017452006980803, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "NY ML", "p": 0.6215686380915161, "dec": 1.56, "book": "Caesars", "novig": 0.6240409194353281, "ev": -0.03035292457723493, "american": -179, "fair_american": -164, "beats_price": false}, {"market": "moneyline", "pick": "PHI ML", "p": 0.3784313619084839, "dec": 2.64, "book": "LowVig.ag", "novig": 0.37595908056467187, "ev": -0.0009412045616024045, "american": 164, "fair_american": 164, "beats_price": false}]}, {"game_id": "401909090", "matchup": "OKC @ SA", "home": "SA", "away": "OKC", "start": "2026-10-21T01:30Z", "state": "pre", "detail": "10/20 - 9:30 PM EDT", "model_margin": -2.99, "model_total": 231.2, "rest": {"home": {"rest": 7, "b2b": 0, "three": 0, "km": 0.0, "tz": 0.0}, "away": {"rest": 7, "b2b": 0, "three": 0, "km": 677.0, "tz": 0.0}}, "injuries": {"SA": ["Tobias Harris (Day-To-Day)", "Jayden Quaintance (Out)"], "OKC": ["Chet Holmgren (Day-To-Day)", "Cason Wallace (Day-To-Day)", "Jaylin Williams (Day-To-Day)", "Nikola Topic (Day-To-Day)", "Thomas Sorber (Day-To-Day)", "Otega Oweh (Out)"]}, "plays": [{"market": "moneyline", "pick": "OKC ML", "p": 0.4539702102185742, "dec": 2.27, "book": "LowVig.ag", "novig": 0.4424383082745027, "ev": 0.03051237719616351, "american": 127, "fair_american": 120, "beats_price": true}], "market": {"spread_home": -2.5, "total": 231.5, "novig_home_ml": 0.5575616917254973, "n_books": 10, "fair_margin": 2.17, "fair_total": 231.5}, "candidates": [{"market": "spread", "pick": "SA -2.5", "p": 0.4902481015921475, "dec": 1.94, "book": "FanDuel", "novig": 0.49887808526551985, "ev": -0.04891868291123391, "american": -106, "fair_american": 104, "beats_price": false}, {"market": "spread", "pick": "OKC +2.5", "p": 0.5097518984078525, "dec": 1.91, "book": "BetMGM", "novig": 0.5011219147344801, "ev": -0.026373874041001777, "american": -110, "fair_american": -104, "beats_price": false}, {"market": "total", "pick": "Over 231.5", "p": 0.5, "dec": 1.94, "book": "FanDuel", "novig": 0.49831268760249686, "ev": -0.030000000000000027, "american": -106, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 231.5", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5016873123975032, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "SA ML", "p": 0.5460297897814258, "dec": 1.77, "book": "FanDuel", "novig": 0.5575616917254973, "ev": -0.033527272086876336, "american": -130, "fair_american": -120, "beats_price": false}, {"market": "moneyline", "pick": "OKC ML", "p": 0.4539702102185742, "dec": 2.27, "book": "LowVig.ag", "novig": 0.4424383082745027, "ev": 0.03051237719616351, "american": 127, "fair_american": 120, "beats_price": true}]}], "plays": [{"market": "moneyline", "pick": "OKC ML", "p": 0.4539702102185742, "dec": 2.27, "book": "LowVig.ag", "novig": 0.4424383082745027, "ev": 0.03051237719616351, "american": 127, "fair_american": 120, "beats_price": true, "matchup": "OKC @ SA", "start": "2026-10-21T01:30Z", "game_id": "401909090"}]};const h=UI.h;
+const pc=x=>x==null?'':(100*x).toFixed(1)+'%',am=x=>x==null?'':(x>0?'+'+x:''+x),ev=x=>x==null?'':(x>=0?'+':'')+(100*x).toFixed(1)+'%';
+const gr=g=>g?h('span',{class:'grade '+g,title:'data grade: A best, C weakest'},g):'';
+function healthBox(P){const hl=document.getElementById('hl');if(!hl)return;Object.entries(P.health||{}).forEach(([k,v])=>hl.append(h('div',null,k+': '+v)));}
+function slateText(P){return (P.is_today?'Today ':'Next slate ')+P.slate_date+' ('+P.n_games+' games)';}
+
+UI.head({slate:slateText(P),updated:UI.ct(P.generated_utc),status:P.status});UI.statusAlert(document.getElementById('alerts'),P.status);
+
+UI.plays(document.getElementById('top'),(P.plays||[]).slice(0,8).map(c=>({pick:c.pick,sub:c.matchup+' \u00b7 '+c.market,when:UI.ct(c.start),price:am(c.american),book:c.book,
+ model:pc(c.p),modelK:'Chance',market:am(c.fair_american),marketK:'Fair',edge:ev(c.ev),edgeVal:c.ev})),'No side, total or moneyline beats its price on this slate yet.');
+const G=document.getElementById('games');(P.games||[]).forEach(g=>{const c=h('div',{class:'gcard'});
+ c.append(h('h3',null,g.matchup),h('div',{class:'meta'},UI.ct(g.start)+(g.state!='pre'?' \u00b7 '+(g.detail||g.state):'')));
+ const mk=g.market;c.append(h('div',{class:'meta'},'Model: '+g.home+' by '+g.model_margin+', total '+g.model_total+(mk?' \u00b7 Market: '+g.home+' '+(mk.spread_home>0?'+':'')+mk.spread_home+', total '+mk.total+(mk.novig_home_ml!=null?', '+g.home+' win '+pc(mk.novig_home_ml):'')+' ('+mk.n_books+' books)':' \u00b7 no sportsbook lines yet')));
+ const inj=Object.entries(g.injuries||{}).filter(([k,v])=>v.length).map(([k,v])=>k+': '+v.join(', '));if(inj.length)c.append(h('div',{class:'meta'},'Injury report: '+inj.join(' | ')));
+ const r=g.rest||{};const rs=[['home',g.home],['away',g.away]].map(([s,t])=>r[s]?t+' '+(r[s].b2b?'back-to-back':r[s].rest+'d rest')+(r[s].km>0?', '+Math.round(r[s].km)+' km':''):'').filter(Boolean);c.append(h('div',{class:'meta'},rs.join(' \u00b7 ')));
+ if(g.candidates&&g.candidates.length){const t=h('table',null,h('tr',null,h('th',null,'Bet'),h('th',{class:'num'},'Chance'),h('th',{class:'num'},'Fair'),h('th',{class:'num'},'Best'),h('th',null,'Book'),h('th',{class:'num'},'Edge')));
+  g.candidates.forEach(x=>t.append(h('tr',null,h('td',null,x.pick),h('td',{class:'num pct'},pc(x.p)),h('td',{class:'num'},am(x.fair_american)),h('td',{class:'num'},am(x.american)),h('td',null,x.book||''),h('td',{class:'num'},h('span',{class:'edge '+UI.edgeCls(x.beats_price?x.ev:-1)},ev(x.ev))))));c.append(h('div',{class:'panel'},t));}
+ G.append(c)});
+healthBox(P);UI.autoReload(300000);
+</script></body></html>
