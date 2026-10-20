@@ -65,7 +65,7 @@ details.info p,details.info .para{margin:4px 0}
 .sec-h{flex-wrap:wrap}
 footer.foot{max-width:1200px;margin:0 auto;padding:0 14px 28px;color:var(--mut);font-size:12px}
 
-.pct{font-weight:700;font-variant-numeric:tabular-nums}.bar{display:inline-block;height:6px;border-radius:3px;background:var(--acc);vertical-align:middle;margin-left:6px}</style></head><body><!--slate-line--><div id="slate-line" style="font:600 14px/1.4 system-ui,sans-serif;padding:6px 12px;background:#e8f4ea;color:#123;border-bottom:1px solid #9994">Slate: Mon Oct 19 | Updated Mon Oct 19, 8:57 PM CT</div><!--/slate-line-->
+.pct{font-weight:700;font-variant-numeric:tabular-nums}.bar{display:inline-block;height:6px;border-radius:3px;background:var(--acc);vertical-align:middle;margin-left:6px}</style></head><body><!--slate-line--><div id="slate-line" style="font:600 14px/1.4 system-ui,sans-serif;padding:6px 12px;background:#e8f4ea;color:#123;border-bottom:1px solid #9994">Slate: Mon Oct 19 | Updated Mon Oct 19, 9:54 PM CT</div><!--/slate-line-->
 <header class="topbar"><div class="in"><div class="brand"><h1 id="title">NHL player points</h1><span id="hstatus"></span></div><div class="hmeta"><span id="slate"></span><span id="updated"></span></div></div><nav class="sports" aria-label="Sports"><a href="../">All</a><a href="../nfl/">NFL</a><a href="../nfl-td/">NFL TD</a><a href="../nfl-props/">NFL Props</a><a href="../cfb/">CFB</a><a href="../mlb/">MLB</a><a href="../nhl/">NHL</a><a href="../nhl-props/" class="on" aria-current="page">NHL Props</a><a href="../nba/">NBA</a><a href="../nba-props/">NBA Props</a><a href="../nba-first-basket/">NBA First Basket</a><a href="../tennis/">Tennis</a></nav></header>
 <main class="wrap"><div id="alerts"></div>
 <div class="sec-h">Top 1+ point chances <small>fair odds = no-vig price matching the model</small></div><div id="top1"></div>
@@ -118,7 +118,7 @@ const UI = (() => {
   return { h, lab, labPill, ct, card, plays, head, statusAlert, sortTable, edgeCls, autoReload };
 })();
 
-const D={"p": {"date": "2026-10-19", "generated_utc": "2026-10-20T01:57:02+00:00", "games": [], "players": [], "health": {"nhl_model_payload": "ok (Mon Oct 19 8:56 PM CT, 0 games)", "nhl_api_current_season": "ok (136 games)"}, "meta": {"slate_date": "2026-10-19", "n_games": 0}, "status": {"state": "ok"}}, "bt": {}};const P=D.p,h=UI.h;
+const D={"p": {"date": "2026-10-19", "generated_utc": "2026-10-20T02:54:40+00:00", "games": [], "players": [], "health": {"nhl_model_payload": "ok (Mon Oct 19 9:54 PM CT, 0 games)", "nhl_api_current_season": "ok (136 games)"}, "meta": {"slate_date": "2026-10-19", "n_games": 0}, "status": {"state": "ok"}}, "bt": {}};const P=D.p,h=UI.h;
 UI.head({slate:P.date+' ('+P.games.length+' games)',updated:UI.ct(P.generated_utc),status:P.status});
 UI.statusAlert(document.getElementById('alerts'),P.status);
 const pc=x=>(100*x).toFixed(1)+'%',am=x=>x>0?'+'+x:''+x;
