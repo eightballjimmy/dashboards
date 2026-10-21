@@ -1,0 +1,214 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0f14">
+<title>NHL simulator</title>
+<style>
+:root{color-scheme:dark;--bg:#0b0f14;--bg2:#10161e;--card:#141c26;--card2:#1a2430;--line:#243040;--ink:#e8edf2;--mut:#8796a8;--acc:#4f9dff;
+--ok:#3ddc97;--okbg:rgba(61,220,151,.13);--warn:#ff7b72;--warnbg:rgba(255,123,114,.13);--amber:#f5b942;--amberbg:rgba(245,185,66,.13);--blue:#6cb2ff;--bluebg:rgba(108,178,255,.13)}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+a{color:var(--blue)}h2,h3{font-weight:650}h3{font-size:14px;margin:16px 0 6px}
+.topbar{position:sticky;top:0;z-index:30;background:rgba(11,15,20,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topbar .in{max-width:1200px;margin:0 auto;padding:9px 14px 2px}
+.brand{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.brand h1{font-size:18px;line-height:1.25;margin:0;font-weight:700;letter-spacing:-.01em}
+.hmeta{display:flex;flex-wrap:wrap;gap:2px 12px;color:var(--mut);font-size:12.5px}.hmeta span:empty{display:none}
+nav.sports{display:flex;gap:6px;overflow-x:auto;max-width:1200px;margin:0 auto;padding:6px 14px 9px;scrollbar-width:none}nav.sports::-webkit-scrollbar{display:none}
+nav.sports a{flex:0 0 auto;padding:4px 11px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--mut);text-decoration:none;font-size:13px}
+nav.sports a.on{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
+main.wrap{max-width:1200px;margin:0 auto;padding:10px 14px 40px}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:8px;font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--mut);margin:16px 0 8px;font-weight:600}
+.sec-h small{text-transform:none;letter-spacing:0;font-weight:400}
+.alert{margin:10px 0;padding:9px 12px;border-radius:10px;border:1px solid var(--amber);background:var(--amberbg);color:var(--ink);font-size:13px}.alert b{color:var(--amber)}
+.alert.bad{border-color:var(--warn);background:var(--warnbg)}.alert.bad b{color:var(--warn)}
+.status-pill{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11px;font-weight:700;background:var(--amberbg);color:var(--amber)}
+.plays{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:640px){.plays{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(min-width:1000px){.plays{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.play{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;min-width:0}
+.play .top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}.play .badges{display:flex;gap:5px;align-items:center;flex:0 0 auto}
+.play .pick{font-weight:700;font-size:16px;line-height:1.3;overflow-wrap:anywhere}.play .game{color:var(--mut);font-size:12.5px;margin-top:1px}
+.play .nums{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin-top:9px;font-size:13.5px;font-variant-numeric:tabular-nums}
+.play .k{color:var(--mut);font-size:11.5px;margin-right:3px}.play .bk{color:var(--mut);font-size:12px}
+.play .note{color:var(--mut);font-size:12px;margin-top:7px;line-height:1.4}
+.empty{color:var(--mut);font-size:13px;padding:12px;border:1px dashed var(--line);border-radius:12px}
+.edge{display:inline-block;padding:2px 9px;border-radius:999px;font-weight:700;font-size:12.5px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.edge.pos{background:var(--okbg);color:var(--ok)}.edge.neg{background:var(--warnbg);color:var(--warn)}.edge.sus{background:var(--amberbg);color:var(--amber)}.edge.neu{background:var(--card2);color:var(--mut)}
+.tabs{display:flex;gap:4px;overflow-x:auto;margin:18px 0 8px;padding:3px;background:var(--bg2);border:1px solid var(--line);border-radius:11px;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}
+.tabs .tab,.tabs button{flex:0 0 auto;padding:6px 12px;border:0;border-radius:8px;background:transparent;color:var(--mut);font:inherit;font-size:13px;cursor:pointer;white-space:nowrap}
+.tabs .tab.on,.tabs button.on{background:var(--card2);color:var(--ink);font-weight:600}
+.panel,.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tools{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin:2px 0 10px}.tools label{font-size:12px;color:var(--mut);display:flex;gap:5px;align-items:center}
+select,input,button{font:inherit;font-size:13px;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg2);color:var(--ink)}
+input[type=checkbox]{padding:0;accent-color:var(--acc)}button{cursor:pointer}button:disabled{opacity:.5;cursor:default}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:7px 9px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--card2);color:var(--mut);font-size:11.5px;font-weight:600;white-space:nowrap;user-select:none;cursor:pointer}th:hover{color:var(--ink)}
+tr:nth-child(even)>td{background:rgba(255,255,255,.028)}tr.bet>td,tr.row>td{white-space:nowrap}tr.bet,tr.row{cursor:pointer}tr.bet:hover>td,tr.row:hover>td{background:rgba(79,157,255,.08)}
+tr.detail>td,tr.sub>td{background:var(--bg2);font-size:12.5px;color:var(--mut)}tr.detail b,tr.sub b{color:var(--ink)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.pill{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11px;font-weight:700;white-space:nowrap;background:var(--card2);color:var(--mut)}
+.pill.SUSPECT,.pill.INJ-UNKNOWN{background:var(--warnbg);color:var(--warn)}.pill.HOLD,.pill.LOWCONF,.pill.MODEL-ONLY-LOWCONF,.pill.LOW-FLAGGED{background:var(--amberbg);color:var(--amber)}
+.pill.FORWARD-TEST{background:var(--bluebg);color:var(--blue)}
+.grade{display:inline-block;min-width:22px;text-align:center;padding:1px 7px;border-radius:6px;font-size:12px;font-weight:700;cursor:help}
+.grade.A{background:var(--okbg);color:var(--ok);border:1px solid rgba(61,220,151,.45)}.grade.B{background:var(--amberbg);color:var(--amber);border:1px solid rgba(245,185,66,.45)}.grade.C{background:var(--warnbg);color:var(--warn);border:1px solid rgba(255,123,114,.45)}.grade.NA{background:transparent;color:var(--mut);border:1px dashed var(--line)}
+.chip{display:inline-block;margin:1px 3px 1px 0;padding:0 7px;border-radius:999px;background:var(--card2);color:var(--mut);font-size:11px;white-space:nowrap;cursor:help}
+.flag{display:inline-block;margin:2px 4px 2px 0;padding:1px 7px;border-radius:6px;background:var(--amberbg);color:var(--amber);font-size:11.5px}
+.legend{margin:4px 0 10px;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--bg2);color:var(--mut);font-size:12px}.legend .row{margin:3px 0}
+.legend summary{cursor:pointer}
+.ok{color:var(--ok)}.deg,.warn{color:var(--amber)}.bad,.fail{color:var(--warn)}.mut,.muted,.info{color:var(--mut)}.neg{color:var(--warn)}.pos{color:var(--ok)}
+.small,small{font-size:12px}small{color:var(--mut)}.mk{font-size:11px;font-weight:700;color:var(--mut)}
+ul.tight{margin:4px 0 0 18px;padding:0}ul.tight li{margin:2px 0}
+details.info{margin:26px 0 0;padding:8px 12px;border:1px solid var(--line);border-radius:12px;background:var(--bg2);color:var(--mut);font-size:12.5px}
+details.info>summary{cursor:pointer;color:var(--mut);font-size:12.5px}details.info[open]>summary{margin-bottom:8px}
+details.info .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:10px;margin:8px 0}
+details.info .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;overflow-x:auto}
+details.info .card h2{margin:0 0 6px;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut)}
+details.info p,details.info .para{margin:4px 0}
+#slate-line{background:var(--bg2)!important;color:var(--mut)!important;font:500 12px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif!important;padding:4px 14px!important;border-bottom:1px solid var(--line)!important}
+#slate-line[style*="fde2e1"]{background:var(--warnbg)!important;color:var(--warn)!important}
+.sec-h{flex-wrap:wrap}
+footer.foot{max-width:1200px;margin:0 auto;padding:0 14px 28px;color:var(--mut);font-size:12px}
+</style></head><body><style>.dtabs{position:sticky;top:0;z-index:999;display:flex;gap:6px;padding:8px;background:#0f172a;font-family:system-ui,sans-serif}.dtabs a{flex:1;text-align:center;padding:12px 6px;border-radius:8px;color:#cbd5e1;background:#1e293b;text-decoration:none;font-weight:600;font-size:16px}.dtabs a.on{background:#2563eb;color:#fff}.dnote{margin:8px;padding:10px 12px;border-radius:8px;background:#fef3c7;color:#78350f;font:600 15px system-ui,sans-serif}</style><nav class="dtabs" data-dtabs="1"><a href="../" class="">Today · Tue Oct 20</a><a href="../tomorrow/" class="on">Tomorrow · Wed Oct 21</a></nav><div class="dnote">Tomorrow is priced with current game lines (moneyline, spread, total). Goalies/injuries firm up on game day.</div><!--slate-line--><div id="slate-line" style="font:600 14px/1.4 system-ui,sans-serif;padding:6px 12px;background:#e8f4ea;color:#123;border-bottom:1px solid #9994">Slate: Wed Oct 21 | Updated Tue Oct 20, 9:49 PM CT</div><!--/slate-line-->
+<header class="topbar"><div class="in"><div class="brand"><h1 id="title">NHL</h1><span id="hstatus"></span></div><div class="hmeta"><span id="slate"></span><span id="updated"></span></div></div><nav class="sports" aria-label="Sports"><a href="../../">All</a><a href="../../nfl/">NFL</a><a href="../../nfl-td/">NFL TD</a><a href="../../nfl-props/">NFL Props</a><a href="../../cfb/">CFB</a><a href="../../mlb/">MLB</a><a href="../../nhl/" class="on" aria-current="page">NHL</a><a href="../../tennis/">Tennis</a></nav></header>
+<main class="wrap"><div id="status"></div><div id="meta"></div>
+<div class="sec-h">Top plays <small id="plays-note"></small></div><div id="plays"></div>
+<div class="tabs"><button data-t="bets" class="on">All edges</button><button data-t="games">Games &amp; goalies</button><button data-t="health">Data health</button></div>
+<div id="t-bets"><div class="box"><div class="tools"><input id="f" placeholder="team / pick"><label>market <select id="fm"><option value="">all</option><option>ML</option><option>TOTAL</option></select></label>
+<label>label <select id="fl"><option value="">all</option><option value="STANDARD">standard</option><option value="LOWCONF">LOWCONF</option><option>SUSPECT</option></select></label>
+<label>pick grade <select id="fg"><option value="">all</option><option>A</option><option>B</option><option>C</option></select></label>
+<label><input type="checkbox" id="fc"> hide unconfirmed goalies</label></div><div id="legend"></div><table id="bt1"></table></div></div>
+<div id="t-games" hidden><div class="box"><table id="gt"></table></div></div>
+<div id="t-health" hidden class="box"></div>
+<section id="live" aria-label="Live games"><div class="sec-h">Live / in progress <small id="live-upd"></small></div><div id="live-body" class="box"></div></section>
+</main>
+<script id="payload" type="application/json">{"status": {"state": "ok"}, "label_help": {"STANDARD": "Model-vs-market gap; inputs look complete.", "LOWCONF": "Model-vs-market gap, but an input is unconfirmed (lineup, starter, goalie or injury status). Verify before relying on it.", "SUSPECT": "Gap is unusually large: more likely a data/input error than value. Verify inputs."}, "grade_help": {"A": "Both starting goalies confirmed (DailyFaceoff 'Confirmed').", "B": "Exactly one goalie confirmed; the other is only 'Likely' or unconfirmed.", "C": "Neither goalie confirmed (both likely / unconfirmed), or a goalie is unknown. A late goalie change would move the numbers a lot."}, "generated_utc": "2026-10-21T02:49:34+00:00", "date": "2026-10-21", "meta": {"date": "2026-10-21", "n_games": 2, "regular_season_start": "2026-09-29", "preseason_start": "2026-09-19", "n_sims": 0, "next_game_date": null, "slate_date": "2026-10-21", "today": "2026-10-21", "odds_api": {"status": "cache", "note": "cache hit (6 min old, ttl 48 min)", "remaining": 19445, "used": 555, "cost": 0, "age_min": 6.3, "fetched_utc": "2026-10-21T02:43:16+00:00", "n_events": 8, "sport": "icehockey_nhl", "n_games_window": 2, "warn": null, "reserve": 500}}, "health": {"sources": {"nhl_history": "ok (6700 regular-season games through 2026-10-19)", "nhl_schedule": "ok (2 games on 2026-10-21)", "nhl_rosters": "ok (goalie ids for 4/4 teams)", "dailyfaceoff_goalies": "ok (page date 2026-10-20, 11 games)", "espn_scoreboard": "ok (2 events)", "the_odds_api": "ok (The Odds API [cache] cache hit (6 min old, ttl 48 min); quota remaining 19445 (used 555, reserve 500))", "model": "ok (2 games)"}, "warnings": ["DailyFaceoff page is for 2026-10-20, not 2026-10-21: confirmed-goalie info not available for this date; using projections"]}, "bets": [], "games": [{"id": 2026020152, "status": "FUT", "start": "2026-10-21T23:30:00Z", "away": "PHI", "home": "BUF", "away_name": "Philadelphia Flyers", "home_name": "Buffalo Sabres", "game_type": 2, "venue": "KeyBank Center", "goalies": {"away": {"id": 8479361, "name": "Joseph Woll", "status": "Projected", "source": "policy", "rest": 2, "match": "policy"}, "home": {"id": 8480045, "name": "Ukko-Pekka Luukkonen", "status": "Projected", "source": "policy", "rest": 4, "match": "policy"}}, "goalie_state": {"away": "unconfirmed", "home": "unconfirmed"}, "data_grade": "C", "model": {"home_win": 0.6337735933492212, "exp_home": 2.9202840535818426, "exp_away": 2.0507269026745556, "exp_total": 5.08438082941811, "p_reg_tie": 0.16763046687945105, "home_minus1_5": 0.3815107901461297, "away_minus1_5": 0.14737370786135764, "total_dist": [0.0029, 0.0459, 0.062, 0.1725, 0.1315, 0.2061, 0.1129, 0.1254, 0.0548, 0.0476, 0.0176, 0.0127, 0.0041, 0.0025, 0.0007, 0.0004], "home_win_raw": 0.6551742146734891, "blend_w": 0.4}, "market": {"book": "The Odds API avg of 11 books", "away_ml": 158.0, "home_ml": -175.0, "novig_home": 0.6192011350311795, "novig_away": 0.38079886496882054, "total": 6.0, "over_odds": -106.0, "under_odds": -110.0, "source": "The Odds API avg of 11 books", "n_books": 11, "best_home_book": "BetOnline.ag", "best_away_book": "Caesars", "best_over_book": "BetOnline.ag", "best_under_book": "BetOnline.ag", "blend_w": 0.4, "p_home_blend": 0.6337735933492212, "p_home_raw": 0.6551742146734891, "edge_home": 0.01457245831804177, "ev_home": -0.004070067594080906, "raw_edge_home": 0.03597307964230967, "raw_p_home": 0.6551742146734891, "edge_away": -0.01457245831804177, "ev_away": -0.0551358708409907, "raw_edge_away": -0.03597307964230967, "raw_p_away": 0.34482578532651087, "p_over": 0.2661382578295957, "p_under": 0.6209627049917292, "p_push": 0.11289903717867504, "ev_over": -0.3698888768506012, "ev_under": 0.2983732921628855}, "flags": ["away goalie NOT CONFIRMED: projected Joseph Woll by last-starter policy (54% accurate historically)", "home goalie NOT CONFIRMED: projected Ukko-Pekka Luukkonen by last-starter policy (54% accurate historically)"], "confidence": "low", "start_ct": "Wed Oct 21 6:30 PM CT", "chips": [["away goalie unconfirmed", "away goalie is unconfirmed (DailyFaceoff status / policy projection)"], ["home goalie unconfirmed", "home goalie is unconfirmed (DailyFaceoff status / policy projection)"]]}, {"id": 2026020153, "status": "FUT", "start": "2026-10-21T23:30:00Z", "away": "FLA", "home": "OTT", "away_name": "Florida Panthers", "home_name": "Ottawa Senators", "game_type": 2, "venue": "Canadian Tire Centre", "goalies": {"away": {"id": 8474593, "name": "Jacob Markstrom", "status": "Projected", "source": "policy", "rest": 4, "match": "policy"}, "home": {"id": 8476999, "name": "Linus Ullmark", "status": "Projected", "source": "policy", "rest": 4, "match": "policy"}}, "goalie_state": {"away": "unconfirmed", "home": "unconfirmed"}, "data_grade": "C", "model": {"home_win": 0.5055631654651275, "exp_home": 2.3740914431158218, "exp_away": 2.31570395118988, "exp_total": 4.814246749396878, "p_reg_tie": 0.18400942424917202, "home_minus1_5": 0.2526210690655147, "away_minus1_5": 0.23643511166496742, "total_dist": [0.0037, 0.0564, 0.071, 0.1927, 0.1352, 0.209, 0.1042, 0.1152, 0.0453, 0.0396, 0.013, 0.0095, 0.0027, 0.0017, 0.0004, 0.0002], "home_win_raw": 0.5140809172147492, "blend_w": 0.4}, "market": {"book": "The Odds API avg of 11 books", "away_ml": -106.0, "home_ml": -108.0, "novig_home": 0.4998825641064136, "novig_away": 0.5001174358935865, "total": 6.0, "over_odds": 105.0, "under_odds": -115.0, "source": "The Odds API avg of 11 books", "n_books": 11, "best_home_book": "DraftKings", "best_away_book": "Caesars", "best_over_book": "Bovada", "best_under_book": "BetMGM", "blend_w": 0.4, "p_home_blend": 0.5055631654651275, "p_home_raw": 0.5140809172147492, "edge_home": 0.005680601358713899, "ev_home": -0.026322792437532216, "raw_edge_home": 0.01419835310833567, "raw_p_home": 0.5140809172147492, "edge_away": -0.005680601358713955, "ev_away": -0.03911332156430436, "raw_edge_away": -0.014198353108335726, "raw_p_away": 0.48591908278525076, "p_over": 0.22792754808058072, "p_under": 0.667891400514541, "p_push": 0.10418105140487831, "ev_over": -0.4285674750299313, "ev_under": 0.35284758280162876}, "flags": ["away goalie NOT CONFIRMED: projected Jacob Markstrom by last-starter policy (54% accurate historically)", "home goalie NOT CONFIRMED: projected Linus Ullmark by last-starter policy (54% accurate historically)"], "confidence": "low", "start_ct": "Wed Oct 21 6:30 PM CT", "chips": [["away goalie unconfirmed", "away goalie is unconfirmed (DailyFaceoff status / policy projection)"], ["home goalie unconfirmed", "home goalie is unconfirmed (DailyFaceoff status / policy projection)"]]}], "generated_ct": "Tue Oct 20 9:49 PM CT", "pick_help": {"A": "Strong play: model beats the break-even of the best price by 4+ pts, or 8%+ expected return.", "B": "Solid play: 2-4 pts over break-even, or 4-8% expected return.", "C": "Thin play: positive edge under 2 pts and under 4% expected return."}}</script>
+<script id="livedata" type="application/json">{"date": "2026-10-21", "updated_utc": "2026-10-21T02:49:32Z", "updated_ct": "Tue Oct 20, 9:49 PM CT", "source": "ESPN scoreboard (free)", "live": [], "final": [], "error": null}</script>
+<script>
+"use strict";
+
+const UI = (() => {
+  const h = (t, a, ...k) => { const e = document.createElement(t); if (a) for (const [x, v] of Object.entries(a)) { if (v == null) continue; if (x === 'class') e.className = v; else if (x === 'text') e.textContent = v; else e.setAttribute(x, v); } for (const c of k.flat()) if (c != null && c !== '') e.append(c.nodeType ? c : document.createTextNode(String(c))); return e; };
+  // 'STANDARD' is the default label on every priced row, so it is not shown as a pill.
+  const lab = l => (l == null || l === 'STANDARD') ? '' : String(l);
+  const labPill = (l, title) => { const t = lab(l); return t ? h('span', { class: 'pill ' + t, title: title || null, text: t }) : null; };
+  let ctF = null; try { ctF = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Chicago', weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }); } catch (e) { ctF = null; }
+  const ct = iso => { if (!iso) return ''; const d = new Date(iso); if (!ctF || isNaN(d)) return String(iso); return ctF.format(d).replace(/,/g, '') + ' CT'; };
+  const edgeCls = (v, suspect) => suspect ? 'sus' : (v == null ? 'neu' : v > 0 ? 'pos' : v < 0 ? 'neg' : 'neu');
+  function card(o) {
+    const nums = h('div', { class: 'nums' });
+    if (o.price) nums.append(h('span', null, h('span', { class: 'k', text: 'Price' }), o.price, o.book ? h('span', { class: 'bk', text: ' ' + o.book }) : null));
+    if (o.model != null && o.model !== '') nums.append(h('span', null, h('span', { class: 'k', text: o.modelK || 'Model' }), o.model));
+    if (o.market != null && o.market !== '') nums.append(h('span', null, h('span', { class: 'k', text: o.marketK || 'Market' }), o.market));
+    if (o.edge) nums.append(h('span', { class: 'edge ' + edgeCls(o.edgeVal, o.suspect), title: o.edgeTitle || 'model minus market', text: o.edge }));
+    const notes = (o.notes || []).filter(Boolean);
+    return h('div', { class: 'play' },
+      h('div', { class: 'top' }, h('div', { style: 'min-width:0' }, h('div', { class: 'pick', text: o.pick || '' }), h('div', { class: 'game', text: [o.sub, o.when].filter(Boolean).join(' \u00b7 ') })),
+        h('div', { class: 'badges' }, o.label ? labPill(o.label) : null, o.grade || null)),
+      nums, notes.length ? h('div', { class: 'note', text: notes.join(' \u00b7 ') }) : null);
+  }
+  function plays(root, items, empty) { root.textContent = ''; if (!items.length) { root.append(h('div', { class: 'empty', text: empty || 'No plays on this slate.' })); return; } const g = h('div', { class: 'plays' }); items.forEach(x => g.append(card(x))); root.append(g); }
+  function head(o) { const s = document.getElementById('slate'), u = document.getElementById('updated'), st = document.getElementById('hstatus');
+    if (s && o.slate) s.textContent = 'Slate: ' + o.slate; if (u && o.updated) u.textContent = 'Updated ' + o.updated;
+    if (st) { st.textContent = ''; const x = o.status || {}; if (x.state && x.state !== 'ok') st.append(h('span', { class: 'status-pill', text: x.state === 'stale' ? 'STALE' : 'RUN FAILED' })); } }
+  function statusAlert(root, st, extra) { st = st || { state: 'ok' }; if (!root || st.state === 'ok' || !st.state) return;
+    root.append(h('div', { class: 'alert' + (st.state === 'stale' ? '' : ' bad') }, h('b', { text: st.state === 'stale' ? 'Stale data: the latest run failed; showing the last good run. ' : 'Run failed: no fresh data. ' }), st.message || '', extra || null)); }
+  // click-to-sort for plain tables whose first row holds the headers (used for the small static tables)
+  function sortTable(t) { const rows = () => Array.from(t.querySelectorAll('tr')).slice(1); const hr = t.querySelector('tr'); if (!hr) return t;
+    Array.from(hr.children).forEach((th, i) => { let dir = 1; th.onclick = () => { const v = r => { const c = r.children[i]; const s = c ? c.textContent.trim() : ''; const n = parseFloat(s.replace(/[%,+]/g, '')); return isNaN(n) ? s.toLowerCase() : n; };
+      const rs = rows().sort((a, b) => { const x = v(a), y = v(b); return (x < y ? -1 : x > y ? 1 : 0) * dir; }); dir = -dir; rs.forEach(r => r.parentNode.append(r)); }; }); return t; }
+  // reload the page every `ms` when served over http(s) (GitHub Pages / local server); a hidden tab reloads as soon as it is shown again
+  function autoReload(ms) { if (!/^https?:$/.test(location.protocol)) return; const t0 = Date.now(); const due = () => Date.now() - t0 >= ms;
+    setInterval(() => { if (due() && document.visibilityState !== 'hidden') location.reload(); }, 15000);
+    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && due()) location.reload(); }); }
+  return { h, lab, labPill, ct, card, plays, head, statusAlert, sortTable, edgeCls, autoReload };
+})();
+
+const P=JSON.parse(document.getElementById('payload').textContent);
+const $=id=>document.getElementById(id);
+function el(t,txt,cls){const e=document.createElement(t);if(txt!==undefined&&txt!==null)e.textContent=txt;if(cls)e.className=cls;return e}
+const pc=(x,d=1)=>x==null?'-':(100*x).toFixed(d)+'%';const f2=(x,d=2)=>x==null?'-':Number(x).toFixed(d);
+const dayName=d=>{if(!d)return '';const x=new Date(d+'T12:00:00');return isNaN(x)?d:x.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})};
+$('title').textContent='NHL'+(P.date?' \u00b7 '+dayName(P.date):'');
+UI.head({slate:P.date?dayName(P.date)+' ('+P.date+')':'',updated:P.generated_ct,status:P.status});
+const st=P.status||{};
+const M=P.meta||{};const mm=$('meta');
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');for(const k of ['bets','games','health'])$('t-'+k).hidden=(k!==b.dataset.t)});
+function sortable(tbl,cols,rows,rowfn){
+ tbl.textContent='';const th=el('thead');const tr=el('tr');let key=null,dir=1;
+ cols.forEach((c,i)=>{const h=el('th',c.h+' ');h.title='click to sort';h.onclick=()=>{if(key===i)dir=-dir;else{key=i;dir=c.num?-1:1}draw()};tr.appendChild(h)});th.appendChild(tr);tbl.appendChild(th);
+ const tb=el('tbody');tbl.appendChild(tb);
+ function draw(){tb.textContent='';let r=rows.slice();if(key!==null){const c=cols[key];r.sort((a,b)=>{const x=c.v(a),y=c.v(b);return (x==null?1:y==null?-1:(x>y?1:x<y?-1:0))*dir*(x==null||y==null?1:1)})}
+  r.forEach(x=>rowfn(tb,x))}
+ draw();return draw}
+// ---- top plays (cards)
+const bets=P.bets||[];
+const gmBy={};(P.games||[]).forEach(g=>{gmBy[g.id]=g});
+function priceOf(b){const m=/\(([+-]\d+)\)\s*$/.exec(b.pick||'');return m?m[1]:''}
+function lineupNote(b){const g=gmBy[b.id],parts=[];if(g&&g.goalies){const s=x=>g.goalies[x]?((g.goalies[x].name||'?')+(g.goalies[x].status?' ('+g.goalies[x].status+')':'')):'?';parts.push('G '+s('away')+' vs '+s('home'))}
+ else if(b.goalies)parts.push('goalies '+b.goalies);if(b.conf&&b.conf!=='ok')parts.push('low-conf');return parts.join(' \u00b7 ')}
+(function(){const pool=bets.filter(b=>b.label!=='SUSPECT').slice().sort((a,b)=>(a.rank||0)-(b.rank||0)).slice(0,6);
+ $('plays-note').textContent=pool.length?'model win % vs no-vig market, SUSPECT excluded':'';
+ UI.plays($('plays'),pool.map(b=>({pick:String(b.pick||'').replace(/\s*\([+-]\d+\)\s*$/,''),sub:b.game+' \u00b7 '+b.market,when:b.start_ct,price:priceOf(b),book:b.best_book||'',model:pc(b.model_p),market:pc(b.mkt_p),
+  edge:(b.edge>=0?'+':'')+(100*b.edge).toFixed(1)+' pts',edgeVal:b.edge,grade:gradeBadge(b),label:b.label,notes:[lineupNote(b),b.ev!=null?'EV at quoted price '+pc(b.ev):'']})),
+  bets.length?'Only SUSPECT rows on this slate - see the table below.':(M.n_games===0?'No NHL games on '+P.date+(M.next_game_date?('; next scheduled game date '+M.next_game_date):'')+'.':'No evaluable edges on this slate (games started or no prices yet - see Data health).'))})();
+// ---- bets
+const bcols=[{h:'#',v:b=>b.rank,num:1},{h:'label',v:b=>b.label},{h:'pick grade',v:b=>b.pick_grade},{h:'type',v:b=>b.market},{h:'pick',v:b=>b.pick},{h:'game',v:b=>b.game},{h:'start (CT)',v:b=>b.start},
+ {h:'model win%',v:b=>b.model_p,num:1},{h:'no-vig mkt%',v:b=>b.mkt_p,num:1},{h:'edge',v:b=>b.edge,num:1},{h:'EV @ quote',v:b=>b.ev,num:1},{h:'goalies',v:b=>b.goalies},{h:'best price @',v:b=>b.best_book},{h:'line source',v:b=>b.src},{h:'flags (hover)',v:b=>(b.chips||[]).length,num:1}];
+let redraw;const openRows=new Set();
+function pickTip(b){return b.pick_edge==null?'':((b.pick_edge>=0?'+':'')+b.pick_edge.toFixed(1)+' pts over break-even, EV '+(b.pick_ev>=0?'+':'')+b.pick_ev.toFixed(1)+'%')}
+function gradeBadge(b){const g=b.pick_grade;const e=el('span',g||'-','grade '+(g||'NA'));e.title=g?('Pick grade '+g+': '+pickTip(b)+'. '+((P.pick_help||{})[g]||'')):'Price is at or above the model fair price';return e}
+(function(){const L=$('legend');const d=el('details',null,'legend small');d.appendChild(el('summary','What the A/B/C pick grade means'));L.appendChild(d);const r0=el('div',null,'row');r0.appendChild(el('b','Pick grade '));
+ r0.appendChild(document.createTextNode('(A/B/C) = how strong the play is at the best available price: edge = model chance minus the break-even chance of that price, in points, plus expected return (EV).'));d.appendChild(r0);
+ for(const g of ['A','B','C']){const r=el('div',null,'row');const b=el('span',g,'grade '+g);r.appendChild(b);r.appendChild(document.createTextNode(' '+((P.pick_help||{})[g]||'')));d.appendChild(r)}})();
+function filt(){const q=$('f').value.toLowerCase(),m=$('fm').value,l=$('fl').value,g=$('fg').value,c=$('fc').checked;
+ return bets.filter(b=>(!q||(b.pick+' '+b.game).toLowerCase().includes(q))&&(!m||b.market===m)&&(!l||b.label===l)&&(!g||(b.pick_grade||'-')===g)&&(!c||b.goalies==='confirmed'))}
+function drawBets(){const tb=$('bt1');
+ const rows=filt();const cols=bcols;tb.textContent='';const th=el('thead');const tr=el('tr');
+ cols.forEach((c,i)=>{const h=el('th',c.h);h.onclick=()=>{drawBets.key=i;drawBets.dir=(drawBets.key===i&&drawBets.last===i)?-(drawBets.dir||1):(c.num?-1:1);drawBets.last=i;drawBets()};tr.appendChild(h)});th.appendChild(tr);tb.appendChild(th);
+ let r=rows.slice();if(drawBets.key!=null){const c=cols[drawBets.key],d=drawBets.dir||1;r.sort((a,b)=>{const x=c.v(a),y=c.v(b);if(x==null)return 1;if(y==null)return -1;return (x>y?1:x<y?-1:0)*d})}
+ const body=el('tbody');tb.appendChild(body);
+ if(!r.length){const t=el('tr');const td=el('td',bets.length?'No rows match the filter.':'No evaluable games/edges for this slate (see health/warnings).','muted');td.colSpan=cols.length;t.appendChild(td);body.appendChild(t)}
+ for(const b of r){const t=el('tr',null,'bet');
+  [b.rank,null,'G',b.market,b.pick,b.game,b.start_ct,pc(b.model_p),pc(b.mkt_p),b.market==='ML'?pc(b.edge):('+'+pc(b.edge)+' vs 50%'),pc(b.ev),b.goalies+(b.conf==='ok'?'':' / low-conf'),b.best_book||'',b.src||'ESPN','C'].forEach((x,i)=>{
+   let td;
+   if(i===1){td=el('td');const p=UI.labPill(b.label,(P.label_help||{})[b.label]);if(p)td.appendChild(p)}
+   else if(i===2){td=el('td');td.appendChild(gradeBadge(b))}
+   else if(i===14){td=el('td');for(const c of (b.chips||[])){const sp=el('span',c[0],'chip');sp.title=c[1];td.appendChild(sp)}}
+   else{td=el('td',x,i===11&&b.goalies!=='confirmed'?'warn':(i===4?'':(i>=7&&i<=10?'num':'')));if(i===4)td.style.fontWeight='600'}
+   t.appendChild(td)});
+  const id=b.id+b.market;t.onclick=()=>{openRows.has(id)?openRows.delete(id):openRows.add(id);drawBets()};body.appendChild(t);
+  if(openRows.has(id)){const s=el('tr',null,'sub');const td=el('td');td.colSpan=cols.length;
+   const d1=el('div');d1.appendChild(el('b','Pick grade: '));d1.appendChild(gradeBadge(b));d1.appendChild(document.createTextNode(' '+(b.pick_grade?pickTip(b)+'. '+((P.pick_help||{})[b.pick_grade]||''):'Price is at or above the model fair price.')));td.appendChild(d1);
+   if(b.flags&&b.flags.length){const d2=el('div');d2.appendChild(el('b','Flags (full text): '));for(const f of b.flags){d2.appendChild(el('span',f,'flag'))}td.appendChild(d2)}
+   s.appendChild(td);body.appendChild(s)}}}
+['f','fm','fl','fg','fc'].forEach(i=>$(i).addEventListener('input',drawBets));drawBets();
+// ---- games
+const gm=(P.games||[]);
+const gcols=[{h:'start (CT)',v:g=>g.start},{h:'game',v:g=>g.away+' @ '+g.home},{h:'state',v:g=>g.status},{h:'away G',v:g=>g.goalies&&g.goalies.away&&g.goalies.away.name},{h:'home G',v:g=>g.goalies&&g.goalies.home&&g.goalies.home.name},
+ {h:'model home win%',v:g=>g.model&&g.model.home_win,num:1},{h:'mkt home %',v:g=>g.market&&g.market.novig_home,num:1},{h:'exp goals A-H',v:g=>g.model&&g.model.exp_total,num:1},{h:'mkt total',v:g=>g.market&&g.market.total,num:1},{h:'line source',v:g=>g.market&&g.market.source},{h:'goalie status A/H',v:g=>g.goalies&&((g.goalies.away&&g.goalies.away.status)+'/'+(g.goalies.home&&g.goalies.home.status))}];
+const gt=$('gt');
+sortable(gt,gcols,gm,(tb,g)=>{const t=el('tr');
+ const sp=s=>g.goalies&&g.goalies[s]?((g.goalies[s].name||'?')+' ['+g.goalies[s].status+']'):'-';
+ [g.start_ct,g.away+' @ '+g.home,g.status,sp('away'),sp('home'),g.model?pc(g.model.home_win):'-',g.market?pc(g.market.novig_home):'-',g.model?(f2(g.model.exp_away,1)+' - '+f2(g.model.exp_home,1)+' (tot '+f2(g.model.exp_total,1)+')'):(g.note||'-'),g.market&&g.market.total!=null?g.market.total:'-',g.market?(g.market.source||'ESPN'):'-',g.goalies?((g.goalies.away?g.goalies.away.status:'-')+' / '+(g.goalies.home?g.goalies.home.status:'-')):'-'].forEach(x=>t.appendChild(el('td',x)));tb.appendChild(t);
+ const d=el('tr',null,'sub');const td=el('td');td.colSpan=12;
+ const parts=[];if(g.goalies)for(const x of['away','home']){const l=g.goalies[x];if(l)parts.push(x+' goalie: '+(l.name||'?')+' ('+l.status+', '+l.source+(l.rest!=null?', rest '+l.rest+'d':'')+')')}
+ if(g.model)parts.push('home win '+pc(g.model.home_win)+'; P(tied after 60) '+pc(g.model.p_reg_tie)+'; puck line home -1.5 '+pc(g.model.home_minus1_5)+', away -1.5 '+pc(g.model.away_minus1_5));
+
+ if(g.flags)parts.push('FLAGS: '+g.flags.join(' | '));
+ td.textContent=parts.join('\n');td.style.whiteSpace='pre-wrap';d.appendChild(td);tb.appendChild(d)});
+// ---- live / in progress + final (separate from the board; refreshed every 5 min by site_sync.sh -> nhlmodel.livescores)
+function renderLive(L){const root=$('live-body');root.textContent='';L=L||{};
+ const upd=$('live-upd');upd.textContent=L.updated_ct?('scores as of '+L.updated_ct+' - ESPN scoreboard, auto-refreshes every 5 min'):'';
+ if(L.error)root.appendChild(el('div','Live scores unavailable: '+L.error,'small warn'));
+ const live=L.live||[],fin=L.final||[];
+ const mk=(g)=>{const away=g.away_abbr||g.away,home=g.home_abbr||g.home;return [g.away+' @ '+g.home,(g.away_score==null?'-':g.away_score)+' - '+(g.home_score==null?'-':g.home_score)+'  ('+away+' - '+home+')',g.status||'',g.start_ct||'']};
+ if(!live.length&&!L.error)root.appendChild(el('p','No games in progress right now.','small muted'));
+ if(live.length){const t=el('table');const hd=el('tr');['game (away @ home)','score','period / clock','started (CT)','bet'].forEach(h=>hd.appendChild(el('th',h)));t.appendChild(hd);
+  for(const g of live){const r=el('tr');mk(g).forEach(x=>r.appendChild(el('td',x)));r.appendChild(el('td',g.note||'in progress: no pre-game pick','muted'));t.appendChild(r)}root.appendChild(t)}
+ if(fin.length){const h=el('div',null,'small');h.appendChild(el('b','Final today: '));
+  h.appendChild(document.createTextNode(fin.map(g=>g.away+' '+(g.away_score==null?'-':g.away_score)+', '+g.home+' '+(g.home_score==null?'-':g.home_score)+' ('+(g.status||'Final')+'; started '+(g.start_ct||'?')+')').join('  |  ')));root.appendChild(h)}
+ root.appendChild(el('div','Moneylines only. Pre-game model edges do not apply once a game has started, so live and final games show no pick.','small muted'))}
+renderLive(JSON.parse($('livedata').textContent));
+if(location.protocol.startsWith('http'))setInterval(async()=>{try{const r=await fetch(location.pathname+'?t='+Date.now(),{cache:'no-store'});if(!r.ok)return;
+ const d=new DOMParser().parseFromString(await r.text(),'text/html').getElementById('livedata');if(d)renderLive(JSON.parse(d.textContent))}catch(e){}},300000);
+// ---- health
+(function(){const root=$('t-health');UI.statusAlert(root,st);{const o=M.odds_api||null;if(o)root.appendChild(el('p','Lines: '+(o.n_games_priced?o.n_games_priced+' games from The Odds API (avg of books)':'ESPN/DraftKings (Odds API '+o.status+')')+' | Odds API quota remaining '+(o.remaining==null?'?':o.remaining),'small muted'))}const t=el('table');for(const [k,v] of Object.entries(P.health.sources||{})){const r=el('tr');r.appendChild(el('td',k));r.appendChild(el('td',v,String(v).startsWith('ok')?'ok':'bad'));t.appendChild(r)}root.appendChild(t);
+ for(const w of (P.health.warnings||[]))root.appendChild(el('div','! '+w,'small warn'))})();
+</script></body></html>
