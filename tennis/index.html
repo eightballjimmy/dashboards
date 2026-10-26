@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Tennis model</title>
+<!doctype html><!--skin-v1--><html lang="en"><head><meta charset="utf-8"><title>Tennis model</title>
 <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0f14"><style>
 :root{color-scheme:dark;--bg:#0b0f14;--bg2:#10161e;--card:#141c26;--card2:#1a2430;--line:#243040;--ink:#e8edf2;--mut:#8796a8;--acc:#4f9dff;
 --ok:#3ddc97;--okbg:rgba(61,220,151,.13);--warn:#ff7b72;--warnbg:rgba(255,123,114,.13);--amber:#f5b942;--amberbg:rgba(245,185,66,.13);--blue:#6cb2ff;--bluebg:rgba(108,178,255,.13)}
@@ -64,8 +64,158 @@ details.info p,details.info .para{margin:4px 0}
 #slate-line[style*="fde2e1"]{background:var(--warnbg)!important;color:var(--warn)!important}
 .sec-h{flex-wrap:wrap}
 footer.foot{max-width:1200px;margin:0 auto;padding:0 14px 28px;color:var(--mut);font-size:12px}
-</style></head><body><!--slate-line--><div id="slate-line" style="font:600 14px/1.4 system-ui,sans-serif;padding:6px 12px;background:#e8f4ea;color:#123;border-bottom:1px solid #9994">Slate: Mon Oct 26 (+ Tue Oct 27) | Updated Mon Oct 26, 6:56 AM CT</div><!--/slate-line-->
-<header class="topbar"><div class="in"><div class="brand"><h1 id="title">Tennis</h1><span id="hstatus"></span></div><div class="hmeta"><span id="slate"></span><span id="updated"></span></div></div><nav class="sports" aria-label="Sports"><a href="../">All</a><a href="../nfl/">NFL</a><a href="../nfl-td/">NFL TD</a><a href="../nfl-props/">NFL Props</a><a href="../cfb/">CFB</a><a href="../mlb/">MLB</a><a href="../nhl/">NHL</a><a href="../nhl-props/">NHL Props</a><a href="../nba/">NBA</a><a href="../nba-props/">NBA Props</a><a href="../nba-first-basket/">NBA First Basket</a><a href="../tennis/" class="on" aria-current="page">Tennis</a></nav></header>
+</style><style id="skin-css">
+/* ===== dashboards skin v1 : override layer, loaded last. Phone-first dark, per-sport accents ===== */
+:root{color-scheme:dark;
+--bg:#060a13;--bg2:#0b1222;--card:#10192e;--card2:#18243f;--line:#24345a;--ink:#f3f6fc;--mut:#9db0d0;--acc:var(--sp,#5b8cff);
+--ok:#2ff0a0;--okbg:rgba(47,240,160,.14);--warn:#ff6683;--warnbg:rgba(255,102,131,.15);--amber:#ffc233;--amberbg:rgba(255,194,51,.15);--blue:#6db6ff;--bluebg:rgba(109,182,255,.15);
+--gA:linear-gradient(135deg,#2ff0a0,#12c27d);--gB:linear-gradient(135deg,#5b9bff,#8a63ff);--gC:linear-gradient(135deg,#ffc233,#ff8a1f);
+--sp:#5b8cff;--sp2:#8b5cf6;--sp-rgb:91,140,255;--r:16px}
+html{scroll-padding-top:70px}
+body{background:radial-gradient(520px 300px at 85% -60px,rgba(var(--sp-rgb),.30),transparent 70%),radial-gradient(420px 260px at -10% 18%,rgba(139,92,246,.10),transparent 70%),#060a13;background-repeat:no-repeat;color:var(--ink);
+ font:15px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh}
+a{color:var(--blue)}
+#slate-line{display:none!important}#slate-line[style*="fde2e1"]{display:block!important}
+
+/* header: gradient, title row scrolls away, sport nav stays pinned */
+.topbar{position:sticky;top:0;z-index:40;background:linear-gradient(135deg,rgba(var(--sp-rgb),.34),rgba(6,10,19,.97) 64%),#060a13;border:0;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.topbar::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--sp),var(--sp2))}
+.topbar .in{padding:12px 16px 4px}
+.brand h1{font-size:23px;font-weight:800;letter-spacing:-.02em;background:linear-gradient(90deg,#fff 20%,var(--sp));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.hmeta{color:#b9c8e4;font-size:12.5px}.hmeta span{display:block}
+nav.sports{padding:8px 14px 11px;gap:7px}
+nav.sports a{display:flex;align-items:center;gap:7px;padding:7px 13px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);color:#d5e0f5;font-size:13.5px;font-weight:600;transition:transform .12s}
+nav.sports a i{width:9px;height:9px;border-radius:50%;background:var(--c);box-shadow:0 0 8px var(--c);flex:0 0 auto}
+nav.sports a.on{background:linear-gradient(135deg,var(--c),var(--c2));border-color:transparent;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35);box-shadow:0 4px 14px -4px var(--c)}
+nav.sports a.on i{background:#fff;box-shadow:none}
+nav.sports a:active{transform:scale(.96)}
+main.wrap{padding:6px 14px 48px}
+
+/* Today / Tomorrow segmented control */
+.dtabs{position:static!important;display:flex!important;gap:0!important;margin:12px 14px 0!important;padding:4px!important;background:var(--bg2)!important;border:1px solid var(--line);border-radius:14px;max-width:1172px}
+.dtabs a{flex:1;text-align:center;padding:11px 6px!important;border-radius:11px!important;background:transparent!important;color:var(--mut)!important;font:700 14.5px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;text-decoration:none}
+.dtabs a.on{background:linear-gradient(135deg,var(--sp),var(--sp2))!important;color:#fff!important;box-shadow:0 4px 16px -6px var(--sp)}
+.dnote{margin:10px 14px 0!important;padding:10px 12px!important;border-radius:12px!important;background:rgba(var(--sp-rgb),.13)!important;border:1px solid rgba(var(--sp-rgb),.38);color:#e6edfb!important;font:500 13px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important}
+@media(min-width:1200px){.dtabs,.dnote{margin-left:auto!important;margin-right:auto!important;max-width:1172px}}
+
+/* sections */
+.sec-h{display:flex;align-items:center;gap:8px;margin:22px 0 10px;padding:0 0 0 12px;position:relative;font-size:13px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#fff}
+.sec-h::before{content:"";position:absolute;left:0;top:2px;bottom:2px;width:4px;border-radius:4px;background:linear-gradient(180deg,var(--sp),var(--sp2))}
+.sec-h small{color:var(--mut);font-weight:500;letter-spacing:0;text-transform:none;flex:1 1 100%;margin-top:-2px}
+.sec-h .cnt{margin-left:auto;font-size:11.5px;font-weight:700;letter-spacing:0;color:var(--mut);background:var(--card2);border-radius:999px;padding:2px 9px;text-transform:none}
+.sec.tog>.sec-h{cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none}
+.sec.tog>.sec-h::after{content:"";width:9px;height:9px;border-right:2.5px solid var(--sp);border-bottom:2.5px solid var(--sp);transform:rotate(45deg);margin:-3px 4px 0 6px;transition:transform .18s;flex:0 0 auto}
+.sec.closed>.sec-h::after{transform:rotate(-45deg);margin-top:0}
+.sec.closed>.sec-b{display:none}
+.sec.tog:not(.closed)>.sec-h .cnt{margin-left:auto}
+
+/* top play cards */
+.plays{gap:12px}
+.play{position:relative;background:linear-gradient(160deg,rgba(var(--sp-rgb),.13),transparent 55%),var(--card);border:1px solid var(--line);border-left:5px solid var(--gc,var(--sp));border-radius:var(--r);padding:14px 14px 13px;box-shadow:0 10px 24px -14px rgba(0,0,0,.8)}
+.play:has(.grade.A){--gc:#2ff0a0;background:linear-gradient(160deg,rgba(47,240,160,.12),transparent 55%),var(--card)}
+.play:has(.grade.B){--gc:#7a8cff;background:linear-gradient(160deg,rgba(122,140,255,.14),transparent 55%),var(--card)}
+.play:has(.grade.C){--gc:#ffb020;background:linear-gradient(160deg,rgba(255,176,32,.11),transparent 55%),var(--card)}
+.play .top{align-items:center;gap:10px}
+.play .pick{font-size:19px;font-weight:800;line-height:1.22;letter-spacing:-.01em}
+.play .game{font-size:12.5px;color:var(--mut);margin-top:3px}
+.play .badges .grade{min-width:40px;height:40px;padding:0;display:flex;align-items:center;justify-content:center;font-size:21px;border-radius:12px}
+.play .nums{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;margin-top:12px;font-size:13px}
+.play .nums>span{display:flex;flex-direction:column;justify-content:center;flex:1 1 auto;min-width:64px;padding:7px 10px;border-radius:11px;background:rgba(255,255,255,.055);font-size:17px;font-weight:800;line-height:1.15;font-variant-numeric:tabular-nums}
+.play .nums>span:first-child{flex:1.4 1 96px;background:rgba(var(--sp-rgb),.20);font-size:24px;letter-spacing:-.02em}
+.play .nums .k{display:block;order:-1;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);margin:0 0 2px}
+.play .nums .bk{font-size:11.5px;font-weight:600;color:#b9c8e4;margin-top:2px}
+.play .nums .edge{flex:0 0 auto;align-self:center;font-size:14px;padding:6px 12px;border-radius:999px;background:var(--okbg);color:var(--ok);border:1px solid rgba(47,240,160,.5);min-width:0}
+.play .nums .edge.neg{background:var(--warnbg);color:var(--warn);border-color:rgba(255,102,131,.5)}
+.play .nums .edge.sus,.play .nums .edge.neu{background:var(--card2);color:var(--mut);border-color:var(--line)}
+.play .note{margin-top:9px;font-size:12px;color:var(--mut)}
+.empty{padding:16px;border:1px dashed rgba(var(--sp-rgb),.5);border-radius:var(--r);background:rgba(var(--sp-rgb),.07);color:#c9d6ee;font-size:13.5px}
+
+/* grade chips: A emerald, B electric blue, C amber (green/red stay reserved for edge and over/under) */
+.grade{display:inline-block;min-width:26px;padding:2px 9px;border-radius:8px;font-size:13px;font-weight:900;text-align:center;border:0!important;letter-spacing:.02em;cursor:help;box-shadow:0 3px 10px -3px rgba(0,0,0,.6)}
+.grade.A{background:var(--gA)!important;color:#022c1a!important}
+.grade.B{background:var(--gB)!important;color:#fff!important}
+.grade.C{background:var(--gC)!important;color:#3a1c00!important}
+.grade.NA{background:transparent!important;color:#6f82a8!important;border:1px dashed var(--line)!important;box-shadow:none}
+.edge{font-weight:800}
+.edge.pos{background:var(--okbg);color:var(--ok)}.edge.neg{background:var(--warnbg);color:var(--warn)}
+.ou{font-weight:800}.ou.over{color:var(--ok)}.ou.under{color:var(--warn)}
+td.sv-pos,.sv-pos{color:var(--ok)!important;font-weight:700}td.sv-neg,.sv-neg{color:var(--warn)!important;font-weight:700}
+.pos{color:var(--ok)}.neg{color:var(--warn)}
+
+/* tabs */
+.tabs{margin:20px 0 10px;padding:4px;background:var(--bg2);border:1px solid var(--line);border-radius:14px;gap:4px}
+.tabs .tab,.tabs button{padding:9px 14px;border-radius:11px;font-size:13.5px;font-weight:600;color:var(--mut)}
+.tabs .tab.on,.tabs button.on{background:linear-gradient(135deg,var(--sp),var(--sp2));color:#fff;box-shadow:0 4px 14px -6px var(--sp)}
+.tabs:empty{display:none}
+
+/* panels, tools, tables: readable on 390px */
+.panel,.box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:10px 10px 4px;overflow:auto;max-height:78vh;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.tools{gap:8px 10px;margin-bottom:10px}
+.tools label{font-size:12px;font-weight:600;color:var(--mut);display:flex;align-items:center;gap:6px}
+select,input,button{font-size:16px;min-height:38px;padding:6px 10px;border-radius:10px;border:1px solid var(--line);background:var(--bg2);color:var(--ink)}
+select:focus,input:focus{outline:2px solid var(--sp);outline-offset:1px}
+input[type=checkbox]{width:20px;height:20px;min-height:0;accent-color:var(--sp)}
+table{font-size:13px;border-collapse:separate;border-spacing:0}
+th,td{padding:9px 10px;border-bottom:1px solid rgba(36,52,90,.7)}
+th{position:sticky;top:0;z-index:3;background:#16213b;color:#b3c3e0;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--sp)}
+th:first-child,td:first-child{position:sticky;left:0;z-index:2;background:var(--card);box-shadow:6px 0 8px -6px rgba(0,0,0,.7)}
+th:first-child{z-index:4;background:#16213b}
+tr:nth-child(even)>td{background:rgba(255,255,255,.03)}tr:nth-child(even)>td:first-child{background:#131d35}
+tr.detail>td:first-child,tr.sub>td:first-child{position:static;box-shadow:none}
+tr.bet:hover>td,tr.row:hover>td{background:rgba(var(--sp-rgb),.14)}
+td:first-child,tr.row>td:first-child,tr.bet>td:first-child{white-space:normal;min-width:112px;max-width:150px}
+td.num{font-weight:600}
+.pill{padding:2px 9px;font-weight:800}
+.pill.ok,.pill.PRICED{background:var(--okbg);color:var(--ok)}.pill.MODEL,.pill.MODEL-ONLY,.pill.NO-MARKET{background:var(--bluebg);color:var(--blue)}
+.chip{background:rgba(var(--sp-rgb),.18);color:#d3def4}
+.flag{background:var(--amberbg);color:var(--amber)}
+.legend,details.info{border:1px solid var(--line);border-radius:14px;background:var(--bg2)}
+.legend summary,details.info summary{font-weight:700;color:#d3def4;padding:2px 0;min-height:28px}
+.alert{border-radius:14px}
+
+/* game cards (NBA etc.) */
+.gcard{background:linear-gradient(160deg,rgba(var(--sp-rgb),.12),transparent 50%),var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;margin:0 0 10px;display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:center;box-shadow:0 10px 24px -16px rgba(0,0,0,.9)}
+.gcard h3{margin:0;font-size:19px;font-weight:800;letter-spacing:-.01em}
+.gcard .meta{grid-column:1/-1;font-size:12.5px;color:var(--mut);line-height:1.4}
+.gcard h3+.meta{grid-column:2;grid-row:1;justify-self:end;color:#fff;font-weight:700;background:rgba(var(--sp-rgb),.28);border-radius:999px;padding:3px 11px;white-space:nowrap}
+.gcard .meta:nth-of-type(2){color:#e6edfb;font-size:13.5px;font-weight:600;margin-top:6px}
+.gcard .meta.inj{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer}
+.gcard .meta.inj.open{display:block}
+.gcard .panel{grid-column:1/-1;margin-top:8px;padding:0;max-height:60vh}
+.gcard.tog>h3{cursor:pointer;-webkit-tap-highlight-color:transparent}
+.gcard.tog>h3::after{content:"";display:inline-block;width:8px;height:8px;border-right:2.5px solid var(--sp);border-bottom:2.5px solid var(--sp);transform:rotate(45deg);margin:0 0 3px 10px;transition:transform .18s}
+.gcard.tog.closed>h3::after{transform:rotate(-45deg);margin-bottom:0}
+.gcard.closed>.panel{display:none}
+
+footer.foot,.foot{color:var(--mut);padding:0 16px 32px;font-size:12px}
+@media(min-width:760px){main.wrap{padding:10px 24px 60px}.plays{grid-template-columns:repeat(2,minmax(0,1fr))}#games{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}#games .gcard{margin:0}}
+@media(min-width:1100px){.plays{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+body[data-sport="nfl"]{--sp:#5b8cff;--sp2:#8b5cf6;--sp-rgb:91,140,255}
+body[data-sport="nfl-props"]{--sp:#33c8ff;--sp2:#5b6bff;--sp-rgb:51,200,255}
+body[data-sport="nfl-td"]{--sp:#ff5fb0;--sp2:#a855f7;--sp-rgb:255,95,176}
+body[data-sport="cfb"]{--sp:#ffc233;--sp2:#ff7a1a;--sp-rgb:255,194,51}
+body[data-sport="nba"]{--sp:#ff7a2f;--sp2:#ff3d6e;--sp-rgb:255,122,47}
+body[data-sport="nba-props"]{--sp:#ff9d4a;--sp2:#ec4899;--sp-rgb:255,157,74}
+body[data-sport="nba-first-basket"]{--sp:#e879f9;--sp2:#7c5cff;--sp-rgb:232,121,249}
+body[data-sport="nhl"]{--sp:#22d3ee;--sp2:#3b82f6;--sp-rgb:34,211,238}
+body[data-sport="nhl-props"]{--sp:#2de3c0;--sp2:#06b6d4;--sp-rgb:45,227,192}
+body[data-sport="mlb"]{--sp:#ff5a6e;--sp2:#ffb020;--sp-rgb:255,90,110}
+body[data-sport="tennis"]{--sp:#b6f03c;--sp2:#22d3ee;--sp-rgb:182,240,60}
+nav.sports a{--c:#7d8fb3;--c2:#5b6b90}
+nav.sports a[data-k="nfl"]{--c:#5b8cff;--c2:#8b5cf6}
+nav.sports a[data-k="nfl-props"]{--c:#33c8ff;--c2:#5b6bff}
+nav.sports a[data-k="nfl-td"]{--c:#ff5fb0;--c2:#a855f7}
+nav.sports a[data-k="cfb"]{--c:#ffc233;--c2:#ff7a1a}
+nav.sports a[data-k="nba"]{--c:#ff7a2f;--c2:#ff3d6e}
+nav.sports a[data-k="nba-props"]{--c:#ff9d4a;--c2:#ec4899}
+nav.sports a[data-k="nba-first-basket"]{--c:#e879f9;--c2:#7c5cff}
+nav.sports a[data-k="nhl"]{--c:#22d3ee;--c2:#3b82f6}
+nav.sports a[data-k="nhl-props"]{--c:#2de3c0;--c2:#06b6d4}
+nav.sports a[data-k="mlb"]{--c:#ff5a6e;--c2:#ffb020}
+nav.sports a[data-k="tennis"]{--c:#b6f03c;--c2:#22d3ee}
+</style></head><body data-sport="tennis"><!--slate-line--><div id="slate-line" style="font:600 14px/1.4 system-ui,sans-serif;padding:6px 12px;background:#e8f4ea;color:#123;border-bottom:1px solid #9994">Slate: Mon Oct 26 (+ Tue Oct 27) | Updated Mon Oct 26, 6:56 AM CT</div><!--/slate-line-->
+<header class="topbar"><div class="in"><div class="brand"><h1 id="title">Tennis</h1><span id="hstatus"></span></div><div class="hmeta"><span id="slate"></span><span id="updated"></span></div></div><nav class="sports" aria-label="Sports"><a href="../" data-k="home"><i></i>Home</a><a href="../nfl/" data-k="nfl"><i></i>NFL</a><a href="../nfl-props/" data-k="nfl-props"><i></i>NFL Props</a><a href="../nfl-td/" data-k="nfl-td"><i></i>NFL TD</a><a href="../cfb/" data-k="cfb"><i></i>CFB</a><a href="../nba/" data-k="nba"><i></i>NBA</a><a href="../nba-props/" data-k="nba-props"><i></i>NBA Props</a><a href="../nba-first-basket/" data-k="nba-first-basket"><i></i>NBA 1st Bkt</a><a href="../nhl/" data-k="nhl"><i></i>NHL</a><a href="../nhl-props/" data-k="nhl-props"><i></i>NHL Pts</a><a href="../mlb/" data-k="mlb"><i></i>MLB</a><a href="../tennis/" data-k="tennis" class="on" aria-current="page"><i></i>Tennis</a></nav></header>
 <main class="wrap"><div id="banners"></div>
 <div class="sec-h">Top plays <small id="plays-note"></small></div><div id="plays"></div>
 <div class="tabs" id="tabs"></div><div id="panel" class="panel"></div>
@@ -158,4 +308,91 @@ function draw(keep){const sc=window.scrollY;const T=document.getElementById('tab
 const P=document.getElementById('panel');P.textContent='';(S.tab==='matches'?matches:health)(P);if(keep)window.scrollTo(0,sc)}
 window.sortBy=sortBy;window.S=S;window.draw=draw;header();plays();draw();
 UI.autoReload(300000);      // 5-minute auto-refresh of the published page
+</script><script id="skin-js">
+/* dashboards skin v1: presentation only. Never changes data, only classes / wrappers / colour spans. */
+(function(){
+'use strict';
+var D=document,B=D.body,SP=B.getAttribute('data-sport')||'';
+var TITLES={'nfl':'All games & lines','nfl-props':'All props','nfl-td':'All players','cfb':'All games & lines','mlb':'All games & edges','nhl':'All edges, games & goalies','nhl-props':'All player points','tennis':'All matches','nba-props':'All props'};
+function store(k,v){try{if(v===undefined)return sessionStorage.getItem('skin:'+location.pathname+':'+k);sessionStorage.setItem('skin:'+location.pathname+':'+k,v)}catch(e){return null}}
+
+/* 1. colour words and signed values (over/under green/red, edge green/red) */
+var OU=/\b(over|under)\b/i,SV=/^[+\-\u2212]\d+(\.\d+)?\s*(pts|%)$/;
+function colourise(root){
+  var sel=root.querySelectorAll?root.querySelectorAll('.pick,td,.sub td'):[];
+  if(root.matches&&root.matches('td,.pick'))sel=[root];
+  for(var i=0;i<sel.length;i++){
+    var el=sel[i];
+    if(el.classList.contains('num')&&!el.dataset.sv){var t=el.textContent.trim();el.dataset.sv=1;if(SV.test(t))el.classList.add(t.charAt(0)==='+'?'sv-pos':'sv-neg')}
+    if(el.dataset.ou)continue;
+    var w=D.createTreeWalker(el,NodeFilter.SHOW_TEXT,null),n,list=[];
+    while((n=w.nextNode())){if(OU.test(n.nodeValue)&&!(n.parentNode.classList&&n.parentNode.classList.contains('ou')))list.push(n)}
+    list.forEach(function(n){
+      var parts=n.nodeValue.split(/\b(over|under)\b/i),f=D.createDocumentFragment();
+      parts.forEach(function(p){
+        if(/^(over|under)$/i.test(p)){var s=D.createElement('span');s.className='ou '+p.toLowerCase();s.textContent=p;f.appendChild(s)}
+        else if(p)f.appendChild(D.createTextNode(p))});
+      n.parentNode.replaceChild(f,n)});
+    el.dataset.ou=1;
+  }
+}
+
+/* 2. collapsible sections (each .sec-h and everything up to the next one) */
+function rows(el){return el.querySelectorAll('tr').length}
+function sections(){
+  var main=D.querySelector('main.wrap');if(!main)return;
+  var kids=[].slice.call(main.children),tabs=null,i;
+  for(i=0;i<kids.length;i++)if(kids[i].classList.contains('tabs')){tabs=kids[i];break}
+  if(tabs){
+    var prev=null;for(i=kids.indexOf(tabs)-1;i>=0;i--)if(kids[i].classList.contains('sec-h')){prev=kids[i];break}
+    if(!prev||/top (plays|props)/i.test(prev.textContent)){
+      var h=D.createElement('div');h.className='sec-h';h.textContent=TITLES[SP]||'Full board';main.insertBefore(h,tabs)}
+  }
+  kids=[].slice.call(main.children);
+  var heads=kids.filter(function(e){return e.classList.contains('sec-h')});
+  heads.forEach(function(h,idx){
+    var sec=D.createElement('section'),body=D.createElement('div'),n=h.nextSibling;
+    sec.className='sec';body.className='sec-b';
+    main.insertBefore(sec,h);sec.appendChild(h);sec.appendChild(body);
+    while(n&&!(n.nodeType===1&&n.classList.contains('sec-h'))){var nx=n.nextSibling;body.appendChild(n);n=nx}
+    var nrows=rows(body),isTop=/top (plays|props)/i.test(h.textContent),key=h.firstChild?h.firstChild.textContent.trim():('s'+idx);
+    if(isTop)return;
+    sec.classList.add('tog');
+    if(nrows>12){var c=D.createElement('span');c.className='cnt';c.textContent=nrows+' rows';h.appendChild(c)}
+    var saved=store(key),closed=saved===null?nrows>45:saved==='1';
+    if(closed)sec.classList.add('closed');
+    h.addEventListener('click',function(e){if(e.target.closest('a,button,select,input'))return;var c=sec.classList.toggle('closed');store(key,c?'1':'0')});
+  });
+}
+
+/* 3. game cards: tap to expand tables / long injury lines */
+function gcards(){
+  var cards=[].slice.call(D.querySelectorAll('.gcard'));
+  cards.forEach(function(c,i){
+    [].forEach.call(c.querySelectorAll('.meta'),function(m){if(/^Injur/i.test(m.textContent)){m.classList.add('inj');m.addEventListener('click',function(){m.classList.toggle('open')})}});
+    var p=c.querySelector('.panel');if(!p)return;
+    c.classList.add('tog');var key='g'+i+(c.querySelector('h3')?c.querySelector('h3').textContent:''),sv=store(key);
+    if(sv===null?(cards.length>3&&i>0):sv==='1')c.classList.add('closed');
+    c.querySelector('h3').addEventListener('click',function(){var x=c.classList.toggle('closed');store(key,x?'1':'0')});
+  });
+}
+
+/* 4. keep only the sport nav pinned: the title row scrolls away */
+function pin(){
+  var t=D.querySelector('.topbar'),i=t&&t.querySelector('.in');if(!t||!i)return;
+  var set=function(){t.style.top=(-i.offsetHeight)+'px'};set();addEventListener('resize',set);addEventListener('load',set);
+  var a=t.querySelector('nav.sports a.on'),n=t.querySelector('nav.sports');
+  if(a&&n)n.scrollLeft=Math.max(0,a.offsetLeft-(n.clientWidth-a.offsetWidth)/2);
+}
+
+var busy=false,mo;
+function run(){colourise(D.body)}
+try{sections();gcards();run();pin()}catch(e){if(window.console)console.warn('skin',e)}
+if(window.MutationObserver){
+  var pend=false;
+  mo=new MutationObserver(function(){if(busy||pend)return;pend=true;requestAnimationFrame(function(){pend=false;busy=true;try{colourise(D.body)}catch(e){}busy=false})});
+  mo.observe(D.body,{childList:true,subtree:true});
+}
+})();
+
 </script></body></html>
