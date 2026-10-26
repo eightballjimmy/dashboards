@@ -215,6 +215,73 @@ nav.sports a[data-k="nhl"]{--c:#22d3ee;--c2:#3b82f6}
 nav.sports a[data-k="nhl-props"]{--c:#2de3c0;--c2:#06b6d4}
 nav.sports a[data-k="mlb"]{--c:#ff5a6e;--c2:#ffb020}
 nav.sports a[data-k="tennis"]{--c:#b6f03c;--c2:#22d3ee}
+</style><style id="gd-css">
+/* game detail panels (apply_gamedetail.py): uses the skin variables, falls back to dark defaults */
+.gd-sec .sec-h{cursor:pointer}
+.gd-sec.closed>.sec-b,.gd-sec.closed>.gd-list{display:none}
+.gd-hint{color:var(--mut,#9db0d0);font-size:12.5px;margin:-4px 2px 10px}
+.gd-list{display:flex;flex-direction:column;gap:10px}
+.gd-card{position:relative;background:linear-gradient(160deg,rgba(var(--sp-rgb,91,140,255),.12),transparent 60%),var(--card,#10192e);border:1px solid var(--line,#24345a);border-left:5px solid var(--sp,#5b8cff);border-radius:16px;overflow:hidden;box-shadow:0 10px 24px -16px rgba(0,0,0,.9)}
+.gd-card.open{border-color:rgba(var(--sp-rgb,91,140,255),.7)}
+.gd-head{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:10px;width:100%;padding:12px 12px 12px 12px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.gd-head:active{background:rgba(255,255,255,.04)}
+.gd-main{flex:1 1 auto;min-width:0}
+.gd-when{font-size:11.5px;color:var(--mut,#9db0d0);display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.gd-live{background:#ff3d6e;color:#fff;border-radius:6px;padding:0 6px;font-size:10.5px;font-weight:800;letter-spacing:.06em}
+.gd-teams{font-size:16.5px;font-weight:800;letter-spacing:-.01em;line-height:1.25;margin-top:2px;overflow-wrap:anywhere;color:var(--ink,#f3f6fc)}
+.gd-tap{font-size:11.5px;color:var(--sp,#5b8cff);font-weight:700;margin-top:3px}
+.gd-side{flex:0 0 auto;display:flex;align-items:center;gap:8px}
+.gd-sc{display:flex;flex-direction:column;align-items:flex-end;font-variant-numeric:tabular-nums;line-height:1.1}
+.gd-sc b{font-size:17px;font-weight:900;letter-spacing:-.02em;color:#fff}
+.gd-sc i{font-style:normal;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mut,#9db0d0);margin-top:2px}
+.gd-chev{width:9px;height:9px;border-right:3px solid var(--sp,#5b8cff);border-bottom:3px solid var(--sp,#5b8cff);transform:rotate(45deg);margin:-3px 3px 0 2px;transition:transform .18s;flex:0 0 auto}
+.gd-card.open .gd-chev{transform:rotate(-135deg);margin-top:4px}
+.gd-g{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;padding:0 7px;border-radius:8px;font-size:14px;font-weight:900;box-shadow:0 3px 10px -3px rgba(0,0,0,.6)}
+.gd-g.A{background:linear-gradient(135deg,#2ff0a0,#12c27d);color:#022c1a}.gd-g.B{background:linear-gradient(135deg,#5b9bff,#8a63ff);color:#fff}.gd-g.C{background:linear-gradient(135deg,#ffc233,#ff8a1f);color:#3a1c00}
+.gd-body{padding:2px 12px 14px;border-top:1px solid rgba(255,255,255,.07)}
+.gd-card:not(.open) .gd-body{display:none}
+.gd-hero{display:flex;align-items:stretch;gap:8px;margin:12px 0 4px}
+.gd-t{flex:1 1 0;min-width:0;text-align:center;padding:10px 6px;border-radius:14px;background:rgba(255,255,255,.055);border:1px solid transparent}
+.gd-t.win{background:rgba(var(--sp-rgb,91,140,255),.20);border-color:rgba(var(--sp-rgb,91,140,255),.6)}
+.gd-t .n{font-size:12px;font-weight:700;color:#cfdaf1;overflow-wrap:anywhere;line-height:1.2}
+.gd-t .s{font-size:34px;font-weight:900;letter-spacing:-.03em;line-height:1.1;font-variant-numeric:tabular-nums;color:#fff;margin-top:2px}
+.gd-t .p{font-size:12px;color:var(--mut,#9db0d0);font-weight:600}
+.gd-dash{align-self:center;color:var(--mut,#9db0d0);font-weight:800}
+.gd-sub{font-size:12px;color:var(--mut,#9db0d0);text-align:center;margin:6px 0 4px}
+.gd-likely{font-size:13px;font-weight:700;text-align:center;margin:6px 0 2px;color:#fff}
+.gd-grid{display:grid;grid-template-columns:1fr;gap:8px;margin-top:10px}
+.gd-k{background:rgba(255,255,255,.05);border-radius:12px;padding:9px 11px}
+.gd-k h4{margin:0 0 5px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--mut,#9db0d0)}
+.gd-k .r{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;line-height:1.5;font-variant-numeric:tabular-nums}
+.gd-k .r span:first-child{color:#cfdaf1;min-width:0;overflow-wrap:anywhere}.gd-k .r span:last-child{font-weight:800;text-align:right;color:#fff}
+.gd-k .pos{color:#2ff0a0!important}.gd-k .neg{color:#ff6683!important}
+.gd-split{display:flex;height:12px;border-radius:7px;overflow:hidden;margin:3px 0 6px;background:rgba(255,255,255,.08)}
+.gd-split i{display:block;height:100%}.gd-split .a{background:var(--sp2,#8b5cf6)}.gd-split .h{background:var(--sp,#5b8cff)}
+.gd-bars{margin-top:12px}.gd-bars h4{margin:0 0 6px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--mut,#9db0d0)}
+.gd-b{display:flex;align-items:center;gap:8px;margin:4px 0;font-size:12.5px;font-variant-numeric:tabular-nums}
+.gd-b .l{flex:0 0 112px;color:#cfdaf1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gd-b .t{flex:1 1 auto;height:12px;border-radius:6px;background:rgba(255,255,255,.07);overflow:hidden;min-width:0}
+.gd-b .t i{display:block;height:100%;border-radius:6px;background:#7d8fb3;min-width:2px}
+.gd-b.a .t i{background:var(--sp2,#8b5cf6)}.gd-b.h .t i{background:var(--sp,#5b8cff)}
+.gd-b .v{flex:0 0 42px;text-align:right;font-weight:800;color:#fff}
+.gd-tops{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.gd-tops span{background:rgba(255,255,255,.07);border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:700;color:#fff}
+.gd-tops small{color:var(--mut,#9db0d0);font-weight:600;margin-left:4px}
+.gd-facts{margin-top:12px;font-size:13px}
+.gd-facts .r{display:flex;gap:10px;padding:5px 0;border-top:1px solid rgba(255,255,255,.06)}
+.gd-facts .r:first-child{border-top:0}
+.gd-facts .r span:first-child{flex:0 0 108px;color:var(--mut,#9db0d0);font-size:12px}
+.gd-facts .r span:last-child{flex:1 1 auto;min-width:0;overflow-wrap:anywhere;color:#e6edfb}
+.gd-inj{margin-top:8px;font-size:12.5px}.gd-inj summary{cursor:pointer;color:#e6edfb;font-weight:700;padding:4px 0}
+.gd-inj div{color:#cfdaf1;padding:2px 0 2px 10px;border-left:2px solid rgba(255,255,255,.12);margin:3px 0;overflow-wrap:anywhere}
+.gd-picks{margin-top:12px;display:flex;flex-direction:column;gap:6px}
+.gd-picks div{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.05);border-radius:10px;padding:6px 9px;overflow-wrap:anywhere}
+.gd-note{margin-top:12px;font-size:11.5px;line-height:1.4;color:var(--mut,#9db0d0)}
+.gd-more{all:unset;box-sizing:border-box;display:block;width:100%;text-align:center;padding:11px;border-radius:12px;border:1px dashed rgba(var(--sp-rgb,91,140,255),.6);color:#fff;font-weight:700;font-size:13.5px;cursor:pointer;margin-top:2px}
+.gd-more:active{background:rgba(255,255,255,.05)}
+.gd-card,.gd-body,.gd-sec{max-width:100%}
+@media(min-width:560px){.gd-grid{grid-template-columns:1fr 1fr}}
+
 </style></head><body data-sport="nhl"><!--slate-line--><div id="slate-line" style="font:600 14px/1.4 system-ui,sans-serif;padding:6px 12px;background:#e8f4ea;color:#123;border-bottom:1px solid #9994">Slate: Mon Oct 26 | Updated Mon Oct 26, 3:56 PM CT</div><!--/slate-line-->
 <header class="topbar"><div class="in"><div class="brand"><h1 id="title">NHL</h1><span id="hstatus"></span></div><div class="hmeta"><span id="slate"></span><span id="updated"></span></div></div><nav class="sports" aria-label="Sports"><a href="../" data-k="home"><i></i>Home</a><a href="../nfl/" data-k="nfl"><i></i>NFL</a><a href="../nfl-props/" data-k="nfl-props"><i></i>NFL Props</a><a href="../nfl-td/" data-k="nfl-td"><i></i>NFL TD</a><a href="../cfb/" data-k="cfb"><i></i>CFB</a><a href="../nba/" data-k="nba"><i></i>NBA</a><a href="../nba-props/" data-k="nba-props"><i></i>NBA Props</a><a href="../nba-first-basket/" data-k="nba-first-basket"><i></i>NBA 1st Bkt</a><a href="../nhl/" data-k="nhl" class="on" aria-current="page"><i></i>NHL</a><a href="../nhl-props/" data-k="nhl-props"><i></i>NHL Pts</a><a href="../mlb/" data-k="mlb"><i></i>MLB</a><a href="../tennis/" data-k="tennis"><i></i>Tennis</a></nav></header>
 <nav class="dtabs" data-dtabs="1"><a href="./" class="on">Today · Mon Oct 26</a><a href="./tomorrow/" class="">Tomorrow · Tue Oct 27</a></nav>
@@ -230,7 +297,7 @@ nav.sports a[data-k="tennis"]{--c:#b6f03c;--c2:#22d3ee}
 <section id="live" aria-label="Live games"><div class="sec-h">Live / in progress <small id="live-upd"></small></div><div id="live-body" class="box"></div></section>
 </main>
 <script id="payload" type="application/json">{"status": {"state": "ok"}, "label_help": {"STANDARD": "Model-vs-market gap; inputs look complete.", "LOWCONF": "Model-vs-market gap, but an input is unconfirmed (lineup, starter, goalie or injury status). Verify before relying on it.", "SUSPECT": "Gap is unusually large: more likely a data/input error than value. Verify inputs."}, "grade_help": {"A": "Both starting goalies confirmed (DailyFaceoff 'Confirmed').", "B": "Exactly one goalie confirmed; the other is only 'Likely' or unconfirmed.", "C": "Neither goalie confirmed (both likely / unconfirmed), or a goalie is unknown. A late goalie change would move the numbers a lot."}, "generated_utc": "2026-10-26T20:56:06+00:00", "date": "2026-10-26", "meta": {"date": "2026-10-26", "n_games": 3, "regular_season_start": "2026-09-29", "preseason_start": "2026-09-19", "n_sims": 0, "next_game_date": null, "slate_date": "2026-10-26", "today": "2026-10-26", "odds_api": {"status": "cache", "note": "cache hit (9 min old, ttl 30 min)", "remaining": 16326, "used": 3674, "cost": 0, "age_min": 8.7, "fetched_utc": "2026-10-26T20:47:26+00:00", "n_events": 14, "sport": "icehockey_nhl", "n_games_window": 14, "warn": null, "reserve": 500}}, "health": {"sources": {"nhl_history": "ok (6744 regular-season games through 2026-10-25)", "nhl_schedule": "ok (3 games on 2026-10-26)", "nhl_rosters": "ok (goalie ids for 6/6 teams)", "dailyfaceoff_goalies": "ok (page date 2026-10-26, 3 games)", "espn_scoreboard": "ok (3 events)", "the_odds_api": "ok (The Odds API [cache] cache hit (9 min old, ttl 30 min); quota remaining 16326 (used 3674, reserve 500))", "model": "ok (3 games)"}, "warnings": []}, "bets": [{"game": "DET @ EDM", "id": 2026020187, "market": "ML", "pick": "DET ML (+151)", "side": "away", "model_p": 0.4230362902230138, "mkt_p": 0.3887053602411664, "edge": 0.03433092998184739, "ev": 0.06182108845976453, "flags": [], "conf": "ok", "goalies": "confirmed", "start": "2026-10-27T01:30:00Z", "src": "The Odds API avg of 11 books", "best_book": "Caesars", "goalie_state": {"away": "confirmed", "home": "confirmed"}, "data_grade": "A", "raw_model_p": 0.46428247217338336, "raw_edge": 0.07557711193221694, "blend_w": 0.46, "label": "STANDARD", "rank": 1, "start_ct": "Mon Oct 26 8:30 PM CT", "chips": [], "pick_grade": "B", "pick_edge": 2.46, "pick_ev": 6.18}, {"game": "TOR @ CGY", "id": 2026020186, "market": "ML", "pick": "CGY ML (+119)", "side": "home", "model_p": 0.4723741477939359, "mkt_p": 0.4444734445438476, "edge": 0.02790070325008831, "ev": 0.03449938366871952, "flags": ["away goalie Sergei Bobrovsky is only 'Likely' (not confirmed) - late change possible"], "conf": "low", "goalies": "unconfirmed goalie", "start": "2026-10-27T00:30:00Z", "src": "The Odds API avg of 11 books", "best_book": "LowVig.ag", "goalie_state": {"away": "likely", "home": "confirmed"}, "data_grade": "B", "raw_model_p": 0.5144956863138593, "raw_edge": 0.07002224177001176, "blend_w": 0.4, "label": "LOWCONF", "rank": 2, "start_ct": "Mon Oct 26 7:30 PM CT", "chips": [["away goalie likely", "away goalie is likely (DailyFaceoff status / policy projection)"]], "pick_grade": "C", "pick_edge": 1.58, "pick_ev": 3.45}, {"game": "LAK @ NYR", "id": 2026020185, "market": "ML", "pick": "LAK ML (+116)", "side": "away", "model_p": 0.4653364024215205, "mkt_p": 0.4503812476937673, "edge": 0.014955154727753217, "ev": 0.0051266292304843475, "flags": ["away goalie Darcy Kuemper is only 'Likely' (not confirmed) - late change possible"], "conf": "low", "goalies": "unconfirmed goalie", "start": "2026-10-26T23:00:00Z", "src": "The Odds API avg of 11 books", "best_book": "LowVig.ag", "goalie_state": {"away": "likely", "home": "confirmed"}, "data_grade": "B", "raw_model_p": 0.4878780520351593, "raw_edge": 0.03749680434139202, "blend_w": 0.4, "label": "LOWCONF", "rank": 3, "start_ct": "Mon Oct 26 6:00 PM CT", "chips": [["away goalie likely", "away goalie is likely (DailyFaceoff status / policy projection)"]], "pick_grade": "C", "pick_edge": 0.24, "pick_ev": 0.51}], "games": [{"id": 2026020185, "status": "FUT", "start": "2026-10-26T23:00:00Z", "away": "LAK", "home": "NYR", "away_name": "Los Angeles Kings", "home_name": "New York Rangers", "game_type": 2, "venue": "Madison Square Garden", "goalies": {"away": {"id": 8475311, "name": "Darcy Kuemper", "status": "Likely", "source": "dailyfaceoff", "rest": 2, "match": "roster"}, "home": {"id": 8473503, "name": "James Reimer", "status": "Confirmed", "source": "dailyfaceoff", "rest": 2, "match": "roster"}}, "goalie_state": {"away": "likely", "home": "confirmed"}, "data_grade": "B", "model": {"home_win": 0.5346635975784795, "exp_home": 2.545107802770746, "exp_away": 2.494446663151632, "exp_total": 5.158905183469049, "p_reg_tie": 0.17646899567050062, "home_minus1_5": 0.26024699926239536, "away_minus1_5": 0.24649682947808782, "total_dist": [0.0027, 0.0434, 0.0589, 0.1686, 0.1278, 0.2081, 0.1122, 0.1306, 0.0556, 0.0511, 0.0182, 0.014, 0.0043, 0.0029, 0.0008, 0.0005], "home_win_raw": 0.5121219479648407, "blend_w": 0.4}, "market": {"book": "The Odds API avg of 11 books", "away_ml": 116.0, "home_ml": -130.0, "novig_home": 0.5496187523062327, "novig_away": 0.4503812476937673, "total": 5.5, "over_odds": -122.0, "under_odds": 110.0, "source": "The Odds API avg of 11 books", "n_books": 11, "best_home_book": "Caesars", "best_away_book": "LowVig.ag", "best_over_book": "BetRivers", "best_under_book": "DraftKings", "blend_w": 0.4, "p_home_blend": 0.5346635975784795, "p_home_raw": 0.5121219479648407, "edge_home": -0.014955154727753217, "ev_home": -0.05405671197653639, "raw_edge_home": -0.03749680434139202, "raw_p_home": 0.5121219479648407, "edge_away": 0.014955154727753217, "ev_away": 0.0051266292304843475, "raw_edge_away": 0.03749680434139202, "raw_p_away": 0.4878780520351593, "p_over": 0.39049674794106376, "p_under": 0.6095032520589363, "p_push": 0.0, "ev_over": -0.2894239504679004, "ev_under": 0.27995682932376625}, "flags": ["away goalie Darcy Kuemper is only 'Likely' (not confirmed) - late change possible"], "confidence": "low", "start_ct": "Mon Oct 26 6:00 PM CT", "chips": [["away goalie likely", "away goalie is likely (DailyFaceoff status / policy projection)"]]}, {"id": 2026020186, "status": "FUT", "start": "2026-10-27T00:30:00Z", "away": "TOR", "home": "CGY", "away_name": "Toronto Maple Leafs", "home_name": "Calgary Flames", "game_type": 2, "venue": "Scotiabank Saddledome", "goalies": {"away": {"id": 8475683, "name": "Sergei Bobrovsky", "status": "Likely", "source": "dailyfaceoff", "rest": 2, "match": "roster"}, "home": {"id": 8482445, "name": "Devin Cooley", "status": "Confirmed", "source": "dailyfaceoff", "rest": 2, "match": "roster"}}, "goalie_state": {"away": "likely", "home": "confirmed"}, "data_grade": "B", "model": {"home_win": 0.4723741477939359, "exp_home": 3.06882283908968, "exp_away": 2.9952488084684776, "exp_total": 6.171197425594714, "p_reg_tie": 0.1584123635127717, "home_minus1_5": 0.2847863525344181, "away_minus1_5": 0.26600745744085236, "total_dist": [0.0011, 0.0201, 0.0328, 0.1078, 0.0991, 0.1847, 0.1212, 0.1611, 0.0837, 0.0878, 0.0383, 0.0335, 0.0127, 0.0096, 0.0033, 0.0022], "home_win_raw": 0.5144956863138593, "blend_w": 0.4}, "market": {"book": "The Odds API avg of 11 books", "away_ml": -135.0, "home_ml": 119.0, "novig_home": 0.4444734445438476, "novig_away": 0.5555265554561524, "total": 6.5, "over_odds": -118.0, "under_odds": 105.0, "source": "The Odds API avg of 11 books", "n_books": 11, "best_home_book": "LowVig.ag", "best_away_book": "DraftKings", "best_over_book": "FanDuel", "best_under_book": "LowVig.ag", "blend_w": 0.4, "p_home_blend": 0.4723741477939359, "p_home_raw": 0.5144956863138593, "edge_home": 0.02790070325008831, "ev_home": 0.03449938366871952, "raw_edge_home": 0.07002224177001176, "raw_p_home": 0.5144956863138593, "edge_away": -0.0279007032500882, "ev_away": -0.0815401831968513, "raw_edge_away": -0.0700222417700117, "raw_p_away": 0.48550431368614066, "p_over": 0.4333371008811951, "p_under": 0.5666628991188049, "p_push": 0.0, "ev_over": -0.19942806786355477, "ev_under": 0.16165894319354995}, "flags": ["away goalie Sergei Bobrovsky is only 'Likely' (not confirmed) - late change possible"], "confidence": "low", "start_ct": "Mon Oct 26 7:30 PM CT", "chips": [["away goalie likely", "away goalie is likely (DailyFaceoff status / policy projection)"]]}, {"id": 2026020187, "status": "FUT", "start": "2026-10-27T01:30:00Z", "away": "DET", "home": "EDM", "away_name": "Detroit Red Wings", "home_name": "Edmonton Oilers", "game_type": 2, "venue": "Rogers Place", "goalies": {"away": {"id": 8485545, "name": "Michal Postava", "status": "Confirmed", "source": "dailyfaceoff", "rest": 2, "match": "roster"}, "home": {"id": 8477465, "name": "Tristan Jarry", "status": "Confirmed", "source": "dailyfaceoff", "rest": 2, "match": "roster"}}, "goalie_state": {"away": "confirmed", "home": "confirmed"}, "data_grade": "A", "model": {"home_win": 0.5769637097769862, "exp_home": 2.874016027246705, "exp_away": 2.678052315248905, "exp_total": 5.664588482936669, "p_reg_tie": 0.16637495439556704, "home_minus1_5": 0.29133117037137995, "away_minus1_5": 0.23979245932780044, "total_dist": [0.0017, 0.0296, 0.0442, 0.1361, 0.1142, 0.1994, 0.1195, 0.1488, 0.0705, 0.0693, 0.0275, 0.0226, 0.0078, 0.0055, 0.0017, 0.0011], "home_win_raw": 0.5357175278266166, "blend_w": 0.46}, "market": {"book": "The Odds API avg of 11 books", "away_ml": 151.0, "home_ml": -169.0, "novig_home": 0.6112946397588336, "novig_away": 0.3887053602411664, "total": 6.5, "over_odds": -125.0, "under_odds": 112.0, "source": "The Odds API avg of 11 books", "n_books": 11, "best_home_book": "BetUS", "best_away_book": "Caesars", "best_over_book": "DraftKings", "best_under_book": "LowVig.ag", "blend_w": 0.46, "p_home_blend": 0.5769637097769862, "p_home_raw": 0.5357175278266166, "edge_home": -0.03433092998184739, "ev_home": -0.08163764538456053, "raw_edge_home": -0.07557711193221694, "raw_p_home": 0.5357175278266166, "edge_away": 0.03433092998184739, "ev_away": 0.06182108845976453, "raw_edge_away": 0.07557711193221694, "raw_p_away": 0.46428247217338336, "p_over": 0.35534466573730983, "p_under": 0.6446553342626902, "p_push": 0.0, "ev_over": -0.3603796016728423, "ev_under": 0.3666693086369033}, "flags": [], "confidence": "ok", "start_ct": "Mon Oct 26 8:30 PM CT", "chips": []}], "generated_ct": "Mon Oct 26 3:56 PM CT", "pick_help": {"A": "Strong play: model beats the break-even of the best price by 4+ pts, or 8%+ expected return.", "B": "Solid play: 2-4 pts over break-even, or 4-8% expected return.", "C": "Thin play: positive edge under 2 pts and under 4% expected return."}}</script>
-<script id="livedata" type="application/json">{"date": "2026-10-26", "updated_utc": "2026-10-26T21:16:34Z", "updated_ct": "Mon Oct 26, 4:16 PM CT", "source": "ESPN scoreboard (free)", "live": [], "final": [], "error": null}</script>
+<script id="livedata" type="application/json">{"date": "2026-10-26", "updated_utc": "2026-10-26T21:26:38Z", "updated_ct": "Mon Oct 26, 4:26 PM CT", "source": "ESPN scoreboard (free)", "live": [], "final": [], "error": null}</script>
 <script>
 "use strict";
 
@@ -447,6 +514,173 @@ if(window.MutationObserver){
   mo=new MutationObserver(function(){if(busy||pend)return;pend=true;requestAnimationFrame(function(){pend=false;busy=true;try{colourise(D.body)}catch(e){}busy=false})});
   mo.observe(D.body,{childList:true,subtree:true});
 }
+})();
+
+</script><script id="gd-data" type="application/json">{"kind":"nhl","games":[{"id":"2026020185","a":"LAK","h":"NYR","an":"Los Angeles Kings","hn":"New York Rangers","ts":1793055600.0,"when":"Mon Oct 26 6:00 PM CT","nototals":true,"proj":{"a":2.49,"h":2.55,"margin":0.05,"dec":2},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["NYR by 2+",0.2523,"h"],["NYR by 1",0.1651,"h"],["Tied after 60",0.1827,"n"],["LAK by 1",0.1618,"a"],["LAK by 2+",0.2381,"a"]]}],"tops":[["2-2",0.0653],["2-3",0.0554],["3-2",0.0543],["1-2",0.0523]],"win":{"a":46.5,"h":53.5},"ml":{"fa":115,"fh":-115,"ba":116,"bh":-130,"bka":"LowVig.ag","bkh":"Caesars"},"winnote":"Includes overtime and shootout","facts":[["LAK goalie","Darcy Kuemper (likely), 2d rest"],["NYR goalie","James Reimer (confirmed), 2d rest"],["Venue","Madison Square Garden"],["Confidence","low"],["Note","away goalie Darcy Kuemper is only 'Likely' (not confirmed) - late change possible"]],"picks":[{"g":"C","t":"LAK ML (+116) (LowVig.ag)"}],"state":"FUT"},{"id":"2026020186","a":"TOR","h":"CGY","an":"Toronto Maple Leafs","hn":"Calgary Flames","ts":1793061000.0,"when":"Mon Oct 26 7:30 PM CT","nototals":true,"proj":{"a":3.0,"h":3.07,"margin":0.07,"dec":2},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["CGY by 2+",0.2757,"h"],["CGY by 1",0.1532,"h"],["Tied after 60",0.1657,"n"],["TOR by 1",0.1495,"a"],["TOR by 2+",0.256,"a"]]}],"tops":[["2-3",0.0502],["3-3",0.0502],["2-2",0.0491],["3-2",0.049]],"win":{"a":52.8,"h":47.2},"ml":{"fa":-112,"fh":112,"ba":-135,"bh":119,"bka":"DraftKings","bkh":"LowVig.ag"},"winnote":"Includes overtime and shootout","facts":[["TOR goalie","Sergei Bobrovsky (likely), 2d rest"],["CGY goalie","Devin Cooley (confirmed), 2d rest"],["Venue","Scotiabank Saddledome"],["Confidence","low"],["Note","away goalie Sergei Bobrovsky is only 'Likely' (not confirmed) - late change possible"]],"picks":[{"g":"C","t":"CGY ML (+119) (LowVig.ag)"}],"state":"FUT"},{"id":"2026020187","a":"DET","h":"EDM","an":"Detroit Red Wings","hn":"Edmonton Oilers","ts":1793064600.0,"when":"Mon Oct 26 8:30 PM CT","nototals":true,"proj":{"a":2.68,"h":2.87,"margin":0.2,"dec":2},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["EDM by 2+",0.2836,"h"],["EDM by 1",0.1622,"h"],["Tied after 60",0.1731,"n"],["DET by 1",0.1512,"a"],["DET by 2+",0.2299,"a"]]}],"tops":[["2-2",0.0575],["2-3",0.055],["3-2",0.0513],["3-3",0.0491]],"win":{"a":42.3,"h":57.7},"ml":{"fa":136,"fh":-136,"ba":151,"bh":-169,"bka":"Caesars","bkh":"BetUS"},"winnote":"Includes overtime and shootout","facts":[["DET goalie","Michal Postava (confirmed), 2d rest"],["EDM goalie","Tristan Jarry (confirmed), 2d rest"],["Venue","Rogers Place"],["Confidence","ok"]],"picks":[{"g":"B","t":"DET ML (+151) (Caesars)"}],"state":"FUT"}],"v":1}</script><script id="gd-js">
+/* game detail panels: renders the JSON blob computed by apply_gamedetail.py. Additive only; any error leaves the page untouched. */
+(function(){
+'use strict';
+try{
+var D=document,blobEl=D.getElementById('gd-data');if(!blobEl)return;
+var B=JSON.parse(blobEl.textContent),G=B.games||[],kind=B.kind;if(!G.length)return;
+if(D.getElementById('gd-sec'))return;
+var NOW=Date.now();
+function el(t,c,x){var e=D.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function ap(p){for(var i=1;i<arguments.length;i++){if(arguments[i]!=null)p.appendChild(arguments[i])}return p}
+function pc(v,d){return v==null?'-':v.toFixed(d==null?1:d)+'%'}
+function sg(v){return v==null?'-':(v>0?'+':v<0?'\u2212':'')+Math.abs(v).toFixed(1)}
+function ml(v){return v==null?'-':(v>0?'+':'')+v}
+function sk(k,v){try{if(v===undefined)return sessionStorage.getItem('gd:'+location.pathname+':'+k);sessionStorage.setItem('gd:'+location.pathname+':'+k,v)}catch(e){return null}}
+var openSet={};try{openSet=JSON.parse(sk('open')||'{}')}catch(e){}
+function row(a,b,cls){var r=el('div','r');ap(r,el('span',null,a),el('span',cls||null,b));return r}
+function kbox(title){var k=el('div','gd-k');ap(k,el('h4',null,title));return k}
+function lastw(n){var w=String(n).trim().split(/\s+/);return w[w.length-1]}
+function SA(g){return g.tennis?lastw(g.an):g.a}
+function SH(g){return g.tennis?lastw(g.hn):g.h}
+
+function hero(g){
+  var w=el('div','gd-hero');
+  if(g.proj){
+    var ph=g.proj.h,pa=g.proj.a,hw=ph>pa,aw=pa>ph;
+    var A=el('div','gd-t'+(aw?' win':'')),H=el('div','gd-t'+(hw?' win':''));
+    ap(A,el('div','n',g.an),el('div','s',pa.toFixed(1)));
+    ap(H,el('div','n',g.hn),el('div','s',ph.toFixed(1)));
+    if(g.rng){ap(A,el('div','p','likely '+g.rng.a[0]+'\u2013'+g.rng.a[1]));ap(H,el('div','p','likely '+g.rng.h[0]+'\u2013'+g.rng.h[1]))}
+    ap(w,A,el('div','gd-dash','@'),H);
+  }else{
+    var A2=el('div','gd-t'+(g.win&&g.win.a>=g.win.h?' win':'')),H2=el('div','gd-t'+(g.win&&g.win.h>g.win.a?' win':''));
+    ap(A2,el('div','n',g.an),el('div','s',g.win?pc(g.win.a,0):'-'));
+    ap(H2,el('div','n',g.hn),el('div','s',g.win?pc(g.win.h,0):'-'));
+    ap(w,A2,el('div','gd-dash','vs'),H2);
+  }
+  return w;
+}
+function bars(b){
+  var w=el('div','gd-bars');ap(w,el('h4',null,b.t));
+  var mx=0;b.items.forEach(function(i){if(i[1]>mx)mx=i[1]});if(!mx)mx=1;
+  b.items.forEach(function(i){
+    var r=el('div','gd-b '+(i[2]||'n')),t=el('div','t'),f=el('i');f.style.width=Math.max(2,i[1]/mx*100)+'%';t.appendChild(f);
+    ap(r,el('div','l',i[0]),t,el('div','v',pc(i[1]*100,0)));w.appendChild(r)});
+  if(b.line!=null)ap(w,el('div','gd-sub','Market total line: '+b.line+' '+(b.unit||'')));
+  return w;
+}
+function body(g){
+  var b=el('div','gd-body');
+  ap(b,hero(g));
+  if(g.proj){
+    var sub=g.proj.dec?'Projected final (model average)':'Projected final from model total '+g.proj.total.toFixed(1)+' and margin '+(g.proj.margin>0?g.hn:g.an)+' by '+Math.abs(g.proj.margin).toFixed(1);
+    ap(b,el('div','gd-sub',sub));
+  }
+  if(g.likely)ap(b,el('div','gd-likely',g.likely));
+  var grid=el('div','gd-grid');
+  if(g.win){
+    var k=kbox('Win probability'),sp2=el('div','gd-split'),ia=el('i','a'),ih=el('i','h');ia.style.width=g.win.a+'%';ih.style.width=g.win.h+'%';ap(sp2,ia,ih);
+    ap(k,sp2,row(SA(g),pc(g.win.a)),row(SH(g),pc(g.win.h)));if(g.winnote)ap(k,el('div','gd-note',g.winnote));grid.appendChild(k);
+  }
+  if(g.ml){
+    var k2=kbox('Moneyline: model fair vs best price');
+    ap(k2,row(SA(g),'fair '+ml(g.ml.fa)+(g.ml.ba!=null?' | best '+ml(g.ml.ba)+(g.ml.bka?' ('+g.ml.bka+')':''):'')),row(SH(g),'fair '+ml(g.ml.fh)+(g.ml.bh!=null?' | best '+ml(g.ml.bh)+(g.ml.bkh?' ('+g.ml.bkh+')':''):'')));grid.appendChild(k2);
+  }
+  if(g.sp&&(g.sp.ph!=null||g.sp.model!=null)){
+    var k3=kbox(g.sp.rl?'Run line (1.5)':'Spread: model vs market');
+    if(g.sp.rl){ap(k3,row(SH(g)+' \u22121.5 covers',pc(g.sp.ph)),row(SA(g)+' \u22121.5 covers',pc(g.sp.pa)))}
+    else{
+      ap(k3,row('Model ('+SH(g)+')',sg(g.sp.model)),row('Market ('+SH(g)+')',sg(g.sp.mkt)));
+      if(g.sp.ph!=null)ap(k3,row(SH(g)+' covers market line',pc(g.sp.ph),g.sp.ph>=52.5?'pos':null),row(SA(g)+' covers market line',pc(g.sp.pa),g.sp.pa>=52.5?'pos':null));
+    }
+    grid.appendChild(k3);
+  }
+  if(g.tot&&!g.nototals){
+    var T=g.tot,k4=kbox(T.games?'Total games: model vs market':'Total: model vs market');
+    if(T.games){
+      ap(k4,row('Model mean (median)',T.model+' ('+T.median+')'));
+      if(T.sd!=null)ap(k4,row('Spread of outcomes','\u00b1'+T.sd));
+      if(T.rng)ap(k4,row('Middle 50% range',T.rng[0]+'\u2013'+T.rng[1]));
+      if(T.line!=null)ap(k4,row('Over '+T.line+' (model line)',pc(T.po_model)));
+      if(T.mkt!=null)ap(k4,row('Market line '+T.mkt+' over',pc(T.po),T.po>=52.5?'pos':null));
+    }else{
+      ap(k4,row('Model',T.model==null?'-':T.model.toFixed(1)),row('Market',T.mkt==null?'-':T.mkt.toFixed(1)));
+      if(T.po!=null)ap(k4,row('Over',pc(T.po),T.po>=52.5?'pos':null),row('Under',pc(T.pu),T.pu>=52.5?'pos':null));
+      if(T.push)ap(k4,row('Push',pc(T.push)));
+      if(T.rng)ap(k4,row('Middle 50% range',T.rng[0]+'\u2013'+T.rng[1]));
+    }
+    grid.appendChild(k4);
+  }
+  b.appendChild(grid);
+  (g.bars||[]).forEach(function(x){b.appendChild(bars(x))});
+  if(g.tops&&g.tops.length){
+    var t=el('div','gd-tops');g.tops.forEach(function(s){var sp=el('span',null,s[0]);sp.appendChild(el('small',null,pc(s[1]*100,1)));t.appendChild(sp)});
+    ap(b,el('div','gd-bars'));b.lastChild.appendChild(el('h4',null,'Most likely scores ('+g.a+'-'+g.h+')'));b.lastChild.appendChild(t);
+  }
+  if(g.picks&&g.picks.length){
+    var pk=el('div','gd-picks');g.picks.forEach(function(p){var d=el('div');ap(d,el('span','gd-g '+p.g,p.g),el('span',null,p.t));pk.appendChild(d)});
+    ap(b,el('h4','gd-sub','Model picks on this game'),pk);
+  }
+  if(g.facts&&g.facts.length){var f=el('div','gd-facts');g.facts.forEach(function(x){f.appendChild(row(x[0],String(x[1])))});
+    f.querySelectorAll('.r').forEach(function(r){r.className='r'});b.appendChild(f)}
+  if(g.inj&&g.inj.length){g.inj.forEach(function(x){var d=el('details','gd-inj'),s=el('summary',null,x[0]+' injuries ('+x[1].length+')');d.appendChild(s);x[1].forEach(function(l){d.appendChild(el('div',null,l))});b.appendChild(d)})}
+  var note={nfl:'Model-simulated from the model\u2019s own projections: a normal spread of outcomes around its margin and total, matched to its win probability.',
+    cfb:'Model-simulated from the model\u2019s own projections: a normal spread of outcomes around its margin and total, matched to its win probability.',
+    nba:'Model-simulated from the model\u2019s own projections: a normal spread of outcomes around its margin and total, matched to its win probability.',
+    nhl:'Model-simulated from the model\u2019s own goal rates using independent Poisson scoring. Win % is the model\u2019s published number.',
+    mlb:'Total-run bars are the model\u2019s own simulated games. Likely scores use independent Poisson scoring from the model\u2019s run rates.',
+    tennis:'Set scores, win % and games are the model\u2019s own simulation outputs.'}[kind];
+  if(note)ap(b,el('div','gd-note',note));
+  return b;
+}
+function card(g,i){
+  var c=el('div','gd-card'),h=el('button','gd-head');h.setAttribute('type','button');h.setAttribute('aria-expanded','false');
+  var m=el('div','gd-main'),w=el('div','gd-when');w.appendChild(el('span',null,g.when||''));
+  if(g.state&&/^(in|live|crit)/i.test(g.state))w.appendChild(el('span','gd-live','LIVE'));
+  if(g.ev)w.appendChild(el('span',null,'\u00b7 '+g.ev));
+  ap(m,w,el('div','gd-teams',g.tennis?g.an+' vs '+g.hn:g.an+' @ '+g.hn),el('div','gd-tap','Tap for projected score & details'));
+  var s=el('div','gd-side');
+  if(g.picks&&g.picks.length){var best=g.picks.map(function(p){return p.g}).sort()[0];s.appendChild(el('span','gd-g '+best,best))}
+  var sc=el('div','gd-sc');
+  if(g.proj){var f=g.proj.dec?1:0;ap(sc,el('b',null,g.proj.a.toFixed(f)+'\u2013'+g.proj.h.toFixed(f)),el('i',null,'proj'))}
+  else if(g.win){ap(sc,el('b',null,Math.round(g.win.a)+'\u2013'+Math.round(g.win.h)+'%'),el('i',null,'win %'))}
+  ap(s,sc,el('span','gd-chev'));
+  ap(h,m,s);c.appendChild(h);
+  var built=false;
+  function toggle(open){
+    if(open&&!built){c.appendChild(body(g));built=true}
+    c.classList.toggle('open',open);h.setAttribute('aria-expanded',open?'true':'false');
+    if(open)openSet[g.id]=1;else delete openSet[g.id];sk('open',JSON.stringify(openSet));
+  }
+  h.addEventListener('click',function(){toggle(!c.classList.contains('open'))});
+  if(openSet[g.id])toggle(true);
+  return c;
+}
+/* which games to list first */
+var cut=NOW-4*3600*1000;
+var up=G.filter(function(g){return g.ts==null||g.ts*1000>=cut}),old=G.filter(function(g){return !(g.ts==null||g.ts*1000>=cut)});
+function ord(a,b){if(kind==='tennis'&&(!!a.priced!==!!b.priced))return a.priced?-1:1;return (a.ts||0)-(b.ts||0)}
+up.sort(ord);old.sort(function(a,b){return (b.ts||0)-(a.ts||0)});
+if(!up.length){up=old;old=[]}
+var LIM=kind==='cfb'||kind==='tennis'?8:12;
+var all=up.concat(old),sec=el('section','sec tog gd-sec'),hd=el('div','sec-h'),bd=el('div','sec-b');sec.id='gd-sec';
+hd.appendChild(document.createTextNode(kind==='tennis'?'Match projections':'Game projections'));
+var cnt=el('span','cnt',all.length+(kind==='tennis'?' matches':' games'));hd.appendChild(cnt);
+ap(sec,hd,bd);
+ap(bd,el('div','gd-hint',kind==='tennis'?'Tap a match for win %, set scores and games.':'Tap a game for its model-simulated score, odds and context.'));
+var list=el('div','gd-list');bd.appendChild(list);
+var shown=0,rest=[];
+all.forEach(function(g,i){if(i<LIM||openSet[g.id]){list.appendChild(card(g,i));shown++}else rest.push(g)});
+if(rest.length){
+  var btn=el('button','gd-more','Show '+rest.length+' more '+(kind==='tennis'?'matches':'games'));btn.setAttribute('type','button');
+  btn.addEventListener('click',function(){rest.forEach(function(g,i){list.appendChild(card(g,i))});btn.remove()});
+  bd.appendChild(btn);
+}
+hd.addEventListener('click',function(){sec.classList.toggle('closed')});
+/* placement: right after the Top plays section */
+var main=D.querySelector('main.wrap')||D.querySelector('main')||D.body,anchor=null;
+var secs=main.querySelectorAll(':scope > section.sec');
+if(secs.length)anchor=secs[0];
+else anchor=D.getElementById('plays')||D.getElementById('top');
+if(anchor&&anchor.parentNode===main)main.insertBefore(sec,anchor.nextSibling);
+else if(anchor)anchor.parentNode.insertBefore(sec,anchor.nextSibling);
+else main.insertBefore(sec,main.firstChild);
+}catch(e){if(window.console)console.warn('game detail',e)}
 })();
 
 </script></body></html>

@@ -215,6 +215,73 @@ nav.sports a[data-k="nhl"]{--c:#22d3ee;--c2:#3b82f6}
 nav.sports a[data-k="nhl-props"]{--c:#2de3c0;--c2:#06b6d4}
 nav.sports a[data-k="mlb"]{--c:#ff5a6e;--c2:#ffb020}
 nav.sports a[data-k="tennis"]{--c:#b6f03c;--c2:#22d3ee}
+</style><style id="gd-css">
+/* game detail panels (apply_gamedetail.py): uses the skin variables, falls back to dark defaults */
+.gd-sec .sec-h{cursor:pointer}
+.gd-sec.closed>.sec-b,.gd-sec.closed>.gd-list{display:none}
+.gd-hint{color:var(--mut,#9db0d0);font-size:12.5px;margin:-4px 2px 10px}
+.gd-list{display:flex;flex-direction:column;gap:10px}
+.gd-card{position:relative;background:linear-gradient(160deg,rgba(var(--sp-rgb,91,140,255),.12),transparent 60%),var(--card,#10192e);border:1px solid var(--line,#24345a);border-left:5px solid var(--sp,#5b8cff);border-radius:16px;overflow:hidden;box-shadow:0 10px 24px -16px rgba(0,0,0,.9)}
+.gd-card.open{border-color:rgba(var(--sp-rgb,91,140,255),.7)}
+.gd-head{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:10px;width:100%;padding:12px 12px 12px 12px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.gd-head:active{background:rgba(255,255,255,.04)}
+.gd-main{flex:1 1 auto;min-width:0}
+.gd-when{font-size:11.5px;color:var(--mut,#9db0d0);display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.gd-live{background:#ff3d6e;color:#fff;border-radius:6px;padding:0 6px;font-size:10.5px;font-weight:800;letter-spacing:.06em}
+.gd-teams{font-size:16.5px;font-weight:800;letter-spacing:-.01em;line-height:1.25;margin-top:2px;overflow-wrap:anywhere;color:var(--ink,#f3f6fc)}
+.gd-tap{font-size:11.5px;color:var(--sp,#5b8cff);font-weight:700;margin-top:3px}
+.gd-side{flex:0 0 auto;display:flex;align-items:center;gap:8px}
+.gd-sc{display:flex;flex-direction:column;align-items:flex-end;font-variant-numeric:tabular-nums;line-height:1.1}
+.gd-sc b{font-size:17px;font-weight:900;letter-spacing:-.02em;color:#fff}
+.gd-sc i{font-style:normal;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mut,#9db0d0);margin-top:2px}
+.gd-chev{width:9px;height:9px;border-right:3px solid var(--sp,#5b8cff);border-bottom:3px solid var(--sp,#5b8cff);transform:rotate(45deg);margin:-3px 3px 0 2px;transition:transform .18s;flex:0 0 auto}
+.gd-card.open .gd-chev{transform:rotate(-135deg);margin-top:4px}
+.gd-g{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;padding:0 7px;border-radius:8px;font-size:14px;font-weight:900;box-shadow:0 3px 10px -3px rgba(0,0,0,.6)}
+.gd-g.A{background:linear-gradient(135deg,#2ff0a0,#12c27d);color:#022c1a}.gd-g.B{background:linear-gradient(135deg,#5b9bff,#8a63ff);color:#fff}.gd-g.C{background:linear-gradient(135deg,#ffc233,#ff8a1f);color:#3a1c00}
+.gd-body{padding:2px 12px 14px;border-top:1px solid rgba(255,255,255,.07)}
+.gd-card:not(.open) .gd-body{display:none}
+.gd-hero{display:flex;align-items:stretch;gap:8px;margin:12px 0 4px}
+.gd-t{flex:1 1 0;min-width:0;text-align:center;padding:10px 6px;border-radius:14px;background:rgba(255,255,255,.055);border:1px solid transparent}
+.gd-t.win{background:rgba(var(--sp-rgb,91,140,255),.20);border-color:rgba(var(--sp-rgb,91,140,255),.6)}
+.gd-t .n{font-size:12px;font-weight:700;color:#cfdaf1;overflow-wrap:anywhere;line-height:1.2}
+.gd-t .s{font-size:34px;font-weight:900;letter-spacing:-.03em;line-height:1.1;font-variant-numeric:tabular-nums;color:#fff;margin-top:2px}
+.gd-t .p{font-size:12px;color:var(--mut,#9db0d0);font-weight:600}
+.gd-dash{align-self:center;color:var(--mut,#9db0d0);font-weight:800}
+.gd-sub{font-size:12px;color:var(--mut,#9db0d0);text-align:center;margin:6px 0 4px}
+.gd-likely{font-size:13px;font-weight:700;text-align:center;margin:6px 0 2px;color:#fff}
+.gd-grid{display:grid;grid-template-columns:1fr;gap:8px;margin-top:10px}
+.gd-k{background:rgba(255,255,255,.05);border-radius:12px;padding:9px 11px}
+.gd-k h4{margin:0 0 5px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--mut,#9db0d0)}
+.gd-k .r{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;line-height:1.5;font-variant-numeric:tabular-nums}
+.gd-k .r span:first-child{color:#cfdaf1;min-width:0;overflow-wrap:anywhere}.gd-k .r span:last-child{font-weight:800;text-align:right;color:#fff}
+.gd-k .pos{color:#2ff0a0!important}.gd-k .neg{color:#ff6683!important}
+.gd-split{display:flex;height:12px;border-radius:7px;overflow:hidden;margin:3px 0 6px;background:rgba(255,255,255,.08)}
+.gd-split i{display:block;height:100%}.gd-split .a{background:var(--sp2,#8b5cf6)}.gd-split .h{background:var(--sp,#5b8cff)}
+.gd-bars{margin-top:12px}.gd-bars h4{margin:0 0 6px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--mut,#9db0d0)}
+.gd-b{display:flex;align-items:center;gap:8px;margin:4px 0;font-size:12.5px;font-variant-numeric:tabular-nums}
+.gd-b .l{flex:0 0 112px;color:#cfdaf1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gd-b .t{flex:1 1 auto;height:12px;border-radius:6px;background:rgba(255,255,255,.07);overflow:hidden;min-width:0}
+.gd-b .t i{display:block;height:100%;border-radius:6px;background:#7d8fb3;min-width:2px}
+.gd-b.a .t i{background:var(--sp2,#8b5cf6)}.gd-b.h .t i{background:var(--sp,#5b8cff)}
+.gd-b .v{flex:0 0 42px;text-align:right;font-weight:800;color:#fff}
+.gd-tops{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.gd-tops span{background:rgba(255,255,255,.07);border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:700;color:#fff}
+.gd-tops small{color:var(--mut,#9db0d0);font-weight:600;margin-left:4px}
+.gd-facts{margin-top:12px;font-size:13px}
+.gd-facts .r{display:flex;gap:10px;padding:5px 0;border-top:1px solid rgba(255,255,255,.06)}
+.gd-facts .r:first-child{border-top:0}
+.gd-facts .r span:first-child{flex:0 0 108px;color:var(--mut,#9db0d0);font-size:12px}
+.gd-facts .r span:last-child{flex:1 1 auto;min-width:0;overflow-wrap:anywhere;color:#e6edfb}
+.gd-inj{margin-top:8px;font-size:12.5px}.gd-inj summary{cursor:pointer;color:#e6edfb;font-weight:700;padding:4px 0}
+.gd-inj div{color:#cfdaf1;padding:2px 0 2px 10px;border-left:2px solid rgba(255,255,255,.12);margin:3px 0;overflow-wrap:anywhere}
+.gd-picks{margin-top:12px;display:flex;flex-direction:column;gap:6px}
+.gd-picks div{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.05);border-radius:10px;padding:6px 9px;overflow-wrap:anywhere}
+.gd-note{margin-top:12px;font-size:11.5px;line-height:1.4;color:var(--mut,#9db0d0)}
+.gd-more{all:unset;box-sizing:border-box;display:block;width:100%;text-align:center;padding:11px;border-radius:12px;border:1px dashed rgba(var(--sp-rgb,91,140,255),.6);color:#fff;font-weight:700;font-size:13.5px;cursor:pointer;margin-top:2px}
+.gd-more:active{background:rgba(255,255,255,.05)}
+.gd-card,.gd-body,.gd-sec{max-width:100%}
+@media(min-width:560px){.gd-grid{grid-template-columns:1fr 1fr}}
+
 </style></head><body data-sport="nhl"><!--slate-line--><div id="slate-line" style="font:600 14px/1.4 system-ui,sans-serif;padding:6px 12px;background:#e8f4ea;color:#123;border-bottom:1px solid #9994">Slate: Tue Oct 27 | Updated Mon Oct 26, 3:56 PM CT</div><!--/slate-line-->
 <header class="topbar"><div class="in"><div class="brand"><h1 id="title">NHL</h1><span id="hstatus"></span></div><div class="hmeta"><span id="slate"></span><span id="updated"></span></div></div><nav class="sports" aria-label="Sports"><a href="../../" data-k="home"><i></i>Home</a><a href="../../nfl/" data-k="nfl"><i></i>NFL</a><a href="../../nfl-props/" data-k="nfl-props"><i></i>NFL Props</a><a href="../../nfl-td/" data-k="nfl-td"><i></i>NFL TD</a><a href="../../cfb/" data-k="cfb"><i></i>CFB</a><a href="../../nba/" data-k="nba"><i></i>NBA</a><a href="../../nba-props/" data-k="nba-props"><i></i>NBA Props</a><a href="../../nba-first-basket/" data-k="nba-first-basket"><i></i>NBA 1st Bkt</a><a href="../../nhl/" data-k="nhl" class="on" aria-current="page"><i></i>NHL</a><a href="../../nhl-props/" data-k="nhl-props"><i></i>NHL Pts</a><a href="../../mlb/" data-k="mlb"><i></i>MLB</a><a href="../../tennis/" data-k="tennis"><i></i>Tennis</a></nav></header>
 <nav class="dtabs" data-dtabs="1"><a href="../" class="">Today · Mon Oct 26</a><a href="../tomorrow/" class="on">Tomorrow · Tue Oct 27</a></nav><div class="dnote">Tomorrow is priced with current game lines (moneyline, spread, total). Goalies/injuries firm up on game day.</div>
@@ -447,6 +514,173 @@ if(window.MutationObserver){
   mo=new MutationObserver(function(){if(busy||pend)return;pend=true;requestAnimationFrame(function(){pend=false;busy=true;try{colourise(D.body)}catch(e){}busy=false})});
   mo.observe(D.body,{childList:true,subtree:true});
 }
+})();
+
+</script><script id="gd-data" type="application/json">{"kind":"nhl","games":[{"id":"2026020188","a":"CBJ","h":"PHI","an":"Columbus Blue Jackets","hn":"Philadelphia Flyers","ts":1793142000.0,"when":"Tue Oct 27 6:00 PM CT","nototals":true,"proj":{"a":2.63,"h":2.33,"margin":-0.29,"dec":2},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["PHI by 2+",0.2038,"h"],["PHI by 1",0.1539,"h"],["Tied after 60",0.183,"n"],["CBJ by 1",0.1732,"a"],["CBJ by 2+",0.2862,"a"]]}],"tops":[["2-2",0.0659],["3-2",0.0577],["2-1",0.0565],["2-3",0.0512]],"win":{"a":53.3,"h":46.7},"ml":{"fa":-114,"fh":114,"ba":-114,"bh":107,"bka":"Caesars","bkh":"BetOnline.ag"},"winnote":"Includes overtime and shootout","facts":[["CBJ goalie","Cam Talbot (projected), 3d rest"],["PHI goalie","Joseph Woll (projected), 3d rest"],["Venue","Xfinity Mobile Arena"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Cam Talbot by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Joseph Woll by last-starter policy (54% accurate historically)"]],"picks":[],"state":"FUT"},{"id":"2026020189","a":"BOS","h":"CAR","an":"Boston Bruins","hn":"Carolina Hurricanes","ts":1793145600.0,"when":"Tue Oct 27 7:00 PM CT","nototals":true,"proj":{"a":2.15,"h":3.3,"margin":1.15,"dec":2},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["CAR by 2+",0.432,"h"],["CAR by 1",0.175,"h"],["Tied after 60",0.1569,"n"],["BOS by 1",0.1141,"a"],["BOS by 2+",0.1219,"a"]]}],"tops":[["2-3",0.0595],["1-3",0.0553],["2-2",0.054],["1-2",0.0502]],"win":{"a":34.8,"h":65.2},"ml":{"fa":188,"fh":-188,"ba":160,"bh":-179,"bka":"DraftKings","bkh":"BetRivers"},"winnote":"Includes overtime and shootout","facts":[["BOS goalie","Jeremy Swayman (projected), 3d rest"],["CAR goalie","Pyotr Kochetkov (projected), 3d rest"],["Venue","Lenovo Center"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Jeremy Swayman by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Pyotr Kochetkov by last-starter policy (54% accurate historically)"]],"picks":[{"g":"C","t":"CAR ML (-179) (BetRivers)"}],"state":"FUT"},{"id":"2026020190","a":"LAK","h":"CHI","an":"Los Angeles Kings","hn":"Chicago Blackhawks","ts":1793145600.0,"when":"Tue Oct 27 7:00 PM CT","nototals":true,"proj":{"a":2.73,"h":2.22,"margin":-0.51,"dec":2},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["CHI by 2+",0.1767,"h"],["CHI by 1",0.1449,"h"],["Tied after 60",0.1802,"n"],["LAK by 1",0.1782,"a"],["LAK by 2+",0.32,"a"]]}],"tops":[["2-2",0.065],["3-2",0.0592],["2-1",0.0586],["3-1",0.0533]],"win":{"a":55.0,"h":45.0},"ml":{"fa":-122,"fh":122,"ba":-120,"bh":102,"bka":"FanDuel","bkh":"DraftKings"},"winnote":"Includes overtime and shootout","facts":[["LAK goalie","Anton Forsberg (projected), 3d rest"],["CHI goalie","Spencer Knight (projected), 2d rest"],["Venue","United Center"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Anton Forsberg by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Spencer Knight by last-starter policy (54% accurate historically)"]],"picks":[{"g":"C","t":"LAK ML (-120) (FanDuel)"}],"state":"FUT"},{"id":"2026020191","a":"MTL","h":"STL","an":"Montréal Canadiens","hn":"St. Louis Blues","ts":1793145600.0,"when":"Tue Oct 27 7:00 PM CT","nototals":true,"proj":{"a":2.58,"h":2.58,"margin":0.0,"dec":2},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["STL by 2+",0.2481,"h"],["STL by 1",0.1618,"h"],["Tied after 60",0.1804,"n"],["MTL by 1",0.1618,"a"],["MTL by 2+",0.248,"a"]]}],"tops":[["2-2",0.0635],["2-3",0.0547],["3-2",0.0547],["1-2",0.0492]],"win":{"a":49.0,"h":51.0},"ml":{"fa":104,"fh":-104,"ba":101,"bh":-110,"bka":"BetOnline.ag","bkh":"BetRivers"},"winnote":"Includes overtime and shootout","facts":[["MTL goalie","Jacob Fowler (projected), 2d rest"],["STL goalie","Joel Hofer (projected), 3d rest"],["Venue","Enterprise Center"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Jacob Fowler by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Joel Hofer by last-starter policy (54% accurate historically)"]],"picks":[],"state":"FUT"},{"id":"2026020192","a":"NYI","h":"NSH","an":"New York Islanders","hn":"Nashville Predators","ts":1793145600.0,"when":"Tue Oct 27 7:00 PM CT","nototals":true,"proj":{"a":2.73,"h":2.35,"margin":-0.39,"dec":2},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["NSH by 2+",0.1948,"h"],["NSH by 1",0.1489,"h"],["Tied after 60",0.1796,"n"],["NYI by 1",0.1735,"a"],["NYI by 2+",0.3032,"a"]]}],"tops":[["2-2",0.064],["3-2",0.0583],["2-1",0.0545],["2-3",0.05]],"win":{"a":50.8,"h":49.2},"ml":{"fa":-103,"fh":103,"ba":110,"bh":-118,"bka":"BetOnline.ag","bkh":"BetRivers"},"winnote":"Includes overtime and shootout","facts":[["NYI goalie","Ilya Sorokin (projected), 2d rest"],["NSH goalie","Justus Annunen (projected), 2d rest"],["Venue","Bridgestone Arena"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Ilya Sorokin by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Justus Annunen by last-starter policy (54% accurate historically)"]],"picks":[],"state":"FUT"},{"id":"2026020193","a":"NJD","h":"DAL","an":"New Jersey Devils","hn":"Dallas Stars","ts":1793145600.0,"when":"Tue Oct 27 7:00 PM CT","nototals":true,"proj":{"a":2.3,"h":2.48,"margin":0.19,"dec":2},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["DAL by 2+",0.2665,"h"],["DAL by 1",0.1731,"h"],["Tied after 60",0.1874,"n"],["NJD by 1",0.16,"a"],["NJD by 2+",0.2131,"a"]]}],"tops":[["2-2",0.0683],["1-2",0.0595],["2-3",0.0565],["2-1",0.055]],"win":{"a":46.5,"h":53.5},"ml":{"fa":115,"fh":-115,"ba":110,"bh":-120,"bka":"BetRivers","bkh":"BetOnline.ag"},"winnote":"Includes overtime and shootout","facts":[["NJD goalie","Jake Allen (projected), 3d rest"],["DAL goalie","Jake Oettinger (projected), 2d rest"],["Venue","American Airlines Center"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Jake Allen by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Jake Oettinger by last-starter policy (54% accurate historically)"]],"picks":[],"state":"FUT"},{"id":"2026020194","a":"FLA","h":"WPG","an":"Florida Panthers","hn":"Winnipeg Jets","ts":1793145600.0,"when":"Tue Oct 27 7:00 PM CT","nototals":true,"proj":{"a":2.73,"h":2.5,"margin":-0.23,"dec":2},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["WPG by 2+",0.2185,"h"],["WPG by 1",0.1534,"h"],["Tied after 60",0.1784,"n"],["FLA by 1",0.1674,"a"],["FLA by 2+",0.2822,"a"]]}],"tops":[["2-2",0.0624],["3-2",0.0567],["2-3",0.052],["2-1",0.0499]],"win":{"a":54.0,"h":46.0},"ml":{"fa":-117,"fh":117,"ba":-125,"bh":112,"bka":"BetUS","bkh":"Caesars"},"winnote":"Includes overtime and shootout","facts":[["FLA goalie","Akira Schmid (projected), 2d rest"],["WPG goalie","Stuart Skinner (projected), 2d rest"],["Venue","Canada Life Centre"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Akira Schmid by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Stuart Skinner by last-starter policy (54% accurate historically)"]],"picks":[],"state":"FUT"},{"id":"2026020195","a":"MIN","h":"UTA","an":"Minnesota Wild","hn":"Utah Mammoth","ts":1793149200.0,"when":"Tue Oct 27 8:00 PM CT","nototals":true,"proj":{"a":2.59,"h":3.05,"margin":0.46,"dec":2},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["UTA by 2+",0.324,"h"],["UTA by 1",0.1665,"h"],["Tied after 60",0.1693,"n"],["MIN by 1",0.1414,"a"],["MIN by 2+",0.1988,"a"]]}],"tops":[["2-3",0.0564],["2-2",0.0555],["3-3",0.0486],["3-2",0.0479]],"win":{"a":44.6,"h":55.4},"ml":{"fa":124,"fh":-124,"ba":110,"bh":-125,"bka":"BetOnline.ag","bkh":"Fanatics"},"winnote":"Includes overtime and shootout","facts":[["MIN goalie","Calvin Pickard (projected), 2d rest"],["UTA goalie","Karel Vejmelka (projected), 3d rest"],["Venue","Delta Center"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Calvin Pickard by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Karel Vejmelka by last-starter policy (54% accurate historically)"]],"picks":[],"state":"FUT"},{"id":"2026020196","a":"OTT","h":"VGK","an":"Ottawa Senators","hn":"Vegas Golden Knights","ts":1793152800.0,"when":"Tue Oct 27 9:00 PM CT","nototals":true,"proj":{"a":2.31,"h":3.01,"margin":0.7,"dec":2},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["VGK by 2+",0.3571,"h"],["VGK by 1",0.1749,"h"],["Tied after 60",0.1702,"n"],["OTT by 1",0.1341,"a"],["OTT by 2+",0.1637,"a"]]}],"tops":[["2-3",0.0593],["2-2",0.0591],["1-3",0.0514],["1-2",0.0512]],"win":{"a":40.5,"h":59.5},"ml":{"fa":147,"fh":-147,"ba":131,"bh":-145,"bka":"Caesars","bkh":"BetOnline.ag"},"winnote":"Includes overtime and shootout","facts":[["OTT goalie","Jonas Johansson (projected), 3d rest"],["VGK goalie","Carter Hart (projected), 3d rest"],["Venue","T-Mobile Arena"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Jonas Johansson by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Carter Hart by last-starter policy (54% accurate historically)"]],"picks":[{"g":"C","t":"VGK ML (-145) (BetOnline.ag)"}],"state":"FUT"},{"id":"2026020197","a":"VAN","h":"ANA","an":"Vancouver Canucks","hn":"Anaheim Ducks","ts":1793152800.0,"when":"Tue Oct 27 9:00 PM CT","nototals":true,"proj":{"a":2.1,"h":3.29,"margin":1.18,"dec":2},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["ANA by 2+",0.4372,"h"],["ANA by 1",0.1761,"h"],["Tied after 60",0.1567,"n"],["VAN by 1",0.1126,"a"],["VAN by 2+",0.1173,"a"]]}],"tops":[["2-3",0.0597],["1-3",0.0569],["2-2",0.0545],["1-2",0.0519]],"win":{"a":33.2,"h":66.8},"ml":{"fa":202,"fh":-202,"ba":180,"bh":-196,"bka":"BetRivers","bkh":"DraftKings"},"winnote":"Includes overtime and shootout","facts":[["VAN goalie","Leevi Merilainen (projected), 2d rest"],["ANA goalie","Lukas Dostal (projected), 3d rest"],["Venue","Honda Center"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Leevi Merilainen by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Lukas Dostal by last-starter policy (54% accurate historically)"]],"picks":[{"g":"C","t":"ANA ML (-196) (DraftKings)"}],"state":"FUT"},{"id":"2026020198","a":"BUF","h":"SJS","an":"Buffalo Sabres","hn":"San Jose Sharks","ts":1793154600.0,"when":"Tue Oct 27 9:30 PM CT","nototals":true,"proj":{"a":2.8,"h":2.82,"margin":0.02,"dec":2},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["SJS by 2+",0.2599,"h"],["SJS by 1",0.1568,"h"],["Tied after 60",0.1725,"n"],["BUF by 1",0.1558,"a"],["BUF by 2+",0.255,"a"]]}],"tops":[["2-2",0.0565],["2-3",0.0531],["3-2",0.0527],["3-3",0.0496]],"win":{"a":52.7,"h":47.3},"ml":{"fa":-111,"fh":111,"ba":-128,"bh":115,"bka":"BetOnline.ag","bkh":"Caesars"},"winnote":"Includes overtime and shootout","facts":[["BUF goalie","Ukko-Pekka Luukkonen (projected), 3d rest"],["SJS goalie","Alex Nedeljkovic (projected), 3d rest"],["Venue","SAP Center at San Jose"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Ukko-Pekka Luukkonen by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Alex Nedeljkovic by last-starter policy (54% accurate historically)"]],"picks":[{"g":"C","t":"SJS ML (+115) (Caesars)"}],"state":"FUT"}],"v":1}</script><script id="gd-js">
+/* game detail panels: renders the JSON blob computed by apply_gamedetail.py. Additive only; any error leaves the page untouched. */
+(function(){
+'use strict';
+try{
+var D=document,blobEl=D.getElementById('gd-data');if(!blobEl)return;
+var B=JSON.parse(blobEl.textContent),G=B.games||[],kind=B.kind;if(!G.length)return;
+if(D.getElementById('gd-sec'))return;
+var NOW=Date.now();
+function el(t,c,x){var e=D.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function ap(p){for(var i=1;i<arguments.length;i++){if(arguments[i]!=null)p.appendChild(arguments[i])}return p}
+function pc(v,d){return v==null?'-':v.toFixed(d==null?1:d)+'%'}
+function sg(v){return v==null?'-':(v>0?'+':v<0?'\u2212':'')+Math.abs(v).toFixed(1)}
+function ml(v){return v==null?'-':(v>0?'+':'')+v}
+function sk(k,v){try{if(v===undefined)return sessionStorage.getItem('gd:'+location.pathname+':'+k);sessionStorage.setItem('gd:'+location.pathname+':'+k,v)}catch(e){return null}}
+var openSet={};try{openSet=JSON.parse(sk('open')||'{}')}catch(e){}
+function row(a,b,cls){var r=el('div','r');ap(r,el('span',null,a),el('span',cls||null,b));return r}
+function kbox(title){var k=el('div','gd-k');ap(k,el('h4',null,title));return k}
+function lastw(n){var w=String(n).trim().split(/\s+/);return w[w.length-1]}
+function SA(g){return g.tennis?lastw(g.an):g.a}
+function SH(g){return g.tennis?lastw(g.hn):g.h}
+
+function hero(g){
+  var w=el('div','gd-hero');
+  if(g.proj){
+    var ph=g.proj.h,pa=g.proj.a,hw=ph>pa,aw=pa>ph;
+    var A=el('div','gd-t'+(aw?' win':'')),H=el('div','gd-t'+(hw?' win':''));
+    ap(A,el('div','n',g.an),el('div','s',pa.toFixed(1)));
+    ap(H,el('div','n',g.hn),el('div','s',ph.toFixed(1)));
+    if(g.rng){ap(A,el('div','p','likely '+g.rng.a[0]+'\u2013'+g.rng.a[1]));ap(H,el('div','p','likely '+g.rng.h[0]+'\u2013'+g.rng.h[1]))}
+    ap(w,A,el('div','gd-dash','@'),H);
+  }else{
+    var A2=el('div','gd-t'+(g.win&&g.win.a>=g.win.h?' win':'')),H2=el('div','gd-t'+(g.win&&g.win.h>g.win.a?' win':''));
+    ap(A2,el('div','n',g.an),el('div','s',g.win?pc(g.win.a,0):'-'));
+    ap(H2,el('div','n',g.hn),el('div','s',g.win?pc(g.win.h,0):'-'));
+    ap(w,A2,el('div','gd-dash','vs'),H2);
+  }
+  return w;
+}
+function bars(b){
+  var w=el('div','gd-bars');ap(w,el('h4',null,b.t));
+  var mx=0;b.items.forEach(function(i){if(i[1]>mx)mx=i[1]});if(!mx)mx=1;
+  b.items.forEach(function(i){
+    var r=el('div','gd-b '+(i[2]||'n')),t=el('div','t'),f=el('i');f.style.width=Math.max(2,i[1]/mx*100)+'%';t.appendChild(f);
+    ap(r,el('div','l',i[0]),t,el('div','v',pc(i[1]*100,0)));w.appendChild(r)});
+  if(b.line!=null)ap(w,el('div','gd-sub','Market total line: '+b.line+' '+(b.unit||'')));
+  return w;
+}
+function body(g){
+  var b=el('div','gd-body');
+  ap(b,hero(g));
+  if(g.proj){
+    var sub=g.proj.dec?'Projected final (model average)':'Projected final from model total '+g.proj.total.toFixed(1)+' and margin '+(g.proj.margin>0?g.hn:g.an)+' by '+Math.abs(g.proj.margin).toFixed(1);
+    ap(b,el('div','gd-sub',sub));
+  }
+  if(g.likely)ap(b,el('div','gd-likely',g.likely));
+  var grid=el('div','gd-grid');
+  if(g.win){
+    var k=kbox('Win probability'),sp2=el('div','gd-split'),ia=el('i','a'),ih=el('i','h');ia.style.width=g.win.a+'%';ih.style.width=g.win.h+'%';ap(sp2,ia,ih);
+    ap(k,sp2,row(SA(g),pc(g.win.a)),row(SH(g),pc(g.win.h)));if(g.winnote)ap(k,el('div','gd-note',g.winnote));grid.appendChild(k);
+  }
+  if(g.ml){
+    var k2=kbox('Moneyline: model fair vs best price');
+    ap(k2,row(SA(g),'fair '+ml(g.ml.fa)+(g.ml.ba!=null?' | best '+ml(g.ml.ba)+(g.ml.bka?' ('+g.ml.bka+')':''):'')),row(SH(g),'fair '+ml(g.ml.fh)+(g.ml.bh!=null?' | best '+ml(g.ml.bh)+(g.ml.bkh?' ('+g.ml.bkh+')':''):'')));grid.appendChild(k2);
+  }
+  if(g.sp&&(g.sp.ph!=null||g.sp.model!=null)){
+    var k3=kbox(g.sp.rl?'Run line (1.5)':'Spread: model vs market');
+    if(g.sp.rl){ap(k3,row(SH(g)+' \u22121.5 covers',pc(g.sp.ph)),row(SA(g)+' \u22121.5 covers',pc(g.sp.pa)))}
+    else{
+      ap(k3,row('Model ('+SH(g)+')',sg(g.sp.model)),row('Market ('+SH(g)+')',sg(g.sp.mkt)));
+      if(g.sp.ph!=null)ap(k3,row(SH(g)+' covers market line',pc(g.sp.ph),g.sp.ph>=52.5?'pos':null),row(SA(g)+' covers market line',pc(g.sp.pa),g.sp.pa>=52.5?'pos':null));
+    }
+    grid.appendChild(k3);
+  }
+  if(g.tot&&!g.nototals){
+    var T=g.tot,k4=kbox(T.games?'Total games: model vs market':'Total: model vs market');
+    if(T.games){
+      ap(k4,row('Model mean (median)',T.model+' ('+T.median+')'));
+      if(T.sd!=null)ap(k4,row('Spread of outcomes','\u00b1'+T.sd));
+      if(T.rng)ap(k4,row('Middle 50% range',T.rng[0]+'\u2013'+T.rng[1]));
+      if(T.line!=null)ap(k4,row('Over '+T.line+' (model line)',pc(T.po_model)));
+      if(T.mkt!=null)ap(k4,row('Market line '+T.mkt+' over',pc(T.po),T.po>=52.5?'pos':null));
+    }else{
+      ap(k4,row('Model',T.model==null?'-':T.model.toFixed(1)),row('Market',T.mkt==null?'-':T.mkt.toFixed(1)));
+      if(T.po!=null)ap(k4,row('Over',pc(T.po),T.po>=52.5?'pos':null),row('Under',pc(T.pu),T.pu>=52.5?'pos':null));
+      if(T.push)ap(k4,row('Push',pc(T.push)));
+      if(T.rng)ap(k4,row('Middle 50% range',T.rng[0]+'\u2013'+T.rng[1]));
+    }
+    grid.appendChild(k4);
+  }
+  b.appendChild(grid);
+  (g.bars||[]).forEach(function(x){b.appendChild(bars(x))});
+  if(g.tops&&g.tops.length){
+    var t=el('div','gd-tops');g.tops.forEach(function(s){var sp=el('span',null,s[0]);sp.appendChild(el('small',null,pc(s[1]*100,1)));t.appendChild(sp)});
+    ap(b,el('div','gd-bars'));b.lastChild.appendChild(el('h4',null,'Most likely scores ('+g.a+'-'+g.h+')'));b.lastChild.appendChild(t);
+  }
+  if(g.picks&&g.picks.length){
+    var pk=el('div','gd-picks');g.picks.forEach(function(p){var d=el('div');ap(d,el('span','gd-g '+p.g,p.g),el('span',null,p.t));pk.appendChild(d)});
+    ap(b,el('h4','gd-sub','Model picks on this game'),pk);
+  }
+  if(g.facts&&g.facts.length){var f=el('div','gd-facts');g.facts.forEach(function(x){f.appendChild(row(x[0],String(x[1])))});
+    f.querySelectorAll('.r').forEach(function(r){r.className='r'});b.appendChild(f)}
+  if(g.inj&&g.inj.length){g.inj.forEach(function(x){var d=el('details','gd-inj'),s=el('summary',null,x[0]+' injuries ('+x[1].length+')');d.appendChild(s);x[1].forEach(function(l){d.appendChild(el('div',null,l))});b.appendChild(d)})}
+  var note={nfl:'Model-simulated from the model\u2019s own projections: a normal spread of outcomes around its margin and total, matched to its win probability.',
+    cfb:'Model-simulated from the model\u2019s own projections: a normal spread of outcomes around its margin and total, matched to its win probability.',
+    nba:'Model-simulated from the model\u2019s own projections: a normal spread of outcomes around its margin and total, matched to its win probability.',
+    nhl:'Model-simulated from the model\u2019s own goal rates using independent Poisson scoring. Win % is the model\u2019s published number.',
+    mlb:'Total-run bars are the model\u2019s own simulated games. Likely scores use independent Poisson scoring from the model\u2019s run rates.',
+    tennis:'Set scores, win % and games are the model\u2019s own simulation outputs.'}[kind];
+  if(note)ap(b,el('div','gd-note',note));
+  return b;
+}
+function card(g,i){
+  var c=el('div','gd-card'),h=el('button','gd-head');h.setAttribute('type','button');h.setAttribute('aria-expanded','false');
+  var m=el('div','gd-main'),w=el('div','gd-when');w.appendChild(el('span',null,g.when||''));
+  if(g.state&&/^(in|live|crit)/i.test(g.state))w.appendChild(el('span','gd-live','LIVE'));
+  if(g.ev)w.appendChild(el('span',null,'\u00b7 '+g.ev));
+  ap(m,w,el('div','gd-teams',g.tennis?g.an+' vs '+g.hn:g.an+' @ '+g.hn),el('div','gd-tap','Tap for projected score & details'));
+  var s=el('div','gd-side');
+  if(g.picks&&g.picks.length){var best=g.picks.map(function(p){return p.g}).sort()[0];s.appendChild(el('span','gd-g '+best,best))}
+  var sc=el('div','gd-sc');
+  if(g.proj){var f=g.proj.dec?1:0;ap(sc,el('b',null,g.proj.a.toFixed(f)+'\u2013'+g.proj.h.toFixed(f)),el('i',null,'proj'))}
+  else if(g.win){ap(sc,el('b',null,Math.round(g.win.a)+'\u2013'+Math.round(g.win.h)+'%'),el('i',null,'win %'))}
+  ap(s,sc,el('span','gd-chev'));
+  ap(h,m,s);c.appendChild(h);
+  var built=false;
+  function toggle(open){
+    if(open&&!built){c.appendChild(body(g));built=true}
+    c.classList.toggle('open',open);h.setAttribute('aria-expanded',open?'true':'false');
+    if(open)openSet[g.id]=1;else delete openSet[g.id];sk('open',JSON.stringify(openSet));
+  }
+  h.addEventListener('click',function(){toggle(!c.classList.contains('open'))});
+  if(openSet[g.id])toggle(true);
+  return c;
+}
+/* which games to list first */
+var cut=NOW-4*3600*1000;
+var up=G.filter(function(g){return g.ts==null||g.ts*1000>=cut}),old=G.filter(function(g){return !(g.ts==null||g.ts*1000>=cut)});
+function ord(a,b){if(kind==='tennis'&&(!!a.priced!==!!b.priced))return a.priced?-1:1;return (a.ts||0)-(b.ts||0)}
+up.sort(ord);old.sort(function(a,b){return (b.ts||0)-(a.ts||0)});
+if(!up.length){up=old;old=[]}
+var LIM=kind==='cfb'||kind==='tennis'?8:12;
+var all=up.concat(old),sec=el('section','sec tog gd-sec'),hd=el('div','sec-h'),bd=el('div','sec-b');sec.id='gd-sec';
+hd.appendChild(document.createTextNode(kind==='tennis'?'Match projections':'Game projections'));
+var cnt=el('span','cnt',all.length+(kind==='tennis'?' matches':' games'));hd.appendChild(cnt);
+ap(sec,hd,bd);
+ap(bd,el('div','gd-hint',kind==='tennis'?'Tap a match for win %, set scores and games.':'Tap a game for its model-simulated score, odds and context.'));
+var list=el('div','gd-list');bd.appendChild(list);
+var shown=0,rest=[];
+all.forEach(function(g,i){if(i<LIM||openSet[g.id]){list.appendChild(card(g,i));shown++}else rest.push(g)});
+if(rest.length){
+  var btn=el('button','gd-more','Show '+rest.length+' more '+(kind==='tennis'?'matches':'games'));btn.setAttribute('type','button');
+  btn.addEventListener('click',function(){rest.forEach(function(g,i){list.appendChild(card(g,i))});btn.remove()});
+  bd.appendChild(btn);
+}
+hd.addEventListener('click',function(){sec.classList.toggle('closed')});
+/* placement: right after the Top plays section */
+var main=D.querySelector('main.wrap')||D.querySelector('main')||D.body,anchor=null;
+var secs=main.querySelectorAll(':scope > section.sec');
+if(secs.length)anchor=secs[0];
+else anchor=D.getElementById('plays')||D.getElementById('top');
+if(anchor&&anchor.parentNode===main)main.insertBefore(sec,anchor.nextSibling);
+else if(anchor)anchor.parentNode.insertBefore(sec,anchor.nextSibling);
+else main.insertBefore(sec,main.firstChild);
+}catch(e){if(window.console)console.warn('game detail',e)}
 })();
 
 </script></body></html>
