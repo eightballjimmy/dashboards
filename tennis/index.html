@@ -283,6 +283,43 @@ nav.sports a[data-k="tennis"]{--c:#b6f03c;--c2:#22d3ee}
 .gd-card,.gd-body,.gd-sec{max-width:100%}
 @media(min-width:560px){.gd-grid{grid-template-columns:1fr 1fr}}
 
+</style><style id="rec-css">
+/* model projected-side record (apply_record.py): uses the skin variables, falls back to dark defaults */
+.rec-sec .sec-h{cursor:pointer}
+.rec-sec.closed>.sec-b{display:none}
+.rec-sub{color:var(--mut,#9db0d0);font-size:12.5px;margin:-4px 2px 10px}
+.rec-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rec-box{position:relative;background:linear-gradient(160deg,rgba(var(--sp-rgb,91,140,255),.16),transparent 62%),var(--card,#10192e);border:1px solid var(--line,#24345a);border-top:4px solid var(--sp,#5b8cff);border-radius:16px;padding:12px 12px 12px;box-shadow:0 10px 24px -16px rgba(0,0,0,.9);min-width:0}
+.rec-box h4{margin:0;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--mut,#9db0d0)}
+.rec-big{font-size:31px;font-weight:900;letter-spacing:-.03em;line-height:1.05;margin-top:6px;color:var(--ink,#f3f6fc);white-space:nowrap}
+.rec-big small{font-size:15px;font-weight:800;color:var(--mut,#9db0d0);margin-left:4px;letter-spacing:0}
+.rec-pct{font-size:13px;font-weight:800;margin-top:2px}
+.rec-pct.hi{color:var(--ok,#2ff0a0)}.rec-pct.mid{color:var(--amber,#ffc233)}.rec-pct.lo{color:var(--warn,#ff6683)}.rec-pct.na{color:var(--mut,#9db0d0)}
+.rec-bar{height:7px;border-radius:99px;background:rgba(255,255,255,.08);margin-top:8px;overflow:hidden}
+.rec-bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--sp,#5b8cff),var(--sp2,#8b5cf6))}
+.rec-gm{font-size:11.5px;color:var(--mut,#9db0d0);margin-top:6px}
+.rec-lines{margin-top:12px;background:var(--card,#10192e);border:1px solid var(--line,#24345a);border-radius:16px;overflow:hidden}
+.rec-lh{display:grid;grid-template-columns:1fr 76px 76px;gap:6px;padding:8px 12px;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--mut,#9db0d0);background:rgba(255,255,255,.03)}
+.rec-lh span+span,.rec-lr .v{text-align:right}
+.rec-lr{display:grid;grid-template-columns:1fr 76px 76px;gap:6px;align-items:center;padding:10px 12px;border-top:1px solid var(--line,#24345a)}
+.rec-lr .l b{display:block;font-size:13.5px;color:var(--ink,#f3f6fc)}
+.rec-lr .l span{display:block;font-size:11px;color:var(--mut,#9db0d0);line-height:1.3;margin-top:1px}
+.rec-lr .v{font-size:15px;font-weight:800;color:var(--ink,#f3f6fc);white-space:nowrap}
+.rec-lr .v em{display:block;font-style:normal;font-size:11px;font-weight:700;color:var(--mut,#9db0d0)}
+.rec-lr .v em.hi{color:var(--ok,#2ff0a0)}.rec-lr .v em.mid{color:var(--amber,#ffc233)}.rec-lr .v em.lo{color:var(--warn,#ff6683)}
+.rec-days{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:12px}
+.rec-d{border-radius:11px;padding:6px 2px 5px;text-align:center;background:var(--card,#10192e);border:1px solid var(--line,#24345a);min-width:0}
+.rec-d b{display:block;font-size:12.5px;line-height:1.2;color:var(--ink,#f3f6fc)}
+.rec-d span{display:block;font-size:9.5px;color:var(--mut,#9db0d0);letter-spacing:.02em}
+.rec-d.hi{background:var(--okbg,rgba(47,240,160,.14));border-color:rgba(47,240,160,.5)}
+.rec-d.lo{background:var(--warnbg,rgba(255,102,131,.15));border-color:rgba(255,102,131,.5)}
+.rec-d.mid{background:var(--amberbg,rgba(255,194,51,.15));border-color:rgba(255,194,51,.5)}
+.rec-d.na{opacity:.55}
+.rec-dl{font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--mut,#9db0d0);margin:12px 2px -6px}
+.rec-note{font-size:11.5px;color:var(--mut,#9db0d0);margin:12px 2px 0;line-height:1.45}
+.rec-empty{background:var(--card,#10192e);border:1px dashed var(--line,#24345a);border-radius:16px;padding:16px;color:var(--mut,#9db0d0);font-size:13.5px;line-height:1.45}
+.rec-empty b{color:var(--ink,#f3f6fc)}
+
 </style></head><body data-sport="tennis"><!--slate-line--><div id="slate-line" style="font:600 14px/1.4 system-ui,sans-serif;padding:6px 12px;background:#e8f4ea;color:#123;border-bottom:1px solid #9994">Slate: Mon Oct 26 (+ Tue Oct 27) | Updated Mon Oct 26, 11:00 PM CT</div><!--/slate-line-->
 <header class="topbar"><div class="in"><div class="brand"><h1 id="title">Tennis</h1><span id="hstatus"></span></div><div class="hmeta"><span id="slate"></span><span id="updated"></span></div></div><nav class="sports" aria-label="Sports"><a href="../" data-k="home"><i></i>Home</a><a href="../nfl/" data-k="nfl"><i></i>NFL</a><a href="../nfl-props/" data-k="nfl-props"><i></i>NFL Props</a><a href="../nfl-td/" data-k="nfl-td"><i></i>NFL TD</a><a href="../cfb/" data-k="cfb"><i></i>CFB</a><a href="../nba/" data-k="nba"><i></i>NBA</a><a href="../nba-props/" data-k="nba-props"><i></i>NBA Props</a><a href="../nba-first-basket/" data-k="nba-first-basket"><i></i>NBA 1st Bkt</a><a href="../intl-basketball/" data-k="intl-basketball"><i></i>EuroLeague</a><a href="../nhl/" data-k="nhl"><i></i>NHL</a><a href="../nhl-props/" data-k="nhl-props"><i></i>NHL Pts</a><a href="../mlb/" data-k="mlb"><i></i>MLB</a><a href="../tennis/" data-k="tennis" class="on" aria-current="page"><i></i>Tennis</a></nav></header>
 <main class="wrap"><div id="banners"></div>
@@ -629,6 +666,84 @@ if(anchor&&anchor.parentNode===main)main.insertBefore(sec,anchor.nextSibling);
 else if(anchor)anchor.parentNode.insertBefore(sec,anchor.nextSibling);
 else main.insertBefore(sec,main.firstChild);
 }catch(e){if(window.console)console.warn('game detail',e)}
+})();
+
+</script><script id="rec-data" type="application/json">{"v":1,"sport":"tennis","today":"2026-10-26","generated":"2026-10-26 23:45","rec":{"lines":["SU"],"graded":551,"since":"2026-10-05","tracked_projections":670,"last7":{"games":178,"SU":{"w":114,"l":63,"p":0,"n":177,"pct":64.4}},"season":{"games":551,"SU":{"w":339,"l":211,"p":0,"n":550,"pct":61.6}},"days":{"2026-10-05":{"games":10,"SU":{"w":7,"l":3,"p":0,"n":10,"pct":70.0}},"2026-10-06":{"games":23,"SU":{"w":13,"l":10,"p":0,"n":23,"pct":56.5}},"2026-10-07":{"games":28,"SU":{"w":18,"l":10,"p":0,"n":28,"pct":64.3}},"2026-10-08":{"games":25,"SU":{"w":16,"l":9,"p":0,"n":25,"pct":64.0}},"2026-10-09":{"games":27,"SU":{"w":18,"l":9,"p":0,"n":27,"pct":66.7}},"2026-10-10":{"games":32,"SU":{"w":19,"l":13,"p":0,"n":32,"pct":59.4}},"2026-10-11":{"games":16,"SU":{"w":9,"l":7,"p":0,"n":16,"pct":56.2}},"2026-10-12":{"games":28,"SU":{"w":18,"l":10,"p":0,"n":28,"pct":64.3}},"2026-10-13":{"games":31,"SU":{"w":19,"l":12,"p":0,"n":31,"pct":61.3}},"2026-10-14":{"games":21,"SU":{"w":12,"l":9,"p":0,"n":21,"pct":57.1}},"2026-10-15":{"games":16,"SU":{"w":10,"l":6,"p":0,"n":16,"pct":62.5}},"2026-10-16":{"games":20,"SU":{"w":11,"l":9,"p":0,"n":20,"pct":55.0}},"2026-10-17":{"games":39,"SU":{"w":28,"l":11,"p":0,"n":39,"pct":71.8}},"2026-10-18":{"games":28,"SU":{"w":10,"l":18,"p":0,"n":28,"pct":35.7}},"2026-10-19":{"games":29,"SU":{"w":17,"l":12,"p":0,"n":29,"pct":58.6}},"2026-10-20":{"games":31,"SU":{"w":19,"l":12,"p":0,"n":31,"pct":61.3}},"2026-10-21":{"games":22,"SU":{"w":13,"l":9,"p":0,"n":22,"pct":59.1}},"2026-10-22":{"games":16,"SU":{"w":12,"l":4,"p":0,"n":16,"pct":75.0}},"2026-10-23":{"games":22,"SU":{"w":16,"l":6,"p":0,"n":22,"pct":72.7}},"2026-10-24":{"games":46,"SU":{"w":28,"l":18,"p":0,"n":46,"pct":60.9}},"2026-10-25":{"games":21,"SU":{"w":12,"l":9,"p":0,"n":21,"pct":57.1}},"2026-10-26":{"games":20,"SU":{"w":14,"l":5,"p":0,"n":19,"pct":73.7}}}},"note":"Singles matches only; the side is the player the model gives better than a 50% chance. Retirements and walkovers are not counted.","empty":""}</script><script id="rec-js">
+/* model projected-side record: renders the JSON blob written by apply_record.py. Additive only; any error leaves the page untouched. */
+(function(){
+'use strict';
+try{
+var D=document,be=D.getElementById('rec-data');if(!be)return;
+var B=JSON.parse(be.textContent),R=B.rec;if(!R||D.getElementById('rec-sec'))return;
+function el(t,c,x){var e=D.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function ap(p){for(var i=1;i<arguments.length;i++){if(arguments[i]!=null)p.appendChild(arguments[i])}return p}
+function wl(t){return t.w+'-'+t.l+(t.p?'-'+t.p:'')}
+function pctTxt(t){return t.pct==null?'\u2014':t.pct.toFixed(1)+'%'}
+function cls(t){if(t.pct==null)return 'na';return t.pct>=55?'hi':(t.pct>=47.5?'mid':'lo')}
+function gm(n){return n+' game'+(n===1?'':'s')+' tracked'}
+var sec=el('section','sec tog rec-sec'),hd=el('div','sec-h'),bd=el('div','sec-b');sec.id='rec-sec';
+hd.appendChild(D.createTextNode('Model projected-side record'));
+var tot=R.season.games;
+hd.appendChild(el('span','cnt',tot?(R.season.SU.w+'-'+R.season.SU.l+(R.season.SU.p?'-'+R.season.SU.p:'')):'tracking'));
+ap(sec,hd,bd);
+ap(bd,el('div','rec-sub','What happens if you just take the side the model\u2019s projected score lands on \u2014 no price or edge filter.'));
+if(!tot){
+  var em=el('div','rec-empty');
+  ap(em,el('b',null,'0 games tracked so far. '),D.createTextNode(B.empty||'Tracking starts with the next game this page projects; the record fills in as games go final.'));
+  ap(bd,em);
+}else{
+  var g=el('div','rec-grid');
+  [['Last 7 days',R.last7],['Season to date',R.season]].forEach(function(w){
+    var t=w[1].SU,b=el('div','rec-box');
+    ap(b,el('h4',null,w[0]));
+    if(!w[1].games){ap(b,el('div','rec-big','\u2014'),el('div','rec-pct na','no finished games'),el('div','rec-gm','0 games tracked'));ap(g,b);return}
+    var big=el('div','rec-big',wl(t));
+    ap(b,big,el('div','rec-pct '+cls(t),pctTxt(t)+' straight up'));
+    var bar=el('div','rec-bar'),f=el('i');f.style.width=Math.max(3,t.pct||0)+'%';bar.appendChild(f);
+    ap(b,bar,el('div','rec-gm',gm(w[1].games)+(w[1].games<10?' (small sample)':'')));
+    ap(g,b);
+  });
+  bd.appendChild(g);
+  /* spread / total lines */
+  var rows=[];
+  if(R.lines.indexOf('ATS')>=0)rows.push(['ATS','Spread side','Projected margin vs the last posted spread']);
+  if(R.lines.indexOf('OU')>=0)rows.push(['OU','Total side','Projected total vs the last posted total']);
+  if(rows.length){
+    var box=el('div','rec-lines'),h=el('div','rec-lh');ap(h,el('span',null,'Side'),el('span',null,'7 days'),el('span',null,'Season'));box.appendChild(h);
+    rows.forEach(function(r){
+      var rw=el('div','rec-lr'),l=el('div','l');ap(l,el('b',null,r[1]),el('span',null,r[2]));
+      ap(rw,l);
+      [R.last7,R.season].forEach(function(w){
+        var t=w[r[0]],v=el('div','v');
+        if(!t||!t.n){ap(v,D.createTextNode('\u2014'),el('em',null,'0 games'))}
+        else{ap(v,D.createTextNode(wl(t)),el('em',cls(t),pctTxt(t)+' \u00b7 '+t.n+' g'))}
+        rw.appendChild(v);
+      });
+      box.appendChild(rw);
+    });
+    bd.appendChild(box);
+  }
+  /* last 7 days strip */
+  bd.appendChild(el('div','rec-dl','Day by day (straight up)'));
+  var ds=el('div','rec-days'),dn=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var p=B.today.split('-').map(Number),base=new Date(p[0],p[1]-1,p[2],12);
+  for(var i=6;i>=0;i--){
+    var d=new Date(base.getTime()-i*864e5),k=d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);
+    var v=R.days[k],c=el('div','rec-d '+(v&&v.SU.n?cls(v.SU):'na'));
+    ap(c,el('span',null,dn[d.getDay()]),el('b',null,v&&v.games?wl(v.SU):'\u2014'));
+    ds.appendChild(c);
+  }
+  bd.appendChild(ds);
+}
+var note=el('div','rec-note');
+note.textContent=(tot?(gm(tot)+' since '+R.since+'. '):'')+(B.note||'')+' Pushes are shown separately and are not counted as wins or losses. Percentages are wins \u00f7 (wins + losses).';
+bd.appendChild(note);
+hd.addEventListener('click',function(){sec.classList.toggle('closed')});
+/* placement: right after the game projections section if present, else after the first section */
+var main=D.querySelector('main.wrap')||D.querySelector('main')||D.body,anchor=D.getElementById('gd-sec');
+if(!anchor){var ss=main.querySelectorAll(':scope > section.sec');if(ss.length)anchor=ss[0];else anchor=D.getElementById('plays')||D.getElementById('top')}
+if(anchor&&anchor.parentNode)anchor.parentNode.insertBefore(sec,anchor.nextSibling);else main.insertBefore(sec,main.firstChild);
+}catch(e){if(window.console)console.warn('model record',e)}
 })();
 
 </script></body></html>
