@@ -297,6 +297,40 @@ nav.sports a[data-k="tennis"]{--c:#b6f03c;--c2:#22d3ee}
 .pd-card,.pd-body,.pd-sec{max-width:100%}
 @media(min-width:560px){.pd-sides:not(.cmp){grid-template-columns:1fr 1fr}.pd-keys{grid-template-columns:repeat(4,1fr)}}
 
+</style><style id="pg-css">
+/* per-game selector (apply_pergame.py): reads the skin / Pro theme variables, falls back to the same navy palette */
+.pg-bar{margin:0 0 14px;max-width:100%;min-width:0}
+.pg-lab{font-size:11px;font-weight:650;letter-spacing:.14em;text-transform:uppercase;color:var(--mut,#8f9aab);margin:2px 2px 6px}
+.pg-chips{display:flex;gap:6px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:1px 1px 6px;scroll-snap-type:x proximity;overscroll-behavior-x:contain}
+.pg-chips::-webkit-scrollbar{display:none}
+.pg-chip{all:unset;box-sizing:border-box;flex:0 0 auto;scroll-snap-align:start;display:flex;flex-direction:column;gap:2px;min-width:78px;padding:7px 11px;border-radius:6px;background:var(--card2,#171e28);border:1px solid var(--line,#232c38);color:var(--mut,#8f9aab);cursor:pointer;-webkit-tap-highlight-color:transparent;text-align:center}
+/* the polish layer sets a global button background/border with !important; match it only for these controls */
+body button.pg-chip,body .pg-seg button{border-radius:6px!important;background:var(--card2,#171e28)!important;border:1px solid var(--line,#232c38)!important;min-height:0}
+.pg-chip b{font-size:13px;font-weight:650;letter-spacing:.01em;color:var(--ink,#e4e9f0);white-space:nowrap;font-variant-numeric:tabular-nums}
+.pg-chip i{font-style:normal;font-size:11px;font-weight:600;white-space:nowrap;color:var(--mut,#8f9aab);font-variant-numeric:tabular-nums}
+body button.pg-chip.on{background:rgba(107,155,195,.30)!important;border-color:rgba(156,192,222,.85)!important}
+.pg-chip.on b{color:#d7e8f6}.pg-chip.on i{color:#a9c4dc}
+.pg-chip:focus-visible{outline:2px solid var(--acc,#6b9bc3);outline-offset:1px}
+.pg-head{margin-top:8px;background:var(--card,#121820);border:1px solid var(--line,#232c38);border-radius:8px;padding:12px;min-width:0}
+.pg-head[hidden]{display:none}
+.pg-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.pg-title{font-size:18px;font-weight:650;letter-spacing:-.01em;color:var(--ink,#e4e9f0);line-height:1.2;overflow-wrap:anywhere}
+.pg-when{font-size:12.5px;color:var(--mut,#8f9aab);margin-top:3px}
+.pg-n{flex:0 0 auto;font-size:11px;font-weight:600;color:var(--mut,#8f9aab);background:var(--card2,#171e28);border:1px solid var(--line,#232c38);border-radius:3px;padding:2px 7px;white-space:nowrap}
+.pg-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
+.pg-cell{background:var(--card2,#171e28);border:1px solid var(--line,#232c38);border-radius:6px;padding:7px 10px;min-width:0}
+.pg-cell span{display:block;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--mut,#8f9aab)}
+.pg-cell b{display:block;font-size:14px;font-weight:650;color:var(--ink,#e4e9f0);overflow-wrap:anywhere;line-height:1.3;margin-top:1px}
+.pg-cell em{display:block;font-style:normal;font-size:11.5px;color:var(--mut,#8f9aab)}
+.pg-cell em.ok{color:var(--acc2,#9cc0de)}
+.pg-seg{display:flex;gap:6px;margin-top:10px}
+.pg-seg button{all:unset;box-sizing:border-box;flex:1 1 0;text-align:center;padding:8px 6px;border-radius:5px;font-size:13px;font-weight:650;color:var(--mut,#8f9aab);background:var(--card2,#171e28);border:1px solid var(--line,#232c38);cursor:pointer;-webkit-tap-highlight-color:transparent}
+body .pg-seg button.on{background:rgba(107,155,195,.30)!important;border-color:rgba(156,192,222,.85)!important;color:#d7e8f6}
+body.pg-sel .pg-hide{display:none!important}
+/* keep "All games" reachable while the other chips scroll */
+.pg-chip:first-child{position:sticky;left:0;z-index:1}
+body button.pg-chip:first-child.on{background:#1e3043!important}
+
 </style><style id="polish-css">
 /* ===== Model Desk polish v1 : institutional / terminal refinement layer. Loaded LAST. Presentation only. ===== */
 :root{
@@ -967,7 +1001,7 @@ ap(r2,inp);if(mkeys.length>1)r2.appendChild(sel);ctl.appendChild(r2);bd.appendCh
 var list=el('div','pd-list'),more=el('button','pd-more','');more.setAttribute('type','button');ap(bd,list,more);
 function filt(){
   var q=(view.q||'').toLowerCase().trim();
-  return R.filter(function(r){return (view.mode==='all'||r.play)&&(!view.mkt||r.mkl===view.mkt)&&(!q||(r.n+' '+(r.tm||'')+' '+(r.mkl||'')).toLowerCase().indexOf(q)>=0)});
+  return R.filter(function(r){return (view.mode==='all'||r.play)&&(!window.__pgSel||window.__pgSel(r))&&(!view.mkt||r.mkl===view.mkt)&&(!q||(r.n+' '+(r.tm||'')+' '+(r.mkl||'')).toLowerCase().indexOf(q)>=0)});
 }
 function render(){
   if(bPick){bPick.className=view.mode==='picks'?'on':'';bAll.className=view.mode==='all'?'on':''}
@@ -979,7 +1013,7 @@ function render(){
   cnt.textContent=F.length+(F.length===1?' prop':' props');
   sk('view',JSON.stringify(view));
 }
-function setv(){lim=LIM0;render()}
+function setv(){lim=LIM0;render()}window.__pdRender=function(n){lim=n||LIM0;render()};
 if(bPick){bPick.addEventListener('click',function(){view.mode='picks';setv()});bAll.addEventListener('click',function(){view.mode='all';setv()})}
 var tm=null;inp.addEventListener('input',function(){clearTimeout(tm);tm=setTimeout(function(){view.q=inp.value;if(view.q&&view.mode==='picks'&&bAll)view.mode='all';setv()},150)});
 sel.addEventListener('change',function(){view.mkt=sel.value;setv()});
@@ -993,6 +1027,88 @@ if(anchor&&anchor.parentNode===main)main.insertBefore(sec,anchor.nextSibling);
 else if(anchor)anchor.parentNode.insertBefore(sec,anchor.nextSibling);
 else main.insertBefore(sec,main.firstChild);
 }catch(e){if(window.console)console.warn('prop detail',e)}
+})();
+
+</script><script id="pg-data" type="application/json">{"page":"nfl-td","games":[{"k":"CAR @ GB","ts":1793319300.0,"t":"7:15 PM","date":"Thu Oct 29","day":"Thu"},{"k":"ARI @ DAL","ts":1793556000.0,"t":"12:00 PM","date":"Sun Nov 1","day":"Sun"},{"k":"ATL @ TB","ts":1793556000.0,"t":"12:00 PM","date":"Sun Nov 1","day":"Sun"},{"k":"BAL @ BUF","ts":1793556000.0,"t":"12:00 PM","date":"Sun Nov 1","day":"Sun"},{"k":"CLE @ PIT","ts":1793556000.0,"t":"12:00 PM","date":"Sun Nov 1","day":"Sun"},{"k":"IND @ JAX","ts":1793556000.0,"t":"12:00 PM","date":"Sun Nov 1","day":"Sun"},{"k":"LV @ NYJ","ts":1793556000.0,"t":"12:00 PM","date":"Sun Nov 1","day":"Sun"},{"k":"MIN @ DET","ts":1793556000.0,"t":"12:00 PM","date":"Sun Nov 1","day":"Sun"},{"k":"TEN @ CIN","ts":1793556000.0,"t":"12:00 PM","date":"Sun Nov 1","day":"Sun"},{"k":"LAC @ LA","ts":1793567100.0,"t":"3:05 PM","date":"Sun Nov 1","day":"Sun"},{"k":"KC @ DEN","ts":1793568300.0,"t":"3:25 PM","date":"Sun Nov 1","day":"Sun"},{"k":"NE @ MIA","ts":1793568300.0,"t":"3:25 PM","date":"Sun Nov 1","day":"Sun"},{"k":"PHI @ WAS","ts":1793582400.0,"t":"7:20 PM","date":"Sun Nov 1","day":"Sun"},{"k":"CHI @ SEA","ts":1793668500.0,"t":"7:15 PM","date":"Mon Nov 2","day":"Mon"}],"top":false,"legacy":false,"v":1}</script><script id="pg-js">
+/* per-game selector: chips + game header; filters the "Prop details" cards by game (and team). Additive; any error leaves the page untouched. */
+(function(){
+'use strict';
+try{
+var D=document,pgEl=D.getElementById('pg-data'),pdEl=D.getElementById('pd-data');if(!pgEl||!pdEl)return;
+if(D.getElementById('pg-bar'))return;
+var B=JSON.parse(pgEl.textContent),G=B.games||[];if(!G.length)return;
+var R=(JSON.parse(pdEl.textContent).recs)||[];
+var pdsec=D.getElementById('pd-sec');if(!pdsec)return;
+function el(t,c,x){var e=D.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function ap(p){for(var i=1;i<arguments.length;i++){if(arguments[i]!=null)p.appendChild(arguments[i])}return p}
+function gk(r){return String(r.s||'').split(' \u00b7 ')[0]}
+var cnt={};R.forEach(function(r){var k=gk(r);cnt[k]=(cnt[k]||0)+1});
+var byK={};G.forEach(function(g){byK[g.k]=g});
+function slug(k){return k.replace(/\s*@\s*/,'-').replace(/[^A-Za-z0-9-]+/g,'_')}
+function sk(v){try{if(v===undefined)return sessionStorage.getItem('pg:'+location.pathname);sessionStorage.setItem('pg:'+location.pathname,v)}catch(e){return null}}
+var sel='',team='';
+/* initial: URL hash (#game=BOS-CAR) wins, then this tab's last choice */
+(function(){var h=(location.hash||'').match(/game=([^&]+)/),want=h?decodeURIComponent(h[1]):sk();
+ if(want){for(var i=0;i<G.length;i++){if(slug(G[i].k)===want||G[i].k===want){sel=G[i].k;break}}}})();
+window.__pgSel=function(r){if(!sel)return true;if(gk(r)!==sel)return false;return !team||r.tm===team};
+
+var main=D.querySelector('main.wrap')||D.querySelector('main')||pdsec.parentNode;
+var bar=el('div','pg-bar');bar.id='pg-bar';
+ap(bar,el('div','pg-lab','Games'));
+var chips=el('div','pg-chips');chips.setAttribute('role','tablist');chips.setAttribute('aria-label','Choose a game');
+var head=el('div','pg-head');head.setAttribute('aria-live','polite');
+ap(bar,chips,head);
+var now=Date.now()/1000,btns={};
+function chip(k,top,sub){var b=el('button','pg-chip');b.setAttribute('type','button');b.setAttribute('role','tab');
+ ap(b,el('b',null,top),el('i',null,sub));b.addEventListener('click',function(){pick(k)});btns[k]=b;chips.appendChild(b)}
+chip('','All games',G.length+(G.length===1?' game':' games'));
+G.forEach(function(g){chip(g.k,g.k,(g.ts&&g.ts<now?'Started \u00b7 ':'')+(g.day?g.day+' ':'')+g.t)});
+
+function cell(l,v,sub,cls){var c=el('div','pg-cell');ap(c,el('span',null,l),el('b',null,v));if(sub)c.appendChild(el('em',cls||null,sub));return c}
+function teamsOf(g){var m=g.k.match(/^(.+?)\s@\s(.+)$/);return m?[m[1],m[2]]:null}
+function drawHead(){
+ head.textContent='';
+ if(!sel){head.hidden=true;return}
+ var g=byK[sel];head.hidden=false;
+ var top=el('div','pg-top'),l=el('div');
+ ap(l,el('div','pg-title',g.k),el('div','pg-when',(g.date?g.date+' \u00b7 ':'')+g.t+' CT'+(g.ts&&g.ts<now?' \u00b7 started':'')));
+ var n=cnt[sel]||0;ap(top,l,el('span','pg-n',n+(n===1?' player':' players')));head.appendChild(top);
+ var ex=g.ex||{},cells=[];
+ (ex.goalies||[]).forEach(function(x){cells.push(cell(x[0]+' goalie',x[1]||'Not listed',x[2]?x[2].charAt(0).toUpperCase()+x[2].slice(1):'',x[2]==='confirmed'?'ok':''))});
+ if(ex.goals&&ex.goals.length){cells.push(cell('Model goals',ex.goals.map(function(x){return x[0]+' '+x[1]}).join(' \u00b7 ')))}
+ if(cells.length){var gr=el('div','pg-grid');cells.forEach(function(c){gr.appendChild(c)});head.appendChild(gr)}
+ var tm=teamsOf(g),tms={};R.forEach(function(r){if(gk(r)===sel&&r.tm)tms[r.tm]=1});
+ if(tm&&tms[tm[0]]&&tms[tm[1]]){
+  var seg=el('div','pg-seg');
+  [['','Both teams'],[tm[0],tm[0]],[tm[1],tm[1]]].forEach(function(x){var b=el('button',team===x[0]?'on':null,x[1]);b.setAttribute('type','button');
+   b.addEventListener('click',function(){team=x[0];drawHead();apply(false)});seg.appendChild(b)});
+  head.appendChild(seg)}
+ else team='';
+}
+function legacy(){
+ /* NHL points page: keep the original table's Game filter and the "top chances" lists in step */
+ var fg=D.getElementById('fg');
+ if(fg){var want=sel;if(fg.value!==want){fg.value=want;if(fg.value!==want)fg.value='';try{fg.dispatchEvent(new Event('change'))}catch(e){}}}
+ var t1=D.getElementById('top1'),t2=D.getElementById('top2');
+ [t1&&t1.closest('section'),t2].forEach(function(e){if(e)e.classList.add('pg-hide')});
+}
+function apply(scroll){
+ D.body.classList.toggle('pg-sel',!!sel);
+ Object.keys(btns).forEach(function(k){var on=k===sel;btns[k].classList.toggle('on',on);btns[k].setAttribute('aria-selected',on?'true':'false')});
+ /* "Top picks" mode would hide non-pick props inside a game: show all props while a game is selected */
+ if(sel){var sg=pdsec.querySelectorAll('.pd-seg button');if(sg.length>1&&!/\bon\b/.test(sg[1].className))sg[1].click();pdsec.classList.remove('closed')}
+ if(window.__pdRender)window.__pdRender(sel?80:0);
+ if(B.legacy)legacy();
+ if(sel){sk(slug(sel))}else{sk('')}
+ try{history.replaceState(null,'',sel?('#game='+slug(sel)):(location.pathname+location.search))}catch(e){}
+ var b=btns[sel];if(b){var c=chips,x=b.offsetLeft-(c.clientWidth-b.offsetWidth)/2;try{c.scrollTo({left:Math.max(0,x),behavior:scroll?'smooth':'auto'})}catch(e){c.scrollLeft=Math.max(0,x)}}
+}
+function pick(k){if(k===sel)return;sel=k;team='';drawHead();apply(true)}
+var anchor;
+if(B.top){var secs=main.querySelectorAll(':scope > section.sec');anchor=secs.length?secs[0]:pdsec}else anchor=pdsec;
+anchor.parentNode.insertBefore(bar,anchor);
+drawHead();apply(false);
+}catch(e){if(window.console)console.warn('per-game',e)}
 })();
 
 </script><script id="polish-data" type="application/json">{"pre":"../","fallback":1793142076,"v":"polish-v1"}</script><script id="polish-js">
