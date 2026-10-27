@@ -1,4 +1,4 @@
-<!doctype html><!--skin-v1--><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>EuroLeague model</title><style>
+<!doctype html><!--polish-v1--><!--skin-v1--><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>EuroLeague model</title><style>
 :root{color-scheme:dark;--bg:#060a13;--bg2:#0b1222;--card:#10192e;--card2:#18243f;--line:#24345a;--ink:#f3f6fc;--mut:#9db0d0;--sp:#f5b83d;--sp2:#ff5a7a;--rgb:245,184,61;
 --ok:#2ff0a0;--okbg:rgba(47,240,160,.14);--warn:#ff6683;--gA:linear-gradient(135deg,#2ff0a0,#12c27d);--gB:linear-gradient(135deg,#5b9bff,#8a63ff);--gC:linear-gradient(135deg,#ffc233,#ff8a1f)}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
@@ -247,6 +247,164 @@ nav.sports a[data-k="tennis"]{--c:#b6f03c;--c2:#22d3ee}
 .rec-empty{background:var(--card,#10192e);border:1px dashed var(--line,#24345a);border-radius:16px;padding:16px;color:var(--mut,#9db0d0);font-size:13.5px;line-height:1.45}
 .rec-empty b{color:var(--ink,#f3f6fc)}
 
+</style><style id="polish-css">
+/* ===== Model Desk polish v1 : institutional / terminal refinement layer. Loaded LAST. Presentation only. ===== */
+:root{
+--bg:#070c16;--bg2:#0b1220;--card:#0f1727;--card2:#151f35;--line:#1f2c47;--line2:#2a3b5e;--ink:#e8eef9;--mut:#8b9bb9;--mut2:#6f7f9d;
+--ok:#35e0a1;--okbg:rgba(53,224,161,.12);--warn:#ff6f8a;--warnbg:rgba(255,111,138,.12);--amber:#ffc24a;--amberbg:rgba(255,194,74,.12);--blue:#7eb4ff;--bluebg:rgba(126,180,255,.12);
+--gA:linear-gradient(180deg,#3fe8a8,#16b571);--gB:linear-gradient(180deg,#76a8ff,#4f73f2);--gC:linear-gradient(180deg,#ffcf5c,#f39c1c);
+--r:12px;--pl-shadow:0 1px 0 rgba(255,255,255,.035) inset,0 10px 24px -16px rgba(0,0,0,.9);
+--pl-font:"Inter","SF Pro Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+body[data-sport="home"]{--sp:#6d8dff;--sp2:#a46bff;--sp-rgb:109,141,255}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:56px}
+body{font-family:var(--pl-font)!important;font-size:14.5px;line-height:1.5;letter-spacing:-.003em;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1,"cv11" 1;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;color:var(--ink);
+ background:radial-gradient(560px 260px at 88% -70px,rgba(var(--sp-rgb),.20),transparent 72%),radial-gradient(460px 260px at -12% 14%,rgba(139,92,246,.07),transparent 70%),#070c16;background-repeat:no-repeat;overflow-x:hidden}
+button,input,select,textarea,table,.dtabs a,.dtabs button,nav.sports a,.tabs .tab{font-family:var(--pl-font)!important}
+::selection{background:rgba(var(--sp-rgb),.35)}
+a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--sp);outline-offset:2px;border-radius:6px}
+*{scrollbar-width:thin;scrollbar-color:#2a3b5e transparent}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ---------- header: brand row, title, freshness, pinned nav ---------- */
+.topbar{position:sticky;top:0;z-index:40;padding:0!important;background:linear-gradient(180deg,rgba(var(--sp-rgb),.16),rgba(7,12,22,.96) 78%),#070c16!important;border:0;border-bottom:1px solid var(--line)!important;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.topbar::after{height:2px!important;background:linear-gradient(90deg,var(--sp),var(--sp2) 60%,transparent)!important;opacity:.9}
+.topbar .in{padding:10px 16px 4px!important;max-width:1200px;margin:0 auto}
+.pl-brandrow{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 10px;padding:0 0 9px;border-bottom:1px solid rgba(255,255,255,.07)}
+.pl-brand{flex:0 0 auto;white-space:nowrap;display:flex;align-items:center;gap:9px;color:#fff!important;text-decoration:none;min-width:0}
+.pl-brand svg{flex:0 0 auto;display:block;filter:drop-shadow(0 4px 10px rgba(80,120,255,.45))}
+.pl-wm{display:flex;flex-direction:column;line-height:1.05}
+.pl-wm b{font-size:13.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#fff}
+.pl-wm b em{font-style:normal;font-weight:500;color:#9fb3da;margin-left:.35em}
+.pl-wm i{font-style:normal;font-size:9.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mut2);margin-top:3px}
+.pl-fresh{display:flex;align-items:center;gap:8px;padding:5px 10px 5px 9px;border-radius:9px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);flex:0 1 auto;min-width:0;--fc:var(--mut)}
+.pl-fresh[data-s=ok]{--fc:var(--ok)}.pl-fresh[data-s=warn]{--fc:var(--amber)}.pl-fresh[data-s=old]{--fc:var(--warn)}
+.pl-dot{width:8px;height:8px;border-radius:50%;background:var(--fc,var(--mut));box-shadow:0 0 0 3px color-mix(in srgb,var(--fc,#888) 22%,transparent);flex:0 0 auto;display:inline-block}
+.pl-fresh[data-s=ok] .pl-dot{animation:pl-pulse 2.4s ease-in-out infinite}
+@keyframes pl-pulse{0%,100%{box-shadow:0 0 0 3px color-mix(in srgb,var(--fc) 22%,transparent)}50%{box-shadow:0 0 0 6px color-mix(in srgb,var(--fc) 6%,transparent)}}
+.pl-ft{display:flex;flex-direction:column;line-height:1.15;text-align:right}
+.pl-ft b{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--fc,var(--mut))}
+.pl-ft{min-width:0}.pl-ft i{font-style:normal;font-size:11.5px;font-weight:600;color:#cbd6ec;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand h1,header h1{font-size:22px;font-weight:750;letter-spacing:-.022em;line-height:1.15;color:#fff!important;background:none!important;-webkit-text-fill-color:#fff!important;margin:0}
+.hmeta{color:var(--mut)!important;font-size:12px!important;line-height:1.45}
+body.pl-js #updated,.pl-hide{display:none!important}
+header.topbar{margin:0}
+header.topbar>nav.sports{max-width:1200px;margin:0 auto}
+nav.sports{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:8px 14px 10px!important}
+nav.sports::-webkit-scrollbar{display:none}
+nav.sports a{flex:0 0 auto;display:flex;align-items:center;gap:7px;padding:6px 11px!important;border-radius:9px!important;background:rgba(255,255,255,.035)!important;border:1px solid rgba(255,255,255,.08)!important;color:#c3d0e8!important;font-size:12.5px!important;font-weight:600!important;letter-spacing:.005em;text-decoration:none;text-shadow:none!important;box-shadow:none!important;transition:background .15s,border-color .15s}
+nav.sports a i{width:6px!important;height:6px!important;border-radius:50%;background:var(--c,#7d8fb3)!important;box-shadow:none!important;flex:0 0 auto}
+nav.sports a.on{background:linear-gradient(135deg,rgba(var(--sp-rgb),.9),var(--c2,var(--sp2)))!important;border-color:transparent!important;color:#fff!important;box-shadow:0 6px 16px -8px var(--c,var(--sp))!important}
+nav.sports a.on i{background:#fff!important}
+nav.sports a[data-k=home] i{background:#9fb3da!important}
+
+/* today / tomorrow */
+.dtabs{margin:12px 14px 0!important;padding:3px!important;background:var(--bg2)!important;border:1px solid var(--line)!important;border-radius:11px!important}
+.dtabs a,.dtabs button{border-radius:8px!important;font-size:13px!important;font-weight:650!important;letter-spacing:0;padding:9px 6px!important}
+.dtabs a.on,.dtabs button.on{background:linear-gradient(135deg,var(--sp),var(--sp2))!important;color:#fff!important;box-shadow:0 4px 12px -6px var(--sp)!important}
+.dnote{border-radius:10px!important;background:rgba(var(--sp-rgb),.09)!important;border:1px solid rgba(var(--sp-rgb),.28)!important;color:#d6e0f4!important;font-size:12.5px!important}
+
+/* ---------- section headers ---------- */
+.sec-h{margin:24px 0 10px!important;padding:0 0 8px 11px!important;border-bottom:1px solid var(--line);font-size:11.5px!important;font-weight:750!important;letter-spacing:.12em!important;text-transform:uppercase;color:#d9e2f4!important;align-items:center}
+.sec-h::before{top:1px!important;bottom:9px!important;width:3px!important;border-radius:2px!important}
+.sec-h small,.sub,.gd-hint,.pd-hint,.rec-sub{color:var(--mut)!important;font-weight:500!important;letter-spacing:0!important;text-transform:none!important;font-size:12.5px}
+.sec-h .cnt{font-size:11px!important;font-weight:650!important;color:var(--mut)!important;background:rgba(255,255,255,.05)!important;border:1px solid var(--line);border-radius:6px!important;padding:1px 8px!important}
+.sec.tog>.sec-h::after{width:7px!important;height:7px!important;border-width:2px!important;border-color:var(--mut)!important}
+
+/* ---------- card system ---------- */
+.play,.gcard,.gd-card,.pd-card,.rec-box,.panel,.box,.legend,details.info,.alert,.empty{border:1px solid var(--line)!important;border-radius:var(--r)!important;box-shadow:var(--pl-shadow)!important}
+.play{background:linear-gradient(160deg,rgba(var(--sp-rgb),.07),transparent 55%),var(--card)!important;border-left:3px solid var(--gc,var(--sp))!important;padding:13px 14px 12px!important}
+.play:has(.grade.A){background:linear-gradient(160deg,rgba(53,224,161,.07),transparent 55%),var(--card)!important;--gc:#35e0a1}
+.play:has(.grade.B){background:linear-gradient(160deg,rgba(118,168,255,.08),transparent 55%),var(--card)!important;--gc:#76a8ff}
+.play:has(.grade.C){background:linear-gradient(160deg,rgba(255,194,74,.07),transparent 55%),var(--card)!important;--gc:#ffc24a}
+.play.gA{--gc:#35e0a1}.play.gB{--gc:#76a8ff}.play.gC{--gc:#ffc24a}
+.gcard,.gd-card,.pd-card,.rec-box{background:linear-gradient(160deg,rgba(var(--sp-rgb),.06),transparent 60%),var(--card)!important}
+.gd-card,.pd-card{border-left:3px solid var(--sp)!important}
+.gd-card.open,.pd-card.open{border-color:rgba(var(--sp-rgb),.55)!important}
+.rec-box{border-top:3px solid var(--sp)!important}
+.panel,.box{background:var(--card)!important;padding:8px 8px 3px!important}
+.legend,details.info{background:var(--bg2)!important}
+.play .pick{font-size:17.5px!important;font-weight:750!important;letter-spacing:-.015em!important}
+.play .game{font-size:12px!important;color:var(--mut)!important}
+.play .nums>span,.play .nums>div,.nums>div{background:rgba(255,255,255,.035)!important;border:1px solid rgba(255,255,255,.05);border-radius:9px!important;font-weight:700!important;font-size:16px!important}
+.play .nums>span:first-child,.nums>div:first-child{background:rgba(var(--sp-rgb),.14)!important;border-color:rgba(var(--sp-rgb),.28)!important;font-size:21px!important;font-weight:750!important}
+.play .nums .k,.nums .k{font-size:9.5px!important;font-weight:700!important;letter-spacing:.1em!important;color:var(--mut)!important}
+.play .nums .bk,.nums small{color:var(--mut)!important;font-weight:550!important}
+.edge{font-weight:750!important;border-radius:999px}
+.play .nums .edge,.edge{border-width:1px!important}
+.gcard h3,.gd-t .n,.pd-name{letter-spacing:-.012em}
+.gcard h3{font-size:17px!important;font-weight:700!important}
+.gcard h3+.meta{background:rgba(var(--sp-rgb),.18)!important;border:1px solid rgba(var(--sp-rgb),.3);font-size:12px!important;font-weight:650!important;border-radius:7px!important;padding:2px 9px!important}
+.gd-head,.pd-head{padding:11px 12px!important}
+.gd-sc b,.pd-big b,.rec-big{font-weight:800!important;letter-spacing:-.025em!important}
+.rec-big{font-size:28px!important}
+.rec-box h4,.gd-k h4,.pd-sh h4,.pd-bars h4{font-size:10.5px!important;font-weight:750!important;letter-spacing:.11em!important;color:var(--mut)!important}
+.rec-d{border-radius:8px!important}
+.gd-live{border-radius:5px!important;background:#ef4468!important}
+
+/* ---------- grade badges: one system (A emerald / B blue / C amber) ---------- */
+.grade,.gd-g,.pd-g,.g{display:inline-flex!important;align-items:center;justify-content:center;min-width:26px;height:26px;padding:0 8px!important;border-radius:8px!important;font-size:13.5px!important;font-weight:850!important;letter-spacing:.01em;line-height:1;border:0!important;cursor:default!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22),0 4px 10px -5px rgba(0,0,0,.7)!important}
+.play .badges .grade,.play .top>.grade{min-width:38px;height:38px;padding:0!important;font-size:19px!important;border-radius:10px!important}
+.grade.A,.gd-g.A,.pd-g.A,.g.gA{background:var(--gA)!important;color:#032a1a!important}
+.grade.B,.gd-g.B,.pd-g.B,.g.gB{background:var(--gB)!important;color:#fff!important}
+.grade.C,.gd-g.C,.pd-g.C,.g.gC{background:var(--gC)!important;color:#3a2000!important}
+.grade.NA{background:transparent!important;color:var(--mut2)!important;box-shadow:inset 0 0 0 1px var(--line)!important}
+
+/* ---------- tables: aligned, tabular, quiet ---------- */
+table{font-size:12.5px!important;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+th{background:#111a2e!important;color:var(--mut)!important;font-size:10px!important;font-weight:750!important;letter-spacing:.08em!important;text-transform:uppercase;padding:9px 10px!important;border-bottom:1px solid var(--line2)!important;box-shadow:inset 0 -1px 0 rgba(var(--sp-rgb),.5)}
+td{padding:8px 10px!important;border-bottom:1px solid rgba(31,44,71,.8)!important}
+th.pl-n,td.pl-n{text-align:right!important;white-space:nowrap}
+tr:nth-child(even)>td{background:rgba(255,255,255,.022)}
+tr:nth-child(even)>td:first-child{background:#0d1525!important}
+th:first-child{background:#111a2e!important}td:first-child{background:var(--card)}
+tr.bet:hover>td,tr.row:hover>td{background:rgba(var(--sp-rgb),.10)!important}
+.pill{border-radius:6px!important;font-weight:750!important;font-size:11px!important;letter-spacing:.03em}
+.chip{border-radius:6px!important}
+select,input,button{border-radius:8px!important;border-color:var(--line2)!important;background:var(--bg2)!important}
+.tabs{border-radius:10px!important;background:var(--bg2)!important;padding:3px!important}
+.tabs .tab,.tabs button{border-radius:8px!important;font-weight:650!important;font-size:13px!important}
+
+/* ---------- footer ---------- */
+footer.foot,.foot{color:var(--mut2)!important;font-size:11.5px!important;padding:0 16px 8px!important;max-width:1200px;margin:0 auto}
+.pl-foot{max-width:1200px;margin:26px auto 0;padding:18px 16px calc(28px + env(safe-area-inset-bottom));border-top:1px solid var(--line);color:var(--mut2);font-size:11.5px;line-height:1.55}
+.pl-foot .pl-fl{display:flex;align-items:center;gap:8px;color:#cbd6ec;font-size:12px;font-weight:750;letter-spacing:.14em;text-transform:uppercase;margin:0 0 8px}
+.pl-foot .pl-fl span{font-weight:500;color:var(--mut);letter-spacing:.06em;text-transform:none}
+.pl-foot p{margin:0 0 7px;max-width:760px}
+.pl-foot .pl-fm{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;color:var(--mut)}
+.pl-foot .pl-fm .grade{height:18px;min-width:18px;font-size:11px!important;border-radius:5px!important;padding:0 5px!important;vertical-align:middle}
+.pl-foot .pl-fm .pl-dot{margin-right:5px}
+body[data-sport=home]>footer:not(.pl-foot){color:var(--mut2);font-size:11px;text-align:left;max-width:1040px;margin:0 auto;padding:6px 16px 0}
+
+/* ---------- home ---------- */
+body[data-sport=home]{margin:0}
+.pl-homehead{position:relative!important;top:0!important}
+.pl-homehead .in{padding-bottom:10px!important}
+.pl-homehead .legend{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:10px 0 0!important;padding:0!important;border:0!important;background:none!important;box-shadow:none!important;font-size:12px;color:var(--mut)!important}
+.pl-homehead .legend span{display:inline-flex;align-items:center;gap:6px}
+body[data-sport=home] main{max-width:1040px;margin:0 auto;padding:4px 14px 8px}
+body[data-sport=home] h2{margin:24px 2px 10px!important;padding:0 0 8px;border-bottom:1px solid var(--line);font-size:11.5px!important;font-weight:750!important;letter-spacing:.12em!important;color:#d9e2f4!important}
+body[data-sport=home] h2::after{display:none}
+body[data-sport=home] .card{border-radius:var(--r)!important;background:linear-gradient(135deg,rgba(var(--rgb),.10),transparent 60%),var(--card)!important;border:1px solid var(--line)!important;box-shadow:var(--pl-shadow)!important;padding:12px 12px 12px 14px!important;gap:12px}
+body[data-sport=home] .card:hover{border-color:rgba(var(--rgb),.6)!important}
+body[data-sport=home] .card::before{width:3px!important}
+body[data-sport=home] .mono{width:42px!important;height:42px!important;border-radius:10px!important;font-size:12.5px!important;font-weight:800!important;letter-spacing:.04em;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)!important;text-shadow:none!important}
+body[data-sport=home] .t{font-size:16px!important;font-weight:700!important;letter-spacing:-.012em}
+body[data-sport=home] .s{font-size:12px!important;color:var(--mut)!important}
+body[data-sport=home] .m{border-radius:6px!important;background:rgba(255,255,255,.05)!important;border:1px solid rgba(255,255,255,.07);color:#cbd6ec!important;font-size:11px!important;font-weight:600!important;padding:1px 8px!important}
+body[data-sport=home] .u{display:flex;align-items:center;font-size:11px!important;color:var(--mut2)!important}
+body[data-sport=home] .u .pl-dot{width:6px;height:6px;margin-right:6px;box-shadow:none;animation:none}
+body[data-sport=home] .chev{border-width:2px!important;border-color:var(--mut)!important;width:8px!important;height:8px!important}
+
+@media(min-width:760px){.pl-brandrow{margin-bottom:12px}.topbar .in{padding-top:12px!important}}
+
+/* narrow screens: wordmark + freshness chip only; the tagline moves to the footer */
+@media(max-width:460px){.pl-wm i{display:none}.pl-brandrow{gap:8px}}
+/* open game cards: tables scroll inside their panel instead of widening the page */
+.gcard,.gcard>*,.gcard .sec-b,.gcard .panel{min-width:0;max-width:100%}
+.gcard .panel{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.gcard .meta{white-space:normal!important;overflow-wrap:anywhere}
+
+
 </style></head><body data-sport="intl-basketball">
 <header><h1>EuroLeague games</h1><div class="meta">Moneylines, spreads &amp; totals · times Central</div><div class="meta">Updated Tue Oct 27, 7:01 AM CT</div><div id="slate-line" class="meta">16 games · 10 plays · next Tue Oct 27</div><nav class="sports" aria-label="Sports"><a href="../" data-k="home"><i></i>Home</a><a href="../nfl/" data-k="nfl"><i></i>NFL</a><a href="../nfl-props/" data-k="nfl-props"><i></i>NFL Props</a><a href="../nfl-td/" data-k="nfl-td"><i></i>NFL TD</a><a href="../cfb/" data-k="cfb"><i></i>CFB</a><a href="../nba/" data-k="nba"><i></i>NBA</a><a href="../nba-props/" data-k="nba-props"><i></i>NBA Props</a><a href="../nba-first-basket/" data-k="nba-first-basket"><i></i>NBA 1st Bkt</a><a href="../intl-basketball/" data-k="intl-basketball" class="on" aria-current="page"><i></i>EuroLeague</a><a href="../nhl/" data-k="nhl"><i></i>NHL</a><a href="../nhl-props/" data-k="nhl-props"><i></i>NHL Pts</a><a href="../mlb/" data-k="mlb"><i></i>MLB</a><a href="../tennis/" data-k="tennis"><i></i>Tennis</a></nav></header>
 <main><div class="dtabs"><button data-d="2026-10-27">Tue Oct 27</button><button data-d="2026-10-28">Wed Oct 28</button><button data-d="2026-10-29">Thu Oct 29</button><button data-d="2026-10-30">Fri Oct 30</button><button data-d="all">All</button></div>
@@ -427,6 +585,111 @@ var main=D.querySelector('main.wrap')||D.querySelector('main')||D.body,anchor=D.
 if(!anchor){var ss=main.querySelectorAll(':scope > section.sec');if(ss.length)anchor=ss[0];else anchor=D.getElementById('plays')||D.getElementById('top')}
 if(anchor&&anchor.parentNode)anchor.parentNode.insertBefore(sec,anchor.nextSibling);else main.insertBefore(sec,main.firstChild);
 }catch(e){if(window.console)console.warn('model record',e)}
+})();
+
+</script><script id="polish-data" type="application/json">{"pre":"../","fallback":1793102516,"v":"polish-v1"}</script><script id="polish-js">
+/* Model Desk polish v1: presentation only. Adds brand row + freshness chip, aligns numeric table columns, adds footer text. Never changes data. */
+(function(){
+'use strict';
+var D=document,B=D.body,W=window;
+if(!B||B.classList.contains('pl-js'))return;
+var DATA={};try{var de=D.getElementById('polish-data');if(de)DATA=JSON.parse(de.textContent)||{}}catch(e){}
+var TZ='America/Chicago',MON={jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,oct:9,nov:10,dec:11};
+var PARTS=new Intl.DateTimeFormat('en-US',{timeZone:TZ,hourCycle:'h23',year:'numeric',month:'numeric',day:'numeric',hour:'numeric',minute:'numeric'});
+var TIME=new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit'});
+var DAY=new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short',month:'short',day:'numeric'});
+var YMD=new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'});
+function ctOff(t){var o={};PARTS.formatToParts(new Date(t)).forEach(function(x){o[x.type]=x.value});return Date.UTC(+o.year,+o.month-1,+o.day,+o.hour%24,+o.minute)-Math.floor(t/60000)*60000}
+function ctEpoch(y,mo,d,h,mi){var g=Date.UTC(y,mo,d,h,mi),i;for(i=0;i<3;i++)g=Date.UTC(y,mo,d,h,mi)-ctOff(g);return g}
+function parseUpd(txt){
+  if(!txt)return null;var m,y,h;
+  m=/Updated\s+(?:[A-Za-z]{3},?\s+)?([A-Za-z]{3})[a-z]*\s+(\d{1,2}),?\s+(?:(\d{4}),?\s+)?(\d{1,2}):(\d{2})\s*(AM|PM)/i.exec(txt);
+  if(m){h=(+m[4])%12+(/pm/i.test(m[6])?12:0);y=m[3]?+m[3]:+YMD.format(new Date()).slice(0,4);
+    var e=ctEpoch(y,MON[m[1].toLowerCase()],+m[2],h,+m[5]);if(!m[3]&&e>Date.now()+864e5)e=ctEpoch(y-1,MON[m[1].toLowerCase()],+m[2],h,+m[5]);return e}
+  m=/Updated\s+(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/i.exec(txt);
+  if(m)return ctEpoch(+m[1],+m[2]-1,+m[3],+m[4],+m[5]);
+  return null}
+function ago(ms){var m=Math.max(0,Math.round(ms/6e4));if(m<1)return 'just now';if(m<60)return m+'m ago';var h=Math.floor(m/60);if(h<48)return h+'h '+(m%60)+'m ago';return Math.floor(h/24)+'d ago'}
+function stateOf(ms){var m=ms/6e4;return m<=120?['ok','Fresh']:(m<=360?['warn','Aging']:['old','Stale'])}
+function setT(el,t){if(el&&el.textContent!==t)el.textContent=t}
+function stamp(e){var d=new Date(e),same=Date.now()-e<864e5;return (same?'':DAY.format(d)+' · ')+TIME.format(d)+' CT'}
+
+var LOGO='<svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="plg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d8dff"/><stop offset="1" stop-color="#2de3c0"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#plg)"/><path d="M6 17.5v-4M10.3 17.5V9M14.6 17.5v-3.5M18.4 17.5V6.5" stroke="#07101f" stroke-width="2.1" stroke-linecap="round"/></svg>';
+var home=B.getAttribute('data-sport')==='home';
+var pre=DATA.pre||'';
+
+/* 1. header: make every page share one header shape, add brand row + freshness chip */
+var chip,chipB,chipI,epoch=null;
+function header(){
+  var hd=D.querySelector('header');if(!hd)return;
+  if(!hd.classList.contains('topbar')){           /* e.g. EuroLeague: plain header -> same structure as the other pages */
+    var nav=hd.querySelector('nav.sports'),inn=D.createElement('div'),br=D.createElement('div'),hm=D.createElement('div'),kids=[].slice.call(hd.childNodes);
+    inn.className='in';br.className='brand';hm.className='hmeta';
+    kids.forEach(function(n){if(n===nav)return;if(n.nodeType===1&&n.tagName==='H1')br.appendChild(n);else if(n.nodeType===1)hm.appendChild(n)});
+    inn.appendChild(br);inn.appendChild(hm);hd.insertBefore(inn,nav||null);hd.classList.add('topbar');
+    [].forEach.call(hm.children,function(c){c.classList.remove('meta');c.style.display='block'});
+  }
+  var inn2=hd.querySelector('.in');if(!inn2||inn2.querySelector('.pl-brandrow'))return;
+  var row=D.createElement('div');row.className='pl-brandrow';
+  row.innerHTML='<a class="pl-brand" href="'+(pre||'./')+'" aria-label="Model Desk home">'+LOGO+'<span class="pl-wm"><b>Model<em>Desk</em></b><i>Sports analytics</i></span></a>'+
+    '<div class="pl-fresh" data-s="" role="status" aria-live="off"><span class="pl-dot"></span><span class="pl-ft"><b>Syncing</b><i>&nbsp;</i></span></div>';
+  inn2.insertBefore(row,inn2.firstChild);
+  chip=row.querySelector('.pl-fresh');chipB=chip.querySelector('b');chipI=chip.querySelector('i');
+  [].forEach.call(hd.querySelectorAll('.hmeta span,.hmeta div,.meta'),function(e){if(/^\s*Updated\b/i.test(e.textContent))e.classList.add('pl-hide')});
+}
+function pageEpoch(){
+  var t=[],e;
+  [D.getElementById('updated'),D.getElementById('slate-line'),D.querySelector('header .hmeta'),D.querySelector('header')].forEach(function(x){if(x)t.push(x.textContent)});
+  for(var i=0;i<t.length;i++){e=parseUpd(t[i]);if(e)return e}
+  var eps=[];[].forEach.call(D.querySelectorAll('.card .u'),function(u){var x=parseUpd(u.textContent);if(x)eps.push(x)});
+  if(eps.length)return Math.max.apply(null,eps);
+  return DATA.fallback?DATA.fallback*1000:null}
+function paint(){
+  if(!chip)return;var e=pageEpoch();if(e)epoch=e;if(!epoch)return;
+  var age=Date.now()-epoch,s=stateOf(age);
+  chip.setAttribute('data-s',s[0]);setT(chipB,s[1]);setT(chipI,stamp(epoch)+' · '+ago(age));
+  chip.title='Page data updated '+DAY.format(new Date(epoch))+' '+TIME.format(new Date(epoch))+' CT';
+  var f=D.querySelector('[data-pl-upd]');setT(f,stamp(epoch));
+  /* home cards: per-card freshness dot */
+  if(home)[].forEach.call(D.querySelectorAll('.card .u'),function(u){var x=parseUpd(u.textContent);if(!x)return;var d=u.querySelector('.pl-dot');if(!d){d=D.createElement('span');d.className='pl-dot';u.insertBefore(d,u.firstChild)}
+    var st=stateOf(Date.now()-x)[0];d.style.setProperty('--fc',st==='ok'?'var(--ok)':st==='warn'?'var(--amber)':'var(--warn)');d.style.background='var(--fc)'});
+}
+
+/* 2. numeric columns right-aligned (tabular numerals for odds / percentages) */
+var NUM=/^[+\-\u2212]?\$?\d[\d.,:]*\s*(%|pts?|u|x|m)?$/i;
+function align(){
+  [].forEach.call(D.querySelectorAll('table'),function(t){
+    var rows=t.rows,n=rows.length;if(n<3||t.getAttribute('data-pl')===String(n))return;
+    var head=t.tHead&&t.tHead.rows.length?t.tHead.rows[t.tHead.rows.length-1]:rows[0],nc=head.cells.length,c,r,col=[];
+    for(c=1;c<nc;c++){var tot=0,num=0;for(r=0;r<n&&tot<60;r++){var row=rows[r];if(row===head||row.cells.length!==nc)continue;var tx=row.cells[c].textContent.replace(/\s+/g,' ').trim();if(!tx||tx==='-'||tx==='\u2014')continue;tot++;if(NUM.test(tx))num++}
+      if(tot>=3&&num/tot>=.75)col.push(c)}
+    col.forEach(function(c){for(var r=0;r<n;r++){var row=rows[r];if(row.cells.length===nc)row.cells[c].classList.add('pl-n')}});
+    t.setAttribute('data-pl',String(n));
+  })}
+
+/* 3. footer */
+function footer(){
+  if(D.querySelector('.pl-foot'))return;
+  var f=D.createElement('footer');f.className='pl-foot';
+  f.innerHTML='<div class="pl-fl">'+LOGO.replace('width="24" height="24"','width="18" height="18"').replace('id="plg"','id="plg2"').replace('url(#plg)','url(#plg2)')+'Model Desk <span>Sports analytics</span></div>'+
+   '<p>Probabilities, fair prices and projected scores are model estimates for information and entertainment. They are not financial or betting advice, and no outcome is ever certain. Prices come from public odds feeds, move quickly and can differ at your book, so confirm before you wager.</p>'+
+   '<p>Independent project. Not affiliated with or endorsed by any league, team or sportsbook. Must be 21+ where wagering is legal. Help is available at 1-800-GAMBLER.</p>'+
+   '<div class="pl-fm"><span><i class="pl-dot" style="--fc:var(--ok);background:var(--fc)"></i>Page data <span data-pl-upd>\u2014</span></span><span>Times Central (CT)</span><span><b class="g gA grade A">A</b> strong <b class="g gB grade B">B</b> solid <b class="g gC grade C">C</b> thin pick grade</span></div>';
+  B.appendChild(f);
+  /* keep the footer after the page content, before the scripts */
+  var first=B.querySelector(':scope>script');if(first)B.insertBefore(f,first);
+}
+
+/* 4. keep only the sport nav pinned (title/brand row scrolls away) */
+function pin(){var t=D.querySelector('.topbar'),i=t&&t.querySelector('.in');if(!t||!i||home)return;t.style.top=(-i.offsetHeight)+'px';
+  var a=t.querySelector('nav.sports a.on'),n=t.querySelector('nav.sports');if(a&&n&&!n.dataset.pl){n.dataset.pl=1;n.scrollLeft=Math.max(0,a.offsetLeft-(n.clientWidth-a.offsetWidth)/2)}}
+
+try{header();footer();B.classList.add('pl-js');paint();align();pin()}catch(e){if(W.console)console.warn('polish',e)}
+var tm=null;function later(){clearTimeout(tm);tm=setTimeout(function(){try{header();align();paint();pin()}catch(e){}},250)}
+if(W.MutationObserver)new MutationObserver(later).observe(B,{childList:true,subtree:true});
+[400,1500,4000].forEach(function(ms){setTimeout(function(){try{paint();pin()}catch(e){}},ms)});
+W.addEventListener('load',function(){try{pin();paint()}catch(e){}});W.addEventListener('resize',function(){try{pin()}catch(e){}});
+setInterval(function(){try{paint()}catch(e){}},30000);
 })();
 
 </script></body></html>
