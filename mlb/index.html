@@ -283,6 +283,18 @@ nav.sports a[data-k="tennis"]{--c:#b6f03c;--c2:#22d3ee}
 .gd-more:active{background:rgba(255,255,255,.05)}
 .gd-card,.gd-body,.gd-sec{max-width:100%}
 @media(min-width:560px){.gd-grid{grid-template-columns:1fr 1fr}}
+/* PAST-GAMES */
+.gd-day{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--mut,#9db0d0);margin:12px 2px 6px}
+.gd-dayg:first-of-type .gd-day{margin-top:4px}
+.gd-rec{display:inline-block;font-size:12.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:4px 12px;margin:0 2px 6px}
+.gd-chk{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 6px;border-radius:7px;font-size:12px;font-weight:900;white-space:nowrap}
+.gd-chk.ok{background:rgba(46,204,113,.22);color:#6ff0a4}
+.gd-chk.no{background:rgba(255,92,120,.22);color:#ff8fa5}
+.gd-chk.pu{background:rgba(255,255,255,.12);color:#dfe8ff}
+.gd-res{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);border-radius:12px;padding:10px 12px;margin:0 0 10px}
+.gd-res-h{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
+.gd-res-h b{font-size:15px;font-weight:800;color:#fff}
+.gd-res .gd-sub{margin-top:4px}
 
 </style><style id="rec-css">
 /* model projected-side record (apply_record.py): uses the skin variables, falls back to dark defaults */
@@ -699,13 +711,13 @@ if(window.MutationObserver){
 }
 })();
 
-</script><script id="gd-data" type="application/json">{"kind":"mlb","games":[{"id":"849803","a":"MIL","h":"TB","an":"Milwaukee Brewers","hn":"Tampa Bay Rays","ts":1793145600.0,"when":"Tue Oct 27 7:00 PM CT","proj":{"a":3.54,"h":4.04,"total":7.57,"margin":0.5,"dec":2},"rng":{"a":[2,5],"h":[2,6]},"tops":[["3-4",0.0419],["3-3",0.0415],["4-4",0.0371],["4-3",0.0367]],"bars":[{"t":"Simulated total runs (10,000 games)","items":[["0",0,"n"],["1",0.0322,"n"],["2",0.0306,"n"],["3",0.0853,"n"],["4",0.0705,"n"],["5",0.1149,"n"],["6",0.0892,"n"],["7",0.1299,"n"],["8",0.0835,"n"],["9",0.0957,"n"],["10",0.0568,"n"],["11",0.0646,"n"],["12",0.0338,"n"],["13",0.0361,"n"],["14",0.0213,"n"],["15+",0.0556,"n"]],"line":7.0,"unit":"runs"}],"tot":{"model":7.57,"mkt":7.0,"po":44.7,"pu":42.3,"push":13.0,"rng":null},"sp":{"label":"Run line (1.5)","ph":39.6,"pa":29.7,"model":null,"mkt":null,"rl":true},"win":{"a":53.2,"h":46.8},"ml":{"fa":-114,"fh":114,"ba":-118,"bh":111,"bka":"LowVig.ag","bkh":"Caesars"},"winnote":"Pure simulation: TB 57.5%","facts":[["MIL starter","Logan Henderson (projected)"],["TB starter","Griffin Jax (probable)"],["MIL lineup","projected"],["TB lineup","projected"],["Park factor (runs)","1.00"],["MIL bullpen","2 arms, all fully rested"],["TB bullpen","1 arms, all fully rested"],["Series","World Series"],["Venue","Tropicana Field"]],"picks":[],"state":"Preview"}],"v":1}</script><script id="gd-js">
+</script><script id="gd-data" type="application/json">{"kind":"mlb","games":[{"id":"849803","a":"MIL","h":"TB","an":"Milwaukee Brewers","hn":"Tampa Bay Rays","ts":1793145600.0,"when":"Tue Oct 27 7:00 PM CT","proj":{"a":3.54,"h":4.04,"total":7.57,"margin":0.5,"dec":2},"rng":{"a":[2,5],"h":[2,6]},"tops":[["3-4",0.0419],["3-3",0.0415],["4-4",0.0371],["4-3",0.0367]],"bars":[{"t":"Simulated total runs (10,000 games)","items":[["0",0,"n"],["1",0.0322,"n"],["2",0.0306,"n"],["3",0.0853,"n"],["4",0.0705,"n"],["5",0.1149,"n"],["6",0.0892,"n"],["7",0.1299,"n"],["8",0.0835,"n"],["9",0.0957,"n"],["10",0.0568,"n"],["11",0.0646,"n"],["12",0.0338,"n"],["13",0.0361,"n"],["14",0.0213,"n"],["15+",0.0556,"n"]],"line":7.0,"unit":"runs"}],"tot":{"model":7.57,"mkt":7.0,"po":44.7,"pu":42.3,"push":13.0,"rng":null},"sp":{"label":"Run line (1.5)","ph":39.6,"pa":29.7,"model":null,"mkt":null,"rl":true},"win":{"a":53.2,"h":46.8},"ml":{"fa":-114,"fh":114,"ba":-118,"bh":111,"bka":"LowVig.ag","bkh":"Caesars"},"winnote":"Pure simulation: TB 57.5%","facts":[["MIL starter","Logan Henderson (projected)"],["TB starter","Griffin Jax (probable)"],["MIL lineup","projected"],["TB lineup","projected"],["Park factor (runs)","1.00"],["MIL bullpen","2 arms, all fully rested"],["TB bullpen","1 arms, all fully rested"],["Series","World Series"],["Venue","Tropicana Field"]],"picks":[],"state":"Preview"}],"past":[{"id":"849804","a":"MIL","h":"TB","an":"Milwaukee Brewers","hn":"Tampa Bay Rays","ts":1793059200.0,"when":"Mon Oct 26 7:00 PM CT","proj":{"a":3.86,"h":3.99,"total":7.84,"margin":0.13,"dec":2},"rng":{"a":[2,5],"h":[2,6]},"tops":[["3-3",0.0396],["3-4",0.0395],["4-3",0.0382],["4-4",0.0381]],"bars":[{"t":"Simulated total runs (10,000 games)","items":[["0",0,"n"],["1",0.0286,"n"],["2",0.026,"n"],["3",0.0805,"n"],["4",0.0664,"n"],["5",0.1101,"n"],["6",0.0895,"n"],["7",0.1209,"n"],["8",0.0804,"n"],["9",0.0995,"n"],["10",0.0639,"n"],["11",0.0694,"n"],["12",0.0413,"n"],["13",0.038,"n"],["14",0.0212,"n"],["15+",0.0643,"n"]],"line":7.0,"unit":"runs"}],"tot":{"model":7.84,"mkt":7.0,"po":47.8,"pu":40.1,"push":12.1,"rng":null},"sp":{"label":"Run line (1.5)","ph":36.4,"pa":33.1,"model":null,"mkt":null,"rl":true},"win":{"a":48.3,"h":51.7},"ml":{"fa":107,"fh":-107,"ba":102,"bh":-111,"bka":"FanDuel","bkh":"BetUS"},"winnote":"Pure simulation: TB 53.9%","facts":[["MIL starter","Robert Gasser (probable)"],["TB starter","Freddy Peralta (probable)"],["MIL lineup","confirmed"],["TB lineup","confirmed"],["Weather","Dome, 70F, wind 0 mph"],["Park factor (runs)","1.00"],["MIL bullpen","6 arms, all fully rested"],["TB bullpen","4 arms, all fully rested"],["Series","World Series"],["Venue","Tropicana Field"]],"picks":[{"g":"B","t":"OVER 7.0 (LowVig.ag)"}],"state":"post","past":true,"d":"2026-10-26","pre_at":1793059062,"fin":{"a":10,"h":1,"su":"L","note":"Final total 11 vs projected 7.84, market line 7","over":"Final"}}],"v":2}</script><script id="gd-js">
 /* game detail panels: renders the JSON blob computed by apply_gamedetail.py. Additive only; any error leaves the page untouched. */
 (function(){
 'use strict';
 try{
 var D=document,blobEl=D.getElementById('gd-data');if(!blobEl)return;
-var B=JSON.parse(blobEl.textContent),G=B.games||[],kind=B.kind;if(!G.length)return;
+var B=JSON.parse(blobEl.textContent),G=B.games||[],PG=B.past||[],kind=B.kind;if(!G.length&&!PG.length)return;
 if(D.getElementById('gd-sec'))return;
 var NOW=Date.now();
 function el(t,c,x){var e=D.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
@@ -747,8 +759,21 @@ function bars(b){
   if(b.line!=null)ap(w,el('div','gd-sub','Market total line: '+b.line+' '+(b.unit||'')));
   return w;
 }
+function resbox(g){
+  var f=g.fin,r=el('div','gd-res'),h2=el('div','gd-res-h');
+  if(f&&f.txt!=null&&f.a==null){ap(h2,el('b',null,f.txt));if(f.su)ap(h2,el('span','gd-chk '+(f.su==='W'?'ok':'no'),f.su==='W'?'\u2713 projected winner':'\u2717 projected winner'));ap(r,h2);ap(r,el('div','gd-sub','Final result vs the last projection posted before the match.'));return r}
+  if(f){
+    ap(h2,el('b',null,'Final: '+SA(g)+' '+f.a+' @ '+SH(g)+' '+f.h));
+    var w=f.su==='W',l=f.su==='L',pp=f.su==='P';
+    if(f.su)ap(h2,el('span','gd-chk '+(w?'ok':l?'no':'pu'),w?'\u2713 projected winner':l?'\u2717 projected winner':'push'));
+    ap(r,h2);if(f.note)ap(r,el('div','gd-sub',f.note));
+  }else{ap(h2,el('b',null,'Final score pending'));ap(r,h2)}
+  ap(r,el('div','gd-sub','Projection below is the last one posted before '+(g.tennis?'the match':'tip-off / start')+'.'));
+  return r;
+}
 function body(g){
   var b=el('div','gd-body');
+  if(g.past)ap(b,resbox(g));
   ap(b,hero(g));
   if(g.proj){
     var sub=g.proj.dec?'Projected final (model average)':'Projected final from model total '+g.proj.total.toFixed(1)+' and margin '+(g.proj.margin>0?g.hn:g.an)+' by '+Math.abs(g.proj.margin).toFixed(1);
@@ -816,11 +841,17 @@ function card(g,i){
   var m=el('div','gd-main'),w=el('div','gd-when');w.appendChild(el('span',null,g.when||''));
   if(g.state&&/^(in|live|crit)/i.test(g.state))w.appendChild(el('span','gd-live','LIVE'));
   if(g.ev)w.appendChild(el('span',null,'\u00b7 '+g.ev));
-  ap(m,w,el('div','gd-teams',g.tennis?g.an+' vs '+g.hn:g.an+' @ '+g.hn),el('div','gd-tap','Tap for projected score & details'));
+  ap(m,w,el('div','gd-teams',g.tennis?g.an+' vs '+g.hn:g.an+' @ '+g.hn),el('div','gd-tap',g.past?(g.proj?'Projected '+g.proj.a.toFixed(g.proj.dec?1:0)+'\u2013'+g.proj.h.toFixed(g.proj.dec?1:0)+' \u00b7 tap for details':'Tap for the saved projection'):'Tap for projected score & details'));
   var s=el('div','gd-side');
   if(g.picks&&g.picks.length){var best=g.picks.map(function(p){return p.g}).sort()[0];s.appendChild(el('span','gd-g '+best,best))}
   var sc=el('div','gd-sc');
-  if(g.proj){var f=g.proj.dec?1:0;ap(sc,el('b',null,g.proj.a.toFixed(f)+'\u2013'+g.proj.h.toFixed(f)),el('i',null,'proj'))}
+  if(g.past){
+    var f=g.fin;
+    if(f&&f.a!=null){ap(sc,el('b',null,f.a+'\u2013'+f.h),el('i',null,'final'))}
+    else if(f){ap(sc,el('b',null,'Final'),el('i',null,'result'))}
+    else{ap(sc,el('b',null,g.proj?g.proj.a.toFixed(g.proj.dec?1:0)+'\u2013'+g.proj.h.toFixed(g.proj.dec?1:0):'\u2013'),el('i',null,'proj'))}
+    if(f&&f.su)s.insertBefore(el('span','gd-chk '+(f.su==='W'?'ok':f.su==='L'?'no':'pu'),f.su==='W'?'\u2713':f.su==='L'?'\u2717':'P'),s.firstChild);
+  }else if(g.proj){var f=g.proj.dec?1:0;ap(sc,el('b',null,g.proj.a.toFixed(f)+'\u2013'+g.proj.h.toFixed(f)),el('i',null,'proj'))}
   else if(g.win){ap(sc,el('b',null,Math.round(g.win.a)+'\u2013'+Math.round(g.win.h)+'%'),el('i',null,'win %'))}
   ap(s,sc,el('span','gd-chev'));
   ap(h,m,s);c.appendChild(h);
@@ -845,7 +876,7 @@ var all=up.concat(old),sec=el('section','sec tog gd-sec'),hd=el('div','sec-h'),b
 hd.appendChild(document.createTextNode(kind==='tennis'?'Match projections':'Game projections'));
 var cnt=el('span','cnt',all.length+(kind==='tennis'?' matches':' games'));hd.appendChild(cnt);
 ap(sec,hd,bd);
-ap(bd,el('div','gd-hint',kind==='tennis'?'Tap a match for win %, set scores and games.':'Tap a game for its model-simulated score, odds and context.'));
+ap(bd,el('div','gd-hint',!G.length?'No upcoming games on the board right now. Games that already started or finished are in Past games below.':kind==='tennis'?'Tap a match for win %, set scores and games.':'Tap a game for its model-simulated score, odds and context.'));
 var list=el('div','gd-list');bd.appendChild(list);
 var shown=0,rest=[];
 all.forEach(function(g,i){if(i<LIM||openSet[g.id]){list.appendChild(card(g,i));shown++}else rest.push(g)});
@@ -855,6 +886,29 @@ if(rest.length){
   bd.appendChild(btn);
 }
 hd.addEventListener('click',function(){sec.classList.toggle('closed')});
+/* PAST-GAMES section: saved last pre-game card of games that have started / finished */
+var psec=null;
+if(PG.length){
+  psec=el('section','sec tog gd-sec gd-past');psec.id='gd-past';
+  var phd=el('div','sec-h'),pbd=el('div','sec-b'),days={},order=[],W=0,Lc=0;
+  PG.forEach(function(g){if(!days[g.d]){days[g.d]=[];order.push(g.d)}days[g.d].push(g);if(g.fin&&g.fin.su){if(g.fin.su==='W')W++;else if(g.fin.su==='L')Lc++}});
+  order.sort().reverse();
+  function dl(d){var x=new Date(d+'T12:00:00');return x.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})}
+  phd.appendChild(document.createTextNode(kind==='tennis'?'Past matches':'Past games'));
+  phd.appendChild(el('span','cnt',PG.length+(kind==='tennis'?' matches':' games')));
+  ap(psec,phd,pbd);
+  ap(pbd,el('div','gd-hint','Saved projections for games that already started or finished (last '+dl(order[order.length-1])+' \u2013 '+dl(order[0])+'). Tap any game to reopen its last pre-game projection.'));
+  if(W+Lc)ap(pbd,el('div','gd-rec','Projected winner '+W+'-'+Lc+' ('+Math.round(100*W/(W+Lc))+'%) on the games below with a final'));
+  var moreDays=[];
+  order.forEach(function(d,i){
+    var box=el('div','gd-dayg');ap(box,el('div','gd-day',dl(d)+' \u00b7 '+days[d].length+(days[d].length===1?' game':' games')));
+    var lst=el('div','gd-list');days[d].sort(function(a,b){return a.ts-b.ts}).forEach(function(g){lst.appendChild(card(g,0))});box.appendChild(lst);
+    if(i<2){pbd.appendChild(box)}else{moreDays.push(box)}
+  });
+  if(moreDays.length){var pb=el('button','gd-more','Show '+moreDays.length+' earlier '+(moreDays.length===1?'day':'days'));pb.setAttribute('type','button');
+    pb.addEventListener('click',function(){moreDays.forEach(function(b){pbd.insertBefore(b,pb)});pb.remove()});pbd.appendChild(pb)}
+  phd.addEventListener('click',function(){psec.classList.toggle('closed')});
+}
 /* placement: right after the Top plays section */
 var main=D.querySelector('main.wrap')||D.querySelector('main')||D.body,anchor=null;
 var secs=main.querySelectorAll(':scope > section.sec');
@@ -863,10 +917,11 @@ else anchor=D.getElementById('plays')||D.getElementById('top');
 if(anchor&&anchor.parentNode===main)main.insertBefore(sec,anchor.nextSibling);
 else if(anchor)anchor.parentNode.insertBefore(sec,anchor.nextSibling);
 else main.insertBefore(sec,main.firstChild);
+if(psec)sec.parentNode.insertBefore(psec,sec.nextSibling);
 }catch(e){if(window.console)console.warn('game detail',e)}
 })();
 
-</script><script id="rec-data" type="application/json">{"v":1,"sport":"mlb","today":"2026-10-27","generated":"2026-10-27 11:29","rec":{"lines":["SU","OU"],"graded":21,"since":"2026-10-06","tracked_projections":22,"last7":{"games":3,"SU":{"w":2,"l":1,"p":0,"n":3,"pct":66.7},"OU":{"w":2,"l":1,"p":0,"n":3,"pct":66.7}},"season":{"games":21,"SU":{"w":10,"l":11,"p":0,"n":21,"pct":47.6},"OU":{"w":9,"l":11,"p":1,"n":21,"pct":45.0}},"days":{"2026-10-06":{"games":2,"SU":{"w":2,"l":0,"p":0,"n":2,"pct":100.0},"OU":{"w":0,"l":2,"p":0,"n":2,"pct":0.0}},"2026-10-07":{"games":4,"SU":{"w":1,"l":3,"p":0,"n":4,"pct":25.0},"OU":{"w":0,"l":3,"p":1,"n":4,"pct":0.0}},"2026-10-08":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-10-10":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-11":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-12":{"games":2,"SU":{"w":0,"l":2,"p":0,"n":2,"pct":0.0},"OU":{"w":2,"l":0,"p":0,"n":2,"pct":100.0}},"2026-10-13":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-14":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-10-15":{"games":2,"SU":{"w":1,"l":1,"p":0,"n":2,"pct":50.0},"OU":{"w":1,"l":1,"p":0,"n":2,"pct":50.0}},"2026-10-17":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-10-18":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-19":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-10-23":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-24":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-10-26":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}}}},"note":"Straight-up side is the model’s projected winner; the total side is the model’s projected total against the posted line.","empty":""}</script><script id="rec-js">
+</script><script id="rec-data" type="application/json">{"v":1,"sport":"mlb","today":"2026-10-27","generated":"2026-10-27 11:49","rec":{"lines":["SU","OU"],"graded":21,"since":"2026-10-06","tracked_projections":22,"last7":{"games":3,"SU":{"w":2,"l":1,"p":0,"n":3,"pct":66.7},"OU":{"w":2,"l":1,"p":0,"n":3,"pct":66.7}},"season":{"games":21,"SU":{"w":10,"l":11,"p":0,"n":21,"pct":47.6},"OU":{"w":9,"l":11,"p":1,"n":21,"pct":45.0}},"days":{"2026-10-06":{"games":2,"SU":{"w":2,"l":0,"p":0,"n":2,"pct":100.0},"OU":{"w":0,"l":2,"p":0,"n":2,"pct":0.0}},"2026-10-07":{"games":4,"SU":{"w":1,"l":3,"p":0,"n":4,"pct":25.0},"OU":{"w":0,"l":3,"p":1,"n":4,"pct":0.0}},"2026-10-08":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-10-10":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-11":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-12":{"games":2,"SU":{"w":0,"l":2,"p":0,"n":2,"pct":0.0},"OU":{"w":2,"l":0,"p":0,"n":2,"pct":100.0}},"2026-10-13":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-14":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-10-15":{"games":2,"SU":{"w":1,"l":1,"p":0,"n":2,"pct":50.0},"OU":{"w":1,"l":1,"p":0,"n":2,"pct":50.0}},"2026-10-17":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-10-18":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-19":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-10-23":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-24":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-10-26":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}}}},"note":"Straight-up side is the model’s projected winner; the total side is the model’s projected total against the posted line.","empty":""}</script><script id="rec-js">
 /* model projected-side record: renders the JSON blob written by apply_record.py. Additive only; any error leaves the page untouched. */
 (function(){
 'use strict';
