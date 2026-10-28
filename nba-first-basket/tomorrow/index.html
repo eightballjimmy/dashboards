@@ -65,119 +65,7 @@ details.info p,details.info .para{margin:4px 0}
 .sec-h{flex-wrap:wrap}
 footer.foot{max-width:1200px;margin:0 auto;padding:0 14px 28px;color:var(--mut);font-size:12px}
 .pct{font-weight:700;font-variant-numeric:tabular-nums}.gcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:8px 0}
-.gcard h3{margin:0 0 4px;font-size:15px}.gcard .meta{color:var(--mut);font-size:12.5px}.gcard table{margin-top:6px}.mut{color:var(--mut)}</style><style id="pd-css">
-/* prop detail panels (apply_propdetail.py): uses the skin variables, falls back to dark defaults */
-.pd-sec .sec-h{cursor:pointer}
-.pd-sec.closed>.sec-b{display:none}
-.pd-hint{color:var(--mut,#9db0d0);font-size:12.5px;margin:-4px 2px 10px}
-.pd-ctl{display:flex;flex-direction:column;gap:8px;margin:0 0 12px}
-.pd-seg{display:flex;gap:6px}
-.pd-seg button{all:unset;box-sizing:border-box;flex:1 1 0;text-align:center;padding:9px 6px;border-radius:12px;font-size:13px;font-weight:800;color:var(--mut,#9db0d0);background:rgba(255,255,255,.06);border:1px solid transparent;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.pd-seg button.on{color:#fff;background:linear-gradient(135deg,rgba(var(--sp-rgb,91,140,255),.45),rgba(var(--sp-rgb,91,140,255),.18));border-color:rgba(var(--sp-rgb,91,140,255),.7)}
-.pd-row2{display:flex;gap:8px;min-width:0}
-.pd-row2>*{min-width:0}
-.pd-in,.pd-sel{box-sizing:border-box;font:inherit;font-size:16px;color:#fff;background:rgba(255,255,255,.07);border:1px solid var(--line,#24345a);border-radius:12px;padding:8px 10px;outline:0;min-width:0;color-scheme:dark}
-.pd-in{flex:1 1 0}.pd-sel{flex:0 1 46%;max-width:46%;text-overflow:ellipsis}
-.pd-in:focus,.pd-sel:focus{border-color:var(--sp,#5b8cff)}
-.pd-list{display:flex;flex-direction:column;gap:10px}
-.pd-empty{color:var(--mut,#9db0d0);font-size:13px;text-align:center;padding:14px 4px}
-.pd-card{position:relative;background:linear-gradient(160deg,rgba(var(--sp-rgb,91,140,255),.12),transparent 60%),var(--card,#10192e);border:1px solid var(--line,#24345a);border-left:5px solid var(--sp,#5b8cff);border-radius:16px;overflow:hidden;box-shadow:0 10px 24px -16px rgba(0,0,0,.9)}
-.pd-card.open{border-color:rgba(var(--sp-rgb,91,140,255),.7)}
-.pd-head{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:10px;width:100%;padding:12px;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.pd-head:active{background:rgba(255,255,255,.04)}
-.pd-main{flex:1 1 auto;min-width:0}
-.pd-when{font-size:11.5px;color:var(--mut,#9db0d0);overflow-wrap:anywhere}
-.pd-name{font-size:16.5px;font-weight:800;letter-spacing:-.01em;line-height:1.25;margin-top:2px;overflow-wrap:anywhere;color:var(--ink,#f3f6fc)}
-.pd-name small{font-size:11px;font-weight:800;color:var(--mut,#9db0d0);background:rgba(255,255,255,.08);border-radius:6px;padding:1px 6px;margin-left:6px;vertical-align:2px;letter-spacing:.04em}
-.pd-m{font-size:13.5px;font-weight:700;margin-top:3px;color:#e6edfb;overflow-wrap:anywhere}
-.pd-m b.ov{color:#2ff0a0}.pd-m b.un{color:#ff6683}
-.pd-tap{font-size:11.5px;color:var(--sp,#5b8cff);font-weight:700;margin-top:3px}
-.pd-side{flex:0 0 auto;display:flex;align-items:center;gap:8px}
-.pd-big{display:flex;flex-direction:column;align-items:flex-end;font-variant-numeric:tabular-nums;line-height:1.1}
-.pd-big b{font-size:17px;font-weight:900;letter-spacing:-.02em;color:#fff}
-.pd-big b.pos{color:#2ff0a0}
-.pd-big i{font-style:normal;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mut,#9db0d0);margin-top:2px}
-.pd-chev{width:9px;height:9px;border-right:3px solid var(--sp,#5b8cff);border-bottom:3px solid var(--sp,#5b8cff);transform:rotate(45deg);margin:-3px 3px 0 2px;transition:transform .18s;flex:0 0 auto}
-.pd-card.open .pd-chev{transform:rotate(-135deg);margin-top:4px}
-.pd-g{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;padding:0 7px;border-radius:8px;font-size:14px;font-weight:900;box-shadow:0 3px 10px -3px rgba(0,0,0,.6);flex:0 0 auto}
-.pd-g.A{background:linear-gradient(135deg,#2ff0a0,#12c27d);color:#022c1a}.pd-g.B{background:linear-gradient(135deg,#5b9bff,#8a63ff);color:#fff}.pd-g.C{background:linear-gradient(135deg,#ffc233,#ff8a1f);color:#3a1c00}
-.pd-body{padding:2px 12px 14px;border-top:1px solid rgba(255,255,255,.07)}
-.pd-card:not(.open) .pd-body{display:none}
-.pd-keys{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:12px}
-.pd-kv{background:rgba(255,255,255,.055);border-radius:12px;padding:7px 10px;min-width:0}
-.pd-kv span{display:block;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--mut,#9db0d0)}
-.pd-kv b{display:block;font-size:15px;font-weight:800;color:#fff;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
-.pd-sides{display:grid;grid-template-columns:1fr;gap:8px;margin-top:10px}
-.pd-sides.cmp{grid-template-columns:1fr}
-.pd-sd{background:rgba(255,255,255,.05);border-radius:14px;padding:10px 11px;border:1px solid transparent;min-width:0}
-.pd-sd.top{background:rgba(var(--sp-rgb,91,140,255),.16);border-color:rgba(var(--sp-rgb,91,140,255),.55)}
-.pd-sh{display:flex;align-items:center;gap:8px;justify-content:space-between}
-.pd-sh h4{margin:0;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#cfdaf1;min-width:0;overflow-wrap:anywhere;display:flex;align-items:center;gap:6px}
-.pd-sh .p{font-size:24px;font-weight:900;letter-spacing:-.03em;color:#fff;font-variant-numeric:tabular-nums;line-height:1.1}
-.pd-r{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;line-height:1.55;font-variant-numeric:tabular-nums}
-.pd-r span:first-child{color:#cfdaf1;min-width:0;overflow-wrap:anywhere}.pd-r span:last-child{font-weight:800;text-align:right;color:#fff;min-width:0;overflow-wrap:anywhere}
-.pd-r .pos{color:#2ff0a0!important}.pd-r .neg{color:#ff6683!important}.pd-r .mut{color:var(--mut,#9db0d0)!important;font-weight:600!important}
-.pd-sides.cmp .pd-sh .p{font-size:20px}
-.pd-bars{margin-top:14px}
-.pd-bars h4{margin:0 0 6px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--mut,#9db0d0)}
-.pd-b{display:flex;align-items:center;gap:8px;margin:4px 0;font-size:12.5px;font-variant-numeric:tabular-nums}
-.pd-b .l{flex:0 0 74px;color:#cfdaf1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right}
-.pd-b .t{flex:1 1 auto;height:13px;border-radius:6px;background:rgba(255,255,255,.07);overflow:hidden;min-width:0}
-.pd-b .t i{display:block;height:100%;border-radius:6px;background:var(--sp,#5b8cff);min-width:2px}
-.pd-b.u .t i{background:#ff6683}.pd-b.o .t i{background:#2ff0a0}.pd-b.p .t i{background:#8fa0c4}.pd-b.n .t i{background:var(--sp,#5b8cff)}
-.pd-b .v{flex:0 0 40px;text-align:right;font-weight:800;color:#fff}
-.pd-bars.abs .pd-b{display:block}.pd-bars.abs .pd-b .l{display:block;text-align:left;white-space:normal;font-size:12px;margin-bottom:2px}
-.pd-bars.abs .pd-b .t{display:block}.pd-bars.abs .pd-b .v{display:none}
-.pd-leg{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;font-size:11.5px;color:var(--mut,#9db0d0)}
-.pd-leg i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:5px;vertical-align:0}
-.pd-facts{margin-top:12px;font-size:13px}
-.pd-facts .r{display:flex;gap:10px;padding:5px 0;border-top:1px solid rgba(255,255,255,.06)}
-.pd-facts .r:first-child{border-top:0}
-.pd-facts .r span:first-child{flex:0 0 104px;color:var(--mut,#9db0d0);font-size:12px}
-.pd-facts .r span:last-child{flex:1 1 auto;min-width:0;overflow-wrap:anywhere;color:#e6edfb}
-.pd-fl{display:flex;flex-direction:column;gap:5px;margin-top:10px}
-.pd-fl div{font-size:12.5px;color:#ffe3a3;background:rgba(255,194,51,.10);border:1px solid rgba(255,194,51,.28);border-radius:10px;padding:5px 9px;overflow-wrap:anywhere}
-.pd-note{margin-top:12px;font-size:11.5px;line-height:1.4;color:var(--mut,#9db0d0)}
-.pd-more{all:unset;box-sizing:border-box;display:block;width:100%;text-align:center;padding:11px;border-radius:12px;border:1px dashed rgba(var(--sp-rgb,91,140,255),.6);color:#fff;font-weight:700;font-size:13.5px;cursor:pointer;margin-top:10px}
-.pd-more:active{background:rgba(255,255,255,.05)}
-.pd-card,.pd-body,.pd-sec{max-width:100%}
-@media(min-width:560px){.pd-sides:not(.cmp){grid-template-columns:1fr 1fr}.pd-keys{grid-template-columns:repeat(4,1fr)}}
-
-</style><style id="pg-css">
-/* per-game selector (apply_pergame.py): reads the skin / Pro theme variables, falls back to the same navy palette */
-.pg-bar{margin:0 0 14px;max-width:100%;min-width:0}
-.pg-lab{font-size:11px;font-weight:650;letter-spacing:.14em;text-transform:uppercase;color:var(--mut,#8f9aab);margin:2px 2px 6px}
-.pg-chips{display:flex;gap:6px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:1px 1px 6px;scroll-snap-type:x proximity;overscroll-behavior-x:contain}
-.pg-chips::-webkit-scrollbar{display:none}
-.pg-chip{all:unset;box-sizing:border-box;flex:0 0 auto;scroll-snap-align:start;display:flex;flex-direction:column;gap:2px;min-width:78px;padding:7px 11px;border-radius:6px;background:var(--card2,#171e28);border:1px solid var(--line,#232c38);color:var(--mut,#8f9aab);cursor:pointer;-webkit-tap-highlight-color:transparent;text-align:center}
-/* the polish layer sets a global button background/border with !important; match it only for these controls */
-body button.pg-chip,body .pg-seg button{border-radius:6px!important;background:var(--card2,#171e28)!important;border:1px solid var(--line,#232c38)!important;min-height:0}
-.pg-chip b{font-size:13px;font-weight:650;letter-spacing:.01em;color:var(--ink,#e4e9f0);white-space:nowrap;font-variant-numeric:tabular-nums}
-.pg-chip i{font-style:normal;font-size:11px;font-weight:600;white-space:nowrap;color:var(--mut,#8f9aab);font-variant-numeric:tabular-nums}
-body button.pg-chip.on{background:rgba(107,155,195,.30)!important;border-color:rgba(156,192,222,.85)!important}
-.pg-chip.on b{color:#d7e8f6}.pg-chip.on i{color:#a9c4dc}
-.pg-chip:focus-visible{outline:2px solid var(--acc,#6b9bc3);outline-offset:1px}
-.pg-head{margin-top:8px;background:var(--card,#121820);border:1px solid var(--line,#232c38);border-radius:8px;padding:12px;min-width:0}
-.pg-head[hidden]{display:none}
-.pg-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
-.pg-title{font-size:18px;font-weight:650;letter-spacing:-.01em;color:var(--ink,#e4e9f0);line-height:1.2;overflow-wrap:anywhere}
-.pg-when{font-size:12.5px;color:var(--mut,#8f9aab);margin-top:3px}
-.pg-n{flex:0 0 auto;font-size:11px;font-weight:600;color:var(--mut,#8f9aab);background:var(--card2,#171e28);border:1px solid var(--line,#232c38);border-radius:3px;padding:2px 7px;white-space:nowrap}
-.pg-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
-.pg-cell{background:var(--card2,#171e28);border:1px solid var(--line,#232c38);border-radius:6px;padding:7px 10px;min-width:0}
-.pg-cell span{display:block;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--mut,#8f9aab)}
-.pg-cell b{display:block;font-size:14px;font-weight:650;color:var(--ink,#e4e9f0);overflow-wrap:anywhere;line-height:1.3;margin-top:1px}
-.pg-cell em{display:block;font-style:normal;font-size:11.5px;color:var(--mut,#8f9aab)}
-.pg-cell em.ok{color:var(--acc2,#9cc0de)}
-.pg-seg{display:flex;gap:6px;margin-top:10px}
-.pg-seg button{all:unset;box-sizing:border-box;flex:1 1 0;text-align:center;padding:8px 6px;border-radius:5px;font-size:13px;font-weight:650;color:var(--mut,#8f9aab);background:var(--card2,#171e28);border:1px solid var(--line,#232c38);cursor:pointer;-webkit-tap-highlight-color:transparent}
-body .pg-seg button.on{background:rgba(107,155,195,.30)!important;border-color:rgba(156,192,222,.85)!important;color:#d7e8f6}
-body.pg-sel .pg-hide{display:none!important}
-/* keep "All games" reachable while the other chips scroll */
-.pg-chip:first-child{position:sticky;left:0;z-index:1}
-body button.pg-chip:first-child.on{background:#1e3043!important}
-
-</style><style id="skin-css">
+.gcard h3{margin:0 0 4px;font-size:15px}.gcard .meta{color:var(--mut);font-size:12.5px}.gcard table{margin-top:6px}.mut{color:var(--mut)}</style><style id="skin-css">
 /* ===== dashboards skin v1 : override layer, loaded last. Phone-first dark, per-sport accents ===== */
 :root{color-scheme:dark;
 --bg:#060a13;--bg2:#0b1222;--card:#10192e;--card2:#18243f;--line:#24345a;--ink:#f3f6fc;--mut:#9db0d0;--acc:var(--sp,#5b8cff);
@@ -331,6 +219,118 @@ nav.sports a[data-k="nhl"]{--c:#22d3ee;--c2:#3b82f6}
 nav.sports a[data-k="nhl-props"]{--c:#2de3c0;--c2:#06b6d4}
 nav.sports a[data-k="mlb"]{--c:#ff5a6e;--c2:#ffb020}
 nav.sports a[data-k="tennis"]{--c:#b6f03c;--c2:#22d3ee}
+</style><style id="pd-css">
+/* prop detail panels (apply_propdetail.py): uses the skin variables, falls back to dark defaults */
+.pd-sec .sec-h{cursor:pointer}
+.pd-sec.closed>.sec-b{display:none}
+.pd-hint{color:var(--mut,#9db0d0);font-size:12.5px;margin:-4px 2px 10px}
+.pd-ctl{display:flex;flex-direction:column;gap:8px;margin:0 0 12px}
+.pd-seg{display:flex;gap:6px}
+.pd-seg button{all:unset;box-sizing:border-box;flex:1 1 0;text-align:center;padding:9px 6px;border-radius:12px;font-size:13px;font-weight:800;color:var(--mut,#9db0d0);background:rgba(255,255,255,.06);border:1px solid transparent;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.pd-seg button.on{color:#fff;background:linear-gradient(135deg,rgba(var(--sp-rgb,91,140,255),.45),rgba(var(--sp-rgb,91,140,255),.18));border-color:rgba(var(--sp-rgb,91,140,255),.7)}
+.pd-row2{display:flex;gap:8px;min-width:0}
+.pd-row2>*{min-width:0}
+.pd-in,.pd-sel{box-sizing:border-box;font:inherit;font-size:16px;color:#fff;background:rgba(255,255,255,.07);border:1px solid var(--line,#24345a);border-radius:12px;padding:8px 10px;outline:0;min-width:0;color-scheme:dark}
+.pd-in{flex:1 1 0}.pd-sel{flex:0 1 46%;max-width:46%;text-overflow:ellipsis}
+.pd-in:focus,.pd-sel:focus{border-color:var(--sp,#5b8cff)}
+.pd-list{display:flex;flex-direction:column;gap:10px}
+.pd-empty{color:var(--mut,#9db0d0);font-size:13px;text-align:center;padding:14px 4px}
+.pd-card{position:relative;background:linear-gradient(160deg,rgba(var(--sp-rgb,91,140,255),.12),transparent 60%),var(--card,#10192e);border:1px solid var(--line,#24345a);border-left:5px solid var(--sp,#5b8cff);border-radius:16px;overflow:hidden;box-shadow:0 10px 24px -16px rgba(0,0,0,.9)}
+.pd-card.open{border-color:rgba(var(--sp-rgb,91,140,255),.7)}
+.pd-head{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:10px;width:100%;padding:12px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.pd-head:active{background:rgba(255,255,255,.04)}
+.pd-main{flex:1 1 auto;min-width:0}
+.pd-when{font-size:11.5px;color:var(--mut,#9db0d0);overflow-wrap:anywhere}
+.pd-name{font-size:16.5px;font-weight:800;letter-spacing:-.01em;line-height:1.25;margin-top:2px;overflow-wrap:anywhere;color:var(--ink,#f3f6fc)}
+.pd-name small{font-size:11px;font-weight:800;color:var(--mut,#9db0d0);background:rgba(255,255,255,.08);border-radius:6px;padding:1px 6px;margin-left:6px;vertical-align:2px;letter-spacing:.04em}
+.pd-m{font-size:13.5px;font-weight:700;margin-top:3px;color:#e6edfb;overflow-wrap:anywhere}
+.pd-m b.ov{color:#2ff0a0}.pd-m b.un{color:#ff6683}
+.pd-tap{font-size:11.5px;color:var(--sp,#5b8cff);font-weight:700;margin-top:3px}
+.pd-side{flex:0 0 auto;display:flex;align-items:center;gap:8px}
+.pd-big{display:flex;flex-direction:column;align-items:flex-end;font-variant-numeric:tabular-nums;line-height:1.1}
+.pd-big b{font-size:17px;font-weight:900;letter-spacing:-.02em;color:#fff}
+.pd-big b.pos{color:#2ff0a0}
+.pd-big i{font-style:normal;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mut,#9db0d0);margin-top:2px}
+.pd-chev{width:9px;height:9px;border-right:3px solid var(--sp,#5b8cff);border-bottom:3px solid var(--sp,#5b8cff);transform:rotate(45deg);margin:-3px 3px 0 2px;transition:transform .18s;flex:0 0 auto}
+.pd-card.open .pd-chev{transform:rotate(-135deg);margin-top:4px}
+.pd-g{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;padding:0 7px;border-radius:8px;font-size:14px;font-weight:900;box-shadow:0 3px 10px -3px rgba(0,0,0,.6);flex:0 0 auto}
+.pd-g.A{background:linear-gradient(135deg,#2ff0a0,#12c27d);color:#022c1a}.pd-g.B{background:linear-gradient(135deg,#5b9bff,#8a63ff);color:#fff}.pd-g.C{background:linear-gradient(135deg,#ffc233,#ff8a1f);color:#3a1c00}
+.pd-body{padding:2px 12px 14px;border-top:1px solid rgba(255,255,255,.07)}
+.pd-card:not(.open) .pd-body{display:none}
+.pd-keys{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:12px}
+.pd-kv{background:rgba(255,255,255,.055);border-radius:12px;padding:7px 10px;min-width:0}
+.pd-kv span{display:block;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--mut,#9db0d0)}
+.pd-kv b{display:block;font-size:15px;font-weight:800;color:#fff;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.pd-sides{display:grid;grid-template-columns:1fr;gap:8px;margin-top:10px}
+.pd-sides.cmp{grid-template-columns:1fr}
+.pd-sd{background:rgba(255,255,255,.05);border-radius:14px;padding:10px 11px;border:1px solid transparent;min-width:0}
+.pd-sd.top{background:rgba(var(--sp-rgb,91,140,255),.16);border-color:rgba(var(--sp-rgb,91,140,255),.55)}
+.pd-sh{display:flex;align-items:center;gap:8px;justify-content:space-between}
+.pd-sh h4{margin:0;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#cfdaf1;min-width:0;overflow-wrap:anywhere;display:flex;align-items:center;gap:6px}
+.pd-sh .p{font-size:24px;font-weight:900;letter-spacing:-.03em;color:#fff;font-variant-numeric:tabular-nums;line-height:1.1}
+.pd-r{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;line-height:1.55;font-variant-numeric:tabular-nums}
+.pd-r span:first-child{color:#cfdaf1;min-width:0;overflow-wrap:anywhere}.pd-r span:last-child{font-weight:800;text-align:right;color:#fff;min-width:0;overflow-wrap:anywhere}
+.pd-r .pos{color:#2ff0a0!important}.pd-r .neg{color:#ff6683!important}.pd-r .mut{color:var(--mut,#9db0d0)!important;font-weight:600!important}
+.pd-sides.cmp .pd-sh .p{font-size:20px}
+.pd-bars{margin-top:14px}
+.pd-bars h4{margin:0 0 6px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--mut,#9db0d0)}
+.pd-b{display:flex;align-items:center;gap:8px;margin:4px 0;font-size:12.5px;font-variant-numeric:tabular-nums}
+.pd-b .l{flex:0 0 74px;color:#cfdaf1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right}
+.pd-b .t{flex:1 1 auto;height:13px;border-radius:6px;background:rgba(255,255,255,.07);overflow:hidden;min-width:0}
+.pd-b .t i{display:block;height:100%;border-radius:6px;background:var(--sp,#5b8cff);min-width:2px}
+.pd-b.u .t i{background:#ff6683}.pd-b.o .t i{background:#2ff0a0}.pd-b.p .t i{background:#8fa0c4}.pd-b.n .t i{background:var(--sp,#5b8cff)}
+.pd-b .v{flex:0 0 40px;text-align:right;font-weight:800;color:#fff}
+.pd-bars.abs .pd-b{display:block}.pd-bars.abs .pd-b .l{display:block;text-align:left;white-space:normal;font-size:12px;margin-bottom:2px}
+.pd-bars.abs .pd-b .t{display:block}.pd-bars.abs .pd-b .v{display:none}
+.pd-leg{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;font-size:11.5px;color:var(--mut,#9db0d0)}
+.pd-leg i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:5px;vertical-align:0}
+.pd-facts{margin-top:12px;font-size:13px}
+.pd-facts .r{display:flex;gap:10px;padding:5px 0;border-top:1px solid rgba(255,255,255,.06)}
+.pd-facts .r:first-child{border-top:0}
+.pd-facts .r span:first-child{flex:0 0 104px;color:var(--mut,#9db0d0);font-size:12px}
+.pd-facts .r span:last-child{flex:1 1 auto;min-width:0;overflow-wrap:anywhere;color:#e6edfb}
+.pd-fl{display:flex;flex-direction:column;gap:5px;margin-top:10px}
+.pd-fl div{font-size:12.5px;color:#ffe3a3;background:rgba(255,194,51,.10);border:1px solid rgba(255,194,51,.28);border-radius:10px;padding:5px 9px;overflow-wrap:anywhere}
+.pd-note{margin-top:12px;font-size:11.5px;line-height:1.4;color:var(--mut,#9db0d0)}
+.pd-more{all:unset;box-sizing:border-box;display:block;width:100%;text-align:center;padding:11px;border-radius:12px;border:1px dashed rgba(var(--sp-rgb,91,140,255),.6);color:#fff;font-weight:700;font-size:13.5px;cursor:pointer;margin-top:10px}
+.pd-more:active{background:rgba(255,255,255,.05)}
+.pd-card,.pd-body,.pd-sec{max-width:100%}
+@media(min-width:560px){.pd-sides:not(.cmp){grid-template-columns:1fr 1fr}.pd-keys{grid-template-columns:repeat(4,1fr)}}
+
+</style><style id="pg-css">
+/* per-game selector (apply_pergame.py): reads the skin / Pro theme variables, falls back to the same navy palette */
+.pg-bar{margin:0 0 14px;max-width:100%;min-width:0}
+.pg-lab{font-size:11px;font-weight:650;letter-spacing:.14em;text-transform:uppercase;color:var(--mut,#8f9aab);margin:2px 2px 6px}
+.pg-chips{display:flex;gap:6px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:1px 1px 6px;scroll-snap-type:x proximity;overscroll-behavior-x:contain}
+.pg-chips::-webkit-scrollbar{display:none}
+.pg-chip{all:unset;box-sizing:border-box;flex:0 0 auto;scroll-snap-align:start;display:flex;flex-direction:column;gap:2px;min-width:78px;padding:7px 11px;border-radius:6px;background:var(--card2,#171e28);border:1px solid var(--line,#232c38);color:var(--mut,#8f9aab);cursor:pointer;-webkit-tap-highlight-color:transparent;text-align:center}
+/* the polish layer sets a global button background/border with !important; match it only for these controls */
+body button.pg-chip,body .pg-seg button{border-radius:6px!important;background:var(--card2,#171e28)!important;border:1px solid var(--line,#232c38)!important;min-height:0}
+.pg-chip b{font-size:13px;font-weight:650;letter-spacing:.01em;color:var(--ink,#e4e9f0);white-space:nowrap;font-variant-numeric:tabular-nums}
+.pg-chip i{font-style:normal;font-size:11px;font-weight:600;white-space:nowrap;color:var(--mut,#8f9aab);font-variant-numeric:tabular-nums}
+body button.pg-chip.on{background:rgba(107,155,195,.30)!important;border-color:rgba(156,192,222,.85)!important}
+.pg-chip.on b{color:#d7e8f6}.pg-chip.on i{color:#a9c4dc}
+.pg-chip:focus-visible{outline:2px solid var(--acc,#6b9bc3);outline-offset:1px}
+.pg-head{margin-top:8px;background:var(--card,#121820);border:1px solid var(--line,#232c38);border-radius:8px;padding:12px;min-width:0}
+.pg-head[hidden]{display:none}
+.pg-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.pg-title{font-size:18px;font-weight:650;letter-spacing:-.01em;color:var(--ink,#e4e9f0);line-height:1.2;overflow-wrap:anywhere}
+.pg-when{font-size:12.5px;color:var(--mut,#8f9aab);margin-top:3px}
+.pg-n{flex:0 0 auto;font-size:11px;font-weight:600;color:var(--mut,#8f9aab);background:var(--card2,#171e28);border:1px solid var(--line,#232c38);border-radius:3px;padding:2px 7px;white-space:nowrap}
+.pg-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
+.pg-cell{background:var(--card2,#171e28);border:1px solid var(--line,#232c38);border-radius:6px;padding:7px 10px;min-width:0}
+.pg-cell span{display:block;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--mut,#8f9aab)}
+.pg-cell b{display:block;font-size:14px;font-weight:650;color:var(--ink,#e4e9f0);overflow-wrap:anywhere;line-height:1.3;margin-top:1px}
+.pg-cell em{display:block;font-style:normal;font-size:11.5px;color:var(--mut,#8f9aab)}
+.pg-cell em.ok{color:var(--acc2,#9cc0de)}
+.pg-seg{display:flex;gap:6px;margin-top:10px}
+.pg-seg button{all:unset;box-sizing:border-box;flex:1 1 0;text-align:center;padding:8px 6px;border-radius:5px;font-size:13px;font-weight:650;color:var(--mut,#8f9aab);background:var(--card2,#171e28);border:1px solid var(--line,#232c38);cursor:pointer;-webkit-tap-highlight-color:transparent}
+body .pg-seg button.on{background:rgba(107,155,195,.30)!important;border-color:rgba(156,192,222,.85)!important;color:#d7e8f6}
+body.pg-sel .pg-hide{display:none!important}
+/* keep "All games" reachable while the other chips scroll */
+.pg-chip:first-child{position:sticky;left:0;z-index:1}
+body button.pg-chip:first-child.on{background:#1e3043!important}
+
 </style><style id="polish-css">
 /* ===== Model Desk polish v1 : institutional / terminal refinement layer. Loaded LAST. Presentation only. ===== */
 :root{
@@ -745,6 +745,93 @@ const G=document.getElementById('games');(P.games||[]).forEach(g=>{const c=h('di
  h('td',{class:'num'},am(r.fair_american)),h('td',{class:'num'},am(r.american)),h('td',null,r.book||''),h('td',{class:'num'},r.ev==null?'':h('span',{class:'edge '+UI.edgeCls(r.beats_price?r.ev:-1,r.label=='SUSPECT')},ev(r.ev))),h('td',null,gr(r)),h('td',null,UI.labPill(r.label)))));
  c.append(h('div',{class:'panel'},t));G.append(c)});
 healthBox(P);UI.autoReload(300000);
+</script><script id="skin-js">
+/* dashboards skin v1: presentation only. Never changes data, only classes / wrappers / colour spans. */
+(function(){
+'use strict';
+var D=document,B=D.body,SP=B.getAttribute('data-sport')||'';
+var TITLES={'nfl':'All games & lines','nfl-props':'All props','nfl-td':'All players','cfb':'All games & lines','mlb':'All games & edges','nhl':'All edges, games & goalies','nhl-props':'All player points','tennis':'All matches','nba-props':'All props'};
+function store(k,v){try{if(v===undefined)return sessionStorage.getItem('skin:'+location.pathname+':'+k);sessionStorage.setItem('skin:'+location.pathname+':'+k,v)}catch(e){return null}}
+
+/* 1. colour words and signed values (over/under green/red, edge green/red) */
+var OU=/\b(over|under)\b/i,SV=/^[+\-\u2212]\d+(\.\d+)?\s*(pts|%)$/;
+function colourise(root){
+  var sel=root.querySelectorAll?root.querySelectorAll('.pick,td,.sub td'):[];
+  if(root.matches&&root.matches('td,.pick'))sel=[root];
+  for(var i=0;i<sel.length;i++){
+    var el=sel[i];
+    if(el.classList.contains('num')&&!el.dataset.sv){var t=el.textContent.trim();el.dataset.sv=1;if(SV.test(t))el.classList.add(t.charAt(0)==='+'?'sv-pos':'sv-neg')}
+    if(el.dataset.ou)continue;
+    var w=D.createTreeWalker(el,NodeFilter.SHOW_TEXT,null),n,list=[];
+    while((n=w.nextNode())){if(OU.test(n.nodeValue)&&!(n.parentNode.classList&&n.parentNode.classList.contains('ou')))list.push(n)}
+    list.forEach(function(n){
+      var parts=n.nodeValue.split(/\b(over|under)\b/i),f=D.createDocumentFragment();
+      parts.forEach(function(p){
+        if(/^(over|under)$/i.test(p)){var s=D.createElement('span');s.className='ou '+p.toLowerCase();s.textContent=p;f.appendChild(s)}
+        else if(p)f.appendChild(D.createTextNode(p))});
+      n.parentNode.replaceChild(f,n)});
+    el.dataset.ou=1;
+  }
+}
+
+/* 2. collapsible sections (each .sec-h and everything up to the next one) */
+function rows(el){return el.querySelectorAll('tr').length}
+function sections(){
+  var main=D.querySelector('main.wrap');if(!main)return;
+  var kids=[].slice.call(main.children),tabs=null,i;
+  for(i=0;i<kids.length;i++)if(kids[i].classList.contains('tabs')){tabs=kids[i];break}
+  if(tabs){
+    var prev=null;for(i=kids.indexOf(tabs)-1;i>=0;i--)if(kids[i].classList.contains('sec-h')){prev=kids[i];break}
+    if(!prev||/top (plays|props)/i.test(prev.textContent)){
+      var h=D.createElement('div');h.className='sec-h';h.textContent=TITLES[SP]||'Full board';main.insertBefore(h,tabs)}
+  }
+  kids=[].slice.call(main.children);
+  var heads=kids.filter(function(e){return e.classList.contains('sec-h')});
+  heads.forEach(function(h,idx){
+    var sec=D.createElement('section'),body=D.createElement('div'),n=h.nextSibling;
+    sec.className='sec';body.className='sec-b';
+    main.insertBefore(sec,h);sec.appendChild(h);sec.appendChild(body);
+    while(n&&!(n.nodeType===1&&n.classList.contains('sec-h'))){var nx=n.nextSibling;body.appendChild(n);n=nx}
+    var nrows=rows(body),isTop=/top (plays|props)/i.test(h.textContent),key=h.firstChild?h.firstChild.textContent.trim():('s'+idx);
+    if(isTop)return;
+    sec.classList.add('tog');
+    if(nrows>12){var c=D.createElement('span');c.className='cnt';c.textContent=nrows+' rows';h.appendChild(c)}
+    var saved=store(key),closed=saved===null?nrows>45:saved==='1';
+    if(closed)sec.classList.add('closed');
+    h.addEventListener('click',function(e){if(e.target.closest('a,button,select,input'))return;var c=sec.classList.toggle('closed');store(key,c?'1':'0')});
+  });
+}
+
+/* 3. game cards: tap to expand tables / long injury lines */
+function gcards(){
+  var cards=[].slice.call(D.querySelectorAll('.gcard'));
+  cards.forEach(function(c,i){
+    [].forEach.call(c.querySelectorAll('.meta'),function(m){if(/^Injur/i.test(m.textContent)){m.classList.add('inj');m.addEventListener('click',function(){m.classList.toggle('open')})}});
+    var p=c.querySelector('.panel');if(!p)return;
+    c.classList.add('tog');var key='g'+i+(c.querySelector('h3')?c.querySelector('h3').textContent:''),sv=store(key);
+    if(sv===null?(cards.length>3&&i>0):sv==='1')c.classList.add('closed');
+    c.querySelector('h3').addEventListener('click',function(){var x=c.classList.toggle('closed');store(key,x?'1':'0')});
+  });
+}
+
+/* 4. keep only the sport nav pinned: the title row scrolls away */
+function pin(){
+  var t=D.querySelector('.topbar'),i=t&&t.querySelector('.in');if(!t||!i)return;
+  var set=function(){t.style.top=(-i.offsetHeight)+'px'};set();addEventListener('resize',set);addEventListener('load',set);
+  var a=t.querySelector('nav.sports a.on'),n=t.querySelector('nav.sports');
+  if(a&&n)n.scrollLeft=Math.max(0,a.offsetLeft-(n.clientWidth-a.offsetWidth)/2);
+}
+
+var busy=false,mo;
+function run(){colourise(D.body)}
+try{sections();gcards();run();pin()}catch(e){if(window.console)console.warn('skin',e)}
+if(window.MutationObserver){
+  var pend=false;
+  mo=new MutationObserver(function(){if(busy||pend)return;pend=true;requestAnimationFrame(function(){pend=false;busy=true;try{colourise(D.body)}catch(e){}busy=false})});
+  mo.observe(D.body,{childList:true,subtree:true});
+}
+})();
+
 </script><script id="pd-data" type="application/json">{"kind":"nba","page":"nba-first-basket","recs":[{"id":"401909893|3908809","n":"Donovan Mitchell","tm":"CLE","s":"CLE @ ATL · Thu Oct 29, 7:00 PM CT","ts":1793318400.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":16.0,"pm":16.0,"pk":null,"f":525,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +525","big":["16.0%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","No (Jarrett Allen)"],["Team share","26%"]],"dist":{"t":"How the model builds it","lab":["CLE wins tip","CLE scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.8143,0.6077,0.2632,0.1599],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","58/206"],["Team scores first","CLE 60.8%"]],"flags":[]},{"id":"401909894|5144091","n":"Jeremiah Fears","tm":"NO","s":"SAC @ NO · Thu Oct 29, 7:00 PM CT","ts":1793318400.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":14.9,"pm":14.9,"pk":null,"f":569,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +569","big":["14.9%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","No (DeAndre Jordan)"],["Team share","26%"]],"dist":{"t":"How the model builds it","lab":["NO wins tip","NO scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.6085,0.582,0.2567,0.1494],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","7/26"],["Team scores first","NO 58.2%"]],"flags":[]},{"id":"401909895|4065733","n":"Ty Jerome","tm":"MEM","s":"MEM @ POR · Thu Oct 29, 9:00 PM CT","ts":1793325600.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":14.4,"pm":14.4,"pk":null,"f":597,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +597","big":["14.4%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","No (Zach Edey)"],["Team share","29%"]],"dist":{"t":"How the model builds it","lab":["MEM wins tip","MEM scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.6975,0.5003,0.2869,0.1435],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","3/10"],["Team scores first","MEM 50.0%"]],"flags":[]},{"id":"401909893|4066328","n":"Jarrett Allen","tm":"CLE","s":"CLE @ ATL · Thu Oct 29, 7:00 PM CT","ts":1793318400.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":14.1,"pm":14.1,"pk":null,"f":607,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +607","big":["14.1%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","Yes"],["Team share","23%"]],"dist":{"t":"How the model builds it","lab":["CLE wins tip","CLE scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.8143,0.6077,0.2328,0.1415],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","64/222"],["Team scores first","CLE 60.8%"]],"flags":[]},{"id":"401909893|4432158","n":"Evan Mobley","tm":"CLE","s":"CLE @ ATL · Thu Oct 29, 7:00 PM CT","ts":1793318400.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":12.7,"pm":12.7,"pk":null,"f":690,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +690","big":["12.7%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","No (Jarrett Allen)"],["Team share","21%"]],"dist":{"t":"How the model builds it","lab":["CLE wins tip","CLE scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.8143,0.6077,0.2083,0.1266],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","51/215"],["Team scores first","CLE 60.8%"]],"flags":[]},{"id":"401909894|3907497","n":"Dejounte Murray","tm":"NO","s":"SAC @ NO · Thu Oct 29, 7:00 PM CT","ts":1793318400.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":12.6,"pm":12.6,"pk":null,"f":691,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +691","big":["12.6%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","No (DeAndre Jordan)"],["Team share","22%"]],"dist":{"t":"How the model builds it","lab":["NO wins tip","NO scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.6085,0.582,0.2173,0.1265],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","29/134"],["Team scores first","NO 58.2%"]],"flags":[]},{"id":"401909894|4395628","n":"Zion Williamson","tm":"NO","s":"SAC @ NO · Thu Oct 29, 7:00 PM CT","ts":1793318400.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":12.2,"pm":12.2,"pk":null,"f":717,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +717","big":["12.2%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","No (DeAndre Jordan)"],["Team share","21%"]],"dist":{"t":"How the model builds it","lab":["NO wins tip","NO scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.6085,0.582,0.2103,0.1224],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","21/96"],["Team scores first","NO 58.2%"]],"flags":[]},{"id":"401909895|4683021","n":"Deni Avdija","tm":"POR","s":"MEM @ POR · Thu Oct 29, 9:00 PM CT","ts":1793325600.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":11.9,"pm":11.9,"pk":null,"f":738,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +738","big":["11.9%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","No (Donovan Clingan)"],["Team share","24%"]],"dist":{"t":"How the model builds it","lab":["POR wins tip","POR scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.3025,0.4997,0.2389,0.1194],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","29/120"],["Team scores first","POR 50.0%"]],"flags":[]},{"id":"401909895|4279888","n":"Ja Morant","tm":"POR","s":"MEM @ POR · Thu Oct 29, 9:00 PM CT","ts":1793325600.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":11.7,"pm":11.7,"pk":null,"f":752,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +752","big":["11.7%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","No (Donovan Clingan)"],["Team share","23%"]],"dist":{"t":"How the model builds it","lab":["POR wins tip","POR scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.3025,0.4997,0.2348,0.1173],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","29/125"],["Team scores first","POR 50.0%"]],"flags":[]},{"id":"401909895|6606","n":"Damian Lillard","tm":"POR","s":"MEM @ POR · Thu Oct 29, 9:00 PM CT","ts":1793325600.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":10.8,"pm":10.8,"pk":null,"f":830,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +830","big":["10.8%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","No (Donovan Clingan)"],["Team share","22%"]],"dist":{"t":"How the model builds it","lab":["POR wins tip","POR scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.3025,0.4997,0.2152,0.1075],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","28/128"],["Team scores first","POR 50.0%"]],"flags":[]},{"id":"401909893|4701230","n":"Jalen Johnson","tm":"ATL","s":"CLE @ ATL · Thu Oct 29, 7:00 PM CT","ts":1793318400.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":10.3,"pm":10.3,"pk":null,"f":869,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +869","big":["10.3%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","No (Onyeka Okongwu)"],["Team share","26%"]],"dist":{"t":"How the model builds it","lab":["ATL wins tip","ATL scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.1857,0.3923,0.2631,0.1032],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","23/90"],["Team scores first","ATL 39.2%"]],"flags":[]},{"id":"401909895|5041935","n":"Cameron Boozer","tm":"MEM","s":"MEM @ POR · Thu Oct 29, 9:00 PM CT","ts":1793325600.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":10.3,"pm":10.3,"pk":null,"f":872,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +872","big":["10.3%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","No (Zach Edey)"],["Team share","21%"]],"dist":{"t":"How the model builds it","lab":["MEM wins tip","MEM scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.6975,0.5003,0.2056,0.1029],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","0/3"],["Team scores first","MEM 50.0%"]],"flags":[]},{"id":"401909894|5142620","n":"Darius Acuff Jr.","tm":"SAC","s":"SAC @ NO · Thu Oct 29, 7:00 PM CT","ts":1793318400.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":9.9,"pm":9.9,"pk":null,"f":914,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +914","big":["9.9%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","No (Domantas Sabonis)"],["Team share","24%"]],"dist":{"t":"How the model builds it","lab":["SAC wins tip","SAC scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.3915,0.418,0.236,0.0986],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","0/2"],["Team scores first","SAC 41.8%"]],"flags":[]},{"id":"401909894|3155942","n":"Domantas Sabonis","tm":"SAC","s":"SAC @ NO · Thu Oct 29, 7:00 PM CT","ts":1793318400.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":9.8,"pm":9.8,"pk":null,"f":916,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +916","big":["9.8%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","Yes"],["Team share","24%"]],"dist":{"t":"How the model builds it","lab":["SAC wins tip","SAC scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.3915,0.418,0.2355,0.0984],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","49/146"],["Team scores first","SAC 41.8%"]],"flags":[]},{"id":"401909895|4903027","n":"Cedric Coward","tm":"MEM","s":"MEM @ POR · Thu Oct 29, 9:00 PM CT","ts":1793325600.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":9.5,"pm":9.5,"pk":null,"f":948,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +948","big":["9.5%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","No (Zach Edey)"],["Team share","19%"]],"dist":{"t":"How the model builds it","lab":["MEM wins tip","MEM scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.6975,0.5003,0.1907,0.0954],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","5/25"],["Team scores first","MEM 50.0%"]],"flags":[]},{"id":"401909894|4397688","n":"Trey Murphy III","tm":"NO","s":"SAC @ NO · Thu Oct 29, 7:00 PM CT","ts":1793318400.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":9.4,"pm":9.4,"pk":null,"f":966,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +966","big":["9.4%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","No (DeAndre Jordan)"],["Team share","16%"]],"dist":{"t":"How the model builds it","lab":["NO wins tip","NO scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.6085,0.582,0.1612,0.0938],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","17/119"],["Team scores first","NO 58.2%"]],"flags":[]},{"id":"401909893|3992","n":"James Harden","tm":"CLE","s":"CLE @ ATL · Thu Oct 29, 7:00 PM CT","ts":1793318400.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":9.1,"pm":9.1,"pk":null,"f":1004,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +1004","big":["9.1%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","No (Jarrett Allen)"],["Team share","15%"]],"dist":{"t":"How the model builds it","lab":["CLE wins tip","CLE scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.8143,0.6077,0.149,0.0906],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","28/206"],["Team scores first","CLE 60.8%"]],"flags":[]},{"id":"401909894|3442","n":"DeAndre Jordan","tm":"NO","s":"SAC @ NO · Thu Oct 29, 7:00 PM CT","ts":1793318400.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":8.7,"pm":8.7,"pk":null,"f":1049,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +1049","big":["8.7%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","Yes"],["Team share","15%"]],"dist":{"t":"How the model builds it","lab":["NO wins tip","NO scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.6085,0.582,0.1496,0.087],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","6/21"],["Team scores first","NO 58.2%"]],"flags":[]},{"id":"401909893|4576087","n":"Peyton Watson","tm":"CLE","s":"CLE @ ATL · Thu Oct 29, 7:00 PM CT","ts":1793318400.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":8.6,"pm":8.6,"pk":null,"f":1061,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +1061","big":["8.6%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","No (Jarrett Allen)"],["Team share","14%"]],"dist":{"t":"How the model builds it","lab":["CLE wins tip","CLE scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.8143,0.6077,0.1417,0.0861],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","3/38"],["Team scores first","CLE 60.8%"]],"flags":[]},{"id":"401909895|5105565","n":"Donovan Clingan","tm":"POR","s":"MEM @ POR · Thu Oct 29, 9:00 PM CT","ts":1793325600.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":8.2,"pm":8.2,"pk":null,"f":1126,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +1126","big":["8.2%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","Yes"],["Team share","16%"]],"dist":{"t":"How the model builds it","lab":["POR wins tip","POR scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.3025,0.4997,0.1632,0.0816],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","10/60"],["Team scores first","POR 50.0%"]],"flags":[]},{"id":"401909894|4065732","n":"De'Andre Hunter","tm":"SAC","s":"SAC @ NO · Thu Oct 29, 7:00 PM CT","ts":1793318400.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":8.1,"pm":8.1,"pk":null,"f":1130,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +1130","big":["8.1%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","No (Domantas Sabonis)"],["Team share","19%"]],"dist":{"t":"How the model builds it","lab":["SAC wins tip","SAC scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.3915,0.418,0.1945,0.0813],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","25/98"],["Team scores first","SAC 41.8%"]],"flags":[]},{"id":"401909893|4431680","n":"Onyeka Okongwu","tm":"ATL","s":"CLE @ ATL · Thu Oct 29, 7:00 PM CT","ts":1793318400.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":7.8,"pm":7.8,"pk":null,"f":1188,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +1188","big":["7.8%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","Yes"],["Team share","20%"]],"dist":{"t":"How the model builds it","lab":["ATL wins tip","ATL scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.1857,0.3923,0.1979,0.0776],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","16/72"],["Team scores first","ATL 39.2%"]],"flags":[]},{"id":"401909894|3064440","n":"Zach LaVine","tm":"SAC","s":"SAC @ NO · Thu Oct 29, 7:00 PM CT","ts":1793318400.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":7.8,"pm":7.8,"pk":null,"f":1184,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +1184","big":["7.8%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","No (Domantas Sabonis)"],["Team share","19%"]],"dist":{"t":"How the model builds it","lab":["SAC wins tip","SAC scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.3915,0.418,0.1864,0.0779],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","25/120"],["Team scores first","SAC 41.8%"]],"flags":[]},{"id":"401909895|5112087","n":"Jaylen Wells","tm":"MEM","s":"MEM @ POR · Thu Oct 29, 9:00 PM CT","ts":1793325600.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":7.8,"pm":7.8,"pk":null,"f":1188,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +1188","big":["7.8%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","No (Zach Edey)"],["Team share","16%"]],"dist":{"t":"How the model builds it","lab":["MEM wins tip","MEM scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.6975,0.5003,0.1552,0.0777],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","11/77"],["Team scores first","MEM 50.0%"]],"flags":[]},{"id":"401909895|4600663","n":"Zach Edey","tm":"MEM","s":"MEM @ POR · Thu Oct 29, 9:00 PM CT","ts":1793325600.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":7.8,"pm":7.8,"pk":null,"f":1177,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +1177","big":["7.8%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","Yes"],["Team share","16%"]],"dist":{"t":"How the model builds it","lab":["MEM wins tip","MEM scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.6975,0.5003,0.1565,0.0783],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","8/46"],["Team scores first","MEM 50.0%"]],"flags":[]},{"id":"401909893|2490149","n":"CJ McCollum","tm":"ATL","s":"CLE @ ATL · Thu Oct 29, 7:00 PM CT","ts":1793318400.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":7.4,"pm":7.4,"pk":null,"f":1250,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +1250","big":["7.4%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","No (Onyeka Okongwu)"],["Team share","19%"]],"dist":{"t":"How the model builds it","lab":["ATL wins tip","ATL scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.1857,0.3923,0.1888,0.0741],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","28/187"],["Team scores first","ATL 39.2%"]],"flags":[]},{"id":"401909895|4431736","n":"Toumani Camara","tm":"POR","s":"MEM @ POR · Thu Oct 29, 9:00 PM CT","ts":1793325600.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":7.1,"pm":7.1,"pk":null,"f":1300,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +1300","big":["7.1%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","No (Donovan Clingan)"],["Team share","14%"]],"dist":{"t":"How the model builds it","lab":["POR wins tip","POR scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.3025,0.4997,0.143,0.0714],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","14/97"],["Team scores first","POR 50.0%"]],"flags":[]},{"id":"401909893|4869342","n":"Dyson Daniels","tm":"ATL","s":"CLE @ ATL · Thu Oct 29, 7:00 PM CT","ts":1793318400.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":6.9,"pm":6.9,"pk":null,"f":1340,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +1340","big":["6.9%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","No (Onyeka Okongwu)"],["Team share","18%"]],"dist":{"t":"How the model builds it","lab":["ATL wins tip","ATL scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.1857,0.3923,0.1771,0.0695],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","17/97"],["Team scores first","ATL 39.2%"]],"flags":[]},{"id":"401909893|4278039","n":"Nickeil Alexander-Walker","tm":"ATL","s":"CLE @ ATL · Thu Oct 29, 7:00 PM CT","ts":1793318400.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":6.6,"pm":6.6,"pk":null,"f":1416,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +1416","big":["6.6%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","No (Onyeka Okongwu)"],["Team share","17%"]],"dist":{"t":"How the model builds it","lab":["ATL wins tip","ATL scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.1857,0.3923,0.1682,0.066],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","7/62"],["Team scores first","ATL 39.2%"]],"flags":[]},{"id":"401909894|4431679","n":"Precious Achiuwa","tm":"SAC","s":"SAC @ NO · Thu Oct 29, 7:00 PM CT","ts":1793318400.0,"mk":"fb","mkl":"first basket","sides":[{"l":"First basket","p":6.0,"pm":6.0,"pk":null,"f":1577,"b":null,"bk":null,"nb":0,"e":null,"v":null}],"play":false,"sus":false,"m":"First basket · fair +1577","big":["6.0%","chance"],"keys":[["Status","Available"],["Starter","Projected starting five"],["Tip jumper","No (Domantas Sabonis)"],["Team share","14%"]],"dist":{"t":"How the model builds it","lab":["SAC wins tip","SAC scores first","Share of team’s first baskets","Player first basket (model)"],"v":[0.3915,0.418,0.1427,0.0596],"s":"nnno","abs":1,"note":"team first-score chance × the player’s share of that team’s first baskets","fam":""},"facts":[["First-basket record","9/63"],["Team scores first","SAC 41.8%"]],"flags":[]}],"v":1}</script><script id="pd-js">
 /* prop detail panels: renders the JSON blob computed by apply_propdetail.py. Additive only; any error leaves the page untouched. */
 (function(){
@@ -953,93 +1040,6 @@ if(B.top){var secs=main.querySelectorAll(':scope > section.sec');anchor=secs.len
 anchor.parentNode.insertBefore(bar,anchor);
 drawHead();apply(false);
 }catch(e){if(window.console)console.warn('per-game',e)}
-})();
-
-</script><script id="skin-js">
-/* dashboards skin v1: presentation only. Never changes data, only classes / wrappers / colour spans. */
-(function(){
-'use strict';
-var D=document,B=D.body,SP=B.getAttribute('data-sport')||'';
-var TITLES={'nfl':'All games & lines','nfl-props':'All props','nfl-td':'All players','cfb':'All games & lines','mlb':'All games & edges','nhl':'All edges, games & goalies','nhl-props':'All player points','tennis':'All matches','nba-props':'All props'};
-function store(k,v){try{if(v===undefined)return sessionStorage.getItem('skin:'+location.pathname+':'+k);sessionStorage.setItem('skin:'+location.pathname+':'+k,v)}catch(e){return null}}
-
-/* 1. colour words and signed values (over/under green/red, edge green/red) */
-var OU=/\b(over|under)\b/i,SV=/^[+\-\u2212]\d+(\.\d+)?\s*(pts|%)$/;
-function colourise(root){
-  var sel=root.querySelectorAll?root.querySelectorAll('.pick,td,.sub td'):[];
-  if(root.matches&&root.matches('td,.pick'))sel=[root];
-  for(var i=0;i<sel.length;i++){
-    var el=sel[i];
-    if(el.classList.contains('num')&&!el.dataset.sv){var t=el.textContent.trim();el.dataset.sv=1;if(SV.test(t))el.classList.add(t.charAt(0)==='+'?'sv-pos':'sv-neg')}
-    if(el.dataset.ou)continue;
-    var w=D.createTreeWalker(el,NodeFilter.SHOW_TEXT,null),n,list=[];
-    while((n=w.nextNode())){if(OU.test(n.nodeValue)&&!(n.parentNode.classList&&n.parentNode.classList.contains('ou')))list.push(n)}
-    list.forEach(function(n){
-      var parts=n.nodeValue.split(/\b(over|under)\b/i),f=D.createDocumentFragment();
-      parts.forEach(function(p){
-        if(/^(over|under)$/i.test(p)){var s=D.createElement('span');s.className='ou '+p.toLowerCase();s.textContent=p;f.appendChild(s)}
-        else if(p)f.appendChild(D.createTextNode(p))});
-      n.parentNode.replaceChild(f,n)});
-    el.dataset.ou=1;
-  }
-}
-
-/* 2. collapsible sections (each .sec-h and everything up to the next one) */
-function rows(el){return el.querySelectorAll('tr').length}
-function sections(){
-  var main=D.querySelector('main.wrap');if(!main)return;
-  var kids=[].slice.call(main.children),tabs=null,i;
-  for(i=0;i<kids.length;i++)if(kids[i].classList.contains('tabs')){tabs=kids[i];break}
-  if(tabs){
-    var prev=null;for(i=kids.indexOf(tabs)-1;i>=0;i--)if(kids[i].classList.contains('sec-h')){prev=kids[i];break}
-    if(!prev||/top (plays|props)/i.test(prev.textContent)){
-      var h=D.createElement('div');h.className='sec-h';h.textContent=TITLES[SP]||'Full board';main.insertBefore(h,tabs)}
-  }
-  kids=[].slice.call(main.children);
-  var heads=kids.filter(function(e){return e.classList.contains('sec-h')});
-  heads.forEach(function(h,idx){
-    var sec=D.createElement('section'),body=D.createElement('div'),n=h.nextSibling;
-    sec.className='sec';body.className='sec-b';
-    main.insertBefore(sec,h);sec.appendChild(h);sec.appendChild(body);
-    while(n&&!(n.nodeType===1&&n.classList.contains('sec-h'))){var nx=n.nextSibling;body.appendChild(n);n=nx}
-    var nrows=rows(body),isTop=/top (plays|props)/i.test(h.textContent),key=h.firstChild?h.firstChild.textContent.trim():('s'+idx);
-    if(isTop)return;
-    sec.classList.add('tog');
-    if(nrows>12){var c=D.createElement('span');c.className='cnt';c.textContent=nrows+' rows';h.appendChild(c)}
-    var saved=store(key),closed=saved===null?nrows>45:saved==='1';
-    if(closed)sec.classList.add('closed');
-    h.addEventListener('click',function(e){if(e.target.closest('a,button,select,input'))return;var c=sec.classList.toggle('closed');store(key,c?'1':'0')});
-  });
-}
-
-/* 3. game cards: tap to expand tables / long injury lines */
-function gcards(){
-  var cards=[].slice.call(D.querySelectorAll('.gcard'));
-  cards.forEach(function(c,i){
-    [].forEach.call(c.querySelectorAll('.meta'),function(m){if(/^Injur/i.test(m.textContent)){m.classList.add('inj');m.addEventListener('click',function(){m.classList.toggle('open')})}});
-    var p=c.querySelector('.panel');if(!p)return;
-    c.classList.add('tog');var key='g'+i+(c.querySelector('h3')?c.querySelector('h3').textContent:''),sv=store(key);
-    if(sv===null?(cards.length>3&&i>0):sv==='1')c.classList.add('closed');
-    c.querySelector('h3').addEventListener('click',function(){var x=c.classList.toggle('closed');store(key,x?'1':'0')});
-  });
-}
-
-/* 4. keep only the sport nav pinned: the title row scrolls away */
-function pin(){
-  var t=D.querySelector('.topbar'),i=t&&t.querySelector('.in');if(!t||!i)return;
-  var set=function(){t.style.top=(-i.offsetHeight)+'px'};set();addEventListener('resize',set);addEventListener('load',set);
-  var a=t.querySelector('nav.sports a.on'),n=t.querySelector('nav.sports');
-  if(a&&n)n.scrollLeft=Math.max(0,a.offsetLeft-(n.clientWidth-a.offsetWidth)/2);
-}
-
-var busy=false,mo;
-function run(){colourise(D.body)}
-try{sections();gcards();run();pin()}catch(e){if(window.console)console.warn('skin',e)}
-if(window.MutationObserver){
-  var pend=false;
-  mo=new MutationObserver(function(){if(busy||pend)return;pend=true;requestAnimationFrame(function(){pend=false;busy=true;try{colourise(D.body)}catch(e){}busy=false})});
-  mo.observe(D.body,{childList:true,subtree:true});
-}
 })();
 
 </script><script id="polish-data" type="application/json">{"pre":"../../","fallback":1793203118,"v":"polish-v1"}</script><script id="polish-js">
