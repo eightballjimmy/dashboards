@@ -297,6 +297,10 @@ nav.sports a[data-k="tennis"]{--c:#b6f03c;--c2:#22d3ee}
 .gd-res-h b{font-size:15px;font-weight:800;color:#fff}
 .gd-res .gd-sub{margin-top:4px}
 
+/* LIVE-CARDS */
+.gd-livebox .gd-res-h{align-items:center}
+.gd-livebox .gd-sub{font-size:12px}
+
 </style><style id="rec-css">
 /* model projected-side record (apply_record.py): uses the skin variables, falls back to dark defaults */
 .rec-sec .sec-h{cursor:pointer}
@@ -917,12 +921,23 @@ function resbox(g){
   ap(r,el('div','gd-sub','Projection below is the last one posted before '+(g.tennis?'the match':'tip-off / start')+'.'));
   return r;
 }
+function livebox(g){
+  var l=g.lv,r=el('div','gd-res gd-livebox'),h2=el('div','gd-res-h');
+  ap(h2,el('span','gd-live','LIVE'));
+  if(l&&l.a!=null)ap(h2,el('b',null,SA(g)+' '+l.a+' @ '+SH(g)+' '+l.h));
+  else ap(h2,el('b',null,SA(g)+' @ '+SH(g)));
+  if(l&&l.d)ap(h2,el('span','gd-sub',l.d));
+  ap(r,h2,el('div','gd-sub','In progress. The projection, win chances and prices below are the model\u2019s last numbers posted before '+(g.tennis?'the match':'the game')+' started.'));
+  return r;
+}
+function isLive(g){return !g.past&&(g.lv||(g.state&&/^(in|live|crit)/i.test(g.state)))}
 function body(g){
   var b=el('div','gd-body');
   if(g.past)ap(b,resbox(g));
+  else if(isLive(g))ap(b,livebox(g));
   ap(b,hero(g));
   if(g.proj){
-    var sub=g.proj.dec?'Projected final (model average)':'Projected final from model total '+g.proj.total.toFixed(1)+' and margin '+(g.proj.margin>0?g.hn:g.an)+' by '+Math.abs(g.proj.margin).toFixed(1);
+    var sub=g.proj.dec?(isLive(g)?'Pre-game projected final (model average)':'Projected final (model average)'):'Projected final from model total '+g.proj.total.toFixed(1)+' and margin '+(g.proj.margin>0?g.hn:g.an)+' by '+Math.abs(g.proj.margin).toFixed(1);
     ap(b,el('div','gd-sub',sub));
   }
   if(g.likely)ap(b,el('div','gd-likely',g.likely));
@@ -985,9 +1000,9 @@ function body(g){
 function card(g,i){
   var c=el('div','gd-card'),h=el('button','gd-head');h.setAttribute('type','button');h.setAttribute('aria-expanded','false');
   var m=el('div','gd-main'),w=el('div','gd-when');w.appendChild(el('span',null,g.when||''));
-  if(g.state&&/^(in|live|crit)/i.test(g.state))w.appendChild(el('span','gd-live','LIVE'));
+  if(isLive(g))w.appendChild(el('span','gd-live','LIVE'));
   if(g.ev)w.appendChild(el('span',null,'\u00b7 '+g.ev));
-  ap(m,w,el('div','gd-teams',g.tennis?g.an+' vs '+g.hn:g.an+' @ '+g.hn),el('div','gd-tap',g.past?(g.proj?'Projected '+g.proj.a.toFixed(g.proj.dec?1:0)+'\u2013'+g.proj.h.toFixed(g.proj.dec?1:0)+' \u00b7 tap for details':'Tap for the saved projection'):'Tap for projected score & details'));
+  ap(m,w,el('div','gd-teams',g.tennis?g.an+' vs '+g.hn:g.an+' @ '+g.hn),el('div','gd-tap',g.past?(g.proj?'Projected '+g.proj.a.toFixed(g.proj.dec?1:0)+'\u2013'+g.proj.h.toFixed(g.proj.dec?1:0)+' \u00b7 tap for details':'Tap for the saved projection'):(isLive(g)&&g.proj?'Pre-game projection '+g.proj.a.toFixed(g.proj.dec?1:0)+'\u2013'+g.proj.h.toFixed(g.proj.dec?1:0)+' \u00b7 tap for details':'Tap for projected score & details')));
   var s=el('div','gd-side');
   if(g.picks&&g.picks.length){var best=g.picks.map(function(p){return p.g}).sort()[0];s.appendChild(el('span','gd-g '+best,best))}
   var sc=el('div','gd-sc');
@@ -997,7 +1012,8 @@ function card(g,i){
     else if(f){ap(sc,el('b',null,'Final'),el('i',null,'result'))}
     else{ap(sc,el('b',null,g.proj?g.proj.a.toFixed(g.proj.dec?1:0)+'\u2013'+g.proj.h.toFixed(g.proj.dec?1:0):'\u2013'),el('i',null,'proj'))}
     if(f&&f.su)s.insertBefore(el('span','gd-chk '+(f.su==='W'?'ok':f.su==='L'?'no':'pu'),f.su==='W'?'\u2713':f.su==='L'?'\u2717':'P'),s.firstChild);
-  }else if(g.proj){var f=g.proj.dec?1:0;ap(sc,el('b',null,g.proj.a.toFixed(f)+'\u2013'+g.proj.h.toFixed(f)),el('i',null,'proj'))}
+  }else if(g.lv&&g.lv.a!=null){ap(sc,el('b',null,g.lv.a+'\u2013'+g.lv.h),el('i',null,g.lv.d||'live'))}
+  else if(g.proj){var f=g.proj.dec?1:0;ap(sc,el('b',null,g.proj.a.toFixed(f)+'\u2013'+g.proj.h.toFixed(f)),el('i',null,'proj'))}
   else if(g.win){ap(sc,el('b',null,Math.round(g.win.a)+'\u2013'+Math.round(g.win.h)+'%'),el('i',null,'win %'))}
   ap(s,sc,el('span','gd-chev'));
   ap(h,m,s);c.appendChild(h);
@@ -1067,7 +1083,7 @@ if(psec)sec.parentNode.insertBefore(psec,sec.nextSibling);
 }catch(e){if(window.console)console.warn('game detail',e)}
 })();
 
-</script><script id="rec-data" type="application/json">{"v":1,"sport":"tennis","today":"2026-10-27","generated":"2026-10-27 20:32","rec":{"lines":["SU"],"graded":591,"since":"2026-10-05","tracked_projections":699,"last7":{"games":187,"SU":{"w":123,"l":63,"p":0,"n":186,"pct":66.1}},"season":{"games":591,"SU":{"w":367,"l":223,"p":0,"n":590,"pct":62.2}},"days":{"2026-10-05":{"games":10,"SU":{"w":7,"l":3,"p":0,"n":10,"pct":70.0}},"2026-10-06":{"games":23,"SU":{"w":13,"l":10,"p":0,"n":23,"pct":56.5}},"2026-10-07":{"games":28,"SU":{"w":18,"l":10,"p":0,"n":28,"pct":64.3}},"2026-10-08":{"games":25,"SU":{"w":16,"l":9,"p":0,"n":25,"pct":64.0}},"2026-10-09":{"games":27,"SU":{"w":18,"l":9,"p":0,"n":27,"pct":66.7}},"2026-10-10":{"games":32,"SU":{"w":19,"l":13,"p":0,"n":32,"pct":59.4}},"2026-10-11":{"games":16,"SU":{"w":9,"l":7,"p":0,"n":16,"pct":56.2}},"2026-10-12":{"games":28,"SU":{"w":18,"l":10,"p":0,"n":28,"pct":64.3}},"2026-10-13":{"games":31,"SU":{"w":19,"l":12,"p":0,"n":31,"pct":61.3}},"2026-10-14":{"games":21,"SU":{"w":12,"l":9,"p":0,"n":21,"pct":57.1}},"2026-10-15":{"games":16,"SU":{"w":10,"l":6,"p":0,"n":16,"pct":62.5}},"2026-10-16":{"games":20,"SU":{"w":11,"l":9,"p":0,"n":20,"pct":55.0}},"2026-10-17":{"games":39,"SU":{"w":28,"l":11,"p":0,"n":39,"pct":71.8}},"2026-10-18":{"games":28,"SU":{"w":10,"l":18,"p":0,"n":28,"pct":35.7}},"2026-10-19":{"games":29,"SU":{"w":17,"l":12,"p":0,"n":29,"pct":58.6}},"2026-10-20":{"games":31,"SU":{"w":19,"l":12,"p":0,"n":31,"pct":61.3}},"2026-10-21":{"games":22,"SU":{"w":13,"l":9,"p":0,"n":22,"pct":59.1}},"2026-10-22":{"games":16,"SU":{"w":12,"l":4,"p":0,"n":16,"pct":75.0}},"2026-10-23":{"games":22,"SU":{"w":16,"l":6,"p":0,"n":22,"pct":72.7}},"2026-10-24":{"games":46,"SU":{"w":28,"l":18,"p":0,"n":46,"pct":60.9}},"2026-10-25":{"games":21,"SU":{"w":12,"l":9,"p":0,"n":21,"pct":57.1}},"2026-10-26":{"games":25,"SU":{"w":17,"l":7,"p":0,"n":24,"pct":70.8}},"2026-10-27":{"games":35,"SU":{"w":25,"l":10,"p":0,"n":35,"pct":71.4}}}},"note":"Singles matches only; the side is the player the model gives better than a 50% chance. Retirements and walkovers are not counted.","empty":""}</script><script id="rec-js">
+</script><script id="rec-data" type="application/json">{"v":1,"sport":"tennis","today":"2026-10-27","generated":"2026-10-27 20:53","rec":{"lines":["SU"],"graded":591,"since":"2026-10-05","tracked_projections":699,"last7":{"games":187,"SU":{"w":123,"l":63,"p":0,"n":186,"pct":66.1}},"season":{"games":591,"SU":{"w":367,"l":223,"p":0,"n":590,"pct":62.2}},"days":{"2026-10-05":{"games":10,"SU":{"w":7,"l":3,"p":0,"n":10,"pct":70.0}},"2026-10-06":{"games":23,"SU":{"w":13,"l":10,"p":0,"n":23,"pct":56.5}},"2026-10-07":{"games":28,"SU":{"w":18,"l":10,"p":0,"n":28,"pct":64.3}},"2026-10-08":{"games":25,"SU":{"w":16,"l":9,"p":0,"n":25,"pct":64.0}},"2026-10-09":{"games":27,"SU":{"w":18,"l":9,"p":0,"n":27,"pct":66.7}},"2026-10-10":{"games":32,"SU":{"w":19,"l":13,"p":0,"n":32,"pct":59.4}},"2026-10-11":{"games":16,"SU":{"w":9,"l":7,"p":0,"n":16,"pct":56.2}},"2026-10-12":{"games":28,"SU":{"w":18,"l":10,"p":0,"n":28,"pct":64.3}},"2026-10-13":{"games":31,"SU":{"w":19,"l":12,"p":0,"n":31,"pct":61.3}},"2026-10-14":{"games":21,"SU":{"w":12,"l":9,"p":0,"n":21,"pct":57.1}},"2026-10-15":{"games":16,"SU":{"w":10,"l":6,"p":0,"n":16,"pct":62.5}},"2026-10-16":{"games":20,"SU":{"w":11,"l":9,"p":0,"n":20,"pct":55.0}},"2026-10-17":{"games":39,"SU":{"w":28,"l":11,"p":0,"n":39,"pct":71.8}},"2026-10-18":{"games":28,"SU":{"w":10,"l":18,"p":0,"n":28,"pct":35.7}},"2026-10-19":{"games":29,"SU":{"w":17,"l":12,"p":0,"n":29,"pct":58.6}},"2026-10-20":{"games":31,"SU":{"w":19,"l":12,"p":0,"n":31,"pct":61.3}},"2026-10-21":{"games":22,"SU":{"w":13,"l":9,"p":0,"n":22,"pct":59.1}},"2026-10-22":{"games":16,"SU":{"w":12,"l":4,"p":0,"n":16,"pct":75.0}},"2026-10-23":{"games":22,"SU":{"w":16,"l":6,"p":0,"n":22,"pct":72.7}},"2026-10-24":{"games":46,"SU":{"w":28,"l":18,"p":0,"n":46,"pct":60.9}},"2026-10-25":{"games":21,"SU":{"w":12,"l":9,"p":0,"n":21,"pct":57.1}},"2026-10-26":{"games":25,"SU":{"w":17,"l":7,"p":0,"n":24,"pct":70.8}},"2026-10-27":{"games":35,"SU":{"w":25,"l":10,"p":0,"n":35,"pct":71.4}}}},"note":"Singles matches only; the side is the player the model gives better than a 50% chance. Retirements and walkovers are not counted.","empty":""}</script><script id="rec-js">
 /* model projected-side record: renders the JSON blob written by apply_record.py. Additive only; any error leaves the page untouched. */
 (function(){
 'use strict';

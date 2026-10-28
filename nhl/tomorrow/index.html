@@ -298,6 +298,10 @@ nav.sports a[data-k="tennis"]{--c:#b6f03c;--c2:#22d3ee}
 .gd-res-h b{font-size:15px;font-weight:800;color:#fff}
 .gd-res .gd-sub{margin-top:4px}
 
+/* LIVE-CARDS */
+.gd-livebox .gd-res-h{align-items:center}
+.gd-livebox .gd-sub{font-size:12px}
+
 </style><style id="polish-css">
 /* ===== Model Desk polish v1 : institutional / terminal refinement layer. Loaded LAST. Presentation only. ===== */
 :root{
@@ -934,12 +938,23 @@ function resbox(g){
   ap(r,el('div','gd-sub','Projection below is the last one posted before '+(g.tennis?'the match':'tip-off / start')+'.'));
   return r;
 }
+function livebox(g){
+  var l=g.lv,r=el('div','gd-res gd-livebox'),h2=el('div','gd-res-h');
+  ap(h2,el('span','gd-live','LIVE'));
+  if(l&&l.a!=null)ap(h2,el('b',null,SA(g)+' '+l.a+' @ '+SH(g)+' '+l.h));
+  else ap(h2,el('b',null,SA(g)+' @ '+SH(g)));
+  if(l&&l.d)ap(h2,el('span','gd-sub',l.d));
+  ap(r,h2,el('div','gd-sub','In progress. The projection, win chances and prices below are the model\u2019s last numbers posted before '+(g.tennis?'the match':'the game')+' started.'));
+  return r;
+}
+function isLive(g){return !g.past&&(g.lv||(g.state&&/^(in|live|crit)/i.test(g.state)))}
 function body(g){
   var b=el('div','gd-body');
   if(g.past)ap(b,resbox(g));
+  else if(isLive(g))ap(b,livebox(g));
   ap(b,hero(g));
   if(g.proj){
-    var sub=g.proj.dec?'Projected final (model average)':'Projected final from model total '+g.proj.total.toFixed(1)+' and margin '+(g.proj.margin>0?g.hn:g.an)+' by '+Math.abs(g.proj.margin).toFixed(1);
+    var sub=g.proj.dec?(isLive(g)?'Pre-game projected final (model average)':'Projected final (model average)'):'Projected final from model total '+g.proj.total.toFixed(1)+' and margin '+(g.proj.margin>0?g.hn:g.an)+' by '+Math.abs(g.proj.margin).toFixed(1);
     ap(b,el('div','gd-sub',sub));
   }
   if(g.likely)ap(b,el('div','gd-likely',g.likely));
@@ -1002,9 +1017,9 @@ function body(g){
 function card(g,i){
   var c=el('div','gd-card'),h=el('button','gd-head');h.setAttribute('type','button');h.setAttribute('aria-expanded','false');
   var m=el('div','gd-main'),w=el('div','gd-when');w.appendChild(el('span',null,g.when||''));
-  if(g.state&&/^(in|live|crit)/i.test(g.state))w.appendChild(el('span','gd-live','LIVE'));
+  if(isLive(g))w.appendChild(el('span','gd-live','LIVE'));
   if(g.ev)w.appendChild(el('span',null,'\u00b7 '+g.ev));
-  ap(m,w,el('div','gd-teams',g.tennis?g.an+' vs '+g.hn:g.an+' @ '+g.hn),el('div','gd-tap',g.past?(g.proj?'Projected '+g.proj.a.toFixed(g.proj.dec?1:0)+'\u2013'+g.proj.h.toFixed(g.proj.dec?1:0)+' \u00b7 tap for details':'Tap for the saved projection'):'Tap for projected score & details'));
+  ap(m,w,el('div','gd-teams',g.tennis?g.an+' vs '+g.hn:g.an+' @ '+g.hn),el('div','gd-tap',g.past?(g.proj?'Projected '+g.proj.a.toFixed(g.proj.dec?1:0)+'\u2013'+g.proj.h.toFixed(g.proj.dec?1:0)+' \u00b7 tap for details':'Tap for the saved projection'):(isLive(g)&&g.proj?'Pre-game projection '+g.proj.a.toFixed(g.proj.dec?1:0)+'\u2013'+g.proj.h.toFixed(g.proj.dec?1:0)+' \u00b7 tap for details':'Tap for projected score & details')));
   var s=el('div','gd-side');
   if(g.picks&&g.picks.length){var best=g.picks.map(function(p){return p.g}).sort()[0];s.appendChild(el('span','gd-g '+best,best))}
   var sc=el('div','gd-sc');
@@ -1014,7 +1029,8 @@ function card(g,i){
     else if(f){ap(sc,el('b',null,'Final'),el('i',null,'result'))}
     else{ap(sc,el('b',null,g.proj?g.proj.a.toFixed(g.proj.dec?1:0)+'\u2013'+g.proj.h.toFixed(g.proj.dec?1:0):'\u2013'),el('i',null,'proj'))}
     if(f&&f.su)s.insertBefore(el('span','gd-chk '+(f.su==='W'?'ok':f.su==='L'?'no':'pu'),f.su==='W'?'\u2713':f.su==='L'?'\u2717':'P'),s.firstChild);
-  }else if(g.proj){var f=g.proj.dec?1:0;ap(sc,el('b',null,g.proj.a.toFixed(f)+'\u2013'+g.proj.h.toFixed(f)),el('i',null,'proj'))}
+  }else if(g.lv&&g.lv.a!=null){ap(sc,el('b',null,g.lv.a+'\u2013'+g.lv.h),el('i',null,g.lv.d||'live'))}
+  else if(g.proj){var f=g.proj.dec?1:0;ap(sc,el('b',null,g.proj.a.toFixed(f)+'\u2013'+g.proj.h.toFixed(f)),el('i',null,'proj'))}
   else if(g.win){ap(sc,el('b',null,Math.round(g.win.a)+'\u2013'+Math.round(g.win.h)+'%'),el('i',null,'win %'))}
   ap(s,sc,el('span','gd-chev'));
   ap(h,m,s);c.appendChild(h);
@@ -1084,7 +1100,7 @@ if(psec)sec.parentNode.insertBefore(psec,sec.nextSibling);
 }catch(e){if(window.console)console.warn('game detail',e)}
 })();
 
-</script><script id="polish-data" type="application/json">{"pre":"../../","fallback":1793152123,"v":"polish-v1"}</script><script id="polish-js">
+</script><script id="polish-data" type="application/json">{"pre":"../../","fallback":1793152444,"v":"polish-v1"}</script><script id="polish-js">
 /* Model Desk polish v1: presentation only. Adds brand row + freshness chip, aligns numeric table columns, adds footer text. Never changes data. */
 (function(){
 'use strict';
