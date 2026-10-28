@@ -1025,7 +1025,7 @@ function body(g){
   }
   if(g.picks&&g.picks.length){
     var pk=el('div','gd-picks');g.picks.forEach(function(p){var d=el('div');ap(d,el('span','gd-g '+p.g,p.g),el('span',null,p.t));pk.appendChild(d)});
-    ap(b,el('h4','gd-sub','Model picks on this game'),pk);
+    ap(b,el('h4','gd-sub',isLive(g)?'Pre-game model picks on this game':'Model picks on this game'),pk);
   }
   if(g.facts&&g.facts.length){var f=el('div','gd-facts');g.facts.forEach(function(x){f.appendChild(row(x[0],String(x[1])))});
     f.querySelectorAll('.r').forEach(function(r){r.className='r'});b.appendChild(f)}
