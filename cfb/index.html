@@ -726,8 +726,8 @@ const UI = (() => {
       const rs = rows().sort((a, b) => { const x = v(a), y = v(b); return (x < y ? -1 : x > y ? 1 : 0) * dir; }); dir = -dir; rs.forEach(r => r.parentNode.append(r)); }; }); return t; }
   // reload the page every `ms` when served over http(s) (GitHub Pages / local server); a hidden tab reloads as soon as it is shown again
   function autoReload(ms) { if (!/^https?:$/.test(location.protocol)) return; const t0 = Date.now(); const due = () => Date.now() - t0 >= ms;
-    setInterval(() => { if (due() && document.visibilityState !== 'hidden') location.reload(); }, 15000);
-    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && due()) location.reload(); }); }
+    setInterval(() => { if (due() && document.visibilityState !== 'hidden') (function(){var u=new URL(location.href);u.searchParams.set('_r',Date.now());location.replace(u.toString())})(); }, 15000);
+    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && due()) (function(){var u=new URL(location.href);u.searchParams.set('_r',Date.now());location.replace(u.toString())})(); }); }
   return { h, lab, labPill, ct, card, plays, head, statusAlert, sortTable, edgeCls, autoReload };
 })();
 
@@ -866,7 +866,7 @@ function footer() {
   F.append($('div', { text: 'Limits: points-only ratings (no PPA/SP+, transfers, weather); injuries from official conference reports for conference games, a partial third-party list for the rest, none for some games (INJ-UNKNOWN); no depth charts (backups inferred from box-score usage).' }));
   if (LIVE) {
     const btn = $('button', { text: 'Refresh now (re-runs the model, ~15-60 s)' }); const msg = $('span', { class: 'small mut', style: 'margin-left:8px' });
-    btn.onclick = async () => { btn.disabled = true; msg.textContent = 'running...'; try { const r = await fetch('../refresh', { method: 'POST' }); const j = await r.json(); msg.textContent = j.message || 'done'; if (j.ok) setTimeout(() => location.reload(), 500); else btn.disabled = false; } catch (e) { msg.textContent = 'refresh failed: ' + e; btn.disabled = false; } };
+    btn.onclick = async () => { btn.disabled = true; msg.textContent = 'running...'; try { const r = await fetch('../refresh', { method: 'POST' }); const j = await r.json(); msg.textContent = j.message || 'done'; if (j.ok) setTimeout(() => (function(){var u=new URL(location.href);u.searchParams.set('_r',Date.now());location.replace(u.toString())})(), 500); else btn.disabled = false; } catch (e) { msg.textContent = 'refresh failed: ' + e; btn.disabled = false; } };
     F.append($('div', { style: 'margin-top:8px' }, btn, msg));
   }
 }
