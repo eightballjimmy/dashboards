@@ -219,6 +219,89 @@ nav.sports a[data-k="nhl"]{--c:#22d3ee;--c2:#3b82f6}
 nav.sports a[data-k="nhl-props"]{--c:#2de3c0;--c2:#06b6d4}
 nav.sports a[data-k="mlb"]{--c:#ff5a6e;--c2:#ffb020}
 nav.sports a[data-k="tennis"]{--c:#b6f03c;--c2:#22d3ee}
+</style><style id="gd-css">
+/* game detail panels (apply_gamedetail.py): uses the skin variables, falls back to dark defaults */
+.gd-sec .sec-h{cursor:pointer}
+.gd-sec.closed>.sec-b,.gd-sec.closed>.gd-list{display:none}
+.gd-hint{color:var(--mut,#9db0d0);font-size:12.5px;margin:-4px 2px 10px}
+.gd-list{display:flex;flex-direction:column;gap:10px}
+.gd-card{position:relative;background:linear-gradient(160deg,rgba(var(--sp-rgb,91,140,255),.12),transparent 60%),var(--card,#10192e);border:1px solid var(--line,#24345a);border-left:5px solid var(--sp,#5b8cff);border-radius:16px;overflow:hidden;box-shadow:0 10px 24px -16px rgba(0,0,0,.9)}
+.gd-card.open{border-color:rgba(var(--sp-rgb,91,140,255),.7)}
+.gd-head{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:10px;width:100%;padding:12px 12px 12px 12px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.gd-head:active{background:rgba(255,255,255,.04)}
+.gd-main{flex:1 1 auto;min-width:0}
+.gd-when{font-size:11.5px;color:var(--mut,#9db0d0);display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.gd-live{background:#ff3d6e;color:#fff;border-radius:6px;padding:0 6px;font-size:10.5px;font-weight:800;letter-spacing:.06em}
+.gd-teams{font-size:16.5px;font-weight:800;letter-spacing:-.01em;line-height:1.25;margin-top:2px;overflow-wrap:anywhere;color:var(--ink,#f3f6fc)}
+.gd-tap{font-size:11.5px;color:var(--sp,#5b8cff);font-weight:700;margin-top:3px}
+.gd-side{flex:0 0 auto;display:flex;align-items:center;gap:8px}
+.gd-sc{display:flex;flex-direction:column;align-items:flex-end;font-variant-numeric:tabular-nums;line-height:1.1}
+.gd-sc b{font-size:17px;font-weight:900;letter-spacing:-.02em;color:#fff}
+.gd-sc i{font-style:normal;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mut,#9db0d0);margin-top:2px}
+.gd-chev{width:9px;height:9px;border-right:3px solid var(--sp,#5b8cff);border-bottom:3px solid var(--sp,#5b8cff);transform:rotate(45deg);margin:-3px 3px 0 2px;transition:transform .18s;flex:0 0 auto}
+.gd-card.open .gd-chev{transform:rotate(-135deg);margin-top:4px}
+.gd-g{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;padding:0 7px;border-radius:8px;font-size:14px;font-weight:900;box-shadow:0 3px 10px -3px rgba(0,0,0,.6)}
+.gd-g.A{background:linear-gradient(135deg,#2ff0a0,#12c27d);color:#022c1a}.gd-g.B{background:linear-gradient(135deg,#5b9bff,#8a63ff);color:#fff}.gd-g.C{background:linear-gradient(135deg,#ffc233,#ff8a1f);color:#3a1c00}
+.gd-body{padding:2px 12px 14px;border-top:1px solid rgba(255,255,255,.07)}
+.gd-card:not(.open) .gd-body{display:none}
+.gd-hero{display:flex;align-items:stretch;gap:8px;margin:12px 0 4px}
+.gd-t{flex:1 1 0;min-width:0;text-align:center;padding:10px 6px;border-radius:14px;background:rgba(255,255,255,.055);border:1px solid transparent}
+.gd-t.win{background:rgba(var(--sp-rgb,91,140,255),.20);border-color:rgba(var(--sp-rgb,91,140,255),.6)}
+.gd-t .n{font-size:12px;font-weight:700;color:#cfdaf1;overflow-wrap:anywhere;line-height:1.2}
+.gd-t .s{font-size:34px;font-weight:900;letter-spacing:-.03em;line-height:1.1;font-variant-numeric:tabular-nums;color:#fff;margin-top:2px}
+.gd-t .p{font-size:12px;color:var(--mut,#9db0d0);font-weight:600}
+.gd-dash{align-self:center;color:var(--mut,#9db0d0);font-weight:800}
+.gd-sub{font-size:12px;color:var(--mut,#9db0d0);text-align:center;margin:6px 0 4px}
+.gd-likely{font-size:13px;font-weight:700;text-align:center;margin:6px 0 2px;color:#fff}
+.gd-grid{display:grid;grid-template-columns:1fr;gap:8px;margin-top:10px}
+.gd-k{background:rgba(255,255,255,.05);border-radius:12px;padding:9px 11px}
+.gd-k h4{margin:0 0 5px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--mut,#9db0d0)}
+.gd-k .r{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;line-height:1.5;font-variant-numeric:tabular-nums}
+.gd-k .r span:first-child{color:#cfdaf1;min-width:0;overflow-wrap:anywhere}.gd-k .r span:last-child{font-weight:800;text-align:right;color:#fff}
+.gd-k .pos{color:#2ff0a0!important}.gd-k .neg{color:#ff6683!important}
+.gd-split{display:flex;height:12px;border-radius:7px;overflow:hidden;margin:3px 0 6px;background:rgba(255,255,255,.08)}
+.gd-split i{display:block;height:100%}.gd-split .a{background:var(--sp2,#8b5cf6)}.gd-split .h{background:var(--sp,#5b8cff)}
+.gd-bars{margin-top:12px}.gd-bars h4{margin:0 0 6px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--mut,#9db0d0)}
+.gd-b{display:flex;align-items:center;gap:8px;margin:4px 0;font-size:12.5px;font-variant-numeric:tabular-nums}
+.gd-b .l{flex:0 0 112px;color:#cfdaf1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gd-b .t{flex:1 1 auto;height:12px;border-radius:6px;background:rgba(255,255,255,.07);overflow:hidden;min-width:0}
+.gd-b .t i{display:block;height:100%;border-radius:6px;background:#7d8fb3;min-width:2px}
+.gd-b.a .t i{background:var(--sp2,#8b5cf6)}.gd-b.h .t i{background:var(--sp,#5b8cff)}
+.gd-b .v{flex:0 0 42px;text-align:right;font-weight:800;color:#fff}
+.gd-tops{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.gd-tops span{background:rgba(255,255,255,.07);border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:700;color:#fff}
+.gd-tops small{color:var(--mut,#9db0d0);font-weight:600;margin-left:4px}
+.gd-facts{margin-top:12px;font-size:13px}
+.gd-facts .r{display:flex;gap:10px;padding:5px 0;border-top:1px solid rgba(255,255,255,.06)}
+.gd-facts .r:first-child{border-top:0}
+.gd-facts .r span:first-child{flex:0 0 108px;color:var(--mut,#9db0d0);font-size:12px}
+.gd-facts .r span:last-child{flex:1 1 auto;min-width:0;overflow-wrap:anywhere;color:#e6edfb}
+.gd-inj{margin-top:8px;font-size:12.5px}.gd-inj summary{cursor:pointer;color:#e6edfb;font-weight:700;padding:4px 0}
+.gd-inj div{color:#cfdaf1;padding:2px 0 2px 10px;border-left:2px solid rgba(255,255,255,.12);margin:3px 0;overflow-wrap:anywhere}
+.gd-picks{margin-top:12px;display:flex;flex-direction:column;gap:6px}
+.gd-picks div{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.05);border-radius:10px;padding:6px 9px;overflow-wrap:anywhere}
+.gd-note{margin-top:12px;font-size:11.5px;line-height:1.4;color:var(--mut,#9db0d0)}
+.gd-more{all:unset;box-sizing:border-box;display:block;width:100%;text-align:center;padding:11px;border-radius:12px;border:1px dashed rgba(var(--sp-rgb,91,140,255),.6);color:#fff;font-weight:700;font-size:13.5px;cursor:pointer;margin-top:2px}
+.gd-more:active{background:rgba(255,255,255,.05)}
+.gd-card,.gd-body,.gd-sec{max-width:100%}
+@media(min-width:560px){.gd-grid{grid-template-columns:1fr 1fr}}
+/* PAST-GAMES */
+.gd-day{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--mut,#9db0d0);margin:12px 2px 6px}
+.gd-dayg:first-of-type .gd-day{margin-top:4px}
+.gd-rec{display:inline-block;font-size:12.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:4px 12px;margin:0 2px 6px}
+.gd-chk{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 6px;border-radius:7px;font-size:12px;font-weight:900;white-space:nowrap}
+.gd-chk.ok{background:rgba(46,204,113,.22);color:#6ff0a4}
+.gd-chk.no{background:rgba(255,92,120,.22);color:#ff8fa5}
+.gd-chk.pu{background:rgba(255,255,255,.12);color:#dfe8ff}
+.gd-res{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);border-radius:12px;padding:10px 12px;margin:0 0 10px}
+.gd-res-h{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
+.gd-res-h b{font-size:15px;font-weight:800;color:#fff}
+.gd-res .gd-sub{margin-top:4px}
+
+/* LIVE-CARDS */
+.gd-livebox .gd-res-h{align-items:center}
+.gd-livebox .gd-sub{font-size:12px}
+
 </style><style id="rec-css">
 /* model projected-side record (apply_record.py): uses the skin variables, falls back to dark defaults */
 .rec-sec .sec-h{cursor:pointer}
@@ -413,89 +496,6 @@ body[data-sport=home] .chev{border-width:2px!important;border-color:var(--mut)!i
 .gcard .panel{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .gcard .meta{white-space:normal!important;overflow-wrap:anywhere}
 
-
-</style><style id="gd-css">
-/* game detail panels (apply_gamedetail.py): uses the skin variables, falls back to dark defaults */
-.gd-sec .sec-h{cursor:pointer}
-.gd-sec.closed>.sec-b,.gd-sec.closed>.gd-list{display:none}
-.gd-hint{color:var(--mut,#9db0d0);font-size:12.5px;margin:-4px 2px 10px}
-.gd-list{display:flex;flex-direction:column;gap:10px}
-.gd-card{position:relative;background:linear-gradient(160deg,rgba(var(--sp-rgb,91,140,255),.12),transparent 60%),var(--card,#10192e);border:1px solid var(--line,#24345a);border-left:5px solid var(--sp,#5b8cff);border-radius:16px;overflow:hidden;box-shadow:0 10px 24px -16px rgba(0,0,0,.9)}
-.gd-card.open{border-color:rgba(var(--sp-rgb,91,140,255),.7)}
-.gd-head{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:10px;width:100%;padding:12px 12px 12px 12px;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.gd-head:active{background:rgba(255,255,255,.04)}
-.gd-main{flex:1 1 auto;min-width:0}
-.gd-when{font-size:11.5px;color:var(--mut,#9db0d0);display:flex;gap:6px;align-items:center;flex-wrap:wrap}
-.gd-live{background:#ff3d6e;color:#fff;border-radius:6px;padding:0 6px;font-size:10.5px;font-weight:800;letter-spacing:.06em}
-.gd-teams{font-size:16.5px;font-weight:800;letter-spacing:-.01em;line-height:1.25;margin-top:2px;overflow-wrap:anywhere;color:var(--ink,#f3f6fc)}
-.gd-tap{font-size:11.5px;color:var(--sp,#5b8cff);font-weight:700;margin-top:3px}
-.gd-side{flex:0 0 auto;display:flex;align-items:center;gap:8px}
-.gd-sc{display:flex;flex-direction:column;align-items:flex-end;font-variant-numeric:tabular-nums;line-height:1.1}
-.gd-sc b{font-size:17px;font-weight:900;letter-spacing:-.02em;color:#fff}
-.gd-sc i{font-style:normal;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mut,#9db0d0);margin-top:2px}
-.gd-chev{width:9px;height:9px;border-right:3px solid var(--sp,#5b8cff);border-bottom:3px solid var(--sp,#5b8cff);transform:rotate(45deg);margin:-3px 3px 0 2px;transition:transform .18s;flex:0 0 auto}
-.gd-card.open .gd-chev{transform:rotate(-135deg);margin-top:4px}
-.gd-g{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;padding:0 7px;border-radius:8px;font-size:14px;font-weight:900;box-shadow:0 3px 10px -3px rgba(0,0,0,.6)}
-.gd-g.A{background:linear-gradient(135deg,#2ff0a0,#12c27d);color:#022c1a}.gd-g.B{background:linear-gradient(135deg,#5b9bff,#8a63ff);color:#fff}.gd-g.C{background:linear-gradient(135deg,#ffc233,#ff8a1f);color:#3a1c00}
-.gd-body{padding:2px 12px 14px;border-top:1px solid rgba(255,255,255,.07)}
-.gd-card:not(.open) .gd-body{display:none}
-.gd-hero{display:flex;align-items:stretch;gap:8px;margin:12px 0 4px}
-.gd-t{flex:1 1 0;min-width:0;text-align:center;padding:10px 6px;border-radius:14px;background:rgba(255,255,255,.055);border:1px solid transparent}
-.gd-t.win{background:rgba(var(--sp-rgb,91,140,255),.20);border-color:rgba(var(--sp-rgb,91,140,255),.6)}
-.gd-t .n{font-size:12px;font-weight:700;color:#cfdaf1;overflow-wrap:anywhere;line-height:1.2}
-.gd-t .s{font-size:34px;font-weight:900;letter-spacing:-.03em;line-height:1.1;font-variant-numeric:tabular-nums;color:#fff;margin-top:2px}
-.gd-t .p{font-size:12px;color:var(--mut,#9db0d0);font-weight:600}
-.gd-dash{align-self:center;color:var(--mut,#9db0d0);font-weight:800}
-.gd-sub{font-size:12px;color:var(--mut,#9db0d0);text-align:center;margin:6px 0 4px}
-.gd-likely{font-size:13px;font-weight:700;text-align:center;margin:6px 0 2px;color:#fff}
-.gd-grid{display:grid;grid-template-columns:1fr;gap:8px;margin-top:10px}
-.gd-k{background:rgba(255,255,255,.05);border-radius:12px;padding:9px 11px}
-.gd-k h4{margin:0 0 5px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--mut,#9db0d0)}
-.gd-k .r{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;line-height:1.5;font-variant-numeric:tabular-nums}
-.gd-k .r span:first-child{color:#cfdaf1;min-width:0;overflow-wrap:anywhere}.gd-k .r span:last-child{font-weight:800;text-align:right;color:#fff}
-.gd-k .pos{color:#2ff0a0!important}.gd-k .neg{color:#ff6683!important}
-.gd-split{display:flex;height:12px;border-radius:7px;overflow:hidden;margin:3px 0 6px;background:rgba(255,255,255,.08)}
-.gd-split i{display:block;height:100%}.gd-split .a{background:var(--sp2,#8b5cf6)}.gd-split .h{background:var(--sp,#5b8cff)}
-.gd-bars{margin-top:12px}.gd-bars h4{margin:0 0 6px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--mut,#9db0d0)}
-.gd-b{display:flex;align-items:center;gap:8px;margin:4px 0;font-size:12.5px;font-variant-numeric:tabular-nums}
-.gd-b .l{flex:0 0 112px;color:#cfdaf1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.gd-b .t{flex:1 1 auto;height:12px;border-radius:6px;background:rgba(255,255,255,.07);overflow:hidden;min-width:0}
-.gd-b .t i{display:block;height:100%;border-radius:6px;background:#7d8fb3;min-width:2px}
-.gd-b.a .t i{background:var(--sp2,#8b5cf6)}.gd-b.h .t i{background:var(--sp,#5b8cff)}
-.gd-b .v{flex:0 0 42px;text-align:right;font-weight:800;color:#fff}
-.gd-tops{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
-.gd-tops span{background:rgba(255,255,255,.07);border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:700;color:#fff}
-.gd-tops small{color:var(--mut,#9db0d0);font-weight:600;margin-left:4px}
-.gd-facts{margin-top:12px;font-size:13px}
-.gd-facts .r{display:flex;gap:10px;padding:5px 0;border-top:1px solid rgba(255,255,255,.06)}
-.gd-facts .r:first-child{border-top:0}
-.gd-facts .r span:first-child{flex:0 0 108px;color:var(--mut,#9db0d0);font-size:12px}
-.gd-facts .r span:last-child{flex:1 1 auto;min-width:0;overflow-wrap:anywhere;color:#e6edfb}
-.gd-inj{margin-top:8px;font-size:12.5px}.gd-inj summary{cursor:pointer;color:#e6edfb;font-weight:700;padding:4px 0}
-.gd-inj div{color:#cfdaf1;padding:2px 0 2px 10px;border-left:2px solid rgba(255,255,255,.12);margin:3px 0;overflow-wrap:anywhere}
-.gd-picks{margin-top:12px;display:flex;flex-direction:column;gap:6px}
-.gd-picks div{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.05);border-radius:10px;padding:6px 9px;overflow-wrap:anywhere}
-.gd-note{margin-top:12px;font-size:11.5px;line-height:1.4;color:var(--mut,#9db0d0)}
-.gd-more{all:unset;box-sizing:border-box;display:block;width:100%;text-align:center;padding:11px;border-radius:12px;border:1px dashed rgba(var(--sp-rgb,91,140,255),.6);color:#fff;font-weight:700;font-size:13.5px;cursor:pointer;margin-top:2px}
-.gd-more:active{background:rgba(255,255,255,.05)}
-.gd-card,.gd-body,.gd-sec{max-width:100%}
-@media(min-width:560px){.gd-grid{grid-template-columns:1fr 1fr}}
-/* PAST-GAMES */
-.gd-day{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--mut,#9db0d0);margin:12px 2px 6px}
-.gd-dayg:first-of-type .gd-day{margin-top:4px}
-.gd-rec{display:inline-block;font-size:12.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:4px 12px;margin:0 2px 6px}
-.gd-chk{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 6px;border-radius:7px;font-size:12px;font-weight:900;white-space:nowrap}
-.gd-chk.ok{background:rgba(46,204,113,.22);color:#6ff0a4}
-.gd-chk.no{background:rgba(255,92,120,.22);color:#ff8fa5}
-.gd-chk.pu{background:rgba(255,255,255,.12);color:#dfe8ff}
-.gd-res{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);border-radius:12px;padding:10px 12px;margin:0 0 10px}
-.gd-res-h{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
-.gd-res-h b{font-size:15px;font-weight:800;color:#fff}
-.gd-res .gd-sub{margin-top:4px}
-
-/* LIVE-CARDS */
-.gd-livebox .gd-res-h{align-items:center}
-.gd-livebox .gd-sub{font-size:12px}
 
 </style><style id="pro-theme">
 /* ===== Model Desk "Pro" theme v1: restrained analytics-terminal palette. Loaded AFTER polish. Presentation only; no layout/size rules on cards (keeps the .g card fix intact). =====
@@ -841,189 +841,6 @@ if(window.MutationObserver){
 }
 })();
 
-</script><script id="rec-data" type="application/json">{"v":1,"sport":"nba","today":"2026-11-01","generated":"2026-11-01 00:55","rec":{"lines":["SU","ATS","OU"],"graded":88,"since":"2026-10-20","tracked_projections":107,"last7":{"games":45,"SU":{"w":30,"l":15,"p":0,"n":45,"pct":66.7},"ATS":{"w":19,"l":23,"p":1,"n":43,"pct":45.2},"OU":{"w":23,"l":20,"p":2,"n":45,"pct":53.5}},"season":{"games":88,"SU":{"w":59,"l":29,"p":0,"n":88,"pct":67.0},"ATS":{"w":37,"l":41,"p":3,"n":81,"pct":47.4},"OU":{"w":42,"l":40,"p":2,"n":84,"pct":51.2}},"days":{"2026-10-20":{"games":3,"SU":{"w":2,"l":1,"p":0,"n":3,"pct":66.7},"ATS":{"w":3,"l":0,"p":0,"n":3,"pct":100.0},"OU":{"w":2,"l":1,"p":0,"n":3,"pct":66.7}},"2026-10-21":{"games":11,"SU":{"w":7,"l":4,"p":0,"n":11,"pct":63.6},"ATS":{"w":4,"l":6,"p":1,"n":11,"pct":40.0},"OU":{"w":6,"l":5,"p":0,"n":11,"pct":54.5}},"2026-10-22":{"games":2,"SU":{"w":2,"l":0,"p":0,"n":2,"pct":100.0},"ATS":{"w":1,"l":1,"p":0,"n":2,"pct":50.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-10-23":{"games":12,"SU":{"w":6,"l":6,"p":0,"n":12,"pct":50.0},"ATS":{"w":3,"l":4,"p":1,"n":8,"pct":42.9},"OU":{"w":3,"l":6,"p":0,"n":9,"pct":33.3}},"2026-10-24":{"games":8,"SU":{"w":6,"l":2,"p":0,"n":8,"pct":75.0},"ATS":{"w":3,"l":5,"p":0,"n":8,"pct":37.5},"OU":{"w":4,"l":4,"p":0,"n":8,"pct":50.0}},"2026-10-25":{"games":7,"SU":{"w":6,"l":1,"p":0,"n":7,"pct":85.7},"ATS":{"w":4,"l":2,"p":0,"n":6,"pct":66.7},"OU":{"w":3,"l":4,"p":0,"n":7,"pct":42.9}},"2026-10-26":{"games":9,"SU":{"w":6,"l":3,"p":0,"n":9,"pct":66.7},"ATS":{"w":4,"l":5,"p":0,"n":9,"pct":44.4},"OU":{"w":3,"l":5,"p":1,"n":9,"pct":37.5}},"2026-10-27":{"games":4,"SU":{"w":4,"l":0,"p":0,"n":4,"pct":100.0},"ATS":{"w":2,"l":1,"p":0,"n":3,"pct":66.7},"OU":{"w":1,"l":3,"p":0,"n":4,"pct":25.0}},"2026-10-28":{"games":12,"SU":{"w":8,"l":4,"p":0,"n":12,"pct":66.7},"ATS":{"w":2,"l":10,"p":0,"n":12,"pct":16.7},"OU":{"w":5,"l":7,"p":0,"n":12,"pct":41.7}},"2026-10-29":{"games":3,"SU":{"w":1,"l":2,"p":0,"n":3,"pct":33.3},"ATS":{"w":1,"l":2,"p":0,"n":3,"pct":33.3},"OU":{"w":3,"l":0,"p":0,"n":3,"pct":100.0}},"2026-10-30":{"games":10,"SU":{"w":6,"l":4,"p":0,"n":10,"pct":60.0},"ATS":{"w":7,"l":1,"p":1,"n":9,"pct":87.5},"OU":{"w":7,"l":2,"p":1,"n":10,"pct":77.8}},"2026-10-31":{"games":7,"SU":{"w":5,"l":2,"p":0,"n":7,"pct":71.4},"ATS":{"w":3,"l":4,"p":0,"n":7,"pct":42.9},"OU":{"w":4,"l":3,"p":0,"n":7,"pct":57.1}}}},"note":"Spread and total sides use the model’s projected margin and total against the last line posted before tip-off.","empty":""}</script><script id="rec-js">
-/* model projected-side record: renders the JSON blob written by apply_record.py. Additive only; any error leaves the page untouched. */
-(function(){
-'use strict';
-try{
-var D=document,be=D.getElementById('rec-data');if(!be)return;
-var B=JSON.parse(be.textContent),R=B.rec;if(!R||D.getElementById('rec-sec'))return;
-function el(t,c,x){var e=D.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
-function ap(p){for(var i=1;i<arguments.length;i++){if(arguments[i]!=null)p.appendChild(arguments[i])}return p}
-function wl(t){return t.w+'-'+t.l+(t.p?'-'+t.p:'')}
-function pctTxt(t){return t.pct==null?'\u2014':t.pct.toFixed(1)+'%'}
-function cls(t){if(t.pct==null)return 'na';return t.pct>=55?'hi':(t.pct>=47.5?'mid':'lo')}
-function gm(n){return n+' game'+(n===1?'':'s')+' tracked'}
-var sec=el('section','sec tog rec-sec'),hd=el('div','sec-h'),bd=el('div','sec-b');sec.id='rec-sec';
-hd.appendChild(D.createTextNode('Model projected-side record'));
-var tot=R.season.games;
-hd.appendChild(el('span','cnt',tot?(R.season.SU.w+'-'+R.season.SU.l+(R.season.SU.p?'-'+R.season.SU.p:'')):'tracking'));
-ap(sec,hd,bd);
-ap(bd,el('div','rec-sub','What happens if you just take the side the model\u2019s projected score lands on \u2014 no price or edge filter.'));
-if(!tot){
-  var em=el('div','rec-empty');
-  ap(em,el('b',null,'0 games tracked so far. '),D.createTextNode(B.empty||'Tracking starts with the next game this page projects; the record fills in as games go final.'));
-  ap(bd,em);
-}else{
-  var g=el('div','rec-grid');
-  [['Last 7 days',R.last7],['Season to date',R.season]].forEach(function(w){
-    var t=w[1].SU,b=el('div','rec-box');
-    ap(b,el('h4',null,w[0]));
-    if(!w[1].games){ap(b,el('div','rec-big','\u2014'),el('div','rec-pct na','no finished games'),el('div','rec-gm','0 games tracked'));ap(g,b);return}
-    var big=el('div','rec-big',wl(t));
-    ap(b,big,el('div','rec-pct '+cls(t),pctTxt(t)+' straight up'));
-    var bar=el('div','rec-bar'),f=el('i');f.style.width=Math.max(3,t.pct||0)+'%';bar.appendChild(f);
-    ap(b,bar,el('div','rec-gm',gm(w[1].games)+(w[1].games<10?' (small sample)':'')));
-    ap(g,b);
-  });
-  bd.appendChild(g);
-  /* spread / total lines */
-  var rows=[];
-  if(R.lines.indexOf('ATS')>=0)rows.push(['ATS','Spread side','Projected margin vs the last posted spread']);
-  if(R.lines.indexOf('OU')>=0)rows.push(['OU','Total side','Projected total vs the last posted total']);
-  if(rows.length){
-    var box=el('div','rec-lines'),h=el('div','rec-lh');ap(h,el('span',null,'Side'),el('span',null,'7 days'),el('span',null,'Season'));box.appendChild(h);
-    rows.forEach(function(r){
-      var rw=el('div','rec-lr'),l=el('div','l');ap(l,el('b',null,r[1]),el('span',null,r[2]));
-      ap(rw,l);
-      [R.last7,R.season].forEach(function(w){
-        var t=w[r[0]],v=el('div','v');
-        if(!t||!t.n){ap(v,D.createTextNode('\u2014'),el('em',null,'0 games'))}
-        else{ap(v,D.createTextNode(wl(t)),el('em',cls(t),pctTxt(t)+' \u00b7 '+t.n+' g'))}
-        rw.appendChild(v);
-      });
-      box.appendChild(rw);
-    });
-    bd.appendChild(box);
-  }
-  /* last 7 days strip */
-  bd.appendChild(el('div','rec-dl','Day by day (straight up)'));
-  var ds=el('div','rec-days'),dn=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  var p=B.today.split('-').map(Number),base=new Date(p[0],p[1]-1,p[2],12);
-  for(var i=6;i>=0;i--){
-    var d=new Date(base.getTime()-i*864e5),k=d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);
-    var v=R.days[k],c=el('div','rec-d '+(v&&v.SU.n?cls(v.SU):'na'));
-    ap(c,el('span',null,dn[d.getDay()]),el('b',null,v&&v.games?wl(v.SU):'\u2014'));
-    ds.appendChild(c);
-  }
-  bd.appendChild(ds);
-}
-var note=el('div','rec-note');
-note.textContent=(tot?(gm(tot)+' since '+R.since+'. '):'')+(B.note||'')+' Pushes are shown separately and are not counted as wins or losses. Percentages are wins \u00f7 (wins + losses).';
-bd.appendChild(note);
-hd.addEventListener('click',function(){sec.classList.toggle('closed')});
-/* placement: right after the game projections section if present, else after the first section */
-var main=D.querySelector('main.wrap')||D.querySelector('main')||D.body,anchor=D.getElementById('gd-sec');
-if(!anchor){var ss=main.querySelectorAll(':scope > section.sec');if(ss.length)anchor=ss[0];else anchor=D.getElementById('plays')||D.getElementById('top')}
-if(anchor&&anchor.parentNode)anchor.parentNode.insertBefore(sec,anchor.nextSibling);else main.insertBefore(sec,main.firstChild);
-}catch(e){if(window.console)console.warn('model record',e)}
-})();
-
-</script><script id="polish-data" type="application/json">{"pre":"../","fallback":1793512507,"v":"polish-v1"}</script><script id="polish-js">
-/* Model Desk polish v1: presentation only. Adds brand row + freshness chip, aligns numeric table columns, adds footer text. Never changes data. */
-(function(){
-'use strict';
-var D=document,B=D.body,W=window;
-if(!B||B.classList.contains('pl-js'))return;
-var DATA={};try{var de=D.getElementById('polish-data');if(de)DATA=JSON.parse(de.textContent)||{}}catch(e){}
-var TZ='America/Chicago',MON={jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,oct:9,nov:10,dec:11};
-var PARTS=new Intl.DateTimeFormat('en-US',{timeZone:TZ,hourCycle:'h23',year:'numeric',month:'numeric',day:'numeric',hour:'numeric',minute:'numeric'});
-var TIME=new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit'});
-var DAY=new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short',month:'short',day:'numeric'});
-var YMD=new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'});
-function ctOff(t){var o={};PARTS.formatToParts(new Date(t)).forEach(function(x){o[x.type]=x.value});return Date.UTC(+o.year,+o.month-1,+o.day,+o.hour%24,+o.minute)-Math.floor(t/60000)*60000}
-function ctEpoch(y,mo,d,h,mi){var g=Date.UTC(y,mo,d,h,mi),i;for(i=0;i<3;i++)g=Date.UTC(y,mo,d,h,mi)-ctOff(g);return g}
-function parseUpd(txt){
-  if(!txt)return null;var m,y,h;
-  m=/Updated\s+(?:[A-Za-z]{3},?\s+)?([A-Za-z]{3})[a-z]*\s+(\d{1,2}),?\s+(?:(\d{4}),?\s+)?(\d{1,2}):(\d{2})\s*(AM|PM)/i.exec(txt);
-  if(m){h=(+m[4])%12+(/pm/i.test(m[6])?12:0);y=m[3]?+m[3]:+YMD.format(new Date()).slice(0,4);
-    var e=ctEpoch(y,MON[m[1].toLowerCase()],+m[2],h,+m[5]);if(!m[3]&&e>Date.now()+864e5)e=ctEpoch(y-1,MON[m[1].toLowerCase()],+m[2],h,+m[5]);return e}
-  m=/Updated\s+(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/i.exec(txt);
-  if(m)return ctEpoch(+m[1],+m[2]-1,+m[3],+m[4],+m[5]);
-  return null}
-function ago(ms){var m=Math.max(0,Math.round(ms/6e4));if(m<1)return 'just now';if(m<60)return m+'m ago';var h=Math.floor(m/60);if(h<48)return h+'h '+(m%60)+'m ago';return Math.floor(h/24)+'d ago'}
-function stateOf(ms){var m=ms/6e4;return m<=120?['ok','Fresh']:(m<=360?['warn','Aging']:['old','Stale'])}
-function setT(el,t){if(el&&el.textContent!==t)el.textContent=t}
-function stamp(e){var d=new Date(e),same=Date.now()-e<864e5;return (same?'':DAY.format(d)+' · ')+TIME.format(d)+' CT'}
-
-var LOGO='<svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="plg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d8dff"/><stop offset="1" stop-color="#2de3c0"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#plg)"/><path d="M6 17.5v-4M10.3 17.5V9M14.6 17.5v-3.5M18.4 17.5V6.5" stroke="#07101f" stroke-width="2.1" stroke-linecap="round"/></svg>';
-var home=B.getAttribute('data-sport')==='home';
-var pre=DATA.pre||'';
-
-/* 1. header: make every page share one header shape, add brand row + freshness chip */
-var chip,chipB,chipI,epoch=null;
-function header(){
-  var hd=D.querySelector('header');if(!hd)return;
-  if(!hd.classList.contains('topbar')){           /* e.g. EuroLeague: plain header -> same structure as the other pages */
-    var nav=hd.querySelector('nav.sports'),inn=D.createElement('div'),br=D.createElement('div'),hm=D.createElement('div'),kids=[].slice.call(hd.childNodes);
-    inn.className='in';br.className='brand';hm.className='hmeta';
-    kids.forEach(function(n){if(n===nav)return;if(n.nodeType===1&&n.tagName==='H1')br.appendChild(n);else if(n.nodeType===1)hm.appendChild(n)});
-    inn.appendChild(br);inn.appendChild(hm);hd.insertBefore(inn,nav||null);hd.classList.add('topbar');
-    [].forEach.call(hm.children,function(c){c.classList.remove('meta');c.style.display='block'});
-  }
-  var inn2=hd.querySelector('.in');if(!inn2||inn2.querySelector('.pl-brandrow'))return;
-  var row=D.createElement('div');row.className='pl-brandrow';
-  row.innerHTML='<a class="pl-brand" href="'+(pre||'./')+'" aria-label="Model Desk home">'+LOGO+'<span class="pl-wm"><b>Model<em>Desk</em></b><i>Sports analytics</i></span></a>'+
-    '<div class="pl-fresh" data-s="" role="status" aria-live="off"><span class="pl-dot"></span><span class="pl-ft"><b>Syncing</b><i>&nbsp;</i></span></div>';
-  inn2.insertBefore(row,inn2.firstChild);
-  chip=row.querySelector('.pl-fresh');chipB=chip.querySelector('b');chipI=chip.querySelector('i');
-  [].forEach.call(hd.querySelectorAll('.hmeta span,.hmeta div,.meta'),function(e){if(/^\s*Updated\b/i.test(e.textContent))e.classList.add('pl-hide')});
-}
-function pageEpoch(){
-  var t=[],e;
-  [D.getElementById('updated'),D.getElementById('slate-line'),D.querySelector('header .hmeta'),D.querySelector('header')].forEach(function(x){if(x)t.push(x.textContent)});
-  for(var i=0;i<t.length;i++){e=parseUpd(t[i]);if(e)return e}
-  var eps=[];[].forEach.call(D.querySelectorAll('.card .u'),function(u){var x=parseUpd(u.textContent);if(x)eps.push(x)});
-  if(eps.length)return Math.max.apply(null,eps);
-  return DATA.fallback?DATA.fallback*1000:null}
-function paint(){
-  if(!chip)return;var e=pageEpoch();if(e)epoch=e;if(!epoch)return;
-  var age=Date.now()-epoch,s=stateOf(age);
-  chip.setAttribute('data-s',s[0]);setT(chipB,s[1]);setT(chipI,stamp(epoch)+' · '+ago(age));
-  chip.title='Page data updated '+DAY.format(new Date(epoch))+' '+TIME.format(new Date(epoch))+' CT';
-  var f=D.querySelector('[data-pl-upd]');setT(f,stamp(epoch));
-  /* home cards: per-card freshness dot */
-  if(home)[].forEach.call(D.querySelectorAll('.card .u'),function(u){var x=parseUpd(u.textContent);if(!x)return;var d=u.querySelector('.pl-dot');if(!d){d=D.createElement('span');d.className='pl-dot';u.insertBefore(d,u.firstChild)}
-    var st=stateOf(Date.now()-x)[0];d.style.setProperty('--fc',st==='ok'?'var(--ok)':st==='warn'?'var(--amber)':'var(--warn)');d.style.background='var(--fc)'});
-}
-
-/* 2. numeric columns right-aligned (tabular numerals for odds / percentages) */
-var NUM=/^[+\-\u2212]?\$?\d[\d.,:]*\s*(%|pts?|u|x|m)?$/i;
-function align(){
-  [].forEach.call(D.querySelectorAll('table'),function(t){
-    var rows=t.rows,n=rows.length;if(n<3||t.getAttribute('data-pl')===String(n))return;
-    var head=t.tHead&&t.tHead.rows.length?t.tHead.rows[t.tHead.rows.length-1]:rows[0],nc=head.cells.length,c,r,col=[];
-    for(c=1;c<nc;c++){var tot=0,num=0;for(r=0;r<n&&tot<60;r++){var row=rows[r];if(row===head||row.cells.length!==nc)continue;var tx=row.cells[c].textContent.replace(/\s+/g,' ').trim();if(!tx||tx==='-'||tx==='\u2014')continue;tot++;if(NUM.test(tx))num++}
-      if(tot>=3&&num/tot>=.75)col.push(c)}
-    col.forEach(function(c){for(var r=0;r<n;r++){var row=rows[r];if(row.cells.length===nc)row.cells[c].classList.add('pl-n')}});
-    t.setAttribute('data-pl',String(n));
-  })}
-
-/* 3. footer */
-function footer(){
-  if(D.querySelector('.pl-foot'))return;
-  var f=D.createElement('footer');f.className='pl-foot';
-  f.innerHTML='<div class="pl-fl">'+LOGO.replace('width="24" height="24"','width="18" height="18"').replace('id="plg"','id="plg2"').replace('url(#plg)','url(#plg2)')+'Model Desk <span>Sports analytics</span></div>'+
-   '<p>Probabilities, fair prices and projected scores are model estimates for information and entertainment. They are not financial or betting advice, and no outcome is ever certain. Prices come from public odds feeds, move quickly and can differ at your book, so confirm before you wager.</p>'+
-   '<p>Independent project. Not affiliated with or endorsed by any league, team or sportsbook. Must be 21+ where wagering is legal. Help is available at 1-800-GAMBLER.</p>'+
-   '<div class="pl-fm"><span><i class="pl-dot" style="--fc:var(--ok);background:var(--fc)"></i>Page data <span data-pl-upd>\u2014</span></span><span>Times Central (CT)</span><span><b class="g gA grade A">A</b> strong <b class="g gB grade B">B</b> solid <b class="g gC grade C">C</b> thin pick grade</span></div>';
-  B.appendChild(f);
-  /* keep the footer after the page content, before the scripts */
-  var first=B.querySelector(':scope>script');if(first)B.insertBefore(f,first);
-}
-
-/* 4. keep only the sport nav pinned (title/brand row scrolls away) */
-function pin(){var t=D.querySelector('.topbar'),i=t&&t.querySelector('.in');if(!t||!i||home)return;t.style.top=(-i.offsetHeight)+'px';
-  var a=t.querySelector('nav.sports a.on'),n=t.querySelector('nav.sports');if(a&&n&&!n.dataset.pl){n.dataset.pl=1;n.scrollLeft=Math.max(0,a.offsetLeft-(n.clientWidth-a.offsetWidth)/2)}}
-
-try{header();footer();B.classList.add('pl-js');paint();align();pin()}catch(e){if(W.console)console.warn('polish',e)}
-var tm=null;function later(){clearTimeout(tm);tm=setTimeout(function(){try{header();align();paint();pin()}catch(e){}},250)}
-if(W.MutationObserver)new MutationObserver(later).observe(B,{childList:true,subtree:true});
-[400,1500,4000].forEach(function(ms){setTimeout(function(){try{paint();pin()}catch(e){}},ms)});
-W.addEventListener('load',function(){try{pin();paint()}catch(e){}});W.addEventListener('resize',function(){try{pin()}catch(e){}});
-setInterval(function(){try{paint()}catch(e){}},30000);
-})();
-
 </script><script id="gd-data" type="application/json">{"kind":"nba","games":[{"id":"401909903","a":"BOS","h":"ORL","an":"BOS","hn":"ORL","ts":1793565000.0,"when":"Sun Nov 1, 2:30 PM CT","proj":{"a":116.7,"h":110.7,"total":227.4,"margin":-6.0},"rng":{"a":[109,124],"h":[103,118]},"bars":[{"t":"Simulated margin","items":[["ORL by 18+",0.0298,"h"],["ORL by 11-17",0.0633,"h"],["ORL by 6-10",0.0855,"h"],["ORL by 1-5",0.1232,"h"],["BOS by 1-5",0.1547,"a"],["BOS by 6-10",0.157,"a"],["BOS by 11-17",0.1807,"a"],["BOS by 18+",0.1773,"a"]]}],"sp":{"model":6.0,"mkt":6.5,"ph":50.1,"pa":49.9},"tot":{"model":227.4,"mkt":223.5,"po":50.0,"pu":50.0,"rng":[215,240]},"win":{"a":68.4,"h":31.6},"ml":{"fa":-217,"fh":217,"ba":-238,"bh":210,"bka":"BetUS","bkh":"DraftKings"},"facts":[["BOS rest","2d rest, 1796 km travel"],["ORL rest","2d rest, 1689 km travel"]],"inj":[["ORL",["Paolo Banchero (Out)","Jalen Suggs (Out)","Izaiyah Nelson (Out)","Noah Penda (Out)"]],["BOS",["Mitchell Robinson (Questionable)","Devin Carter (Out)"]]],"picks":[],"state":"pre"},{"id":"401909904","a":"BKN","h":"IND","an":"BKN","hn":"IND","ts":1793570400.0,"when":"Sun Nov 1, 4:00 PM CT","proj":{"a":113.1,"h":116.9,"total":230.0,"margin":3.8},"rng":{"a":[105,121],"h":[109,125]},"bars":[{"t":"Simulated margin","items":[["IND by 18+",0.1602,"h"],["IND by 11-17",0.1532,"h"],["IND by 6-10",0.1373,"h"],["IND by 1-5",0.1435,"h"],["BKN by 1-5",0.1275,"a"],["BKN by 6-10",0.1002,"a"],["BKN by 11-17",0.0888,"a"],["BKN by 18+",0.0614,"a"]]}],"sp":{"model":-3.8,"mkt":-4.0,"ph":50.0,"pa":50.0},"tot":{"model":230.0,"mkt":230.5,"po":50.0,"pu":50.0,"rng":[218,242]},"win":{"a":39.2,"h":60.8},"ml":{"fa":155,"fh":-155,"ba":148,"bh":-164,"bka":"Caesars","bkh":"LowVig.ag"},"facts":[["BKN rest","2d rest, 1038 km travel"],["IND rest","2d rest, 1651 km travel"]],"inj":[["IND",["Aaron Nesmith (Probable)","Obi Toppin (Questionable)","Tyrese Haliburton (Out)","Ivica Zubac (Out)","Ben Sheppard (Out)","Johnny Furphy (Out)","T.J. McConnell (Out)"]],["BKN",["Egor Demin (Out)","Mikel Brown Jr. (Out)","Ben Saraf (Out)","Tyler Bilodeau (Out)"]]],"picks":[],"state":"pre"},{"id":"401909905","a":"LAC","h":"GS","an":"LAC","hn":"GS","ts":1793583000.0,"when":"Sun Nov 1, 7:30 PM CT","proj":{"a":111.2,"h":114.7,"total":225.9,"margin":3.6},"rng":{"a":[102,120],"h":[106,124]},"bars":[{"t":"Simulated margin","items":[["GS by 18+",0.2432,"h"],["GS by 11-17",0.1215,"h"],["GS by 6-10",0.0971,"h"],["GS by 1-5",0.0994,"h"],["LAC by 1-5",0.0943,"a"],["LAC by 6-10",0.0842,"a"],["LAC by 11-17",0.0948,"a"],["LAC by 18+",0.1459,"a"]]}],"sp":{"model":-3.6,"mkt":-2.5,"ph":50.2,"pa":49.8},"tot":{"model":225.9,"mkt":219.5,"po":50.0,"pu":50.0,"rng":[214,238]},"win":{"a":45.3,"h":54.7},"ml":{"fa":121,"fh":-121,"ba":112,"bh":-127,"bka":"LowVig.ag","bkh":"FanDuel"},"facts":[["LAC rest","2d rest, 2542 km travel"],["GS rest","2d rest"]],"inj":[["GS",["Gui Santos (Probable)","Stephen Curry (Out)","Draymond Green (Out)","Jimmy Butler III (Out)","Moses Moody (Out)","Kristaps Porzingis (Out)"]],["LAC",["Brandon Ingram (Out)","Bradley Beal (Out)","Max Strus (Out)","Jordan Miller (Out)","Yanic Konan Niederhauser (Out)"]]],"picks":[],"state":"pre"},{"id":"401909906","a":"TOR","h":"LAL","an":"TOR","hn":"LAL","ts":1793584800.0,"when":"Sun Nov 1, 8:00 PM CT","proj":{"a":110.8,"h":114.9,"total":225.7,"margin":4.0},"rng":{"a":[103,118],"h":[107,122]},"bars":[{"t":"Simulated margin","items":[["LAL by 18+",0.1465,"h"],["LAL by 11-17",0.1605,"h"],["LAL by 6-10",0.1478,"h"],["LAL by 1-5",0.1544,"h"],["TOR by 1-5",0.1334,"a"],["TOR by 6-10",0.1,"a"],["TOR by 11-17",0.0817,"a"],["TOR by 18+",0.046,"a"]]}],"sp":{"model":-4.0,"mkt":-4.5,"ph":49.9,"pa":50.1},"tot":{"model":225.7,"mkt":227.5,"po":50.0,"pu":50.0,"rng":[214,238]},"win":{"a":37.6,"h":62.4},"ml":{"fa":166,"fh":-166,"ba":162,"bh":-179,"bka":"LowVig.ag","bkh":"DraftKings"},"facts":[["TOR rest","2d rest, 3497 km travel"],["LAL rest","2d rest, 556 km travel"]],"inj":[["LAL",["Ziaire Williams (Questionable)"]],["TOR",["Kawhi Leonard (Out)","Malachi Smith (Out)","Nate Bittle (Out)"]]],"picks":[],"state":"pre"}],"past":[{"id":"401909902","a":"OKC","h":"HOU","an":"OKC","hn":"HOU","ts":1793493000.0,"when":"Sat Oct 31, 7:30 PM CT","proj":{"a":110.4,"h":111.9,"total":222.3,"margin":1.4},"rng":{"a":[104,117],"h":[105,119]},"bars":[{"t":"Simulated margin","items":[["HOU by 18+",0.0369,"h"],["HOU by 11-17",0.1193,"h"],["HOU by 6-10",0.1685,"h"],["HOU by 1-5",0.2155,"h"],["OKC by 1-5",0.1947,"a"],["OKC by 6-10",0.1284,"a"],["OKC by 11-17",0.075,"a"],["OKC by 18+",0.0178,"a"]]}],"sp":{"model":-1.4,"mkt":-2.5,"ph":49.8,"pa":50.2},"tot":{"model":222.3,"mkt":219.5,"po":50.0,"pu":50.0,"rng":[210,234]},"win":{"a":43.1,"h":56.9},"ml":{"fa":132,"fh":-132,"ba":132,"bh":-141,"bka":"LowVig.ag","bkh":"BetUS"},"facts":[["OKC rest","3d rest, 365 km travel"],["HOU rest","back-to-back, 3rd game in 4 nights, 365 km travel"]],"inj":[["HOU",["Fred VanVleet (Out)","Reed Sheppard (Out)","Steven Adams (Out)","Quadir Copeland (Out)"]],["OKC",["Jalen Williams (Out)","Chet Holmgren (Out)","Cason Wallace (Out)","Alex Caruso (Out)","Nikola Topic (Out)","Thomas Sorber (Out)"]]],"picks":[{"g":"C","t":"OKC ML +132 (LowVig.ag)"}],"state":"post","past":true,"d":"2026-10-31","pre_at":1793492818,"fin":{"a":98,"h":119,"su":"W","note":"Final total 217 vs projected 222.3, market line 219.5","over":"Final"}},{"id":"401909899","a":"SAC","h":"MEM","an":"SAC","hn":"MEM","ts":1793491200.0,"when":"Sat Oct 31, 7:00 PM CT","proj":{"a":113.9,"h":121.2,"total":235.1,"margin":7.2},"rng":{"a":[107,121],"h":[114,128]},"bars":[{"t":"Simulated margin","items":[["MEM by 18+",0.1754,"h"],["MEM by 11-17",0.208,"h"],["MEM by 6-10",0.1794,"h"],["MEM by 1-5",0.1672,"h"],["SAC by 1-5",0.1174,"a"],["SAC by 6-10",0.07,"a"],["SAC by 11-17",0.0411,"a"],["SAC by 18+",0.0122,"a"]]}],"sp":{"model":-7.2,"mkt":-8.5,"ph":49.8,"pa":50.2},"tot":{"model":235.1,"mkt":229.5,"po":50.0,"pu":50.0,"rng":[223,247]},"win":{"a":25.5,"h":74.5},"ml":{"fa":292,"fh":-292,"ba":300,"bh":-345,"bka":"Caesars","bkh":"FanDuel"},"facts":[["SAC rest","2d rest, 577 km travel"],["MEM rest","2d rest, 2971 km travel"]],"inj":[["MEM",["Ty Jerome (Out)","Scotty Pippen Jr. (Out)","Quinten Post (Out)"]],["SAC",["Keegan Murray (Out)","Maxime Raynaud (Out)","Dylan Cardwell (Out)","Ben Simmons (Out)"]]],"picks":[{"g":"C","t":"SAC ML +300 (Caesars)"}],"state":"post","past":true,"d":"2026-10-31","pre_at":1793491123,"fin":{"a":105,"h":136,"su":"W","note":"Final total 241 vs projected 235.1, market line 229.5","over":"Final"}},{"id":"401909900","a":"CLE","h":"MIL","an":"CLE","hn":"MIL","ts":1793491200.0,"when":"Sat Oct 31, 7:00 PM CT","proj":{"a":121.6,"h":110.8,"total":232.4,"margin":-10.8},"rng":{"a":[114,130],"h":[103,119]},"bars":[{"t":"Simulated margin","items":[["MIL by 18+",0.0339,"h"],["MIL by 11-17",0.0509,"h"],["MIL by 6-10",0.062,"h"],["MIL by 1-5",0.0868,"h"],["CLE by 1-5",0.1133,"a"],["CLE by 6-10",0.1264,"a"],["CLE by 11-17",0.1751,"a"],["CLE by 18+",0.3313,"a"]]}],"sp":{"model":10.8,"mkt":9.0,"ph":49.7,"pa":50.3},"tot":{"model":232.4,"mkt":235.5,"po":50.0,"pu":50.0,"rng":[220,245]},"win":{"a":75.6,"h":24.4},"ml":{"fa":-311,"fh":311,"ba":-357,"bh":310,"bka":"Caesars","bkh":"FanDuel"},"facts":[["CLE rest","2d rest, 3rd game in 4 nights, 1077 km travel"],["MIL rest","3d rest"]],"inj":[["CLE",["Jaylon Tyson (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-31","pre_at":1793491123,"fin":{"a":136,"h":111,"su":"W","note":"Final total 247 vs projected 232.4, market line 235.5","over":"Final"}},{"id":"401909901","a":"MIN","h":"SA","an":"MIN","hn":"SA","ts":1793491200.0,"when":"Sat Oct 31, 7:00 PM CT","proj":{"a":109.8,"h":119.9,"total":229.7,"margin":10.1},"rng":{"a":[103,117],"h":[113,127]},"bars":[{"t":"Simulated margin","items":[["SA by 18+",0.2577,"h"],["SA by 11-17",0.2276,"h"],["SA by 6-10",0.1706,"h"],["SA by 1-5",0.1435,"h"],["MIN by 1-5",0.0908,"a"],["MIN by 6-10",0.0504,"a"],["MIN by 11-17",0.0278,"a"],["MIN by 18+",0.0078,"a"]]}],"sp":{"model":-10.1,"mkt":-12.5,"ph":49.6,"pa":50.4},"tot":{"model":229.7,"mkt":229.0,"po":50.0,"pu":50.0,"rng":[218,242]},"win":{"a":18.8,"h":81.2},"ml":{"fa":431,"fh":-431,"ba":430,"bh":-556,"bka":"Fanatics","bkh":"FanDuel"},"facts":[["MIN rest","back-to-back, 3rd game in 4 nights, 1788 km travel"],["SA rest","3d rest, 1754 km travel"]],"inj":[["SA",["Tobias Harris (Out)","Jayden Quaintance (Out)"]],["MIN",["Anthony Edwards (Out)","Rudy Gobert (Out)","Donte DiVincenzo (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-31","pre_at":1793491123,"fin":{"a":111,"h":121,"su":"W","note":"Final total 232 vs projected 229.7, market line 229","over":"Final"}},{"id":"401909898","a":"ATL","h":"NO","an":"ATL","hn":"NO","ts":1793487600.0,"when":"Sat Oct 31, 6:00 PM CT","proj":{"a":118.7,"h":117.3,"total":236.0,"margin":-1.4},"rng":{"a":[112,125],"h":[111,124]},"bars":[{"t":"Simulated margin","items":[["NO by 18+",0.0177,"h"],["NO by 11-17",0.0746,"h"],["NO by 6-10",0.128,"h"],["NO by 1-5",0.1943,"h"],["ATL by 1-5",0.2156,"a"],["ATL by 6-10",0.1689,"a"],["ATL by 11-17",0.1199,"a"],["ATL by 18+",0.0372,"a"]]}],"sp":{"model":1.4,"mkt":5.0,"ph":50.6,"pa":49.4},"tot":{"model":236.0,"mkt":239.5,"po":50.0,"pu":50.0,"rng":[224,248]},"win":{"a":63.3,"h":36.7},"ml":{"fa":-172,"fh":172,"ba":-196,"bh":175,"bka":"FanDuel","bkh":"Caesars"},"facts":[["ATL rest","2d rest, 3rd game in 4 nights, 684 km travel"],["NO rest","2d rest, 3rd game in 4 nights"]],"inj":[["NO",["Dejounte Murray (Out)","Yves Missi (Out)","Jordan Poole (Out)","Malik Dia (Out)","Jaron Pierre Jr. (Out)"]],["ATL",["Jalen Wilson (Out)","Keshon Gilbert (Out)","Mouhamed Gueye (Out)","Henri Veesaar (Out)"]]],"picks":[{"g":"C","t":"NO ML +175 (Caesars)"}],"state":"post","past":true,"d":"2026-10-31","pre_at":1793487484,"fin":{"a":99,"h":121,"su":"L","note":"Final total 220 vs projected 236, market line 239.5","over":"Final"}},{"id":"401909897","a":"PHI","h":"CHA","an":"PHI","hn":"CHA","ts":1793484000.0,"when":"Sat Oct 31, 5:00 PM CT","proj":{"a":107.1,"h":109.0,"total":216.1,"margin":1.9},"rng":{"a":[100,115],"h":[101,117]},"bars":[{"t":"Simulated margin","items":[["CHA by 18+",0.1215,"h"],["CHA by 11-17",0.1379,"h"],["CHA by 6-10",0.1334,"h"],["CHA by 1-5",0.1474,"h"],["PHI by 1-5",0.1387,"a"],["PHI by 6-10",0.1133,"a"],["PHI by 11-17",0.104,"a"],["PHI by 18+",0.0744,"a"]]}],"sp":{"model":-1.9,"mkt":2.0,"ph":50.7,"pa":49.3},"tot":{"model":216.1,"mkt":212.5,"po":50.0,"pu":50.0,"rng":[204,228]},"win":{"a":53.8,"h":46.2},"ml":{"fa":-117,"fh":117,"ba":-127,"bh":118,"bka":"FanDuel","bkh":"Caesars"},"facts":[["PHI rest","back-to-back, 3rd game in 4 nights, 721 km travel"],["CHA rest","back-to-back, 3rd game in 4 nights, 531 km travel"]],"inj":[["CHA",["Kon Knueppel (Out)","Coby White (Out)","Grant Williams (Out)","Kylan Boswell (Out)"]],["PHI",["Joel Embiid (Out)","LeBron James (Out)","Dominick Barlow (Out)"]]],"picks":[{"g":"C","t":"CHA ML +118 (Caesars)"}],"state":"post","past":true,"d":"2026-10-31","pre_at":1793483694,"fin":{"a":109,"h":104,"su":"L","note":"Final total 213 vs projected 216.1, market line 212.5","over":"Final"}},{"id":"401909896","a":"POR","h":"UTAH","an":"POR","hn":"UTAH","ts":1793473200.0,"when":"Sat Oct 31, 2:00 PM CT","proj":{"a":121.2,"h":115.7,"total":236.9,"margin":-5.5},"rng":{"a":[114,128],"h":[109,123]},"bars":[{"t":"Simulated margin","items":[["UTAH by 18+",0.0218,"h"],["UTAH by 11-17",0.0583,"h"],["UTAH by 6-10",0.0869,"h"],["UTAH by 1-5",0.1319,"h"],["POR by 1-5",0.1694,"a"],["POR by 6-10",0.1695,"a"],["POR by 11-17",0.1844,"a"],["POR by 18+",0.1467,"a"]]}],"sp":{"model":5.5,"mkt":6.5,"ph":50.2,"pa":49.8},"tot":{"model":236.9,"mkt":233.0,"po":50.0,"pu":50.0,"rng":[225,249]},"win":{"a":68.6,"h":31.4},"ml":{"fa":-218,"fh":218,"ba":-238,"bh":223,"bka":"FanDuel","bkh":"BetUS"},"facts":[["POR rest","2d rest, 1020 km travel"],["UTAH rest","3d rest"]],"inj":[["UTAH",["Jaren Jackson Jr. (Out)","Jusuf Nurkic (Out)"]],["POR",["Ja Morant (Out)","Shaedon Sharpe (Out)"]]],"picks":[{"g":"C","t":"UTAH ML +223 (BetUS)"}],"state":"post","past":true,"d":"2026-10-31","pre_at":1793473100,"fin":{"a":112,"h":90,"su":"W","note":"Final total 202 vs projected 236.9, market line 233","over":"Final"}},{"id":"401909285","a":"LAL","h":"GS","an":"LAL","hn":"GS","ts":1793412000.0,"when":"Fri Oct 30, 9:00 PM CT","proj":{"a":116.2,"h":114.7,"total":230.9,"margin":-1.6},"rng":{"a":[109,123],"h":[108,121]},"bars":[{"t":"Simulated margin","items":[["GS by 18+",0.017,"h"],["GS by 11-17",0.0726,"h"],["GS by 6-10",0.1258,"h"],["GS by 1-5",0.1928,"h"],["LAL by 1-5",0.2162,"a"],["LAL by 6-10",0.1709,"a"],["LAL by 11-17",0.1225,"a"],["LAL by 18+",0.0385,"a"]]}],"sp":{"model":1.6,"mkt":3.0,"ph":50.3,"pa":49.7},"tot":{"model":230.9,"mkt":234.5,"po":50.0,"pu":50.0,"rng":[219,243]},"win":{"a":57.3,"h":42.7},"ml":{"fa":-134,"fh":134,"ba":-145,"bh":130,"bka":"LowVig.ag","bkh":"Bovada"},"facts":[["LAL rest","2d rest, 3rd game in 4 nights, 560 km travel"],["GS rest","2d rest, 2542 km travel"]],"inj":[["GS",["Jimmy Butler III (Out)","Moses Moody (Out)","Kristaps Porzingis (Out)"]],["LAL",["Ziaire Williams (Out)","Cameron Carr (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-30","pre_at":1793411701,"fin":{"a":95,"h":112,"su":"L","note":"Final total 207 vs projected 230.9, market line 234.5","over":"Final"}},{"id":"401909286","a":"DEN","h":"PHX","an":"DEN","hn":"PHX","ts":1793412000.0,"when":"Fri Oct 30, 9:00 PM CT","proj":{"a":118.4,"h":113.3,"total":231.7,"margin":-5.0},"rng":{"a":[110,127],"h":[105,122]},"bars":[{"t":"Simulated margin","items":[["PHX by 18+",0.1022,"h"],["PHX by 11-17",0.0887,"h"],["PHX by 6-10",0.0858,"h"],["PHX by 1-5",0.1012,"h"],["DEN by 1-5",0.1113,"a"],["DEN by 6-10",0.1105,"a"],["DEN by 11-17",0.1378,"a"],["DEN by 18+",0.2409,"a"]]}],"sp":{"model":5.0,"mkt":4.0,"ph":49.8,"pa":50.2},"tot":{"model":231.7,"mkt":231.5,"po":50.0,"pu":50.0,"rng":[220,244]},"win":{"a":61.1,"h":38.9},"ml":{"fa":-157,"fh":157,"ba":-167,"bh":155,"bka":"BetRivers","bkh":"Bovada"},"facts":[["DEN rest","2d rest, 2112 km travel"],["PHX rest","4d rest, 1352 km travel"]],"inj":[["PHX",["Mark Williams (Out)","Drew Timme (Out)"]],["DEN",["Alpha Diallo (Out)","Spencer Jones (Out)","Julian Strawther (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-30","pre_at":1793411701,"fin":{"a":127,"h":120,"su":"W","note":"Final total 247 vs projected 231.7, market line 231.5","over":"Final"}},{"id":"401909282","a":"IND","h":"MIA","an":"IND","hn":"MIA","ts":1793404800.0,"when":"Fri Oct 30, 7:00 PM CT","proj":{"a":115.7,"h":124.5,"total":240.2,"margin":8.8},"rng":{"a":[108,123],"h":[117,132]},"bars":[{"t":"Simulated margin","items":[["MIA by 18+",0.2665,"h"],["MIA by 11-17",0.1848,"h"],["MIA by 6-10",0.1418,"h"],["MIA by 1-5",0.1304,"h"],["IND by 1-5",0.0998,"a"],["IND by 6-10",0.0695,"a"],["IND by 11-17",0.0538,"a"],["IND by 18+",0.03,"a"]]}],"sp":{"model":-8.8,"mkt":-8.5,"ph":50.1,"pa":49.9},"tot":{"model":240.2,"mkt":237.0,"po":50.0,"pu":50.0,"rng":[228,252]},"win":{"a":26.5,"h":73.5},"ml":{"fa":278,"fh":-278,"ba":282,"bh":-294,"bka":"LowVig.ag","bkh":"BetUS"},"facts":[["IND rest","2d rest, 1651 km travel"],["MIA rest","2d rest, 975 km travel"]],"inj":[["IND",["Tyrese Haliburton (Out)","Ivica Zubac (Out)","Obi Toppin (Out)","Ben Sheppard (Out)","Johnny Furphy (Out)","T.J. McConnell (Out)"]]],"picks":[{"g":"C","t":"IND ML +282 (LowVig.ag)"}],"state":"post","past":true,"d":"2026-10-30","pre_at":1793404596,"fin":{"a":125,"h":145,"su":"W","note":"Final total 270 vs projected 240.2, market line 237","over":"Final"}},{"id":"401909283","a":"HOU","h":"DAL","an":"HOU","hn":"DAL","ts":1793404800.0,"when":"Fri Oct 30, 7:00 PM CT","proj":{"a":116.8,"h":114.2,"total":231.0,"margin":-2.6},"rng":{"a":[110,124],"h":[107,121]},"bars":[{"t":"Simulated margin","items":[["DAL by 18+",0.0126,"h"],["DAL by 11-17",0.0595,"h"],["DAL by 6-10",0.1107,"h"],["DAL by 1-5",0.1807,"h"],["HOU by 1-5",0.2186,"a"],["HOU by 6-10",0.1841,"a"],["HOU by 11-17",0.1419,"a"],["HOU by 18+",0.0494,"a"]]}],"sp":{"model":2.6,"mkt":5.5,"ph":50.5,"pa":49.5},"tot":{"model":231.0,"mkt":224.0,"po":50.0,"pu":50.0,"rng":[219,243]},"win":{"a":63.6,"h":36.4},"ml":{"fa":-175,"fh":175,"ba":-196,"bh":175,"bka":"DraftKings","bkh":"LowVig.ag"},"facts":[["HOU rest","2d rest, 1380 km travel"],["DAL rest","2d rest"]],"inj":[["DAL",["Santi Aldama (Out)","Dereck Lively II (Out)","Sergio de Larrea (Out)","Tarik Biberovic (Out)"]],["HOU",["Alperen Sengun (Out)","Reed Sheppard (Out)","Steven Adams (Out)","Quadir Copeland (Out)","Julian Phillips (Out)"]]],"picks":[{"g":"C","t":"DAL ML +175 (LowVig.ag)"}],"state":"post","past":true,"d":"2026-10-30","pre_at":1793404596,"fin":{"a":111,"h":116,"su":"L","note":"Final total 227 vs projected 231, market line 224","over":"Final"}},{"id":"401909284","a":"LAC","h":"MIN","an":"LAC","hn":"MIN","ts":1793404800.0,"when":"Fri Oct 30, 7:00 PM CT","proj":{"a":110.2,"h":116.4,"total":226.6,"margin":6.1},"rng":{"a":[103,117],"h":[109,124]},"bars":[{"t":"Simulated margin","items":[["MIN by 18+",0.1708,"h"],["MIN by 11-17",0.1868,"h"],["MIN by 6-10",0.1638,"h"],["MIN by 1-5",0.1603,"h"],["LAC by 1-5",0.1242,"a"],["LAC by 6-10",0.0831,"a"],["LAC by 11-17",0.0579,"a"],["LAC by 18+",0.0239,"a"]]}],"sp":{"model":-6.1,"mkt":-7.0,"ph":49.8,"pa":50.2},"tot":{"model":226.6,"mkt":223.0,"po":50.0,"pu":50.0,"rng":[214,239]},"win":{"a":30.4,"h":69.6},"ml":{"fa":229,"fh":-229,"ba":225,"bh":-256,"bka":"BetMGM","bkh":"LowVig.ag"},"facts":[["LAC rest","2d rest, 2462 km travel"],["MIN rest","2d rest"]],"inj":[["MIN",["Anthony Edwards (Out)","Donte DiVincenzo (Out)"]],["LAC",["Brandon Ingram (Out)","Jordan Miller (Out)","Bradley Beal (Out)","Max Strus (Out)","Yanic Konan Niederhauser (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-30","pre_at":1793404596,"fin":{"a":101,"h":127,"su":"W","note":"Final total 228 vs projected 226.6, market line 223","over":"Final"}},{"id":"401909278","a":"CHI","h":"BOS","an":"CHI","hn":"BOS","ts":1793403000.0,"when":"Fri Oct 30, 6:30 PM CT","proj":{"a":109.6,"h":124.5,"total":234.1,"margin":15.0},"rng":{"a":[102,117],"h":[117,132]},"bars":[{"t":"Simulated margin","items":[["BOS by 18+",0.4303,"h"],["BOS by 11-17",0.1929,"h"],["BOS by 6-10",0.1233,"h"],["BOS by 1-5",0.098,"h"],["CHI by 1-5",0.0634,"a"],["CHI by 6-10",0.0386,"a"],["CHI by 11-17",0.0258,"a"],["CHI by 18+",0.0116,"a"]]}],"sp":{"model":-15.0,"mkt":-14.0,"ph":50.2,"pa":49.8},"tot":{"model":234.1,"mkt":236.0,"po":50.0,"pu":50.0,"rng":[222,246]},"win":{"a":14.7,"h":85.3},"ml":{"fa":579,"fh":-579,"ba":590,"bh":-769,"bka":"LowVig.ag","bkh":"BetRivers"},"facts":[["CHI rest","2d rest, 1369 km travel"],["BOS rest","3d rest"]],"inj":[["BOS",["Devin Carter (Out)"]],["CHI",["Nic Claxton (Out)","Dailyn Swain (Out)"]]],"picks":[{"g":"C","t":"CHI ML +590 (LowVig.ag)"}],"state":"post","past":true,"d":"2026-10-30","pre_at":1793402191,"fin":{"a":111,"h":125,"su":"W","note":"Final total 236 vs projected 234.1, market line 236","over":"Final"}},{"id":"401909279","a":"DET","h":"BKN","an":"DET","hn":"BKN","ts":1793403000.0,"when":"Fri Oct 30, 6:30 PM CT","proj":{"a":115.6,"h":107.2,"total":222.8,"margin":-8.4},"rng":{"a":[108,123],"h":[99,115]},"bars":[{"t":"Simulated margin","items":[["BKN by 18+",0.0341,"h"],["BKN by 11-17",0.0574,"h"],["BKN by 6-10",0.072,"h"],["BKN by 1-5",0.1013,"h"],["DET by 1-5",0.1298,"a"],["DET by 6-10",0.1394,"a"],["DET by 11-17",0.1803,"a"],["DET by 18+",0.2621,"a"]]}],"sp":{"model":8.4,"mkt":8.0,"ph":49.9,"pa":50.1},"tot":{"model":222.8,"mkt":222.0,"po":50.0,"pu":50.0,"rng":[211,235]},"win":{"a":72.4,"h":27.6},"ml":{"fa":-262,"fh":262,"ba":-294,"bh":260,"bka":"FanDuel","bkh":"BetRivers"},"facts":[["DET rest","2d rest, 3rd game in 4 nights, 778 km travel"],["BKN rest","3d rest, 306 km travel"]],"inj":[["BKN",["Egor Demin (Out)","Ben Saraf (Out)","Tyler Bilodeau (Out)"]],["DET",["Jalen Duren (Out)","Isaiah Joe (Out)","Ugonna Onyenso (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-30","pre_at":1793402191,"fin":{"a":110,"h":94,"su":"W","note":"Final total 204 vs projected 222.8, market line 222","over":"Final"}},{"id":"401909280","a":"NY","h":"PHI","an":"NY","hn":"PHI","ts":1793403000.0,"when":"Fri Oct 30, 6:30 PM CT","proj":{"a":111.7,"h":110.4,"total":222.1,"margin":-1.3},"rng":{"a":[105,118],"h":[104,117]},"bars":[{"t":"Simulated margin","items":[["PHI by 18+",0.0184,"h"],["PHI by 11-17",0.0767,"h"],["PHI by 6-10",0.1302,"h"],["PHI by 1-5",0.1959,"h"],["NY by 1-5",0.215,"a"],["NY by 6-10",0.1669,"a"],["NY by 11-17",0.1172,"a"],["NY by 18+",0.0358,"a"]]}],"sp":{"model":1.3,"mkt":3.0,"ph":50.3,"pa":49.7},"tot":{"model":222.1,"mkt":225.5,"po":50.0,"pu":50.0,"rng":[210,234]},"win":{"a":57.4,"h":42.6},"ml":{"fa":-135,"fh":135,"ba":-141,"bh":135,"bka":"BetUS","bkh":"Caesars"},"facts":[["NY rest","2d rest, 3rd game in 4 nights, 1073 km travel"],["PHI rest","2d rest, 937 km travel"]],"inj":[["PHI",["Jaylen Brown (Out)","Dominick Barlow (Out)"]],["NY",["Jose Alvarado (Out)"]]],"picks":[{"g":"C","t":"PHI ML +135 (Caesars)"}],"state":"post","past":true,"d":"2026-10-30","pre_at":1793402191,"fin":{"a":93,"h":98,"su":"L","note":"Final total 191 vs projected 222.1, market line 225.5","over":"Final"}},{"id":"401909281","a":"ORL","h":"TOR","an":"ORL","hn":"TOR","ts":1793403000.0,"when":"Fri Oct 30, 6:30 PM CT","proj":{"a":110.9,"h":116.4,"total":227.3,"margin":5.5},"rng":{"a":[103,119],"h":[109,124]},"bars":[{"t":"Simulated margin","items":[["TOR by 18+",0.1976,"h"],["TOR by 11-17",0.1635,"h"],["TOR by 6-10",0.1381,"h"],["TOR by 1-5",0.1382,"h"],["ORL by 1-5",0.1175,"a"],["ORL by 6-10",0.0896,"a"],["ORL by 11-17",0.0773,"a"],["ORL by 18+",0.0522,"a"]]}],"sp":{"model":-5.5,"mkt":-5.5,"ph":50.0,"pa":50.0},"tot":{"model":227.3,"mkt":227.0,"po":50.0,"pu":50.0,"rng":[215,239]},"win":{"a":35.0,"h":65.0},"ml":{"fa":186,"fh":-186,"ba":180,"bh":-204,"bka":"DraftKings","bkh":"LowVig.ag"},"facts":[["ORL rest","2d rest"],["TOR rest","2d rest"]],"inj":[["TOR",["Kawhi Leonard (Out)","Malachi Smith (Out)","Nate Bittle (Out)"]],["ORL",["Paolo Banchero (Out)","Jalen Suggs (Out)","Izaiyah Nelson (Out)","Noah Penda (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-30","pre_at":1793402191,"fin":{"a":121,"h":114,"su":"L","note":"Final total 235 vs projected 227.3, market line 227","over":"Final"}},{"id":"401909277","a":"CHA","h":"WSH","an":"CHA","hn":"WSH","ts":1793401200.0,"when":"Fri Oct 30, 6:00 PM CT","proj":{"a":113.6,"h":114.0,"total":227.6,"margin":0.4},"rng":{"a":[106,121],"h":[106,122]},"bars":[{"t":"Simulated margin","items":[["WSH by 18+",0.1009,"h"],["WSH by 11-17",0.1245,"h"],["WSH by 6-10",0.1262,"h"],["WSH by 1-5",0.1452,"h"],["CHA by 1-5",0.1434,"a"],["CHA by 6-10",0.1219,"a"],["CHA by 11-17",0.1173,"a"],["CHA by 18+",0.091,"a"]]}],"sp":{"model":-0.4,"mkt":1.0,"ph":50.2,"pa":49.8},"tot":{"model":227.6,"mkt":218.5,"po":50.0,"pu":50.0,"rng":[215,240]},"win":{"a":51.2,"h":48.8},"ml":{"fa":-105,"fh":105,"ba":-105,"bh":114,"bka":"Caesars","bkh":"BetRivers"},"facts":[["CHA rest","2d rest, 637 km travel"],["WSH rest","2d rest, 490 km travel"]],"inj":[["WSH",["Jamir Watkins (Out)","Justin Champagnie (Out)","Reece Beekman (Out)","Tristan Vukcevic (Out)"]],["CHA",["Dennis Schroder (Probable)","Kon Knueppel (Out)","Coby White (Out)","Grant Williams (Out)","Kylan Boswell (Out)"]]],"picks":[{"g":"B","t":"WSH ML +114 (BetRivers)"}],"state":"post","past":true,"d":"2026-10-30","pre_at":1793401006,"fin":{"a":79,"h":95,"su":"W","note":"Final total 174 vs projected 227.6, market line 218.5","over":"Final"}},{"id":"401909895","a":"MEM","h":"POR","an":"MEM","hn":"POR","ts":1793325600.0,"when":"Thu Oct 29, 9:00 PM CT","proj":{"a":110.8,"h":120.8,"total":231.6,"margin":9.9},"rng":{"a":[103,119],"h":[113,129]},"bars":[{"t":"Simulated margin","items":[["POR by 18+",0.3228,"h"],["POR by 11-17",0.1636,"h"],["POR by 6-10",0.12,"h"],["POR by 1-5",0.1106,"h"],["MEM by 1-5",0.0889,"a"],["MEM by 6-10",0.0669,"a"],["MEM by 11-17",0.0593,"a"],["MEM by 18+",0.0476,"a"]]}],"sp":{"model":-9.9,"mkt":-8.0,"ph":50.3,"pa":49.7},"tot":{"model":231.6,"mkt":232.5,"po":50.0,"pu":50.0,"rng":[219,244]},"win":{"a":27.3,"h":72.7},"ml":{"fa":267,"fh":-267,"ba":290,"bh":-270,"bka":"FanDuel","bkh":"LowVig.ag"},"facts":[["MEM rest","3d rest, 1020 km travel"],["POR rest","2d rest, 1331 km travel"]],"inj":[["POR",["Shaedon Sharpe (Out)","Robert Williams III (Out)"]],["MEM",["Jahmai Mashack (Out)","Javon Small (Out)","Carson Cooper (Out)"]]],"picks":[{"g":"B","t":"MEM ML +290 (FanDuel)"}],"state":"post","past":true,"d":"2026-10-29","pre_at":1793325493,"fin":{"a":124,"h":103,"su":"L","note":"Final total 227 vs projected 231.6, market line 232.5","over":"Final"}},{"id":"401909893","a":"CLE","h":"ATL","an":"CLE","hn":"ATL","ts":1793318400.0,"when":"Thu Oct 29, 7:00 PM CT","proj":{"a":119.3,"h":116.1,"total":235.4,"margin":-3.3},"rng":{"a":[112,127],"h":[109,124]},"bars":[{"t":"Simulated margin","items":[["ATL by 18+",0.0607,"h"],["ATL by 11-17",0.0916,"h"],["ATL by 6-10",0.1044,"h"],["ATL by 1-5",0.1329,"h"],["CLE by 1-5",0.148,"a"],["CLE by 6-10",0.1391,"a"],["CLE by 11-17",0.1505,"a"],["CLE by 18+",0.144,"a"]]}],"sp":{"model":3.3,"mkt":-1.5,"ph":49.2,"pa":50.8},"tot":{"model":235.4,"mkt":238.0,"po":50.0,"pu":50.0,"rng":[223,248]},"win":{"a":48.8,"h":51.2},"ml":{"fa":105,"fh":-105,"ba":107,"bh":-114,"bka":"LowVig.ag","bkh":"BetRivers"},"facts":[["CLE rest","back-to-back, 3rd game in 4 nights, 893 km travel"],["ATL rest","back-to-back, 3rd game in 4 nights"]],"inj":[["ATL",["Jalen Wilson (Out)","Keshon Gilbert (Out)","Mouhamed Gueye (Out)","Henri Veesaar (Out)"]],["CLE",["Meleek Thomas (Out)","Tristan Enaruna (Out)"]]],"picks":[{"g":"C","t":"CLE ML +107 (LowVig.ag)"}],"state":"post","past":true,"d":"2026-10-29","pre_at":1793318259,"fin":{"a":111,"h":114,"su":"L","note":"Final total 225 vs projected 235.4, market line 238","over":"Final"}},{"id":"401909894","a":"SAC","h":"NO","an":"SAC","hn":"NO","ts":1793318400.0,"when":"Thu Oct 29, 7:00 PM CT","proj":{"a":114.5,"h":121.7,"total":236.2,"margin":7.1},"rng":{"a":[107,122],"h":[114,130]},"bars":[{"t":"Simulated margin","items":[["NO by 18+",0.2495,"h"],["NO by 11-17",0.1637,"h"],["NO by 6-10",0.1294,"h"],["NO by 1-5",0.125,"h"],["SAC by 1-5",0.1043,"a"],["SAC by 6-10",0.0799,"a"],["SAC by 11-17",0.0709,"a"],["SAC by 18+",0.0539,"a"]]}],"sp":{"model":-7.1,"mkt":-6.5,"ph":50.1,"pa":49.9},"tot":{"model":236.2,"mkt":235.0,"po":50.0,"pu":50.0,"rng":[224,248]},"win":{"a":32.1,"h":67.9},"ml":{"fa":212,"fh":-212,"ba":206,"bh":-233,"bka":"MyBookie.ag","bkh":"Caesars"},"facts":[["SAC rest","2d rest, 809 km travel"],["NO rest","back-to-back"]],"inj":[["NO",["Dejounte Murray (Out)","Yves Missi (Out)","Jordan Poole (Out)","Malik Dia (Out)","Jaron Pierre Jr. (Out)"]],["SAC",["Keegan Murray (Out)","Maxime Raynaud (Out)","Dylan Cardwell (Out)","Ben Simmons (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-29","pre_at":1793318259,"fin":{"a":120,"h":132,"su":"W","note":"Final total 252 vs projected 236.2, market line 235","over":"Final"}},{"id":"401909892","a":"LAL","h":"LAC","an":"LAL","hn":"LAC","ts":1793241000.0,"when":"Wed Oct 28, 9:30 PM CT","proj":{"a":112.9,"h":116.9,"total":229.8,"margin":4.0},"rng":{"a":[105,120],"h":[109,124]},"bars":[{"t":"Simulated margin","items":[["LAC by 18+",0.1574,"h"],["LAC by 11-17",0.1572,"h"],["LAC by 6-10",0.1417,"h"],["LAC by 1-5",0.1475,"h"],["LAL by 1-5",0.1292,"a"],["LAL by 6-10",0.0994,"a"],["LAL by 11-17",0.0851,"a"],["LAL by 18+",0.0541,"a"]]}],"sp":{"model":-4.0,"mkt":-1.0,"ph":50.5,"pa":49.5},"tot":{"model":229.8,"mkt":224.5,"po":50.0,"pu":50.0,"rng":[218,242]},"win":{"a":48.5,"h":51.5},"ml":{"fa":106,"fh":-106,"ba":-103,"bh":-108,"bka":"LowVig.ag","bkh":"BetRivers"},"facts":[["LAL rest","back-to-back, 3rd game in 4 nights, 13 km travel"],["LAC rest","3d rest, 1908 km travel"]],"inj":[["LAC",["Brandon Ingram (Out)","Rui Hachimura (Out)","Max Strus (Out)","Jordan Miller (Out)","Bradley Beal (Out)","Yanic Konan Niederhauser (Out)"]],["LAL",["Luka Doncic (Out)","Ziaire Williams (Out)","Cameron Carr (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-28","pre_at":1793240441,"fin":{"a":103,"h":87,"su":"L","note":"Final total 190 vs projected 229.8, market line 224.5","over":"Final"}},{"id":"401909891","a":"OKC","h":"DAL","an":"OKC","hn":"DAL","ts":1793237400.0,"when":"Wed Oct 28, 8:30 PM CT","proj":{"a":118.0,"h":111.7,"total":229.7,"margin":-6.3},"rng":{"a":[109,127],"h":[103,120]},"bars":[{"t":"Simulated margin","items":[["DAL by 18+",0.1025,"h"],["DAL by 11-17",0.0829,"h"],["DAL by 6-10",0.0792,"h"],["DAL by 1-5",0.0936,"h"],["OKC by 1-5",0.1041,"a"],["OKC by 6-10",0.1054,"a"],["OKC by 11-17",0.136,"a"],["OKC by 18+",0.2762,"a"]]}],"sp":{"model":6.3,"mkt":5.0,"ph":49.8,"pa":50.2},"tot":{"model":229.7,"mkt":228.0,"po":50.0,"pu":50.0,"rng":[218,242]},"win":{"a":63.2,"h":36.8},"ml":{"fa":-172,"fh":172,"ba":-179,"bh":170,"bka":"FanDuel","bkh":"BetRivers"},"facts":[["OKC rest","2d rest, 3rd game in 4 nights, 304 km travel"],["DAL rest","2d rest, 1788 km travel"]],"inj":[["DAL",["Naji Marshall (Out)","Santi Aldama (Out)","Dereck Lively II (Out)","Sergio de Larrea (Out)","Tarik Biberovic (Out)"]],["OKC",["Jalen Williams (Out)","Chet Holmgren (Out)","Cason Wallace (Out)","Nikola Topic (Out)","Alex Caruso (Out)","Otega Oweh (Out)","Thomas Sorber (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-28","pre_at":1793236859,"fin":{"a":96,"h":120,"su":"L","note":"Final total 216 vs projected 229.7, market line 228","over":"Final"}},{"id":"401909890","a":"SA","h":"UTAH","an":"SA","hn":"UTAH","ts":1793235600.0,"when":"Wed Oct 28, 8:00 PM CT","proj":{"a":126.9,"h":112.6,"total":239.5,"margin":-14.2},"rng":{"a":[119,135],"h":[105,120]},"bars":[{"t":"Simulated margin","items":[["UTAH by 18+",0.0122,"h"],["UTAH by 11-17",0.0275,"h"],["UTAH by 6-10",0.0411,"h"],["UTAH by 1-5",0.0672,"h"],["SA by 1-5",0.1028,"a"],["SA by 6-10",0.1278,"a"],["SA by 11-17",0.1961,"a"],["SA by 18+",0.4083,"a"]]}],"sp":{"model":14.2,"mkt":13.5,"ph":49.9,"pa":50.1},"tot":{"model":239.5,"mkt":233.5,"po":50.0,"pu":50.0,"rng":[227,252]},"win":{"a":84.4,"h":15.6},"ml":{"fa":-540,"fh":540,"ba":-667,"bh":600,"bka":"LowVig.ag","bkh":"BetRivers"},"facts":[["SA rest","back-to-back, 1754 km travel"],["UTAH rest","2d rest, 3rd game in 4 nights"]],"inj":[["UTAH",["Lauri Markkanen (Out)","Jaren Jackson Jr. (Out)","Jusuf Nurkic (Out)"]],["SA",["Tobias Harris (Out)","Jayden Quaintance (Out)"]]],"picks":[{"g":"A","t":"UTAH ML +600 (BetRivers)"}],"state":"post","past":true,"d":"2026-10-28","pre_at":1793235399,"fin":{"a":117,"h":111,"su":"W","note":"Final total 228 vs projected 239.5, market line 233.5","over":"Final/OT"}},{"id":"401909886","a":"NY","h":"CHI","an":"NY","hn":"CHI","ts":1793232000.0,"when":"Wed Oct 28, 7:00 PM CT","proj":{"a":119.0,"h":110.7,"total":229.7,"margin":-8.2},"rng":{"a":[111,127],"h":[103,119]},"bars":[{"t":"Simulated margin","items":[["CHI by 18+",0.0458,"h"],["CHI by 11-17",0.0639,"h"],["CHI by 6-10",0.0743,"h"],["CHI by 1-5",0.0995,"h"],["NY by 1-5",0.1229,"a"],["NY by 6-10",0.1302,"a"],["NY by 11-17",0.1692,"a"],["NY by 18+",0.2716,"a"]]}],"sp":{"model":8.2,"mkt":7.5,"ph":49.9,"pa":50.1},"tot":{"model":229.7,"mkt":233.0,"po":50.0,"pu":50.0,"rng":[218,242]},"win":{"a":70.5,"h":29.5},"ml":{"fa":-239,"fh":239,"ba":-263,"bh":230,"bka":"FanDuel","bkh":"BetUS"},"facts":[["NY rest","back-to-back, 3rd game in 4 nights, 1148 km travel"],["CHI rest","2d rest, 1369 km travel"]],"inj":[["CHI",["Patrick Williams (Out)","Nic Claxton (Out)","Tobe Awaka (Out)"]],["NY",["Jose Alvarado (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-28","pre_at":1793231937,"fin":{"a":133,"h":127,"su":"W","note":"Final total 260 vs projected 229.7, market line 233","over":"Final"}},{"id":"401909887","a":"HOU","h":"MIL","an":"HOU","hn":"MIL","ts":1793232000.0,"when":"Wed Oct 28, 7:00 PM CT","proj":{"a":117.9,"h":110.3,"total":228.2,"margin":-7.6},"rng":{"a":[111,125],"h":[103,118]},"bars":[{"t":"Simulated margin","items":[["MIL by 18+",0.0169,"h"],["MIL by 11-17",0.0461,"h"],["MIL by 6-10",0.0712,"h"],["MIL by 1-5",0.113,"h"],["HOU by 1-5",0.1558,"a"],["HOU by 6-10",0.1676,"a"],["HOU by 11-17",0.2018,"a"],["HOU by 18+",0.2002,"a"]]}],"sp":{"model":7.6,"mkt":8.5,"ph":50.2,"pa":49.8},"tot":{"model":228.2,"mkt":227.0,"po":50.0,"pu":50.0,"rng":[216,240]},"win":{"a":73.9,"h":26.1},"ml":{"fa":-284,"fh":284,"ba":-312,"bh":285,"bka":"BetRivers","bkh":"LowVig.ag"},"facts":[["HOU rest","2d rest, 1620 km travel"],["MIL rest","2d rest"]],"inj":[["HOU",["Alperen Sengun (Out)","Marcus Smart (Out)","Steven Adams (Out)","Quadir Copeland (Out)","Julian Phillips (Out)"]]],"picks":[{"g":"C","t":"MIL ML +285 (LowVig.ag)"}],"state":"post","past":true,"d":"2026-10-28","pre_at":1793231937,"fin":{"a":132,"h":100,"su":"W","note":"Final total 232 vs projected 228.2, market line 227","over":"Final"}},{"id":"401909888","a":"GS","h":"MIN","an":"GS","hn":"MIN","ts":1793232000.0,"when":"Wed Oct 28, 7:00 PM CT","proj":{"a":113.8,"h":117.3,"total":231.1,"margin":3.6},"rng":{"a":[106,122],"h":[109,125]},"bars":[{"t":"Simulated margin","items":[["MIN by 18+",0.1735,"h"],["MIN by 11-17",0.1464,"h"],["MIN by 6-10",0.1282,"h"],["MIN by 1-5",0.1339,"h"],["GS by 1-5",0.1216,"a"],["GS by 6-10",0.0991,"a"],["GS by 11-17",0.0936,"a"],["GS by 18+",0.0775,"a"]]}],"sp":{"model":-3.6,"mkt":-4.0,"ph":49.9,"pa":50.1},"tot":{"model":231.1,"mkt":227.5,"po":50.0,"pu":50.0,"rng":[219,243]},"win":{"a":40.5,"h":59.5},"ml":{"fa":147,"fh":-147,"ba":143,"bh":-154,"bka":"BetRivers","bkh":"BetOnline.ag"},"facts":[["GS rest","2d rest, 1124 km travel"],["MIN rest","2d rest, 3rd game in 4 nights, 1014 km travel"]],"inj":[["MIN",["Anthony Edwards (Out)","Donte DiVincenzo (Out)"]],["GS",["Jimmy Butler III (Out)","Gui Santos (Out)","Kristaps Porzingis (Out)","Moses Moody (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-28","pre_at":1793231937,"fin":{"a":119,"h":114,"su":"L","note":"Final total 233 vs projected 231.1, market line 227.5","over":"Final"}},{"id":"401909889","a":"DEN","h":"NO","an":"DEN","hn":"NO","ts":1793232000.0,"when":"Wed Oct 28, 7:00 PM CT","proj":{"a":122.9,"h":120.6,"total":243.5,"margin":-2.2},"rng":{"a":[116,130],"h":[114,127]},"bars":[{"t":"Simulated margin","items":[["NO by 18+",0.0142,"h"],["NO by 11-17",0.0646,"h"],["NO by 6-10",0.1167,"h"],["NO by 1-5",0.1857,"h"],["DEN by 1-5",0.218,"a"],["DEN by 6-10",0.179,"a"],["DEN by 11-17",0.134,"a"],["DEN by 18+",0.0448,"a"]]}],"sp":{"model":2.2,"mkt":4.5,"ph":50.4,"pa":49.6},"tot":{"model":243.5,"mkt":241.0,"po":50.0,"pu":50.0,"rng":[231,256]},"win":{"a":61.0,"h":39.0},"ml":{"fa":-156,"fh":156,"ba":-169,"bh":155,"bka":"Bovada","bkh":"BetRivers"},"facts":[["DEN rest","2d rest, 1740 km travel"],["NO rest","4d rest, 1740 km travel"]],"inj":[["NO",["Yves Missi (Out)","Malik Dia (Out)","Jaron Pierre Jr. (Out)"]],["DEN",["Cameron Johnson (Out)","Alpha Diallo (Out)","Spencer Jones (Out)","Julian Strawther (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-28","pre_at":1793231937,"fin":{"a":104,"h":91,"su":"W","note":"Final total 195 vs projected 243.5, market line 241","over":"Final"}},{"id":"401909885","a":"ORL","h":"TOR","an":"ORL","hn":"TOR","ts":1793230200.0,"when":"Wed Oct 28, 6:30 PM CT","proj":{"a":112.7,"h":114.8,"total":227.5,"margin":2.0},"rng":{"a":[106,119],"h":[108,122]},"bars":[{"t":"Simulated margin","items":[["TOR by 18+",0.043,"h"],["TOR by 11-17",0.1309,"h"],["TOR by 6-10",0.1768,"h"],["TOR by 1-5",0.2176,"h"],["ORL by 1-5",0.1877,"a"],["ORL by 6-10",0.1192,"a"],["ORL by 11-17",0.0667,"a"],["ORL by 18+",0.0149,"a"]]}],"sp":{"model":-2.0,"mkt":-4.5,"ph":49.6,"pa":50.4},"tot":{"model":227.5,"mkt":225.0,"po":50.0,"pu":50.0,"rng":[215,240]},"win":{"a":37.6,"h":62.4},"ml":{"fa":166,"fh":-166,"ba":166,"bh":-185,"bka":"FanDuel","bkh":"BetOnline.ag"},"facts":[["ORL rest","3d rest, 548 km travel"],["TOR rest","3d rest, 1114 km travel"]],"inj":[["TOR",["Kawhi Leonard (Out)","Malachi Smith (Out)","Nate Bittle (Out)"]],["ORL",["Paolo Banchero (Out)","Jalen Suggs (Out)","Izaiyah Nelson (Out)","Noah Penda (Out)"]]],"picks":[{"g":"C","t":"ORL +4.5 -101 (LowVig.ag)"},{"g":"C","t":"ORL ML +166 (FanDuel)"}],"state":"post","past":true,"d":"2026-10-28","pre_at":1793229933,"fin":{"a":99,"h":129,"su":"W","note":"Final total 228 vs projected 227.5, market line 225","over":"Final"}},{"id":"401909881","a":"MIA","h":"ATL","an":"MIA","hn":"ATL","ts":1793228400.0,"when":"Wed Oct 28, 6:00 PM CT","proj":{"a":118.3,"h":121.9,"total":240.2,"margin":3.7},"rng":{"a":[109,127],"h":[113,131]},"bars":[{"t":"Simulated margin","items":[["ATL by 18+",0.2446,"h"],["ATL by 11-17",0.1217,"h"],["ATL by 6-10",0.0972,"h"],["ATL by 1-5",0.0994,"h"],["MIA by 1-5",0.0941,"a"],["MIA by 6-10",0.084,"a"],["MIA by 11-17",0.0944,"a"],["MIA by 18+",0.1449,"a"]]}],"sp":{"model":-3.7,"mkt":-2.5,"ph":50.2,"pa":49.8},"tot":{"model":240.2,"mkt":243.5,"po":50.0,"pu":50.0,"rng":[228,252]},"win":{"a":43.4,"h":56.6},"ml":{"fa":130,"fh":-130,"ba":125,"bh":-135,"bka":"BetUS","bkh":"LowVig.ag"},"facts":[["MIA rest","2d rest, 975 km travel"],["ATL rest","2d rest, 1128 km travel"]],"inj":[["ATL",["Jalen Wilson (Out)","Keshon Gilbert (Out)","Mouhamed Gueye (Out)","Henri Veesaar (Out)"]],["MIA",["Simone Fontecchio (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-28","pre_at":1793228252,"fin":{"a":129,"h":117,"su":"L","note":"Final total 246 vs projected 240.2, market line 243.5","over":"Final"}},{"id":"401909882","a":"WSH","h":"CLE","an":"WSH","hn":"CLE","ts":1793228400.0,"when":"Wed Oct 28, 6:00 PM CT","proj":{"a":112.8,"h":126.2,"total":239.0,"margin":13.4},"rng":{"a":[104,121],"h":[118,135]},"bars":[{"t":"Simulated margin","items":[["CLE by 18+",0.4106,"h"],["CLE by 11-17",0.1518,"h"],["CLE by 6-10",0.1043,"h"],["CLE by 1-5",0.0927,"h"],["WSH by 1-5",0.073,"a"],["WSH by 6-10",0.0551,"a"],["WSH by 11-17",0.0501,"a"],["WSH by 18+",0.0455,"a"]]}],"sp":{"model":-13.4,"mkt":-9.5,"ph":50.7,"pa":49.3},"tot":{"model":239.0,"mkt":240.0,"po":50.0,"pu":50.0,"rng":[227,251]},"win":{"a":23.2,"h":76.8},"ml":{"fa":331,"fh":-331,"ba":320,"bh":-357,"bka":"BetUS","bkh":"FanDuel"},"facts":[["WSH rest","2d rest, 701 km travel"],["CLE rest","2d rest"]],"inj":[["WSH",["Jamir Watkins (Out)","Tre Johnson (Out)","Justin Champagnie (Out)","Reece Beekman (Out)","Tristan Vukcevic (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-28","pre_at":1793228252,"fin":{"a":111,"h":121,"su":"W","note":"Final total 232 vs projected 239, market line 240","over":"Final"}},{"id":"401909883","a":"CHA","h":"DET","an":"CHA","hn":"DET","ts":1793228400.0,"when":"Wed Oct 28, 6:00 PM CT","proj":{"a":109.0,"h":112.9,"total":221.9,"margin":3.9},"rng":{"a":[102,116],"h":[106,120]},"bars":[{"t":"Simulated margin","items":[["DET by 18+",0.0651,"h"],["DET by 11-17",0.1659,"h"],["DET by 6-10",0.1976,"h"],["DET by 1-5",0.2178,"h"],["CHA by 1-5",0.1646,"a"],["CHA by 6-10",0.0936,"a"],["CHA by 11-17",0.0463,"a"],["CHA by 18+",0.0088,"a"]]}],"sp":{"model":-3.9,"mkt":-7.5,"ph":49.4,"pa":50.6},"tot":{"model":221.9,"mkt":213.0,"po":50.0,"pu":50.0,"rng":[210,234]},"win":{"a":29.6,"h":70.4},"ml":{"fa":237,"fh":-237,"ba":235,"bh":-278,"bka":"DraftKings","bkh":"LowVig.ag"},"facts":[["CHA rest","2d rest, 814 km travel"],["DET rest","back-to-back, 3rd game in 4 nights, 774 km travel"]],"inj":[["DET",["Jalen Duren (Out)","Isaiah Joe (Out)","Ugonna Onyenso (Out)"]],["CHA",["Kon Knueppel (Out)","Coby White (Out)","Grant Williams (Out)","Kylan Boswell (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-28","pre_at":1793228252,"fin":{"a":89,"h":97,"su":"W","note":"Final total 186 vs projected 221.9, market line 213","over":"Final"}},{"id":"401909884","a":"PHI","h":"IND","an":"PHI","hn":"IND","ts":1793228400.0,"when":"Wed Oct 28, 6:00 PM CT","proj":{"a":120.9,"h":110.7,"total":231.6,"margin":-10.2},"rng":{"a":[112,130],"h":[102,119]},"bars":[{"t":"Simulated margin","items":[["IND by 18+",0.0658,"h"],["IND by 11-17",0.0642,"h"],["IND by 6-10",0.0666,"h"],["IND by 1-5",0.0839,"h"],["PHI by 1-5",0.1005,"a"],["PHI by 6-10",0.1076,"a"],["PHI by 11-17",0.148,"a"],["PHI by 18+",0.3446,"a"]]}],"sp":{"model":10.2,"mkt":7.5,"ph":49.5,"pa":50.5},"tot":{"model":231.6,"mkt":234.5,"po":50.0,"pu":50.0,"rng":[219,244]},"win":{"a":71.0,"h":29.0},"ml":{"fa":-245,"fh":245,"ba":-263,"bh":235,"bka":"FanDuel","bkh":"Caesars"},"facts":[["PHI rest","3d rest, 937 km travel"],["IND rest","2d rest, 3rd game in 4 nights, 393 km travel"]],"inj":[["IND",["Tyrese Haliburton (Out)","Ivica Zubac (Out)","Ben Sheppard (Out)","Johnny Furphy (Out)","T.J. McConnell (Out)"]],["PHI",["Dominick Barlow (Out)","Ariel Hukporti (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-28","pre_at":1793228252,"fin":{"a":114,"h":109,"su":"W","note":"Final total 223 vs projected 231.6, market line 234.5","over":"Final"}},{"id":"401909880","a":"POR","h":"LAL","an":"POR","hn":"LAL","ts":1793156400.0,"when":"Tue Oct 27, 10:00 PM CT","proj":{"a":114.9,"h":113.4,"total":228.3,"margin":-1.5},"rng":{"a":[107,122],"h":[106,121]},"bars":[{"t":"Simulated margin","items":[["LAL by 18+",0.0779,"h"],["LAL by 11-17",0.107,"h"],["LAL by 6-10",0.1153,"h"],["LAL by 1-5",0.1399,"h"],["POR by 1-5",0.1471,"a"],["POR by 6-10",0.1318,"a"],["POR by 11-17",0.1349,"a"],["POR by 18+",0.1166,"a"]]}],"sp":{"model":1.5,"mkt":-2.0,"ph":49.4,"pa":50.6},"tot":{"model":228.3,"mkt":233.5,"po":50.0,"pu":50.0,"rng":[216,240]},"win":{"a":47.5,"h":52.5},"ml":{"fa":111,"fh":-111,"ba":110,"bh":-118,"bka":"BetRivers","bkh":"LowVig.ag"},"facts":[["POR rest","4d rest, 582 km travel"],["LAL rest","2d rest, 935 km travel"]],"inj":[["LAL",["Cameron Carr (Out)"]],["POR",["Shaedon Sharpe (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-27","pre_at":1793156085,"fin":{"a":136,"h":129,"su":"W","note":"Final total 265 vs projected 228.3, market line 233.5","over":"Final"}},{"id":"401909878","a":"DET","h":"NY","an":"DET","hn":"NY","ts":1793145600.0,"when":"Tue Oct 27, 7:00 PM CT","proj":{"a":108.2,"h":114.1,"total":222.3,"margin":5.9},"rng":{"a":[99,117],"h":[105,123]},"bars":[{"t":"Simulated margin","items":[["NY by 18+",0.2811,"h"],["NY by 11-17",0.1281,"h"],["NY by 6-10",0.0989,"h"],["NY by 1-5",0.0984,"h"],["DET by 1-5",0.0901,"a"],["DET by 6-10",0.0782,"a"],["DET by 11-17",0.0851,"a"],["DET by 18+",0.1209,"a"]]}],"sp":{"model":-5.9,"mkt":-4.0,"ph":50.3,"pa":49.7},"tot":{"model":222.3,"mkt":219.5,"po":50.0,"pu":50.0,"rng":[210,234]},"win":{"a":39.1,"h":60.9},"ml":{"fa":156,"fh":-156,"ba":149,"bh":-164,"bka":"LowVig.ag","bkh":"BetUS"},"facts":[["DET rest","2d rest, 137 km travel"],["NY rest","2d rest"]],"inj":[["NY",["Jose Alvarado (Out)"]],["DET",["Jalen Duren (Out)","Isaiah Joe (Out)","Ugonna Onyenso (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-27","pre_at":1793143659,"fin":{"a":97,"h":111,"su":"W","note":"Final total 208 vs projected 222.3, market line 219.5","over":"Final"}},{"id":"401909879","a":"SAC","h":"SA","an":"SAC","hn":"SA","ts":1793145600.0,"when":"Tue Oct 27, 7:00 PM CT","proj":{"a":107.2,"h":126.2,"total":233.4,"margin":19.0},"rng":{"a":[100,115],"h":[119,134]},"bars":[{"t":"Simulated margin","items":[["SA by 18+",0.5415,"h"],["SA by 11-17",0.1854,"h"],["SA by 6-10",0.1046,"h"],["SA by 1-5",0.0745,"h"],["SAC by 1-5",0.042,"a"],["SAC by 6-10",0.0227,"a"],["SAC by 11-17",0.0132,"a"],["SAC by 18+",0.0047,"a"]]}],"sp":{"model":-19.0,"mkt":-19.0,"ph":50.0,"pa":50.0},"tot":{"model":233.4,"mkt":232.5,"po":50.0,"pu":50.0,"rng":[221,246]},"win":{"a":8.8,"h":91.2},"ml":{"fa":1035,"fh":-1035,"ba":1100,"bh":-1667,"bka":"FanDuel","bkh":"MyBookie.ag"},"facts":[["SAC rest","2d rest, 2348 km travel"],["SA rest","3d rest, 405 km travel"]],"inj":[["SA",["Tobias Harris (Out)","Jayden Quaintance (Out)"]],["SAC",["Keegan Murray (Out)","Maxime Raynaud (Out)","Dylan Cardwell (Out)","Ben Simmons (Out)"]]],"picks":[{"g":"B","t":"SAC ML +1100 (FanDuel)"}],"state":"post","past":true,"d":"2026-10-27","pre_at":1793143659,"fin":{"a":103,"h":130,"su":"W","note":"Final total 233 vs projected 233.4, market line 232.5","over":"Final"}},{"id":"401909877","a":"BKN","h":"BOS","an":"BKN","hn":"BOS","ts":1793143800.0,"when":"Tue Oct 27, 6:30 PM CT","proj":{"a":102.4,"h":118.3,"total":220.7,"margin":16.0},"rng":{"a":[94,110],"h":[110,126]},"bars":[{"t":"Simulated margin","items":[["BOS by 18+",0.4626,"h"],["BOS by 11-17",0.171,"h"],["BOS by 6-10",0.1093,"h"],["BOS by 1-5",0.0894,"h"],["BKN by 1-5",0.0619,"a"],["BKN by 6-10",0.041,"a"],["BKN by 11-17",0.0311,"a"],["BKN by 18+",0.0186,"a"]]}],"sp":{"model":-16.0,"mkt":-12.5,"ph":50.6,"pa":49.4},"tot":{"model":220.7,"mkt":223.5,"po":50.0,"pu":50.0,"rng":[209,233]},"win":{"a":16.0,"h":84.0},"ml":{"fa":525,"fh":-525,"ba":525,"bh":-625,"bka":"BetRivers","bkh":"DraftKings"},"facts":[["BKN rest","2d rest, 3rd game in 4 nights, 306 km travel"],["BOS rest","back-to-back"]],"inj":[["BOS",["Devin Carter (Out)"]],["BKN",["Drake Powell (Out)","Ben Saraf (Out)","Tyler Bilodeau (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-27","pre_at":1793143659,"fin":{"a":124,"h":125,"su":"W","note":"Final total 249 vs projected 220.7, market line 223.5","over":"Final/OT"}},{"id":"401909876","a":"GS","h":"DEN","an":"GS","hn":"DEN","ts":1793066400.0,"when":"Mon Oct 26, 9:00 PM CT","proj":{"a":114.6,"h":124.9,"total":239.5,"margin":10.2},"rng":{"a":[106,123],"h":[116,134]},"bars":[{"t":"Simulated margin","items":[["DEN by 18+",0.3488,"h"],["DEN by 11-17",0.1452,"h"],["DEN by 6-10",0.1054,"h"],["DEN by 1-5",0.0986,"h"],["GS by 1-5",0.0829,"a"],["GS by 6-10",0.0663,"a"],["GS by 11-17",0.0649,"a"],["GS by 18+",0.0695,"a"]]}],"sp":{"model":-10.2,"mkt":-7.5,"ph":50.5,"pa":49.5},"tot":{"model":239.5,"mkt":236.5,"po":50.0,"pu":50.0,"rng":[227,252]},"win":{"a":29.3,"h":70.7},"ml":{"fa":242,"fh":-242,"ba":230,"bh":-263,"bka":"BetRivers","bkh":"LowVig.ag"},"facts":[["GS rest","2d rest, 3rd game in 4 nights, 942 km travel"],["DEN rest","2d rest"]],"inj":[["DEN",["Cameron Johnson (Out)","Alpha Diallo (Out)","Spencer Jones (Out)","Julian Strawther (Out)"]],["GS",["Jimmy Butler III (Out)","Kristaps Porzingis (Out)","Moses Moody (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-26","pre_at":1793064150,"fin":{"a":134,"h":114,"su":"L","note":"Final total 248 vs projected 239.5, market line 236.5","over":"Final"}},{"id":"401909875","a":"MEM","h":"UTAH","an":"MEM","hn":"UTAH","ts":1793062800.0,"when":"Mon Oct 26, 8:00 PM CT","proj":{"a":121.0,"h":122.5,"total":243.5,"margin":1.6},"rng":{"a":[113,129],"h":[115,130]},"bars":[{"t":"Simulated margin","items":[["UTAH by 18+",0.1173,"h"],["UTAH by 11-17",0.1353,"h"],["UTAH by 6-10",0.1321,"h"],["UTAH by 1-5",0.1472,"h"],["MEM by 1-5",0.1397,"a"],["MEM by 6-10",0.115,"a"],["MEM by 11-17",0.1065,"a"],["MEM by 18+",0.0774,"a"]]}],"sp":{"model":-1.6,"mkt":1.0,"ph":50.5,"pa":49.5},"tot":{"model":243.5,"mkt":237.5,"po":50.0,"pu":50.0,"rng":[231,256]},"win":{"a":50.1,"h":49.9},"ml":{"fa":-100,"fh":100,"ba":-110,"bh":-105,"bka":"FanDuel","bkh":"Fanatics"},"facts":[["MEM rest","back-to-back, 3rd game in 4 nights, 856 km travel"],["UTAH rest","back-to-back, 3rd game in 4 nights"]],"inj":[["UTAH",["Jusuf Nurkic (Out)","Jaxson Hayes (Out)"]],["MEM",["Isaiah Stewart (Questionable)","Karim Lopez (Questionable)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-26","pre_at":1793061329,"fin":{"a":110,"h":105,"su":"L","note":"Final total 215 vs projected 243.5, market line 237.5","over":"Final"}},{"id":"401909874","a":"ATL","h":"HOU","an":"ATL","hn":"HOU","ts":1793061000.0,"when":"Mon Oct 26, 7:30 PM CT","proj":{"a":111.9,"h":118.4,"total":230.3,"margin":6.5},"rng":{"a":[103,121],"h":[110,127]},"bars":[{"t":"Simulated margin","items":[["HOU by 18+",0.2783,"h"],["HOU by 11-17",0.1368,"h"],["HOU by 6-10",0.1058,"h"],["HOU by 1-5",0.1043,"h"],["ATL by 1-5",0.0934,"a"],["ATL by 6-10",0.0789,"a"],["ATL by 11-17",0.0821,"a"],["ATL by 18+",0.1004,"a"]]}],"sp":{"model":-6.5,"mkt":-4.5,"ph":50.4,"pa":49.6},"tot":{"model":230.3,"mkt":229.5,"po":50.0,"pu":50.0,"rng":[218,242]},"win":{"a":36.5,"h":63.5},"ml":{"fa":174,"fh":-174,"ba":175,"bh":-185,"bka":"Bovada","bkh":"BetOnline.ag"},"facts":[["ATL rest","2d rest, 3rd game in 4 nights, 1128 km travel"],["HOU rest","2d rest, 3rd game in 4 nights, 1128 km travel"]],"inj":[["HOU",["Marcus Smart (Out)","Steven Adams (Out)","Quadir Copeland (Out)","Julian Phillips (Out)"]],["ATL",["Jalen Wilson (Out)","Keshon Gilbert (Out)","Mouhamed Gueye (Out)","Henri Veesaar (Out)"]]],"picks":[{"g":"C","t":"ATL ML +175 (Bovada)"}],"state":"post","past":true,"d":"2026-10-26","pre_at":1793059062,"fin":{"a":110,"h":120,"su":"W","note":"Final total 230 vs projected 230.3, market line 229.5","over":"Final"}},{"id":"401909872","a":"IND","h":"MIL","an":"IND","hn":"MIL","ts":1793059200.0,"when":"Mon Oct 26, 7:00 PM CT","proj":{"a":118.1,"h":117.2,"total":235.3,"margin":-0.9},"rng":{"a":[111,125],"h":[110,124]},"bars":[{"t":"Simulated margin","items":[["MIL by 18+",0.0202,"h"],["MIL by 11-17",0.0816,"h"],["MIL by 6-10",0.1353,"h"],["MIL by 1-5",0.1993,"h"],["IND by 1-5",0.2133,"a"],["IND by 6-10",0.1621,"a"],["IND by 11-17",0.1112,"a"],["IND by 18+",0.0329,"a"]]}],"sp":{"model":0.9,"mkt":4.0,"ph":50.5,"pa":49.5},"tot":{"model":235.3,"mkt":238.5,"po":50.0,"pu":50.0,"rng":[223,247]},"win":{"a":59.2,"h":40.8},"ml":{"fa":-145,"fh":145,"ba":-161,"bh":144,"bka":"FanDuel","bkh":"LowVig.ag"},"facts":[["IND rest","back-to-back, 3rd game in 4 nights, 1182 km travel"],["MIL rest","2d rest, 3rd game in 4 nights, 1117 km travel"]],"inj":[["IND",["Andrew Nembhard (Out)","Ivica Zubac (Out)","Ben Sheppard (Out)","Johnny Furphy (Out)","T.J. McConnell (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-26","pre_at":1793059062,"fin":{"a":102,"h":110,"su":"L","note":"Final total 212 vs projected 235.3, market line 238.5","over":"Final"}},{"id":"401909873","a":"PHX","h":"OKC","an":"PHX","hn":"OKC","ts":1793059200.0,"when":"Mon Oct 26, 7:00 PM CT","proj":{"a":106.3,"h":115.1,"total":221.4,"margin":8.9},"rng":{"a":[99,114],"h":[107,123]},"bars":[{"t":"Simulated margin","items":[["OKC by 18+",0.272,"h"],["OKC by 11-17",0.1828,"h"],["OKC by 6-10",0.1396,"h"],["OKC by 1-5",0.1284,"h"],["PHX by 1-5",0.0988,"a"],["PHX by 6-10",0.0694,"a"],["PHX by 11-17",0.0545,"a"],["PHX by 18+",0.0315,"a"]]}],"sp":{"model":-8.9,"mkt":-8.5,"ph":50.1,"pa":49.9},"tot":{"model":221.4,"mkt":221.5,"po":50.0,"pu":50.0,"rng":[209,234]},"win":{"a":26.6,"h":73.4},"ml":{"fa":277,"fh":-277,"ba":270,"bh":-303,"bka":"BetRivers","bkh":"BetUS"},"facts":[["PHX rest","2d rest, 1352 km travel"],["OKC rest","back-to-back"]],"inj":[["OKC",["Jalen Williams (Out)","Chet Holmgren (Out)","Cason Wallace (Out)","Nikola Topic (Out)","Otega Oweh (Out)","Thomas Sorber (Out)"]],["PHX",["Oso Ighodaro (Out)","Mark Williams (Out)","Drew Timme (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-26","pre_at":1793059062,"fin":{"a":114,"h":125,"su":"W","note":"Final total 239 vs projected 221.4, market line 221.5","over":"Final"}},{"id":"401909870","a":"CHI","h":"BOS","an":"CHI","hn":"BOS","ts":1793057400.0,"when":"Mon Oct 26, 6:30 PM CT","proj":{"a":109.1,"h":122.5,"total":231.6,"margin":13.5},"rng":{"a":[102,117],"h":[115,130]},"bars":[{"t":"Simulated margin","items":[["BOS by 18+",0.3806,"h"],["BOS by 11-17",0.2075,"h"],["BOS by 6-10",0.1372,"h"],["BOS by 1-5",0.1098,"h"],["CHI by 1-5",0.0699,"a"],["CHI by 6-10",0.0412,"a"],["CHI by 11-17",0.0258,"a"],["CHI by 18+",0.0099,"a"]]}],"sp":{"model":-13.5,"mkt":-14.0,"ph":49.9,"pa":50.1},"tot":{"model":231.6,"mkt":233.0,"po":50.0,"pu":50.0,"rng":[219,244]},"win":{"a":15.6,"h":84.4},"ml":{"fa":542,"fh":-542,"ba":530,"bh":-714,"bka":"FanDuel","bkh":"BetUS"},"facts":[["CHI rest","2d rest, 3rd game in 4 nights, 1369 km travel"],["BOS rest","3d rest"]],"inj":[["BOS",["Devin Carter (Out)"]],["CHI",["Patrick Williams (Out)","Nic Claxton (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-26","pre_at":1793056929,"fin":{"a":99,"h":134,"su":"W","note":"Final total 233 vs projected 231.6, market line 233","over":"Final"}},{"id":"401909871","a":"DAL","h":"MIA","an":"DAL","hn":"MIA","ts":1793057400.0,"when":"Mon Oct 26, 6:30 PM CT","proj":{"a":118.8,"h":123.4,"total":242.2,"margin":4.7},"rng":{"a":[112,126],"h":[117,130]},"bars":[{"t":"Simulated margin","items":[["MIA by 18+",0.0768,"h"],["MIA by 11-17",0.1814,"h"],["MIA by 6-10",0.2046,"h"],["MIA by 1-5",0.2152,"h"],["DAL by 1-5",0.1537,"a"],["DAL by 6-10",0.0834,"a"],["DAL by 11-17",0.0391,"a"],["DAL by 18+",0.0069,"a"]]}],"sp":{"model":-4.7,"mkt":-7.5,"ph":49.5,"pa":50.5},"tot":{"model":242.2,"mkt":240.5,"po":50.0,"pu":50.0,"rng":[230,254]},"win":{"a":30.1,"h":69.9},"ml":{"fa":233,"fh":-233,"ba":235,"bh":-270,"bka":"BetRivers","bkh":"Caesars"},"facts":[["DAL rest","2d rest, 3rd game in 4 nights, 1788 km travel"],["MIA rest","2d rest, 3rd game in 4 nights, 1052 km travel"]],"inj":[["DAL",["Naji Marshall (Out)","Santi Aldama (Out)","Dereck Lively II (Out)","Caleb Martin (Out)","Tarik Biberovic (Out)"]]],"picks":[{"g":"C","t":"DAL ML +235 (BetRivers)"}],"state":"post","past":true,"d":"2026-10-26","pre_at":1793056929,"fin":{"a":113,"h":109,"su":"L","note":"Final total 222 vs projected 242.2, market line 240.5","over":"Final"}},{"id":"401909868","a":"WSH","h":"CHA","an":"WSH","hn":"CHA","ts":1793055600.0,"when":"Mon Oct 26, 6:00 PM CT","proj":{"a":114.0,"h":116.5,"total":230.5,"margin":2.5},"rng":{"a":[106,122],"h":[109,124]},"bars":[{"t":"Simulated margin","items":[["CHA by 18+",0.1428,"h"],["CHA by 11-17",0.1416,"h"],["CHA by 6-10",0.1308,"h"],["CHA by 1-5",0.1411,"h"],["WSH by 1-5",0.1309,"a"],["WSH by 6-10",0.1072,"a"],["WSH by 11-17",0.1002,"a"],["WSH by 18+",0.0775,"a"]]}],"sp":{"model":-2.5,"mkt":-3.0,"ph":49.9,"pa":50.1},"tot":{"model":230.5,"mkt":228.0,"po":50.0,"pu":50.0,"rng":[218,243]},"win":{"a":43.0,"h":57.0},"ml":{"fa":133,"fh":-133,"ba":126,"bh":-141,"bka":"Caesars","bkh":"BetRivers"},"facts":[["WSH rest","2d rest, 3rd game in 4 nights, 949 km travel"],["CHA rest","2d rest, 3rd game in 4 nights"]],"inj":[["CHA",["Kon Knueppel (Out)","Coby White (Out)","Grant Williams (Out)","Kylan Boswell (Out)"]],["WSH",["Jamir Watkins (Out)","Reece Beekman (Out)","Tristan Vukcevic (Out)","AJ Dybantsa (Out)"]]],"picks":[],"state":"post","past":true,"d":"2026-10-26","pre_at":1793053583,"fin":{"a":103,"h":110,"su":"W","note":"Final total 213 vs projected 230.5, market line 228","over":"Final"}},{"id":"401909869","a":"MIN","h":"CLE","an":"MIN","hn":"CLE","ts":1793055600.0,"when":"Mon Oct 26, 6:00 PM CT","proj":{"a":113.9,"h":118.3,"total":232.2,"margin":4.4},"rng":{"a":[105,123],"h":[109,127]},"bars":[{"t":"Simulated margin","items":[["CLE by 18+",0.2559,"h"],["CLE by 11-17",0.1239,"h"],["CLE by 6-10",0.0979,"h"],["CLE by 1-5",0.0992,"h"],["MIN by 1-5",0.093,"a"],["MIN by 6-10",0.0822,"a"],["MIN by 11-17",0.0915,"a"],["MIN by 18+",0.137,"a"]]}],"sp":{"model":-4.4,"mkt":-3.0,"ph":50.2,"pa":49.8},"tot":{"model":232.2,"mkt":234.0,"po":50.0,"pu":50.0,"rng":[220,244]},"win":{"a":42.4,"h":57.6},"ml":{"fa":136,"fh":-136,"ba":145,"bh":-141,"bka":"MyBookie.ag","bkh":"Caesars"},"facts":[["MIN rest","back-to-back, 3rd game in 4 nights, 1014 km travel"],["CLE rest","2d rest"]],"inj":[["MIN",["Donte DiVincenzo (Out)"]]],"picks":[{"g":"C","t":"MIN ML +145 (MyBookie.ag)"}],"state":"post","past":true,"d":"2026-10-26","pre_at":1793053583,"fin":{"a":125,"h":127,"su":"W","note":"Final total 252 vs projected 232.2, market line 234","over":"Final/OT"}}],"v":2}</script><script id="gd-js">
 /* game detail panels: renders the JSON blob computed by apply_gamedetail.py. Additive only; any error leaves the page untouched. */
 (function(){
@@ -1244,6 +1061,189 @@ else if(anchor)anchor.parentNode.insertBefore(sec,anchor.nextSibling);
 else main.insertBefore(sec,main.firstChild);
 if(psec)sec.parentNode.insertBefore(psec,sec.nextSibling);
 }catch(e){if(window.console)console.warn('game detail',e)}
+})();
+
+</script><script id="rec-data" type="application/json">{"v":1,"sport":"nba","today":"2026-11-01","generated":"2026-11-01 00:55","rec":{"lines":["SU","ATS","OU"],"graded":88,"since":"2026-10-20","tracked_projections":107,"last7":{"games":45,"SU":{"w":30,"l":15,"p":0,"n":45,"pct":66.7},"ATS":{"w":19,"l":23,"p":1,"n":43,"pct":45.2},"OU":{"w":23,"l":20,"p":2,"n":45,"pct":53.5}},"season":{"games":88,"SU":{"w":59,"l":29,"p":0,"n":88,"pct":67.0},"ATS":{"w":37,"l":41,"p":3,"n":81,"pct":47.4},"OU":{"w":42,"l":40,"p":2,"n":84,"pct":51.2}},"days":{"2026-10-20":{"games":3,"SU":{"w":2,"l":1,"p":0,"n":3,"pct":66.7},"ATS":{"w":3,"l":0,"p":0,"n":3,"pct":100.0},"OU":{"w":2,"l":1,"p":0,"n":3,"pct":66.7}},"2026-10-21":{"games":11,"SU":{"w":7,"l":4,"p":0,"n":11,"pct":63.6},"ATS":{"w":4,"l":6,"p":1,"n":11,"pct":40.0},"OU":{"w":6,"l":5,"p":0,"n":11,"pct":54.5}},"2026-10-22":{"games":2,"SU":{"w":2,"l":0,"p":0,"n":2,"pct":100.0},"ATS":{"w":1,"l":1,"p":0,"n":2,"pct":50.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-10-23":{"games":12,"SU":{"w":6,"l":6,"p":0,"n":12,"pct":50.0},"ATS":{"w":3,"l":4,"p":1,"n":8,"pct":42.9},"OU":{"w":3,"l":6,"p":0,"n":9,"pct":33.3}},"2026-10-24":{"games":8,"SU":{"w":6,"l":2,"p":0,"n":8,"pct":75.0},"ATS":{"w":3,"l":5,"p":0,"n":8,"pct":37.5},"OU":{"w":4,"l":4,"p":0,"n":8,"pct":50.0}},"2026-10-25":{"games":7,"SU":{"w":6,"l":1,"p":0,"n":7,"pct":85.7},"ATS":{"w":4,"l":2,"p":0,"n":6,"pct":66.7},"OU":{"w":3,"l":4,"p":0,"n":7,"pct":42.9}},"2026-10-26":{"games":9,"SU":{"w":6,"l":3,"p":0,"n":9,"pct":66.7},"ATS":{"w":4,"l":5,"p":0,"n":9,"pct":44.4},"OU":{"w":3,"l":5,"p":1,"n":9,"pct":37.5}},"2026-10-27":{"games":4,"SU":{"w":4,"l":0,"p":0,"n":4,"pct":100.0},"ATS":{"w":2,"l":1,"p":0,"n":3,"pct":66.7},"OU":{"w":1,"l":3,"p":0,"n":4,"pct":25.0}},"2026-10-28":{"games":12,"SU":{"w":8,"l":4,"p":0,"n":12,"pct":66.7},"ATS":{"w":2,"l":10,"p":0,"n":12,"pct":16.7},"OU":{"w":5,"l":7,"p":0,"n":12,"pct":41.7}},"2026-10-29":{"games":3,"SU":{"w":1,"l":2,"p":0,"n":3,"pct":33.3},"ATS":{"w":1,"l":2,"p":0,"n":3,"pct":33.3},"OU":{"w":3,"l":0,"p":0,"n":3,"pct":100.0}},"2026-10-30":{"games":10,"SU":{"w":6,"l":4,"p":0,"n":10,"pct":60.0},"ATS":{"w":7,"l":1,"p":1,"n":9,"pct":87.5},"OU":{"w":7,"l":2,"p":1,"n":10,"pct":77.8}},"2026-10-31":{"games":7,"SU":{"w":5,"l":2,"p":0,"n":7,"pct":71.4},"ATS":{"w":3,"l":4,"p":0,"n":7,"pct":42.9},"OU":{"w":4,"l":3,"p":0,"n":7,"pct":57.1}}}},"note":"Spread and total sides use the model’s projected margin and total against the last line posted before tip-off.","empty":""}</script><script id="rec-js">
+/* model projected-side record: renders the JSON blob written by apply_record.py. Additive only; any error leaves the page untouched. */
+(function(){
+'use strict';
+try{
+var D=document,be=D.getElementById('rec-data');if(!be)return;
+var B=JSON.parse(be.textContent),R=B.rec;if(!R||D.getElementById('rec-sec'))return;
+function el(t,c,x){var e=D.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function ap(p){for(var i=1;i<arguments.length;i++){if(arguments[i]!=null)p.appendChild(arguments[i])}return p}
+function wl(t){return t.w+'-'+t.l+(t.p?'-'+t.p:'')}
+function pctTxt(t){return t.pct==null?'\u2014':t.pct.toFixed(1)+'%'}
+function cls(t){if(t.pct==null)return 'na';return t.pct>=55?'hi':(t.pct>=47.5?'mid':'lo')}
+function gm(n){return n+' game'+(n===1?'':'s')+' tracked'}
+var sec=el('section','sec tog rec-sec'),hd=el('div','sec-h'),bd=el('div','sec-b');sec.id='rec-sec';
+hd.appendChild(D.createTextNode('Model projected-side record'));
+var tot=R.season.games;
+hd.appendChild(el('span','cnt',tot?(R.season.SU.w+'-'+R.season.SU.l+(R.season.SU.p?'-'+R.season.SU.p:'')):'tracking'));
+ap(sec,hd,bd);
+ap(bd,el('div','rec-sub','What happens if you just take the side the model\u2019s projected score lands on \u2014 no price or edge filter.'));
+if(!tot){
+  var em=el('div','rec-empty');
+  ap(em,el('b',null,'0 games tracked so far. '),D.createTextNode(B.empty||'Tracking starts with the next game this page projects; the record fills in as games go final.'));
+  ap(bd,em);
+}else{
+  var g=el('div','rec-grid');
+  [['Last 7 days',R.last7],['Season to date',R.season]].forEach(function(w){
+    var t=w[1].SU,b=el('div','rec-box');
+    ap(b,el('h4',null,w[0]));
+    if(!w[1].games){ap(b,el('div','rec-big','\u2014'),el('div','rec-pct na','no finished games'),el('div','rec-gm','0 games tracked'));ap(g,b);return}
+    var big=el('div','rec-big',wl(t));
+    ap(b,big,el('div','rec-pct '+cls(t),pctTxt(t)+' straight up'));
+    var bar=el('div','rec-bar'),f=el('i');f.style.width=Math.max(3,t.pct||0)+'%';bar.appendChild(f);
+    ap(b,bar,el('div','rec-gm',gm(w[1].games)+(w[1].games<10?' (small sample)':'')));
+    ap(g,b);
+  });
+  bd.appendChild(g);
+  /* spread / total lines */
+  var rows=[];
+  if(R.lines.indexOf('ATS')>=0)rows.push(['ATS','Spread side','Projected margin vs the last posted spread']);
+  if(R.lines.indexOf('OU')>=0)rows.push(['OU','Total side','Projected total vs the last posted total']);
+  if(rows.length){
+    var box=el('div','rec-lines'),h=el('div','rec-lh');ap(h,el('span',null,'Side'),el('span',null,'7 days'),el('span',null,'Season'));box.appendChild(h);
+    rows.forEach(function(r){
+      var rw=el('div','rec-lr'),l=el('div','l');ap(l,el('b',null,r[1]),el('span',null,r[2]));
+      ap(rw,l);
+      [R.last7,R.season].forEach(function(w){
+        var t=w[r[0]],v=el('div','v');
+        if(!t||!t.n){ap(v,D.createTextNode('\u2014'),el('em',null,'0 games'))}
+        else{ap(v,D.createTextNode(wl(t)),el('em',cls(t),pctTxt(t)+' \u00b7 '+t.n+' g'))}
+        rw.appendChild(v);
+      });
+      box.appendChild(rw);
+    });
+    bd.appendChild(box);
+  }
+  /* last 7 days strip */
+  bd.appendChild(el('div','rec-dl','Day by day (straight up)'));
+  var ds=el('div','rec-days'),dn=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var p=B.today.split('-').map(Number),base=new Date(p[0],p[1]-1,p[2],12);
+  for(var i=6;i>=0;i--){
+    var d=new Date(base.getTime()-i*864e5),k=d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);
+    var v=R.days[k],c=el('div','rec-d '+(v&&v.SU.n?cls(v.SU):'na'));
+    ap(c,el('span',null,dn[d.getDay()]),el('b',null,v&&v.games?wl(v.SU):'\u2014'));
+    ds.appendChild(c);
+  }
+  bd.appendChild(ds);
+}
+var note=el('div','rec-note');
+note.textContent=(tot?(gm(tot)+' since '+R.since+'. '):'')+(B.note||'')+' Pushes are shown separately and are not counted as wins or losses. Percentages are wins \u00f7 (wins + losses).';
+bd.appendChild(note);
+hd.addEventListener('click',function(){sec.classList.toggle('closed')});
+/* placement: right after the game projections section if present, else after the first section */
+var main=D.querySelector('main.wrap')||D.querySelector('main')||D.body,anchor=D.getElementById('gd-sec');
+if(!anchor){var ss=main.querySelectorAll(':scope > section.sec');if(ss.length)anchor=ss[0];else anchor=D.getElementById('plays')||D.getElementById('top')}
+if(anchor&&anchor.parentNode)anchor.parentNode.insertBefore(sec,anchor.nextSibling);else main.insertBefore(sec,main.firstChild);
+}catch(e){if(window.console)console.warn('model record',e)}
+})();
+
+</script><script id="polish-data" type="application/json">{"pre":"../","fallback":1793512507,"v":"polish-v1"}</script><script id="polish-js">
+/* Model Desk polish v1: presentation only. Adds brand row + freshness chip, aligns numeric table columns, adds footer text. Never changes data. */
+(function(){
+'use strict';
+var D=document,B=D.body,W=window;
+if(!B||B.classList.contains('pl-js'))return;
+var DATA={};try{var de=D.getElementById('polish-data');if(de)DATA=JSON.parse(de.textContent)||{}}catch(e){}
+var TZ='America/Chicago',MON={jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,oct:9,nov:10,dec:11};
+var PARTS=new Intl.DateTimeFormat('en-US',{timeZone:TZ,hourCycle:'h23',year:'numeric',month:'numeric',day:'numeric',hour:'numeric',minute:'numeric'});
+var TIME=new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit'});
+var DAY=new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short',month:'short',day:'numeric'});
+var YMD=new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'});
+function ctOff(t){var o={};PARTS.formatToParts(new Date(t)).forEach(function(x){o[x.type]=x.value});return Date.UTC(+o.year,+o.month-1,+o.day,+o.hour%24,+o.minute)-Math.floor(t/60000)*60000}
+function ctEpoch(y,mo,d,h,mi){var g=Date.UTC(y,mo,d,h,mi),i;for(i=0;i<3;i++)g=Date.UTC(y,mo,d,h,mi)-ctOff(g);return g}
+function parseUpd(txt){
+  if(!txt)return null;var m,y,h;
+  m=/Updated\s+(?:[A-Za-z]{3},?\s+)?([A-Za-z]{3})[a-z]*\s+(\d{1,2}),?\s+(?:(\d{4}),?\s+)?(\d{1,2}):(\d{2})\s*(AM|PM)/i.exec(txt);
+  if(m){h=(+m[4])%12+(/pm/i.test(m[6])?12:0);y=m[3]?+m[3]:+YMD.format(new Date()).slice(0,4);
+    var e=ctEpoch(y,MON[m[1].toLowerCase()],+m[2],h,+m[5]);if(!m[3]&&e>Date.now()+864e5)e=ctEpoch(y-1,MON[m[1].toLowerCase()],+m[2],h,+m[5]);return e}
+  m=/Updated\s+(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/i.exec(txt);
+  if(m)return ctEpoch(+m[1],+m[2]-1,+m[3],+m[4],+m[5]);
+  return null}
+function ago(ms){var m=Math.max(0,Math.round(ms/6e4));if(m<1)return 'just now';if(m<60)return m+'m ago';var h=Math.floor(m/60);if(h<48)return h+'h '+(m%60)+'m ago';return Math.floor(h/24)+'d ago'}
+function stateOf(ms){var m=ms/6e4;return m<=120?['ok','Fresh']:(m<=360?['warn','Aging']:['old','Stale'])}
+function setT(el,t){if(el&&el.textContent!==t)el.textContent=t}
+function stamp(e){var d=new Date(e),same=Date.now()-e<864e5;return (same?'':DAY.format(d)+' · ')+TIME.format(d)+' CT'}
+
+var LOGO='<svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="plg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d8dff"/><stop offset="1" stop-color="#2de3c0"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#plg)"/><path d="M6 17.5v-4M10.3 17.5V9M14.6 17.5v-3.5M18.4 17.5V6.5" stroke="#07101f" stroke-width="2.1" stroke-linecap="round"/></svg>';
+var home=B.getAttribute('data-sport')==='home';
+var pre=DATA.pre||'';
+
+/* 1. header: make every page share one header shape, add brand row + freshness chip */
+var chip,chipB,chipI,epoch=null;
+function header(){
+  var hd=D.querySelector('header');if(!hd)return;
+  if(!hd.classList.contains('topbar')){           /* e.g. EuroLeague: plain header -> same structure as the other pages */
+    var nav=hd.querySelector('nav.sports'),inn=D.createElement('div'),br=D.createElement('div'),hm=D.createElement('div'),kids=[].slice.call(hd.childNodes);
+    inn.className='in';br.className='brand';hm.className='hmeta';
+    kids.forEach(function(n){if(n===nav)return;if(n.nodeType===1&&n.tagName==='H1')br.appendChild(n);else if(n.nodeType===1)hm.appendChild(n)});
+    inn.appendChild(br);inn.appendChild(hm);hd.insertBefore(inn,nav||null);hd.classList.add('topbar');
+    [].forEach.call(hm.children,function(c){c.classList.remove('meta');c.style.display='block'});
+  }
+  var inn2=hd.querySelector('.in');if(!inn2||inn2.querySelector('.pl-brandrow'))return;
+  var row=D.createElement('div');row.className='pl-brandrow';
+  row.innerHTML='<a class="pl-brand" href="'+(pre||'./')+'" aria-label="Model Desk home">'+LOGO+'<span class="pl-wm"><b>Model<em>Desk</em></b><i>Sports analytics</i></span></a>'+
+    '<div class="pl-fresh" data-s="" role="status" aria-live="off"><span class="pl-dot"></span><span class="pl-ft"><b>Syncing</b><i>&nbsp;</i></span></div>';
+  inn2.insertBefore(row,inn2.firstChild);
+  chip=row.querySelector('.pl-fresh');chipB=chip.querySelector('b');chipI=chip.querySelector('i');
+  [].forEach.call(hd.querySelectorAll('.hmeta span,.hmeta div,.meta'),function(e){if(/^\s*Updated\b/i.test(e.textContent))e.classList.add('pl-hide')});
+}
+function pageEpoch(){
+  var t=[],e;
+  [D.getElementById('updated'),D.getElementById('slate-line'),D.querySelector('header .hmeta'),D.querySelector('header')].forEach(function(x){if(x)t.push(x.textContent)});
+  for(var i=0;i<t.length;i++){e=parseUpd(t[i]);if(e)return e}
+  var eps=[];[].forEach.call(D.querySelectorAll('.card .u'),function(u){var x=parseUpd(u.textContent);if(x)eps.push(x)});
+  if(eps.length)return Math.max.apply(null,eps);
+  return DATA.fallback?DATA.fallback*1000:null}
+function paint(){
+  if(!chip)return;var e=pageEpoch();if(e)epoch=e;if(!epoch)return;
+  var age=Date.now()-epoch,s=stateOf(age);
+  chip.setAttribute('data-s',s[0]);setT(chipB,s[1]);setT(chipI,stamp(epoch)+' · '+ago(age));
+  chip.title='Page data updated '+DAY.format(new Date(epoch))+' '+TIME.format(new Date(epoch))+' CT';
+  var f=D.querySelector('[data-pl-upd]');setT(f,stamp(epoch));
+  /* home cards: per-card freshness dot */
+  if(home)[].forEach.call(D.querySelectorAll('.card .u'),function(u){var x=parseUpd(u.textContent);if(!x)return;var d=u.querySelector('.pl-dot');if(!d){d=D.createElement('span');d.className='pl-dot';u.insertBefore(d,u.firstChild)}
+    var st=stateOf(Date.now()-x)[0];d.style.setProperty('--fc',st==='ok'?'var(--ok)':st==='warn'?'var(--amber)':'var(--warn)');d.style.background='var(--fc)'});
+}
+
+/* 2. numeric columns right-aligned (tabular numerals for odds / percentages) */
+var NUM=/^[+\-\u2212]?\$?\d[\d.,:]*\s*(%|pts?|u|x|m)?$/i;
+function align(){
+  [].forEach.call(D.querySelectorAll('table'),function(t){
+    var rows=t.rows,n=rows.length;if(n<3||t.getAttribute('data-pl')===String(n))return;
+    var head=t.tHead&&t.tHead.rows.length?t.tHead.rows[t.tHead.rows.length-1]:rows[0],nc=head.cells.length,c,r,col=[];
+    for(c=1;c<nc;c++){var tot=0,num=0;for(r=0;r<n&&tot<60;r++){var row=rows[r];if(row===head||row.cells.length!==nc)continue;var tx=row.cells[c].textContent.replace(/\s+/g,' ').trim();if(!tx||tx==='-'||tx==='\u2014')continue;tot++;if(NUM.test(tx))num++}
+      if(tot>=3&&num/tot>=.75)col.push(c)}
+    col.forEach(function(c){for(var r=0;r<n;r++){var row=rows[r];if(row.cells.length===nc)row.cells[c].classList.add('pl-n')}});
+    t.setAttribute('data-pl',String(n));
+  })}
+
+/* 3. footer */
+function footer(){
+  if(D.querySelector('.pl-foot'))return;
+  var f=D.createElement('footer');f.className='pl-foot';
+  f.innerHTML='<div class="pl-fl">'+LOGO.replace('width="24" height="24"','width="18" height="18"').replace('id="plg"','id="plg2"').replace('url(#plg)','url(#plg2)')+'Model Desk <span>Sports analytics</span></div>'+
+   '<p>Probabilities, fair prices and projected scores are model estimates for information and entertainment. They are not financial or betting advice, and no outcome is ever certain. Prices come from public odds feeds, move quickly and can differ at your book, so confirm before you wager.</p>'+
+   '<p>Independent project. Not affiliated with or endorsed by any league, team or sportsbook. Must be 21+ where wagering is legal. Help is available at 1-800-GAMBLER.</p>'+
+   '<div class="pl-fm"><span><i class="pl-dot" style="--fc:var(--ok);background:var(--fc)"></i>Page data <span data-pl-upd>\u2014</span></span><span>Times Central (CT)</span><span><b class="g gA grade A">A</b> strong <b class="g gB grade B">B</b> solid <b class="g gC grade C">C</b> thin pick grade</span></div>';
+  B.appendChild(f);
+  /* keep the footer after the page content, before the scripts */
+  var first=B.querySelector(':scope>script');if(first)B.insertBefore(f,first);
+}
+
+/* 4. keep only the sport nav pinned (title/brand row scrolls away) */
+function pin(){var t=D.querySelector('.topbar'),i=t&&t.querySelector('.in');if(!t||!i||home)return;t.style.top=(-i.offsetHeight)+'px';
+  var a=t.querySelector('nav.sports a.on'),n=t.querySelector('nav.sports');if(a&&n&&!n.dataset.pl){n.dataset.pl=1;n.scrollLeft=Math.max(0,a.offsetLeft-(n.clientWidth-a.offsetWidth)/2)}}
+
+try{header();footer();B.classList.add('pl-js');paint();align();pin()}catch(e){if(W.console)console.warn('polish',e)}
+var tm=null;function later(){clearTimeout(tm);tm=setTimeout(function(){try{header();align();paint();pin()}catch(e){}},250)}
+if(W.MutationObserver)new MutationObserver(later).observe(B,{childList:true,subtree:true});
+[400,1500,4000].forEach(function(ms){setTimeout(function(){try{paint();pin()}catch(e){}},ms)});
+W.addEventListener('load',function(){try{pin();paint()}catch(e){}});W.addEventListener('resize',function(){try{pin()}catch(e){}});
+setInterval(function(){try{paint()}catch(e){}},30000);
 })();
 
 </script></body></html>

@@ -220,6 +220,89 @@ nav.sports a[data-k="nhl"]{--c:#22d3ee;--c2:#3b82f6}
 nav.sports a[data-k="nhl-props"]{--c:#2de3c0;--c2:#06b6d4}
 nav.sports a[data-k="mlb"]{--c:#ff5a6e;--c2:#ffb020}
 nav.sports a[data-k="tennis"]{--c:#b6f03c;--c2:#22d3ee}
+</style><style id="gd-css">
+/* game detail panels (apply_gamedetail.py): uses the skin variables, falls back to dark defaults */
+.gd-sec .sec-h{cursor:pointer}
+.gd-sec.closed>.sec-b,.gd-sec.closed>.gd-list{display:none}
+.gd-hint{color:var(--mut,#9db0d0);font-size:12.5px;margin:-4px 2px 10px}
+.gd-list{display:flex;flex-direction:column;gap:10px}
+.gd-card{position:relative;background:linear-gradient(160deg,rgba(var(--sp-rgb,91,140,255),.12),transparent 60%),var(--card,#10192e);border:1px solid var(--line,#24345a);border-left:5px solid var(--sp,#5b8cff);border-radius:16px;overflow:hidden;box-shadow:0 10px 24px -16px rgba(0,0,0,.9)}
+.gd-card.open{border-color:rgba(var(--sp-rgb,91,140,255),.7)}
+.gd-head{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:10px;width:100%;padding:12px 12px 12px 12px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.gd-head:active{background:rgba(255,255,255,.04)}
+.gd-main{flex:1 1 auto;min-width:0}
+.gd-when{font-size:11.5px;color:var(--mut,#9db0d0);display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.gd-live{background:#ff3d6e;color:#fff;border-radius:6px;padding:0 6px;font-size:10.5px;font-weight:800;letter-spacing:.06em}
+.gd-teams{font-size:16.5px;font-weight:800;letter-spacing:-.01em;line-height:1.25;margin-top:2px;overflow-wrap:anywhere;color:var(--ink,#f3f6fc)}
+.gd-tap{font-size:11.5px;color:var(--sp,#5b8cff);font-weight:700;margin-top:3px}
+.gd-side{flex:0 0 auto;display:flex;align-items:center;gap:8px}
+.gd-sc{display:flex;flex-direction:column;align-items:flex-end;font-variant-numeric:tabular-nums;line-height:1.1}
+.gd-sc b{font-size:17px;font-weight:900;letter-spacing:-.02em;color:#fff}
+.gd-sc i{font-style:normal;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mut,#9db0d0);margin-top:2px}
+.gd-chev{width:9px;height:9px;border-right:3px solid var(--sp,#5b8cff);border-bottom:3px solid var(--sp,#5b8cff);transform:rotate(45deg);margin:-3px 3px 0 2px;transition:transform .18s;flex:0 0 auto}
+.gd-card.open .gd-chev{transform:rotate(-135deg);margin-top:4px}
+.gd-g{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;padding:0 7px;border-radius:8px;font-size:14px;font-weight:900;box-shadow:0 3px 10px -3px rgba(0,0,0,.6)}
+.gd-g.A{background:linear-gradient(135deg,#2ff0a0,#12c27d);color:#022c1a}.gd-g.B{background:linear-gradient(135deg,#5b9bff,#8a63ff);color:#fff}.gd-g.C{background:linear-gradient(135deg,#ffc233,#ff8a1f);color:#3a1c00}
+.gd-body{padding:2px 12px 14px;border-top:1px solid rgba(255,255,255,.07)}
+.gd-card:not(.open) .gd-body{display:none}
+.gd-hero{display:flex;align-items:stretch;gap:8px;margin:12px 0 4px}
+.gd-t{flex:1 1 0;min-width:0;text-align:center;padding:10px 6px;border-radius:14px;background:rgba(255,255,255,.055);border:1px solid transparent}
+.gd-t.win{background:rgba(var(--sp-rgb,91,140,255),.20);border-color:rgba(var(--sp-rgb,91,140,255),.6)}
+.gd-t .n{font-size:12px;font-weight:700;color:#cfdaf1;overflow-wrap:anywhere;line-height:1.2}
+.gd-t .s{font-size:34px;font-weight:900;letter-spacing:-.03em;line-height:1.1;font-variant-numeric:tabular-nums;color:#fff;margin-top:2px}
+.gd-t .p{font-size:12px;color:var(--mut,#9db0d0);font-weight:600}
+.gd-dash{align-self:center;color:var(--mut,#9db0d0);font-weight:800}
+.gd-sub{font-size:12px;color:var(--mut,#9db0d0);text-align:center;margin:6px 0 4px}
+.gd-likely{font-size:13px;font-weight:700;text-align:center;margin:6px 0 2px;color:#fff}
+.gd-grid{display:grid;grid-template-columns:1fr;gap:8px;margin-top:10px}
+.gd-k{background:rgba(255,255,255,.05);border-radius:12px;padding:9px 11px}
+.gd-k h4{margin:0 0 5px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--mut,#9db0d0)}
+.gd-k .r{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;line-height:1.5;font-variant-numeric:tabular-nums}
+.gd-k .r span:first-child{color:#cfdaf1;min-width:0;overflow-wrap:anywhere}.gd-k .r span:last-child{font-weight:800;text-align:right;color:#fff}
+.gd-k .pos{color:#2ff0a0!important}.gd-k .neg{color:#ff6683!important}
+.gd-split{display:flex;height:12px;border-radius:7px;overflow:hidden;margin:3px 0 6px;background:rgba(255,255,255,.08)}
+.gd-split i{display:block;height:100%}.gd-split .a{background:var(--sp2,#8b5cf6)}.gd-split .h{background:var(--sp,#5b8cff)}
+.gd-bars{margin-top:12px}.gd-bars h4{margin:0 0 6px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--mut,#9db0d0)}
+.gd-b{display:flex;align-items:center;gap:8px;margin:4px 0;font-size:12.5px;font-variant-numeric:tabular-nums}
+.gd-b .l{flex:0 0 112px;color:#cfdaf1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gd-b .t{flex:1 1 auto;height:12px;border-radius:6px;background:rgba(255,255,255,.07);overflow:hidden;min-width:0}
+.gd-b .t i{display:block;height:100%;border-radius:6px;background:#7d8fb3;min-width:2px}
+.gd-b.a .t i{background:var(--sp2,#8b5cf6)}.gd-b.h .t i{background:var(--sp,#5b8cff)}
+.gd-b .v{flex:0 0 42px;text-align:right;font-weight:800;color:#fff}
+.gd-tops{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.gd-tops span{background:rgba(255,255,255,.07);border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:700;color:#fff}
+.gd-tops small{color:var(--mut,#9db0d0);font-weight:600;margin-left:4px}
+.gd-facts{margin-top:12px;font-size:13px}
+.gd-facts .r{display:flex;gap:10px;padding:5px 0;border-top:1px solid rgba(255,255,255,.06)}
+.gd-facts .r:first-child{border-top:0}
+.gd-facts .r span:first-child{flex:0 0 108px;color:var(--mut,#9db0d0);font-size:12px}
+.gd-facts .r span:last-child{flex:1 1 auto;min-width:0;overflow-wrap:anywhere;color:#e6edfb}
+.gd-inj{margin-top:8px;font-size:12.5px}.gd-inj summary{cursor:pointer;color:#e6edfb;font-weight:700;padding:4px 0}
+.gd-inj div{color:#cfdaf1;padding:2px 0 2px 10px;border-left:2px solid rgba(255,255,255,.12);margin:3px 0;overflow-wrap:anywhere}
+.gd-picks{margin-top:12px;display:flex;flex-direction:column;gap:6px}
+.gd-picks div{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.05);border-radius:10px;padding:6px 9px;overflow-wrap:anywhere}
+.gd-note{margin-top:12px;font-size:11.5px;line-height:1.4;color:var(--mut,#9db0d0)}
+.gd-more{all:unset;box-sizing:border-box;display:block;width:100%;text-align:center;padding:11px;border-radius:12px;border:1px dashed rgba(var(--sp-rgb,91,140,255),.6);color:#fff;font-weight:700;font-size:13.5px;cursor:pointer;margin-top:2px}
+.gd-more:active{background:rgba(255,255,255,.05)}
+.gd-card,.gd-body,.gd-sec{max-width:100%}
+@media(min-width:560px){.gd-grid{grid-template-columns:1fr 1fr}}
+/* PAST-GAMES */
+.gd-day{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--mut,#9db0d0);margin:12px 2px 6px}
+.gd-dayg:first-of-type .gd-day{margin-top:4px}
+.gd-rec{display:inline-block;font-size:12.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:4px 12px;margin:0 2px 6px}
+.gd-chk{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 6px;border-radius:7px;font-size:12px;font-weight:900;white-space:nowrap}
+.gd-chk.ok{background:rgba(46,204,113,.22);color:#6ff0a4}
+.gd-chk.no{background:rgba(255,92,120,.22);color:#ff8fa5}
+.gd-chk.pu{background:rgba(255,255,255,.12);color:#dfe8ff}
+.gd-res{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);border-radius:12px;padding:10px 12px;margin:0 0 10px}
+.gd-res-h{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
+.gd-res-h b{font-size:15px;font-weight:800;color:#fff}
+.gd-res .gd-sub{margin-top:4px}
+
+/* LIVE-CARDS */
+.gd-livebox .gd-res-h{align-items:center}
+.gd-livebox .gd-sub{font-size:12px}
+
 </style><style id="rec-css">
 /* model projected-side record (apply_record.py): uses the skin variables, falls back to dark defaults */
 .rec-sec .sec-h{cursor:pointer}
@@ -414,89 +497,6 @@ body[data-sport=home] .chev{border-width:2px!important;border-color:var(--mut)!i
 .gcard .panel{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .gcard .meta{white-space:normal!important;overflow-wrap:anywhere}
 
-
-</style><style id="gd-css">
-/* game detail panels (apply_gamedetail.py): uses the skin variables, falls back to dark defaults */
-.gd-sec .sec-h{cursor:pointer}
-.gd-sec.closed>.sec-b,.gd-sec.closed>.gd-list{display:none}
-.gd-hint{color:var(--mut,#9db0d0);font-size:12.5px;margin:-4px 2px 10px}
-.gd-list{display:flex;flex-direction:column;gap:10px}
-.gd-card{position:relative;background:linear-gradient(160deg,rgba(var(--sp-rgb,91,140,255),.12),transparent 60%),var(--card,#10192e);border:1px solid var(--line,#24345a);border-left:5px solid var(--sp,#5b8cff);border-radius:16px;overflow:hidden;box-shadow:0 10px 24px -16px rgba(0,0,0,.9)}
-.gd-card.open{border-color:rgba(var(--sp-rgb,91,140,255),.7)}
-.gd-head{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:10px;width:100%;padding:12px 12px 12px 12px;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.gd-head:active{background:rgba(255,255,255,.04)}
-.gd-main{flex:1 1 auto;min-width:0}
-.gd-when{font-size:11.5px;color:var(--mut,#9db0d0);display:flex;gap:6px;align-items:center;flex-wrap:wrap}
-.gd-live{background:#ff3d6e;color:#fff;border-radius:6px;padding:0 6px;font-size:10.5px;font-weight:800;letter-spacing:.06em}
-.gd-teams{font-size:16.5px;font-weight:800;letter-spacing:-.01em;line-height:1.25;margin-top:2px;overflow-wrap:anywhere;color:var(--ink,#f3f6fc)}
-.gd-tap{font-size:11.5px;color:var(--sp,#5b8cff);font-weight:700;margin-top:3px}
-.gd-side{flex:0 0 auto;display:flex;align-items:center;gap:8px}
-.gd-sc{display:flex;flex-direction:column;align-items:flex-end;font-variant-numeric:tabular-nums;line-height:1.1}
-.gd-sc b{font-size:17px;font-weight:900;letter-spacing:-.02em;color:#fff}
-.gd-sc i{font-style:normal;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mut,#9db0d0);margin-top:2px}
-.gd-chev{width:9px;height:9px;border-right:3px solid var(--sp,#5b8cff);border-bottom:3px solid var(--sp,#5b8cff);transform:rotate(45deg);margin:-3px 3px 0 2px;transition:transform .18s;flex:0 0 auto}
-.gd-card.open .gd-chev{transform:rotate(-135deg);margin-top:4px}
-.gd-g{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;padding:0 7px;border-radius:8px;font-size:14px;font-weight:900;box-shadow:0 3px 10px -3px rgba(0,0,0,.6)}
-.gd-g.A{background:linear-gradient(135deg,#2ff0a0,#12c27d);color:#022c1a}.gd-g.B{background:linear-gradient(135deg,#5b9bff,#8a63ff);color:#fff}.gd-g.C{background:linear-gradient(135deg,#ffc233,#ff8a1f);color:#3a1c00}
-.gd-body{padding:2px 12px 14px;border-top:1px solid rgba(255,255,255,.07)}
-.gd-card:not(.open) .gd-body{display:none}
-.gd-hero{display:flex;align-items:stretch;gap:8px;margin:12px 0 4px}
-.gd-t{flex:1 1 0;min-width:0;text-align:center;padding:10px 6px;border-radius:14px;background:rgba(255,255,255,.055);border:1px solid transparent}
-.gd-t.win{background:rgba(var(--sp-rgb,91,140,255),.20);border-color:rgba(var(--sp-rgb,91,140,255),.6)}
-.gd-t .n{font-size:12px;font-weight:700;color:#cfdaf1;overflow-wrap:anywhere;line-height:1.2}
-.gd-t .s{font-size:34px;font-weight:900;letter-spacing:-.03em;line-height:1.1;font-variant-numeric:tabular-nums;color:#fff;margin-top:2px}
-.gd-t .p{font-size:12px;color:var(--mut,#9db0d0);font-weight:600}
-.gd-dash{align-self:center;color:var(--mut,#9db0d0);font-weight:800}
-.gd-sub{font-size:12px;color:var(--mut,#9db0d0);text-align:center;margin:6px 0 4px}
-.gd-likely{font-size:13px;font-weight:700;text-align:center;margin:6px 0 2px;color:#fff}
-.gd-grid{display:grid;grid-template-columns:1fr;gap:8px;margin-top:10px}
-.gd-k{background:rgba(255,255,255,.05);border-radius:12px;padding:9px 11px}
-.gd-k h4{margin:0 0 5px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--mut,#9db0d0)}
-.gd-k .r{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;line-height:1.5;font-variant-numeric:tabular-nums}
-.gd-k .r span:first-child{color:#cfdaf1;min-width:0;overflow-wrap:anywhere}.gd-k .r span:last-child{font-weight:800;text-align:right;color:#fff}
-.gd-k .pos{color:#2ff0a0!important}.gd-k .neg{color:#ff6683!important}
-.gd-split{display:flex;height:12px;border-radius:7px;overflow:hidden;margin:3px 0 6px;background:rgba(255,255,255,.08)}
-.gd-split i{display:block;height:100%}.gd-split .a{background:var(--sp2,#8b5cf6)}.gd-split .h{background:var(--sp,#5b8cff)}
-.gd-bars{margin-top:12px}.gd-bars h4{margin:0 0 6px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--mut,#9db0d0)}
-.gd-b{display:flex;align-items:center;gap:8px;margin:4px 0;font-size:12.5px;font-variant-numeric:tabular-nums}
-.gd-b .l{flex:0 0 112px;color:#cfdaf1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.gd-b .t{flex:1 1 auto;height:12px;border-radius:6px;background:rgba(255,255,255,.07);overflow:hidden;min-width:0}
-.gd-b .t i{display:block;height:100%;border-radius:6px;background:#7d8fb3;min-width:2px}
-.gd-b.a .t i{background:var(--sp2,#8b5cf6)}.gd-b.h .t i{background:var(--sp,#5b8cff)}
-.gd-b .v{flex:0 0 42px;text-align:right;font-weight:800;color:#fff}
-.gd-tops{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
-.gd-tops span{background:rgba(255,255,255,.07);border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:700;color:#fff}
-.gd-tops small{color:var(--mut,#9db0d0);font-weight:600;margin-left:4px}
-.gd-facts{margin-top:12px;font-size:13px}
-.gd-facts .r{display:flex;gap:10px;padding:5px 0;border-top:1px solid rgba(255,255,255,.06)}
-.gd-facts .r:first-child{border-top:0}
-.gd-facts .r span:first-child{flex:0 0 108px;color:var(--mut,#9db0d0);font-size:12px}
-.gd-facts .r span:last-child{flex:1 1 auto;min-width:0;overflow-wrap:anywhere;color:#e6edfb}
-.gd-inj{margin-top:8px;font-size:12.5px}.gd-inj summary{cursor:pointer;color:#e6edfb;font-weight:700;padding:4px 0}
-.gd-inj div{color:#cfdaf1;padding:2px 0 2px 10px;border-left:2px solid rgba(255,255,255,.12);margin:3px 0;overflow-wrap:anywhere}
-.gd-picks{margin-top:12px;display:flex;flex-direction:column;gap:6px}
-.gd-picks div{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.05);border-radius:10px;padding:6px 9px;overflow-wrap:anywhere}
-.gd-note{margin-top:12px;font-size:11.5px;line-height:1.4;color:var(--mut,#9db0d0)}
-.gd-more{all:unset;box-sizing:border-box;display:block;width:100%;text-align:center;padding:11px;border-radius:12px;border:1px dashed rgba(var(--sp-rgb,91,140,255),.6);color:#fff;font-weight:700;font-size:13.5px;cursor:pointer;margin-top:2px}
-.gd-more:active{background:rgba(255,255,255,.05)}
-.gd-card,.gd-body,.gd-sec{max-width:100%}
-@media(min-width:560px){.gd-grid{grid-template-columns:1fr 1fr}}
-/* PAST-GAMES */
-.gd-day{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--mut,#9db0d0);margin:12px 2px 6px}
-.gd-dayg:first-of-type .gd-day{margin-top:4px}
-.gd-rec{display:inline-block;font-size:12.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:4px 12px;margin:0 2px 6px}
-.gd-chk{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 6px;border-radius:7px;font-size:12px;font-weight:900;white-space:nowrap}
-.gd-chk.ok{background:rgba(46,204,113,.22);color:#6ff0a4}
-.gd-chk.no{background:rgba(255,92,120,.22);color:#ff8fa5}
-.gd-chk.pu{background:rgba(255,255,255,.12);color:#dfe8ff}
-.gd-res{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);border-radius:12px;padding:10px 12px;margin:0 0 10px}
-.gd-res-h{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
-.gd-res-h b{font-size:15px;font-weight:800;color:#fff}
-.gd-res .gd-sub{margin-top:4px}
-
-/* LIVE-CARDS */
-.gd-livebox .gd-res-h{align-items:center}
-.gd-livebox .gd-sub{font-size:12px}
 
 </style><style id="pro-theme">
 /* ===== Model Desk "Pro" theme v1: restrained analytics-terminal palette. Loaded AFTER polish. Presentation only; no layout/size rules on cards (keeps the .g card fix intact). =====
@@ -903,189 +903,6 @@ if(window.MutationObserver){
 }
 })();
 
-</script><script id="rec-data" type="application/json">{"v":1,"sport":"nfl","today":"2026-11-01","generated":"2026-11-01 00:55","rec":{"lines":["SU","ATS","OU"],"graded":45,"since":"2026-10-05","tracked_projections":73,"last7":{"games":2,"SU":{"w":2,"l":0,"p":0,"n":2,"pct":100.0},"ATS":{"w":1,"l":1,"p":0,"n":2,"pct":50.0},"OU":{"w":1,"l":1,"p":0,"n":2,"pct":50.0}},"season":{"games":45,"SU":{"w":29,"l":15,"p":1,"n":45,"pct":65.9},"ATS":{"w":20,"l":23,"p":2,"n":45,"pct":46.5},"OU":{"w":22,"l":22,"p":1,"n":45,"pct":50.0}},"days":{"2026-10-05":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"ATS":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-08":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"ATS":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-11":{"games":13,"SU":{"w":9,"l":3,"p":1,"n":13,"pct":75.0},"ATS":{"w":6,"l":6,"p":1,"n":13,"pct":50.0},"OU":{"w":7,"l":6,"p":0,"n":13,"pct":53.8}},"2026-10-12":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"ATS":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-15":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"ATS":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-10-18":{"games":12,"SU":{"w":7,"l":5,"p":0,"n":12,"pct":58.3},"ATS":{"w":2,"l":9,"p":1,"n":12,"pct":18.2},"OU":{"w":4,"l":7,"p":1,"n":12,"pct":36.4}},"2026-10-19":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"ATS":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-10-22":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"ATS":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-25":{"games":12,"SU":{"w":8,"l":4,"p":0,"n":12,"pct":66.7},"ATS":{"w":7,"l":5,"p":0,"n":12,"pct":58.3},"OU":{"w":8,"l":4,"p":0,"n":12,"pct":66.7}},"2026-10-26":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"ATS":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-10-29":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"ATS":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}}}},"note":"Spread and total sides use the model’s projected margin and total against the last line posted before kickoff; when the published model line sits exactly on the market line, the model’s raw projection is used.","empty":""}</script><script id="rec-js">
-/* model projected-side record: renders the JSON blob written by apply_record.py. Additive only; any error leaves the page untouched. */
-(function(){
-'use strict';
-try{
-var D=document,be=D.getElementById('rec-data');if(!be)return;
-var B=JSON.parse(be.textContent),R=B.rec;if(!R||D.getElementById('rec-sec'))return;
-function el(t,c,x){var e=D.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
-function ap(p){for(var i=1;i<arguments.length;i++){if(arguments[i]!=null)p.appendChild(arguments[i])}return p}
-function wl(t){return t.w+'-'+t.l+(t.p?'-'+t.p:'')}
-function pctTxt(t){return t.pct==null?'\u2014':t.pct.toFixed(1)+'%'}
-function cls(t){if(t.pct==null)return 'na';return t.pct>=55?'hi':(t.pct>=47.5?'mid':'lo')}
-function gm(n){return n+' game'+(n===1?'':'s')+' tracked'}
-var sec=el('section','sec tog rec-sec'),hd=el('div','sec-h'),bd=el('div','sec-b');sec.id='rec-sec';
-hd.appendChild(D.createTextNode('Model projected-side record'));
-var tot=R.season.games;
-hd.appendChild(el('span','cnt',tot?(R.season.SU.w+'-'+R.season.SU.l+(R.season.SU.p?'-'+R.season.SU.p:'')):'tracking'));
-ap(sec,hd,bd);
-ap(bd,el('div','rec-sub','What happens if you just take the side the model\u2019s projected score lands on \u2014 no price or edge filter.'));
-if(!tot){
-  var em=el('div','rec-empty');
-  ap(em,el('b',null,'0 games tracked so far. '),D.createTextNode(B.empty||'Tracking starts with the next game this page projects; the record fills in as games go final.'));
-  ap(bd,em);
-}else{
-  var g=el('div','rec-grid');
-  [['Last 7 days',R.last7],['Season to date',R.season]].forEach(function(w){
-    var t=w[1].SU,b=el('div','rec-box');
-    ap(b,el('h4',null,w[0]));
-    if(!w[1].games){ap(b,el('div','rec-big','\u2014'),el('div','rec-pct na','no finished games'),el('div','rec-gm','0 games tracked'));ap(g,b);return}
-    var big=el('div','rec-big',wl(t));
-    ap(b,big,el('div','rec-pct '+cls(t),pctTxt(t)+' straight up'));
-    var bar=el('div','rec-bar'),f=el('i');f.style.width=Math.max(3,t.pct||0)+'%';bar.appendChild(f);
-    ap(b,bar,el('div','rec-gm',gm(w[1].games)+(w[1].games<10?' (small sample)':'')));
-    ap(g,b);
-  });
-  bd.appendChild(g);
-  /* spread / total lines */
-  var rows=[];
-  if(R.lines.indexOf('ATS')>=0)rows.push(['ATS','Spread side','Projected margin vs the last posted spread']);
-  if(R.lines.indexOf('OU')>=0)rows.push(['OU','Total side','Projected total vs the last posted total']);
-  if(rows.length){
-    var box=el('div','rec-lines'),h=el('div','rec-lh');ap(h,el('span',null,'Side'),el('span',null,'7 days'),el('span',null,'Season'));box.appendChild(h);
-    rows.forEach(function(r){
-      var rw=el('div','rec-lr'),l=el('div','l');ap(l,el('b',null,r[1]),el('span',null,r[2]));
-      ap(rw,l);
-      [R.last7,R.season].forEach(function(w){
-        var t=w[r[0]],v=el('div','v');
-        if(!t||!t.n){ap(v,D.createTextNode('\u2014'),el('em',null,'0 games'))}
-        else{ap(v,D.createTextNode(wl(t)),el('em',cls(t),pctTxt(t)+' \u00b7 '+t.n+' g'))}
-        rw.appendChild(v);
-      });
-      box.appendChild(rw);
-    });
-    bd.appendChild(box);
-  }
-  /* last 7 days strip */
-  bd.appendChild(el('div','rec-dl','Day by day (straight up)'));
-  var ds=el('div','rec-days'),dn=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  var p=B.today.split('-').map(Number),base=new Date(p[0],p[1]-1,p[2],12);
-  for(var i=6;i>=0;i--){
-    var d=new Date(base.getTime()-i*864e5),k=d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);
-    var v=R.days[k],c=el('div','rec-d '+(v&&v.SU.n?cls(v.SU):'na'));
-    ap(c,el('span',null,dn[d.getDay()]),el('b',null,v&&v.games?wl(v.SU):'\u2014'));
-    ds.appendChild(c);
-  }
-  bd.appendChild(ds);
-}
-var note=el('div','rec-note');
-note.textContent=(tot?(gm(tot)+' since '+R.since+'. '):'')+(B.note||'')+' Pushes are shown separately and are not counted as wins or losses. Percentages are wins \u00f7 (wins + losses).';
-bd.appendChild(note);
-hd.addEventListener('click',function(){sec.classList.toggle('closed')});
-/* placement: right after the game projections section if present, else after the first section */
-var main=D.querySelector('main.wrap')||D.querySelector('main')||D.body,anchor=D.getElementById('gd-sec');
-if(!anchor){var ss=main.querySelectorAll(':scope > section.sec');if(ss.length)anchor=ss[0];else anchor=D.getElementById('plays')||D.getElementById('top')}
-if(anchor&&anchor.parentNode)anchor.parentNode.insertBefore(sec,anchor.nextSibling);else main.insertBefore(sec,main.firstChild);
-}catch(e){if(window.console)console.warn('model record',e)}
-})();
-
-</script><script id="polish-data" type="application/json">{"pre":"../","fallback":1793512296,"v":"polish-v1"}</script><script id="polish-js">
-/* Model Desk polish v1: presentation only. Adds brand row + freshness chip, aligns numeric table columns, adds footer text. Never changes data. */
-(function(){
-'use strict';
-var D=document,B=D.body,W=window;
-if(!B||B.classList.contains('pl-js'))return;
-var DATA={};try{var de=D.getElementById('polish-data');if(de)DATA=JSON.parse(de.textContent)||{}}catch(e){}
-var TZ='America/Chicago',MON={jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,oct:9,nov:10,dec:11};
-var PARTS=new Intl.DateTimeFormat('en-US',{timeZone:TZ,hourCycle:'h23',year:'numeric',month:'numeric',day:'numeric',hour:'numeric',minute:'numeric'});
-var TIME=new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit'});
-var DAY=new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short',month:'short',day:'numeric'});
-var YMD=new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'});
-function ctOff(t){var o={};PARTS.formatToParts(new Date(t)).forEach(function(x){o[x.type]=x.value});return Date.UTC(+o.year,+o.month-1,+o.day,+o.hour%24,+o.minute)-Math.floor(t/60000)*60000}
-function ctEpoch(y,mo,d,h,mi){var g=Date.UTC(y,mo,d,h,mi),i;for(i=0;i<3;i++)g=Date.UTC(y,mo,d,h,mi)-ctOff(g);return g}
-function parseUpd(txt){
-  if(!txt)return null;var m,y,h;
-  m=/Updated\s+(?:[A-Za-z]{3},?\s+)?([A-Za-z]{3})[a-z]*\s+(\d{1,2}),?\s+(?:(\d{4}),?\s+)?(\d{1,2}):(\d{2})\s*(AM|PM)/i.exec(txt);
-  if(m){h=(+m[4])%12+(/pm/i.test(m[6])?12:0);y=m[3]?+m[3]:+YMD.format(new Date()).slice(0,4);
-    var e=ctEpoch(y,MON[m[1].toLowerCase()],+m[2],h,+m[5]);if(!m[3]&&e>Date.now()+864e5)e=ctEpoch(y-1,MON[m[1].toLowerCase()],+m[2],h,+m[5]);return e}
-  m=/Updated\s+(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/i.exec(txt);
-  if(m)return ctEpoch(+m[1],+m[2]-1,+m[3],+m[4],+m[5]);
-  return null}
-function ago(ms){var m=Math.max(0,Math.round(ms/6e4));if(m<1)return 'just now';if(m<60)return m+'m ago';var h=Math.floor(m/60);if(h<48)return h+'h '+(m%60)+'m ago';return Math.floor(h/24)+'d ago'}
-function stateOf(ms){var m=ms/6e4;return m<=120?['ok','Fresh']:(m<=360?['warn','Aging']:['old','Stale'])}
-function setT(el,t){if(el&&el.textContent!==t)el.textContent=t}
-function stamp(e){var d=new Date(e),same=Date.now()-e<864e5;return (same?'':DAY.format(d)+' · ')+TIME.format(d)+' CT'}
-
-var LOGO='<svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="plg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d8dff"/><stop offset="1" stop-color="#2de3c0"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#plg)"/><path d="M6 17.5v-4M10.3 17.5V9M14.6 17.5v-3.5M18.4 17.5V6.5" stroke="#07101f" stroke-width="2.1" stroke-linecap="round"/></svg>';
-var home=B.getAttribute('data-sport')==='home';
-var pre=DATA.pre||'';
-
-/* 1. header: make every page share one header shape, add brand row + freshness chip */
-var chip,chipB,chipI,epoch=null;
-function header(){
-  var hd=D.querySelector('header');if(!hd)return;
-  if(!hd.classList.contains('topbar')){           /* e.g. EuroLeague: plain header -> same structure as the other pages */
-    var nav=hd.querySelector('nav.sports'),inn=D.createElement('div'),br=D.createElement('div'),hm=D.createElement('div'),kids=[].slice.call(hd.childNodes);
-    inn.className='in';br.className='brand';hm.className='hmeta';
-    kids.forEach(function(n){if(n===nav)return;if(n.nodeType===1&&n.tagName==='H1')br.appendChild(n);else if(n.nodeType===1)hm.appendChild(n)});
-    inn.appendChild(br);inn.appendChild(hm);hd.insertBefore(inn,nav||null);hd.classList.add('topbar');
-    [].forEach.call(hm.children,function(c){c.classList.remove('meta');c.style.display='block'});
-  }
-  var inn2=hd.querySelector('.in');if(!inn2||inn2.querySelector('.pl-brandrow'))return;
-  var row=D.createElement('div');row.className='pl-brandrow';
-  row.innerHTML='<a class="pl-brand" href="'+(pre||'./')+'" aria-label="Model Desk home">'+LOGO+'<span class="pl-wm"><b>Model<em>Desk</em></b><i>Sports analytics</i></span></a>'+
-    '<div class="pl-fresh" data-s="" role="status" aria-live="off"><span class="pl-dot"></span><span class="pl-ft"><b>Syncing</b><i>&nbsp;</i></span></div>';
-  inn2.insertBefore(row,inn2.firstChild);
-  chip=row.querySelector('.pl-fresh');chipB=chip.querySelector('b');chipI=chip.querySelector('i');
-  [].forEach.call(hd.querySelectorAll('.hmeta span,.hmeta div,.meta'),function(e){if(/^\s*Updated\b/i.test(e.textContent))e.classList.add('pl-hide')});
-}
-function pageEpoch(){
-  var t=[],e;
-  [D.getElementById('updated'),D.getElementById('slate-line'),D.querySelector('header .hmeta'),D.querySelector('header')].forEach(function(x){if(x)t.push(x.textContent)});
-  for(var i=0;i<t.length;i++){e=parseUpd(t[i]);if(e)return e}
-  var eps=[];[].forEach.call(D.querySelectorAll('.card .u'),function(u){var x=parseUpd(u.textContent);if(x)eps.push(x)});
-  if(eps.length)return Math.max.apply(null,eps);
-  return DATA.fallback?DATA.fallback*1000:null}
-function paint(){
-  if(!chip)return;var e=pageEpoch();if(e)epoch=e;if(!epoch)return;
-  var age=Date.now()-epoch,s=stateOf(age);
-  chip.setAttribute('data-s',s[0]);setT(chipB,s[1]);setT(chipI,stamp(epoch)+' · '+ago(age));
-  chip.title='Page data updated '+DAY.format(new Date(epoch))+' '+TIME.format(new Date(epoch))+' CT';
-  var f=D.querySelector('[data-pl-upd]');setT(f,stamp(epoch));
-  /* home cards: per-card freshness dot */
-  if(home)[].forEach.call(D.querySelectorAll('.card .u'),function(u){var x=parseUpd(u.textContent);if(!x)return;var d=u.querySelector('.pl-dot');if(!d){d=D.createElement('span');d.className='pl-dot';u.insertBefore(d,u.firstChild)}
-    var st=stateOf(Date.now()-x)[0];d.style.setProperty('--fc',st==='ok'?'var(--ok)':st==='warn'?'var(--amber)':'var(--warn)');d.style.background='var(--fc)'});
-}
-
-/* 2. numeric columns right-aligned (tabular numerals for odds / percentages) */
-var NUM=/^[+\-\u2212]?\$?\d[\d.,:]*\s*(%|pts?|u|x|m)?$/i;
-function align(){
-  [].forEach.call(D.querySelectorAll('table'),function(t){
-    var rows=t.rows,n=rows.length;if(n<3||t.getAttribute('data-pl')===String(n))return;
-    var head=t.tHead&&t.tHead.rows.length?t.tHead.rows[t.tHead.rows.length-1]:rows[0],nc=head.cells.length,c,r,col=[];
-    for(c=1;c<nc;c++){var tot=0,num=0;for(r=0;r<n&&tot<60;r++){var row=rows[r];if(row===head||row.cells.length!==nc)continue;var tx=row.cells[c].textContent.replace(/\s+/g,' ').trim();if(!tx||tx==='-'||tx==='\u2014')continue;tot++;if(NUM.test(tx))num++}
-      if(tot>=3&&num/tot>=.75)col.push(c)}
-    col.forEach(function(c){for(var r=0;r<n;r++){var row=rows[r];if(row.cells.length===nc)row.cells[c].classList.add('pl-n')}});
-    t.setAttribute('data-pl',String(n));
-  })}
-
-/* 3. footer */
-function footer(){
-  if(D.querySelector('.pl-foot'))return;
-  var f=D.createElement('footer');f.className='pl-foot';
-  f.innerHTML='<div class="pl-fl">'+LOGO.replace('width="24" height="24"','width="18" height="18"').replace('id="plg"','id="plg2"').replace('url(#plg)','url(#plg2)')+'Model Desk <span>Sports analytics</span></div>'+
-   '<p>Probabilities, fair prices and projected scores are model estimates for information and entertainment. They are not financial or betting advice, and no outcome is ever certain. Prices come from public odds feeds, move quickly and can differ at your book, so confirm before you wager.</p>'+
-   '<p>Independent project. Not affiliated with or endorsed by any league, team or sportsbook. Must be 21+ where wagering is legal. Help is available at 1-800-GAMBLER.</p>'+
-   '<div class="pl-fm"><span><i class="pl-dot" style="--fc:var(--ok);background:var(--fc)"></i>Page data <span data-pl-upd>\u2014</span></span><span>Times Central (CT)</span><span><b class="g gA grade A">A</b> strong <b class="g gB grade B">B</b> solid <b class="g gC grade C">C</b> thin pick grade</span></div>';
-  B.appendChild(f);
-  /* keep the footer after the page content, before the scripts */
-  var first=B.querySelector(':scope>script');if(first)B.insertBefore(f,first);
-}
-
-/* 4. keep only the sport nav pinned (title/brand row scrolls away) */
-function pin(){var t=D.querySelector('.topbar'),i=t&&t.querySelector('.in');if(!t||!i||home)return;t.style.top=(-i.offsetHeight)+'px';
-  var a=t.querySelector('nav.sports a.on'),n=t.querySelector('nav.sports');if(a&&n&&!n.dataset.pl){n.dataset.pl=1;n.scrollLeft=Math.max(0,a.offsetLeft-(n.clientWidth-a.offsetWidth)/2)}}
-
-try{header();footer();B.classList.add('pl-js');paint();align();pin()}catch(e){if(W.console)console.warn('polish',e)}
-var tm=null;function later(){clearTimeout(tm);tm=setTimeout(function(){try{header();align();paint();pin()}catch(e){}},250)}
-if(W.MutationObserver)new MutationObserver(later).observe(B,{childList:true,subtree:true});
-[400,1500,4000].forEach(function(ms){setTimeout(function(){try{paint();pin()}catch(e){}},ms)});
-W.addEventListener('load',function(){try{pin();paint()}catch(e){}});W.addEventListener('resize',function(){try{pin()}catch(e){}});
-setInterval(function(){try{paint()}catch(e){}},30000);
-})();
-
 </script><script id="gd-data" type="application/json">{"kind":"nfl","games":[{"id":"2026_08_ARI_DAL","a":"ARI","h":"DAL","an":"ARI","hn":"DAL","ts":1793556000.0,"when":"Sun Nov 1 12:00 PM CT","proj":{"a":23.8,"h":30.8,"total":54.5,"margin":7.0},"rng":{"a":[18,30],"h":[25,37]},"bars":[{"t":"Simulated margin","items":[["DAL by 15+",0.2547,"h"],["DAL by 8-14",0.2278,"h"],["DAL by 4-7",0.1385,"h"],["DAL by 1-3",0.0954,"h"],["ARI by 1-3",0.0769,"a"],["ARI by 4-7",0.0768,"a"],["ARI by 8-14",0.0718,"a"],["ARI by 15+",0.0293,"a"]]}],"sp":{"model":-7.0,"mkt":-7.0,"ph":49.9,"pa":50.1},"tot":{"model":54.5,"mkt":54.5,"po":50.3,"pu":49.7,"rng":[45,64]},"win":{"a":26.9,"h":73.1},"ml":{"fa":272,"fh":-272,"ba":270,"bh":-303},"inj":[["DAL",["Jonathan Bullard (DT) - Questionable","Kenny Clark (DT) - Questionable","P.J. Locke (S) - Questionable","George Pickens (WR) - Questionable","KaVontae Turpin (WR) - Out","Luke Schoonmaker (TE) - Questionable","Dee Winters (LB) - Out","Marist Liufau (LB) - Questionable"]],["ARI",["Hjalte Froholdt (C) - Questionable","Andrew Wingard (S) - Questionable","Jon Gaines II (G) - Out","Max Melton (CB) - Questionable","Walter Nolen (DT) - Out"]]],"facts":[["ARI QB","Jacoby Brissett"],["DAL QB","Dak Prescott"],["Rest (days)","DAL 6 - ARI 7"],["Lines","The Odds API avg of 11 books (median line)"]],"picks":[]},{"id":"2026_08_ATL_TB","a":"ATL","h":"TB","an":"ATL","hn":"TB","ts":1793556000.0,"when":"Sun Nov 1 12:00 PM CT","proj":{"a":21.0,"h":22.5,"total":43.5,"margin":1.5},"rng":{"a":[14,28],"h":[15,30]},"bars":[{"t":"Simulated margin","items":[["TB by 15+",0.2168,"h"],["TB by 8-14",0.1421,"h"],["TB by 4-7",0.0932,"h"],["TB by 1-3",0.072,"h"],["ATL by 1-3",0.0704,"a"],["ATL by 4-7",0.0878,"a"],["ATL by 8-14",0.1263,"a"],["ATL by 15+",0.1676,"a"]]}],"sp":{"model":-1.5,"mkt":-1.5,"ph":50.8,"pa":49.2},"tot":{"model":43.5,"mkt":43.5,"po":49.6,"pu":50.4,"rng":[34,53]},"win":{"a":46.4,"h":53.6},"ml":{"fa":115,"fh":-115,"ba":110,"bh":-123},"inj":[["TB",["Kenny Gainwell (RB) - Questionable","Luke Goedeke (T) - Questionable","Emeka Egbuka (WR) - Out"]],["ATL",["Samson Ebukam (DE) - Questionable","Olamide Zaccheaus (WR) - Questionable","Charles Snowden (DE) - Questionable","Divine Deablo (LB) - Questionable","Brian Robinson (RB) - Out","Billy Bowman Jr. (CB) - Questionable","Beaux Collins (WR) - Questionable","Cameron Williams (T) - Questionable","Avieon Terrell (CB) - Questionable"]]],"facts":[["ATL QB","Michael Penix Jr."],["TB QB","Baker Mayfield (98% to play), backup Jalon Daniels"],["Rest (days)","TB 7 - ATL 7"],["Weather","76F, wind 10 mph, rain 37%"],["Roof","outdoors"],["Lines","The Odds API avg of 11 books (median line)"]],"picks":[]},{"id":"2026_08_BAL_BUF","a":"BAL","h":"BUF","an":"BAL","hn":"BUF","ts":1793556000.0,"when":"Sun Nov 1 12:00 PM CT","proj":{"a":25.8,"h":28.8,"total":54.5,"margin":3.0},"rng":{"a":[20,32],"h":[23,35]},"bars":[{"t":"Simulated margin","items":[["BUF by 15+",0.1377,"h"],["BUF by 8-14",0.1971,"h"],["BUF by 4-7",0.1463,"h"],["BUF by 1-3",0.1126,"h"],["BAL by 1-3",0.1012,"a"],["BAL by 4-7",0.1091,"a"],["BAL by 8-14",0.1112,"a"],["BAL by 15+",0.0485,"a"]]}],"sp":{"model":-3.0,"mkt":-3.0,"ph":51.9,"pa":48.1},"tot":{"model":54.5,"mkt":54.5,"po":49.7,"pu":50.3,"rng":[45,64]},"win":{"a":38.8,"h":61.2},"ml":{"fa":158,"fh":-158,"ba":155,"bh":-169},"inj":[["BUF",["DJ Moore (WR) - Questionable","Greg Gaines (DT) - Questionable","Spencer Brown (T) - Questionable","Dee Alford (CB) - Questionable","Tyrell Shavers (WR) - Out","Dalton Kincaid (TE) - Questionable","TJ Parker (LB) - Questionable"]],["BAL",["Jaylinn Hawkins (S) - Out","T.J. Tampa (CB) - Questionable","Olaivavega Ioane (G) - Out","Adam Randall (RB) - Questionable"]]],"facts":[["BAL QB","Lamar Jackson (98% to play), backup Tyler Huntley"],["BUF QB","Josh Allen"],["Rest (days)","BUF 14 - BAL 7"],["Weather","67F, wind 8 mph, rain 2%"],["Roof","outdoors"],["Lines","The Odds API avg of 11 books (median line)"]],"picks":[]},{"id":"2026_08_CLE_PIT","a":"CLE","h":"PIT","an":"CLE","hn":"PIT","ts":1793556000.0,"when":"Sun Nov 1 12:00 PM CT","proj":{"a":17.8,"h":21.2,"total":39.0,"margin":3.5},"rng":{"a":[12,23],"h":[16,27]},"bars":[{"t":"Simulated margin","items":[["PIT by 15+",0.1447,"h"],["PIT by 8-14",0.2053,"h"],["PIT by 4-7",0.15,"h"],["PIT by 1-3",0.1137,"h"],["CLE by 1-3",0.0999,"a"],["CLE by 4-7",0.1054,"a"],["CLE by 8-14",0.1032,"a"],["CLE by 15+",0.0415,"a"]]}],"sp":{"model":-3.5,"mkt":-3.5,"ph":49.4,"pa":50.6},"tot":{"model":39.0,"mkt":39.0,"po":50.0,"pu":50.0,"rng":[30,48]},"win":{"a":36.8,"h":63.2},"ml":{"fa":172,"fh":-172,"ba":167,"bh":-185},"inj":[["PIT",["Brandin Echols (CB) - Out","Ben Skowronek (WR) - Questionable","Doneiko Slaughter (CB) - Out"]],["CLE",["Tytus Howard (T) - Questionable","Daniel Thomas (S) - Questionable","Myles Harden (CB) - Questionable"]]],"facts":[["CLE QB","Deshaun Watson"],["PIT QB","Aaron Rodgers"],["Rest (days)","PIT 7 - CLE 7"],["Weather","67F, wind 6 mph, rain 5%"],["Roof","outdoors"],["Lines","The Odds API avg of 11 books (median line)"]],"picks":[]},{"id":"2026_08_IND_JAX","a":"IND","h":"JAX","an":"IND","hn":"JAX","ts":1793556000.0,"when":"Sun Nov 1 12:00 PM CT","proj":{"a":18.2,"h":28.2,"total":46.5,"margin":10.0},"rng":{"a":[12,24],"h":[22,34]},"bars":[{"t":"Simulated margin","items":[["JAX by 15+",0.3542,"h"],["JAX by 8-14",0.2281,"h"],["JAX by 4-7",0.1232,"h"],["JAX by 1-3",0.0796,"h"],["IND by 1-3",0.0605,"a"],["IND by 4-7",0.058,"a"],["IND by 8-14",0.0521,"a"],["IND by 15+",0.0209,"a"]]}],"sp":{"model":-10.0,"mkt":-10.0,"ph":49.7,"pa":50.3},"tot":{"model":46.5,"mkt":46.5,"po":50.0,"pu":50.0,"rng":[37,56]},"win":{"a":20.3,"h":79.7},"ml":{"fa":393,"fh":-393,"ba":410,"bh":-476},"inj":[["JAX",["Jakobi Meyers (WR) - Questionable","Antonio Johnson (S) - Out"]],["IND",["Andrew Ogletree (TE) - Questionable","Anthony Gould (WR) - Out","Justin Walley (CB) - Out","Bryce Boettcher (LB) - Questionable"]]],"facts":[["IND QB","Daniel Jones"],["JAX QB","Trevor Lawrence"],["Rest (days)","JAX 14 - IND 7"],["Weather","78F, wind 11 mph, rain 16%"],["Roof","outdoors"],["Lines","The Odds API avg of 11 books (median line)"]],"picks":[{"g":"C","t":"IND ML"}]},{"id":"2026_08_KC_DEN","a":"KC","h":"DEN","an":"KC","hn":"DEN","ts":1793568300.0,"when":"Sun Nov 1 3:25 PM CT","proj":{"a":20.8,"h":19.8,"total":40.5,"margin":-1.0},"rng":{"a":[14,27],"h":[13,26]},"bars":[{"t":"Simulated margin","items":[["DEN by 15+",0.1209,"h"],["DEN by 8-14",0.1396,"h"],["DEN by 4-7",0.1065,"h"],["DEN by 1-3",0.0879,"h"],["KC by 1-3",0.0899,"a"],["KC by 4-7",0.1134,"a"],["KC by 8-14",0.1578,"a"],["KC by 15+",0.154,"a"]]}],"sp":{"model":1.0,"mkt":1.0,"ph":50.6,"pa":49.4},"tot":{"model":40.5,"mkt":40.5,"po":50.3,"pu":49.7,"rng":[31,50]},"win":{"a":51.4,"h":48.6},"ml":{"fa":-106,"fh":106,"ba":-114,"bh":102},"inj":[["DEN",["Garett Bolles (T) - Questionable","Zach Allen (DE) - Questionable","Brandon Jones (S) - Questionable","Talanoa Hufanga (S) - Out","Jaylen Waddle (WR) - Questionable","RJ Harvey (RB) - Out"]],["KC",["L'Jarius Sneed (CB) - Questionable","Omarr Norman-Lott (DT) - Out","R Mason Thomas (DE) - Questionable","Mansoor Delane (CB) - Questionable"]]],"facts":[["KC QB","Patrick Mahomes (98% to play), backup Justin Fields"],["DEN QB","Bo Nix"],["Rest (days)","DEN 7 - KC 7"],["Weather","58F, wind 6 mph, rain 4%"],["Roof","outdoors"],["Lines","The Odds API avg of 11 books (median line)"]],"picks":[]},{"id":"2026_08_LAC_LA","a":"LAC","h":"LA","an":"LAC","hn":"LA","ts":1793567100.0,"when":"Sun Nov 1 3:05 PM CT","proj":{"a":19.5,"h":26.0,"total":45.5,"margin":6.5},"rng":{"a":[13,26],"h":[20,32]},"bars":[{"t":"Simulated margin","items":[["LA by 15+",0.2456,"h"],["LA by 8-14",0.2201,"h"],["LA by 4-7",0.1361,"h"],["LA by 1-3",0.0953,"h"],["LAC by 1-3",0.0787,"a"],["LAC by 4-7",0.0806,"a"],["LAC by 8-14",0.0788,"a"],["LAC by 15+",0.0354,"a"]]}],"sp":{"model":-6.5,"mkt":-6.5,"ph":50.0,"pa":50.0},"tot":{"model":45.5,"mkt":45.5,"po":49.9,"pu":50.1,"rng":[36,55]},"win":{"a":28.8,"h":71.2},"ml":{"fa":248,"fh":-248,"ba":240,"bh":-263},"inj":[["LA",["Coleman Shelton (C) - Questionable","Colby Parkinson (TE) - Questionable","Trent McDuffie (CB) - Questionable","Jordan Whittington (WR) - Questionable"]],["LAC",["Donte Jackson (CB) - Questionable","Derwin James (S) - Out","Kayode Awosika (G) - Out","Deane Leonard (CB) - Out","Rodney Shelley (CB) - Questionable","Brenen Thompson (WR) - Out"]]],"facts":[["LAC QB","Justin Herbert"],["LA QB","Matthew Stafford"],["Rest (days)","LA 7 - LAC 14"],["Roof","dome"],["Lines","The Odds API avg of 11 books (median line)"]],"picks":[{"g":"C","t":"LAC +7"}]},{"id":"2026_08_LV_NYJ","a":"LV","h":"NYJ","an":"LV","hn":"NYJ","ts":1793556000.0,"when":"Sun Nov 1 12:00 PM CT","proj":{"a":22.2,"h":23.8,"total":46.0,"margin":1.5},"rng":{"a":[14,31],"h":[15,32]},"bars":[{"t":"Simulated margin","items":[["NYJ by 15+",0.2773,"h"],["NYJ by 8-14",0.1152,"h"],["NYJ by 4-7",0.0713,"h"],["NYJ by 1-3",0.0543,"h"],["LV by 1-3",0.0537,"a"],["LV by 4-7",0.0689,"a"],["LV by 8-14",0.1077,"a"],["LV by 15+",0.2335,"a"]]}],"sp":{"model":-1.5,"mkt":-1.5,"ph":49.7,"pa":50.3},"tot":{"model":46.0,"mkt":46.0,"po":50.0,"pu":50.0,"rng":[37,55]},"win":{"a":47.4,"h":52.6},"ml":{"fa":111,"fh":-111,"ba":107,"bh":-118},"inj":[["NYJ",["Joseph Ossai (DE) - Out","Dylan Parham (G) - Questionable","Max Mitchell (T) - Out","Breece Hall (RB) - Questionable","T'Vondre Sweat (DT) - Out","David Bailey (DE) - Doubtful"]],["LV",["Patrick Johnson (DE) - Out","Jackson Powers-Johnson (G) - Questionable","Carter Runyon (TE) - Out","Jack Bech (WR) - Questionable"]]],"facts":[["LV QB","Kirk Cousins"],["NYJ QB","Geno Smith"],["Rest (days)","NYJ 7 - LV 7"],["Weather","60F, wind 3 mph, rain 0%"],["Roof","outdoors"],["Lines","The Odds API avg of 11 books (median line)"]],"picks":[]},{"id":"2026_08_MIN_DET","a":"MIN","h":"DET","an":"MIN","hn":"DET","ts":1793556000.0,"when":"Sun Nov 1 12:00 PM CT","proj":{"a":21.2,"h":24.8,"total":46.0,"margin":3.5},"rng":{"a":[15,27],"h":[19,31]},"bars":[{"t":"Simulated margin","items":[["DET by 15+",0.1791,"h"],["DET by 8-14",0.1901,"h"],["DET by 4-7",0.1309,"h"],["DET by 1-3",0.0989,"h"],["MIN by 1-3",0.0898,"a"],["MIN by 4-7",0.1003,"a"],["MIN by 8-14",0.1127,"a"],["MIN by 15+",0.0663,"a"]]}],"sp":{"model":-3.5,"mkt":-3.5,"ph":47.8,"pa":52.2},"tot":{"model":46.0,"mkt":46.0,"po":50.2,"pu":49.8,"rng":[37,55]},"win":{"a":38.5,"h":61.5},"ml":{"fa":160,"fh":-160,"ba":157,"bh":-169},"inj":[["DET",["Kerby Joseph (S) - Out","Roger McCreary (CB) - Questionable"]],["MIN",["Jay Ward (S) - Questionable"]]],"facts":[["MIN QB","Kyler Murray"],["DET QB","Jared Goff"],["Rest (days)","DET 7 - MIN 7"],["Roof","dome"],["Lines","The Odds API avg of 11 books (median line)"]],"picks":[]},{"id":"2026_08_NE_MIA","a":"NE","h":"MIA","an":"NE","hn":"MIA","ts":1793568300.0,"when":"Sun Nov 1 3:25 PM CT","proj":{"a":25.0,"h":18.0,"total":43.0,"margin":-7.0},"rng":{"a":[19,31],"h":[12,24]},"bars":[{"t":"Simulated margin","items":[["MIA by 15+",0.0201,"h"],["MIA by 8-14",0.0631,"h"],["MIA by 4-7",0.0749,"h"],["MIA by 1-3",0.0789,"h"],["NE by 1-3",0.1017,"a"],["NE by 4-7",0.1499,"a"],["NE by 8-14",0.244,"a"],["NE by 15+",0.237,"a"]]}],"sp":{"model":7.0,"mkt":7.0,"ph":50.7,"pa":49.3},"tot":{"model":43.0,"mkt":43.0,"po":49.7,"pu":50.3,"rng":[34,52]},"win":{"a":74.8,"h":25.2},"ml":{"fa":-298,"fh":298,"ba":-323,"bh":300},"inj":[["MIA",["Reese Taylor (CB) - Questionable","Julius Brents (CB) - Questionable","Kadyn Proctor (T) - Out"]],["NE",["Carlton Davis III (CB) - Questionable","A.J. Brown (WR) - Questionable","Christian Elliss (LB) - Questionable","TreVeyon Henderson (RB) - Questionable"]]],"facts":[["NE QB","Drake Maye (98% to play), backup Tommy DeVito"],["MIA QB","Malik Willis (98% to play), backup Kyle McCord"],["Rest (days)","MIA 7 - NE 10"],["Weather","76F, wind 7 mph, rain 54%"],["Roof","outdoors"],["Lines","The Odds API avg of 11 books (median line)"]],"picks":[{"g":"C","t":"MIA ML"}]},{"id":"2026_08_PHI_WAS","a":"PHI","h":"WAS","an":"PHI","hn":"WAS","ts":1793582400.0,"when":"Sun Nov 1 7:20 PM CT","proj":{"a":17.0,"h":23.0,"total":40.0,"margin":6.0},"rng":{"a":[11,23],"h":[17,29]},"bars":[{"t":"Simulated margin","items":[["WAS by 15+",0.2337,"h"],["WAS by 8-14",0.2153,"h"],["WAS by 4-7",0.1356,"h"],["WAS by 1-3",0.0963,"h"],["PHI by 1-3",0.0809,"a"],["PHI by 4-7",0.0841,"a"],["PHI by 8-14",0.0844,"a"],["PHI by 15+",0.0398,"a"]]}],"sp":{"model":-6.0,"mkt":-6.0,"ph":50.2,"pa":49.8},"tot":{"model":40.0,"mkt":40.0,"po":50.2,"pu":49.8,"rng":[31,49]},"win":{"a":30.4,"h":69.6},"ml":{"fa":229,"fh":-229,"ba":225,"bh":-250},"inj":[["WAS",["Daron Payne (DT) - Out","Javon Kinlaw (DT) - Out","John Bates (TE) - Questionable","Treylon Burks (WR) - Questionable","Jer'Zhan Newton (DT) - Questionable"]],["PHI",["Jonathan Jones (CB) - Out","DeVonta Smith (WR) - Out","Britain Covey (WR) - Out","Dontayvion Wicks (WR) - Out","Jakorian Bennett (CB) - Questionable","Jihaad Campbell (LB) - Out"]]],"facts":[["PHI QB","Tanner McKee"],["WAS QB","Jayden Daniels (98% to play), backup Marcus Mariota"],["Rest (days)","WAS 13 - PHI 6"],["Weather","51F, wind 5 mph, rain 2%"],["Roof","outdoors"],["Lines","The Odds API avg of 11 books (median line)"]],"picks":[]},{"id":"2026_08_TEN_CIN","a":"TEN","h":"CIN","an":"TEN","hn":"CIN","ts":1793556000.0,"when":"Sun Nov 1 12:00 PM CT","proj":{"a":17.0,"h":29.5,"total":46.5,"margin":12.5},"rng":{"a":[11,23],"h":[23,36]},"bars":[{"t":"Simulated margin","items":[["CIN by 15+",0.4339,"h"],["CIN by 8-14",0.2275,"h"],["CIN by 4-7",0.1118,"h"],["CIN by 1-3",0.068,"h"],["TEN by 1-3",0.0481,"a"],["TEN by 4-7",0.0435,"a"],["TEN by 8-14",0.0357,"a"],["TEN by 15+",0.0123,"a"]]}],"sp":{"model":-12.5,"mkt":-12.5,"ph":50.0,"pa":50.0},"tot":{"model":46.5,"mkt":46.5,"po":49.9,"pu":50.1,"rng":[37,56]},"win":{"a":14.9,"h":85.1},"ml":{"fa":573,"fh":-573,"ba":584,"bh":-667},"inj":[["CIN",["Joe Giles-Harris (LB) - Questionable","Kyle Dugger (S) - Out"]],["TEN",["John Franklin-Myers (DE) - Questionable","Calvin Ridley (WR) - Questionable","Jaylon Jones (CB) - Questionable","Tyjae Spears (RB) - Out","Dorian Mausi (LB) - Questionable","Carnell Tate (WR) - Out"]]],"facts":[["TEN QB","Cam Ward"],["CIN QB","Joe Burrow"],["Rest (days)","CIN 7 - TEN 7"],["Weather","75F, wind 4 mph, rain 5%"],["Roof","outdoors"],["Lines","The Odds API avg of 11 books (median line)"]],"picks":[{"g":"C","t":"TEN ML"}]},{"id":"2026_08_CHI_SEA","a":"CHI","h":"SEA","an":"CHI","hn":"SEA","ts":1793668500.0,"when":"Mon Nov 2 7:15 PM CT","proj":{"a":21.8,"h":24.8,"total":46.5,"margin":3.0},"rng":{"a":[16,28],"h":[19,31]},"bars":[{"t":"Simulated margin","items":[["SEA by 15+",0.149,"h"],["SEA by 8-14",0.1929,"h"],["SEA by 4-7",0.14,"h"],["SEA by 1-3",0.1075,"h"],["CHI by 1-3",0.0975,"a"],["CHI by 4-7",0.1072,"a"],["CHI by 8-14",0.1144,"a"],["CHI by 15+",0.0566,"a"]]}],"sp":{"model":-3.0,"mkt":-3.0,"ph":51.1,"pa":48.9},"tot":{"model":46.5,"mkt":46.5,"po":50.0,"pu":50.0,"rng":[37,56]},"win":{"a":39.3,"h":60.7},"ml":{"fa":154,"fh":-154,"ba":150,"bh":-164},"inj":[],"facts":[["CHI QB","Caleb Williams"],["SEA QB","Sam Darnold"],["Rest (days)","SEA 8 - CHI 11"],["Weather","50F, wind 1 mph, rain 0%"],["Roof","outdoors"],["Lines","The Odds API avg of 11 books (median line)"]],"picks":[]}],"past":[{"id":"2026_08_CAR_GB","a":"CAR","h":"GB","an":"CAR","hn":"GB","ts":1793319300.0,"when":"Thu Oct 29 7:15 PM CT","proj":{"a":21.8,"h":25.2,"total":47.0,"margin":3.5},"rng":{"a":[16,27],"h":[20,31]},"bars":[{"t":"Simulated margin","items":[["GB by 15+",0.1409,"h"],["GB by 8-14",0.2069,"h"],["GB by 4-7",0.1522,"h"],["GB by 1-3",0.1154,"h"],["CAR by 1-3",0.1011,"a"],["CAR by 4-7",0.1058,"a"],["CAR by 8-14",0.1018,"a"],["CAR by 15+",0.0391,"a"]]}],"sp":{"model":-3.5,"mkt":-3.5,"ph":50.2,"pa":49.8},"tot":{"model":47.0,"mkt":47.0,"po":50.3,"pu":49.7,"rng":[38,56]},"win":{"a":36.6,"h":63.4},"ml":{"fa":173,"fh":-173,"ba":167,"bh":-185},"inj":[["GB",["Zaire Franklin (LB) - Out","Devonte Wyatt (DT) - Questionable","Sean Rhyan (C) - Out","Brenton Cox Jr. (LB) - Questionable","Travis Glover (G) - Out","Matthew Golden (WR) - Questionable","Anthony Campbell (DT) - Questionable"]],["CAR",["Damien Lewis (G) - Out","Bobby Brown III (DT) - Questionable","Jaelan Phillips (LB) - Out","Akayleb Evans (CB) - Out","Torricelli Simpkins III (G) - Out","Haynes King (QB) - Out"]]],"facts":[["CAR QB","Bryce Young (98% to play), backup Kenny Pickett"],["GB QB","Jordan Love"],["Rest (days)","GB 4 - CAR 4"],["Weather","51F, wind 7 mph, rain 0%"],["Roof","outdoors"],["Lines","The Odds API avg of 11 books (median line)"]],"picks":[],"past":true,"d":"2026-10-29","pre_at":1793318868,"fin":{"a":19,"h":27,"su":"W","note":"Final total 46 vs projected 47, market line 47","over":"Final"},"state":"post"},{"id":"2026_07_DAL_PHI","a":"DAL","h":"PHI","an":"DAL","hn":"PHI","ts":1793060100.0,"when":"Mon Oct 26 7:15 PM CT","proj":{"a":23.8,"h":19.8,"total":43.5,"margin":-4.0},"rng":{"a":[18,29],"h":[14,25]},"bars":[{"t":"Simulated margin","items":[["PHI by 15+",0.029,"h"],["PHI by 8-14",0.0904,"h"],["PHI by 4-7",0.1018,"h"],["PHI by 1-3",0.1012,"h"],["DAL by 1-3",0.1196,"a"],["DAL by 4-7",0.1604,"a"],["DAL by 8-14",0.2189,"a"],["DAL by 15+",0.1411,"a"]]}],"sp":{"model":4.0,"mkt":4.0,"ph":49.9,"pa":50.1},"tot":{"model":43.5,"mkt":43.5,"po":50.5,"pu":49.5,"rng":[34,53]},"win":{"a":65.9,"h":34.1},"ml":{"fa":-194,"fh":194,"ba":-208,"bh":188},"inj":[["PHI",["Saquon Barkley (RB) - Questionable","Jonathan Greenard (LB) - Questionable","Michael Carter II (CB) - Out","DeVonta Smith (WR) - Out","Landon Dickerson (G) - Questionable","Grant Calcaterra (TE) - Questionable","Dontayvion Wicks (WR) - Out","Nolan Smith (LB) - Out","Jakorian Bennett (CB) - Questionable","Jalyx Hunt (LB) - Questionable"]],["DAL",["P.J. Locke (S) - Questionable","KaVontae Turpin (WR) - Out","Dee Winters (LB) - Out","Marist Liufau (LB) - Questionable","Drew Shelton (T) - Out"]]],"facts":[["DAL QB","Dak Prescott"],["PHI QB","Tanner McKee"],["Rest (days)","PHI 8 - DAL 8"],["Weather","57F, wind 4 mph, rain 0%"],["Roof","outdoors"],["Lines","The Odds API avg of 11 books (median line)"]],"picks":[],"past":true,"d":"2026-10-26","pre_at":1793058456,"fin":{"a":38,"h":21,"su":"W","note":"Final total 59 vs projected 43.5, market line 43.5","over":"Final"},"state":"post"}],"v":2}</script><script id="gd-js">
 /* game detail panels: renders the JSON blob computed by apply_gamedetail.py. Additive only; any error leaves the page untouched. */
 (function(){
@@ -1306,6 +1123,189 @@ else if(anchor)anchor.parentNode.insertBefore(sec,anchor.nextSibling);
 else main.insertBefore(sec,main.firstChild);
 if(psec)sec.parentNode.insertBefore(psec,sec.nextSibling);
 }catch(e){if(window.console)console.warn('game detail',e)}
+})();
+
+</script><script id="rec-data" type="application/json">{"v":1,"sport":"nfl","today":"2026-11-01","generated":"2026-11-01 00:55","rec":{"lines":["SU","ATS","OU"],"graded":45,"since":"2026-10-05","tracked_projections":73,"last7":{"games":2,"SU":{"w":2,"l":0,"p":0,"n":2,"pct":100.0},"ATS":{"w":1,"l":1,"p":0,"n":2,"pct":50.0},"OU":{"w":1,"l":1,"p":0,"n":2,"pct":50.0}},"season":{"games":45,"SU":{"w":29,"l":15,"p":1,"n":45,"pct":65.9},"ATS":{"w":20,"l":23,"p":2,"n":45,"pct":46.5},"OU":{"w":22,"l":22,"p":1,"n":45,"pct":50.0}},"days":{"2026-10-05":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"ATS":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-08":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"ATS":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-11":{"games":13,"SU":{"w":9,"l":3,"p":1,"n":13,"pct":75.0},"ATS":{"w":6,"l":6,"p":1,"n":13,"pct":50.0},"OU":{"w":7,"l":6,"p":0,"n":13,"pct":53.8}},"2026-10-12":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"ATS":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-15":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"ATS":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-10-18":{"games":12,"SU":{"w":7,"l":5,"p":0,"n":12,"pct":58.3},"ATS":{"w":2,"l":9,"p":1,"n":12,"pct":18.2},"OU":{"w":4,"l":7,"p":1,"n":12,"pct":36.4}},"2026-10-19":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"ATS":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-10-22":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"ATS":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-25":{"games":12,"SU":{"w":8,"l":4,"p":0,"n":12,"pct":66.7},"ATS":{"w":7,"l":5,"p":0,"n":12,"pct":58.3},"OU":{"w":8,"l":4,"p":0,"n":12,"pct":66.7}},"2026-10-26":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"ATS":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-10-29":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"ATS":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}}}},"note":"Spread and total sides use the model’s projected margin and total against the last line posted before kickoff; when the published model line sits exactly on the market line, the model’s raw projection is used.","empty":""}</script><script id="rec-js">
+/* model projected-side record: renders the JSON blob written by apply_record.py. Additive only; any error leaves the page untouched. */
+(function(){
+'use strict';
+try{
+var D=document,be=D.getElementById('rec-data');if(!be)return;
+var B=JSON.parse(be.textContent),R=B.rec;if(!R||D.getElementById('rec-sec'))return;
+function el(t,c,x){var e=D.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function ap(p){for(var i=1;i<arguments.length;i++){if(arguments[i]!=null)p.appendChild(arguments[i])}return p}
+function wl(t){return t.w+'-'+t.l+(t.p?'-'+t.p:'')}
+function pctTxt(t){return t.pct==null?'\u2014':t.pct.toFixed(1)+'%'}
+function cls(t){if(t.pct==null)return 'na';return t.pct>=55?'hi':(t.pct>=47.5?'mid':'lo')}
+function gm(n){return n+' game'+(n===1?'':'s')+' tracked'}
+var sec=el('section','sec tog rec-sec'),hd=el('div','sec-h'),bd=el('div','sec-b');sec.id='rec-sec';
+hd.appendChild(D.createTextNode('Model projected-side record'));
+var tot=R.season.games;
+hd.appendChild(el('span','cnt',tot?(R.season.SU.w+'-'+R.season.SU.l+(R.season.SU.p?'-'+R.season.SU.p:'')):'tracking'));
+ap(sec,hd,bd);
+ap(bd,el('div','rec-sub','What happens if you just take the side the model\u2019s projected score lands on \u2014 no price or edge filter.'));
+if(!tot){
+  var em=el('div','rec-empty');
+  ap(em,el('b',null,'0 games tracked so far. '),D.createTextNode(B.empty||'Tracking starts with the next game this page projects; the record fills in as games go final.'));
+  ap(bd,em);
+}else{
+  var g=el('div','rec-grid');
+  [['Last 7 days',R.last7],['Season to date',R.season]].forEach(function(w){
+    var t=w[1].SU,b=el('div','rec-box');
+    ap(b,el('h4',null,w[0]));
+    if(!w[1].games){ap(b,el('div','rec-big','\u2014'),el('div','rec-pct na','no finished games'),el('div','rec-gm','0 games tracked'));ap(g,b);return}
+    var big=el('div','rec-big',wl(t));
+    ap(b,big,el('div','rec-pct '+cls(t),pctTxt(t)+' straight up'));
+    var bar=el('div','rec-bar'),f=el('i');f.style.width=Math.max(3,t.pct||0)+'%';bar.appendChild(f);
+    ap(b,bar,el('div','rec-gm',gm(w[1].games)+(w[1].games<10?' (small sample)':'')));
+    ap(g,b);
+  });
+  bd.appendChild(g);
+  /* spread / total lines */
+  var rows=[];
+  if(R.lines.indexOf('ATS')>=0)rows.push(['ATS','Spread side','Projected margin vs the last posted spread']);
+  if(R.lines.indexOf('OU')>=0)rows.push(['OU','Total side','Projected total vs the last posted total']);
+  if(rows.length){
+    var box=el('div','rec-lines'),h=el('div','rec-lh');ap(h,el('span',null,'Side'),el('span',null,'7 days'),el('span',null,'Season'));box.appendChild(h);
+    rows.forEach(function(r){
+      var rw=el('div','rec-lr'),l=el('div','l');ap(l,el('b',null,r[1]),el('span',null,r[2]));
+      ap(rw,l);
+      [R.last7,R.season].forEach(function(w){
+        var t=w[r[0]],v=el('div','v');
+        if(!t||!t.n){ap(v,D.createTextNode('\u2014'),el('em',null,'0 games'))}
+        else{ap(v,D.createTextNode(wl(t)),el('em',cls(t),pctTxt(t)+' \u00b7 '+t.n+' g'))}
+        rw.appendChild(v);
+      });
+      box.appendChild(rw);
+    });
+    bd.appendChild(box);
+  }
+  /* last 7 days strip */
+  bd.appendChild(el('div','rec-dl','Day by day (straight up)'));
+  var ds=el('div','rec-days'),dn=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var p=B.today.split('-').map(Number),base=new Date(p[0],p[1]-1,p[2],12);
+  for(var i=6;i>=0;i--){
+    var d=new Date(base.getTime()-i*864e5),k=d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);
+    var v=R.days[k],c=el('div','rec-d '+(v&&v.SU.n?cls(v.SU):'na'));
+    ap(c,el('span',null,dn[d.getDay()]),el('b',null,v&&v.games?wl(v.SU):'\u2014'));
+    ds.appendChild(c);
+  }
+  bd.appendChild(ds);
+}
+var note=el('div','rec-note');
+note.textContent=(tot?(gm(tot)+' since '+R.since+'. '):'')+(B.note||'')+' Pushes are shown separately and are not counted as wins or losses. Percentages are wins \u00f7 (wins + losses).';
+bd.appendChild(note);
+hd.addEventListener('click',function(){sec.classList.toggle('closed')});
+/* placement: right after the game projections section if present, else after the first section */
+var main=D.querySelector('main.wrap')||D.querySelector('main')||D.body,anchor=D.getElementById('gd-sec');
+if(!anchor){var ss=main.querySelectorAll(':scope > section.sec');if(ss.length)anchor=ss[0];else anchor=D.getElementById('plays')||D.getElementById('top')}
+if(anchor&&anchor.parentNode)anchor.parentNode.insertBefore(sec,anchor.nextSibling);else main.insertBefore(sec,main.firstChild);
+}catch(e){if(window.console)console.warn('model record',e)}
+})();
+
+</script><script id="polish-data" type="application/json">{"pre":"../","fallback":1793512296,"v":"polish-v1"}</script><script id="polish-js">
+/* Model Desk polish v1: presentation only. Adds brand row + freshness chip, aligns numeric table columns, adds footer text. Never changes data. */
+(function(){
+'use strict';
+var D=document,B=D.body,W=window;
+if(!B||B.classList.contains('pl-js'))return;
+var DATA={};try{var de=D.getElementById('polish-data');if(de)DATA=JSON.parse(de.textContent)||{}}catch(e){}
+var TZ='America/Chicago',MON={jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,oct:9,nov:10,dec:11};
+var PARTS=new Intl.DateTimeFormat('en-US',{timeZone:TZ,hourCycle:'h23',year:'numeric',month:'numeric',day:'numeric',hour:'numeric',minute:'numeric'});
+var TIME=new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit'});
+var DAY=new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short',month:'short',day:'numeric'});
+var YMD=new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'});
+function ctOff(t){var o={};PARTS.formatToParts(new Date(t)).forEach(function(x){o[x.type]=x.value});return Date.UTC(+o.year,+o.month-1,+o.day,+o.hour%24,+o.minute)-Math.floor(t/60000)*60000}
+function ctEpoch(y,mo,d,h,mi){var g=Date.UTC(y,mo,d,h,mi),i;for(i=0;i<3;i++)g=Date.UTC(y,mo,d,h,mi)-ctOff(g);return g}
+function parseUpd(txt){
+  if(!txt)return null;var m,y,h;
+  m=/Updated\s+(?:[A-Za-z]{3},?\s+)?([A-Za-z]{3})[a-z]*\s+(\d{1,2}),?\s+(?:(\d{4}),?\s+)?(\d{1,2}):(\d{2})\s*(AM|PM)/i.exec(txt);
+  if(m){h=(+m[4])%12+(/pm/i.test(m[6])?12:0);y=m[3]?+m[3]:+YMD.format(new Date()).slice(0,4);
+    var e=ctEpoch(y,MON[m[1].toLowerCase()],+m[2],h,+m[5]);if(!m[3]&&e>Date.now()+864e5)e=ctEpoch(y-1,MON[m[1].toLowerCase()],+m[2],h,+m[5]);return e}
+  m=/Updated\s+(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/i.exec(txt);
+  if(m)return ctEpoch(+m[1],+m[2]-1,+m[3],+m[4],+m[5]);
+  return null}
+function ago(ms){var m=Math.max(0,Math.round(ms/6e4));if(m<1)return 'just now';if(m<60)return m+'m ago';var h=Math.floor(m/60);if(h<48)return h+'h '+(m%60)+'m ago';return Math.floor(h/24)+'d ago'}
+function stateOf(ms){var m=ms/6e4;return m<=120?['ok','Fresh']:(m<=360?['warn','Aging']:['old','Stale'])}
+function setT(el,t){if(el&&el.textContent!==t)el.textContent=t}
+function stamp(e){var d=new Date(e),same=Date.now()-e<864e5;return (same?'':DAY.format(d)+' · ')+TIME.format(d)+' CT'}
+
+var LOGO='<svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="plg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d8dff"/><stop offset="1" stop-color="#2de3c0"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#plg)"/><path d="M6 17.5v-4M10.3 17.5V9M14.6 17.5v-3.5M18.4 17.5V6.5" stroke="#07101f" stroke-width="2.1" stroke-linecap="round"/></svg>';
+var home=B.getAttribute('data-sport')==='home';
+var pre=DATA.pre||'';
+
+/* 1. header: make every page share one header shape, add brand row + freshness chip */
+var chip,chipB,chipI,epoch=null;
+function header(){
+  var hd=D.querySelector('header');if(!hd)return;
+  if(!hd.classList.contains('topbar')){           /* e.g. EuroLeague: plain header -> same structure as the other pages */
+    var nav=hd.querySelector('nav.sports'),inn=D.createElement('div'),br=D.createElement('div'),hm=D.createElement('div'),kids=[].slice.call(hd.childNodes);
+    inn.className='in';br.className='brand';hm.className='hmeta';
+    kids.forEach(function(n){if(n===nav)return;if(n.nodeType===1&&n.tagName==='H1')br.appendChild(n);else if(n.nodeType===1)hm.appendChild(n)});
+    inn.appendChild(br);inn.appendChild(hm);hd.insertBefore(inn,nav||null);hd.classList.add('topbar');
+    [].forEach.call(hm.children,function(c){c.classList.remove('meta');c.style.display='block'});
+  }
+  var inn2=hd.querySelector('.in');if(!inn2||inn2.querySelector('.pl-brandrow'))return;
+  var row=D.createElement('div');row.className='pl-brandrow';
+  row.innerHTML='<a class="pl-brand" href="'+(pre||'./')+'" aria-label="Model Desk home">'+LOGO+'<span class="pl-wm"><b>Model<em>Desk</em></b><i>Sports analytics</i></span></a>'+
+    '<div class="pl-fresh" data-s="" role="status" aria-live="off"><span class="pl-dot"></span><span class="pl-ft"><b>Syncing</b><i>&nbsp;</i></span></div>';
+  inn2.insertBefore(row,inn2.firstChild);
+  chip=row.querySelector('.pl-fresh');chipB=chip.querySelector('b');chipI=chip.querySelector('i');
+  [].forEach.call(hd.querySelectorAll('.hmeta span,.hmeta div,.meta'),function(e){if(/^\s*Updated\b/i.test(e.textContent))e.classList.add('pl-hide')});
+}
+function pageEpoch(){
+  var t=[],e;
+  [D.getElementById('updated'),D.getElementById('slate-line'),D.querySelector('header .hmeta'),D.querySelector('header')].forEach(function(x){if(x)t.push(x.textContent)});
+  for(var i=0;i<t.length;i++){e=parseUpd(t[i]);if(e)return e}
+  var eps=[];[].forEach.call(D.querySelectorAll('.card .u'),function(u){var x=parseUpd(u.textContent);if(x)eps.push(x)});
+  if(eps.length)return Math.max.apply(null,eps);
+  return DATA.fallback?DATA.fallback*1000:null}
+function paint(){
+  if(!chip)return;var e=pageEpoch();if(e)epoch=e;if(!epoch)return;
+  var age=Date.now()-epoch,s=stateOf(age);
+  chip.setAttribute('data-s',s[0]);setT(chipB,s[1]);setT(chipI,stamp(epoch)+' · '+ago(age));
+  chip.title='Page data updated '+DAY.format(new Date(epoch))+' '+TIME.format(new Date(epoch))+' CT';
+  var f=D.querySelector('[data-pl-upd]');setT(f,stamp(epoch));
+  /* home cards: per-card freshness dot */
+  if(home)[].forEach.call(D.querySelectorAll('.card .u'),function(u){var x=parseUpd(u.textContent);if(!x)return;var d=u.querySelector('.pl-dot');if(!d){d=D.createElement('span');d.className='pl-dot';u.insertBefore(d,u.firstChild)}
+    var st=stateOf(Date.now()-x)[0];d.style.setProperty('--fc',st==='ok'?'var(--ok)':st==='warn'?'var(--amber)':'var(--warn)');d.style.background='var(--fc)'});
+}
+
+/* 2. numeric columns right-aligned (tabular numerals for odds / percentages) */
+var NUM=/^[+\-\u2212]?\$?\d[\d.,:]*\s*(%|pts?|u|x|m)?$/i;
+function align(){
+  [].forEach.call(D.querySelectorAll('table'),function(t){
+    var rows=t.rows,n=rows.length;if(n<3||t.getAttribute('data-pl')===String(n))return;
+    var head=t.tHead&&t.tHead.rows.length?t.tHead.rows[t.tHead.rows.length-1]:rows[0],nc=head.cells.length,c,r,col=[];
+    for(c=1;c<nc;c++){var tot=0,num=0;for(r=0;r<n&&tot<60;r++){var row=rows[r];if(row===head||row.cells.length!==nc)continue;var tx=row.cells[c].textContent.replace(/\s+/g,' ').trim();if(!tx||tx==='-'||tx==='\u2014')continue;tot++;if(NUM.test(tx))num++}
+      if(tot>=3&&num/tot>=.75)col.push(c)}
+    col.forEach(function(c){for(var r=0;r<n;r++){var row=rows[r];if(row.cells.length===nc)row.cells[c].classList.add('pl-n')}});
+    t.setAttribute('data-pl',String(n));
+  })}
+
+/* 3. footer */
+function footer(){
+  if(D.querySelector('.pl-foot'))return;
+  var f=D.createElement('footer');f.className='pl-foot';
+  f.innerHTML='<div class="pl-fl">'+LOGO.replace('width="24" height="24"','width="18" height="18"').replace('id="plg"','id="plg2"').replace('url(#plg)','url(#plg2)')+'Model Desk <span>Sports analytics</span></div>'+
+   '<p>Probabilities, fair prices and projected scores are model estimates for information and entertainment. They are not financial or betting advice, and no outcome is ever certain. Prices come from public odds feeds, move quickly and can differ at your book, so confirm before you wager.</p>'+
+   '<p>Independent project. Not affiliated with or endorsed by any league, team or sportsbook. Must be 21+ where wagering is legal. Help is available at 1-800-GAMBLER.</p>'+
+   '<div class="pl-fm"><span><i class="pl-dot" style="--fc:var(--ok);background:var(--fc)"></i>Page data <span data-pl-upd>\u2014</span></span><span>Times Central (CT)</span><span><b class="g gA grade A">A</b> strong <b class="g gB grade B">B</b> solid <b class="g gC grade C">C</b> thin pick grade</span></div>';
+  B.appendChild(f);
+  /* keep the footer after the page content, before the scripts */
+  var first=B.querySelector(':scope>script');if(first)B.insertBefore(f,first);
+}
+
+/* 4. keep only the sport nav pinned (title/brand row scrolls away) */
+function pin(){var t=D.querySelector('.topbar'),i=t&&t.querySelector('.in');if(!t||!i||home)return;t.style.top=(-i.offsetHeight)+'px';
+  var a=t.querySelector('nav.sports a.on'),n=t.querySelector('nav.sports');if(a&&n&&!n.dataset.pl){n.dataset.pl=1;n.scrollLeft=Math.max(0,a.offsetLeft-(n.clientWidth-a.offsetWidth)/2)}}
+
+try{header();footer();B.classList.add('pl-js');paint();align();pin()}catch(e){if(W.console)console.warn('polish',e)}
+var tm=null;function later(){clearTimeout(tm);tm=setTimeout(function(){try{header();align();paint();pin()}catch(e){}},250)}
+if(W.MutationObserver)new MutationObserver(later).observe(B,{childList:true,subtree:true});
+[400,1500,4000].forEach(function(ms){setTimeout(function(){try{paint();pin()}catch(e){}},ms)});
+W.addEventListener('load',function(){try{pin();paint()}catch(e){}});W.addEventListener('resize',function(){try{pin()}catch(e){}});
+setInterval(function(){try{paint()}catch(e){}},30000);
 })();
 
 </script></body></html>
