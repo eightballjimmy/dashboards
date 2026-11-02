@@ -1,4 +1,4 @@
-<!doctype html><!--polish-v1--><!--skin-v1--><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!doctype html><!--skin-v1--><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>NBA games</title><style>
 :root{color-scheme:dark;--bg:#0b0f14;--bg2:#10161e;--card:#141c26;--card2:#1a2430;--line:#243040;--ink:#e8edf2;--mut:#8796a8;--acc:#4f9dff;
 --ok:#3ddc97;--okbg:rgba(61,220,151,.13);--warn:#ff7b72;--warnbg:rgba(255,123,114,.13);--amber:#f5b942;--amberbg:rgba(245,185,66,.13);--blue:#6cb2ff;--bluebg:rgba(108,178,255,.13)}
@@ -65,402 +65,7 @@ details.info p,details.info .para{margin:4px 0}
 .sec-h{flex-wrap:wrap}
 footer.foot{max-width:1200px;margin:0 auto;padding:0 14px 28px;color:var(--mut);font-size:12px}
 .pct{font-weight:700;font-variant-numeric:tabular-nums}.gcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:8px 0}
-.gcard h3{margin:0 0 4px;font-size:15px}.gcard .meta{color:var(--mut);font-size:12.5px}.gcard table{margin-top:6px}.mut{color:var(--mut)}</style><style id="skin-css">
-/* ===== dashboards skin v1 : override layer, loaded last. Phone-first dark, per-sport accents ===== */
-:root{color-scheme:dark;
---bg:#060a13;--bg2:#0b1222;--card:#10192e;--card2:#18243f;--line:#24345a;--ink:#f3f6fc;--mut:#9db0d0;--acc:var(--sp,#5b8cff);
---ok:#2ff0a0;--okbg:rgba(47,240,160,.14);--warn:#ff6683;--warnbg:rgba(255,102,131,.15);--amber:#ffc233;--amberbg:rgba(255,194,51,.15);--blue:#6db6ff;--bluebg:rgba(109,182,255,.15);
---gA:linear-gradient(135deg,#2ff0a0,#12c27d);--gB:linear-gradient(135deg,#5b9bff,#8a63ff);--gC:linear-gradient(135deg,#ffc233,#ff8a1f);
---sp:#5b8cff;--sp2:#8b5cf6;--sp-rgb:91,140,255;--r:16px}
-html{scroll-padding-top:70px}
-body{background:radial-gradient(520px 300px at 85% -60px,rgba(var(--sp-rgb),.30),transparent 70%),radial-gradient(420px 260px at -10% 18%,rgba(139,92,246,.10),transparent 70%),#060a13;background-repeat:no-repeat;color:var(--ink);
- font:15px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh}
-a{color:var(--blue)}
-#slate-line{display:none!important}#slate-line[style*="fde2e1"]{display:block!important}
-
-/* header: gradient, title row scrolls away, sport nav stays pinned */
-.topbar{position:sticky;top:0;z-index:40;background:linear-gradient(135deg,rgba(var(--sp-rgb),.34),rgba(6,10,19,.97) 64%),#060a13;border:0;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
-.topbar::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--sp),var(--sp2))}
-.topbar .in{padding:12px 16px 4px}
-.brand h1{font-size:23px;font-weight:800;letter-spacing:-.02em;background:linear-gradient(90deg,#fff 20%,var(--sp));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
-.hmeta{color:#b9c8e4;font-size:12.5px}.hmeta span{display:block}
-nav.sports{padding:8px 14px 11px;gap:7px}
-nav.sports a{display:flex;align-items:center;gap:7px;padding:7px 13px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);color:#d5e0f5;font-size:13.5px;font-weight:600;transition:transform .12s}
-nav.sports a i{width:9px;height:9px;border-radius:50%;background:var(--c);box-shadow:0 0 8px var(--c);flex:0 0 auto}
-nav.sports a.on{background:linear-gradient(135deg,var(--c),var(--c2));border-color:transparent;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35);box-shadow:0 4px 14px -4px var(--c)}
-nav.sports a.on i{background:#fff;box-shadow:none}
-nav.sports a:active{transform:scale(.96)}
-main.wrap{padding:6px 14px 48px}
-
-/* Today / Tomorrow segmented control */
-.dtabs{position:static!important;display:flex!important;gap:0!important;margin:12px 14px 0!important;padding:4px!important;background:var(--bg2)!important;border:1px solid var(--line);border-radius:14px;max-width:1172px}
-.dtabs a{flex:1;text-align:center;padding:11px 6px!important;border-radius:11px!important;background:transparent!important;color:var(--mut)!important;font:700 14.5px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;text-decoration:none}
-.dtabs a.on{background:linear-gradient(135deg,var(--sp),var(--sp2))!important;color:#fff!important;box-shadow:0 4px 16px -6px var(--sp)}
-.dnote{margin:10px 14px 0!important;padding:10px 12px!important;border-radius:12px!important;background:rgba(var(--sp-rgb),.13)!important;border:1px solid rgba(var(--sp-rgb),.38);color:#e6edfb!important;font:500 13px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important}
-@media(min-width:1200px){.dtabs,.dnote{margin-left:auto!important;margin-right:auto!important;max-width:1172px}}
-
-/* sections */
-.sec-h{display:flex;align-items:center;gap:8px;margin:22px 0 10px;padding:0 0 0 12px;position:relative;font-size:13px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#fff}
-.sec-h::before{content:"";position:absolute;left:0;top:2px;bottom:2px;width:4px;border-radius:4px;background:linear-gradient(180deg,var(--sp),var(--sp2))}
-.sec-h small{color:var(--mut);font-weight:500;letter-spacing:0;text-transform:none;flex:1 1 100%;margin-top:-2px}
-.sec-h .cnt{margin-left:auto;font-size:11.5px;font-weight:700;letter-spacing:0;color:var(--mut);background:var(--card2);border-radius:999px;padding:2px 9px;text-transform:none}
-.sec.tog>.sec-h{cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none}
-.sec.tog>.sec-h::after{content:"";width:9px;height:9px;border-right:2.5px solid var(--sp);border-bottom:2.5px solid var(--sp);transform:rotate(45deg);margin:-3px 4px 0 6px;transition:transform .18s;flex:0 0 auto}
-.sec.closed>.sec-h::after{transform:rotate(-45deg);margin-top:0}
-.sec.closed>.sec-b{display:none}
-.sec.tog:not(.closed)>.sec-h .cnt{margin-left:auto}
-
-/* top play cards */
-.plays{gap:12px}
-.play{position:relative;background:linear-gradient(160deg,rgba(var(--sp-rgb),.13),transparent 55%),var(--card);border:1px solid var(--line);border-left:5px solid var(--gc,var(--sp));border-radius:var(--r);padding:14px 14px 13px;box-shadow:0 10px 24px -14px rgba(0,0,0,.8)}
-.play:has(.grade.A){--gc:#2ff0a0;background:linear-gradient(160deg,rgba(47,240,160,.12),transparent 55%),var(--card)}
-.play:has(.grade.B){--gc:#7a8cff;background:linear-gradient(160deg,rgba(122,140,255,.14),transparent 55%),var(--card)}
-.play:has(.grade.C){--gc:#ffb020;background:linear-gradient(160deg,rgba(255,176,32,.11),transparent 55%),var(--card)}
-.play .top{align-items:center;gap:10px}
-.play .pick{font-size:19px;font-weight:800;line-height:1.22;letter-spacing:-.01em}
-.play .game{font-size:12.5px;color:var(--mut);margin-top:3px}
-.play .badges .grade{min-width:40px;height:40px;padding:0;display:flex;align-items:center;justify-content:center;font-size:21px;border-radius:12px}
-.play .nums{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;margin-top:12px;font-size:13px}
-.play .nums>span{display:flex;flex-direction:column;justify-content:center;flex:1 1 auto;min-width:64px;padding:7px 10px;border-radius:11px;background:rgba(255,255,255,.055);font-size:17px;font-weight:800;line-height:1.15;font-variant-numeric:tabular-nums}
-.play .nums>span:first-child{flex:1.4 1 96px;background:rgba(var(--sp-rgb),.20);font-size:24px;letter-spacing:-.02em}
-.play .nums .k{display:block;order:-1;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);margin:0 0 2px}
-.play .nums .bk{font-size:11.5px;font-weight:600;color:#b9c8e4;margin-top:2px}
-.play .nums .edge{flex:0 0 auto;align-self:center;font-size:14px;padding:6px 12px;border-radius:999px;background:var(--okbg);color:var(--ok);border:1px solid rgba(47,240,160,.5);min-width:0}
-.play .nums .edge.neg{background:var(--warnbg);color:var(--warn);border-color:rgba(255,102,131,.5)}
-.play .nums .edge.sus,.play .nums .edge.neu{background:var(--card2);color:var(--mut);border-color:var(--line)}
-.play .note{margin-top:9px;font-size:12px;color:var(--mut)}
-.empty{padding:16px;border:1px dashed rgba(var(--sp-rgb),.5);border-radius:var(--r);background:rgba(var(--sp-rgb),.07);color:#c9d6ee;font-size:13.5px}
-
-/* grade chips: A emerald, B electric blue, C amber (green/red stay reserved for edge and over/under) */
-.grade{display:inline-block;min-width:26px;padding:2px 9px;border-radius:8px;font-size:13px;font-weight:900;text-align:center;border:0!important;letter-spacing:.02em;cursor:help;box-shadow:0 3px 10px -3px rgba(0,0,0,.6)}
-.grade.A{background:var(--gA)!important;color:#022c1a!important}
-.grade.B{background:var(--gB)!important;color:#fff!important}
-.grade.C{background:var(--gC)!important;color:#3a1c00!important}
-.grade.NA{background:transparent!important;color:#6f82a8!important;border:1px dashed var(--line)!important;box-shadow:none}
-.edge{font-weight:800}
-.edge.pos{background:var(--okbg);color:var(--ok)}.edge.neg{background:var(--warnbg);color:var(--warn)}
-.ou{font-weight:800}.ou.over{color:var(--ok)}.ou.under{color:var(--warn)}
-td.sv-pos,.sv-pos{color:var(--ok)!important;font-weight:700}td.sv-neg,.sv-neg{color:var(--warn)!important;font-weight:700}
-.pos{color:var(--ok)}.neg{color:var(--warn)}
-
-/* tabs */
-.tabs{margin:20px 0 10px;padding:4px;background:var(--bg2);border:1px solid var(--line);border-radius:14px;gap:4px}
-.tabs .tab,.tabs button{padding:9px 14px;border-radius:11px;font-size:13.5px;font-weight:600;color:var(--mut)}
-.tabs .tab.on,.tabs button.on{background:linear-gradient(135deg,var(--sp),var(--sp2));color:#fff;box-shadow:0 4px 14px -6px var(--sp)}
-.tabs:empty{display:none}
-
-/* panels, tools, tables: readable on 390px */
-.panel,.box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:10px 10px 4px;overflow:auto;max-height:78vh;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
-.tools{gap:8px 10px;margin-bottom:10px}
-.tools label{font-size:12px;font-weight:600;color:var(--mut);display:flex;align-items:center;gap:6px}
-select,input,button{font-size:16px;min-height:38px;padding:6px 10px;border-radius:10px;border:1px solid var(--line);background:var(--bg2);color:var(--ink)}
-select:focus,input:focus{outline:2px solid var(--sp);outline-offset:1px}
-input[type=checkbox]{width:20px;height:20px;min-height:0;accent-color:var(--sp)}
-table{font-size:13px;border-collapse:separate;border-spacing:0}
-th,td{padding:9px 10px;border-bottom:1px solid rgba(36,52,90,.7)}
-th{position:sticky;top:0;z-index:3;background:#16213b;color:#b3c3e0;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--sp)}
-th:first-child,td:first-child{position:sticky;left:0;z-index:2;background:var(--card);box-shadow:6px 0 8px -6px rgba(0,0,0,.7)}
-th:first-child{z-index:4;background:#16213b}
-tr:nth-child(even)>td{background:rgba(255,255,255,.03)}tr:nth-child(even)>td:first-child{background:#131d35}
-tr.detail>td:first-child,tr.sub>td:first-child{position:static;box-shadow:none}
-tr.bet:hover>td,tr.row:hover>td{background:rgba(var(--sp-rgb),.14)}
-td:first-child,tr.row>td:first-child,tr.bet>td:first-child{white-space:normal;min-width:112px;max-width:150px}
-td.num{font-weight:600}
-.pill{padding:2px 9px;font-weight:800}
-.pill.ok,.pill.PRICED{background:var(--okbg);color:var(--ok)}.pill.MODEL,.pill.MODEL-ONLY,.pill.NO-MARKET{background:var(--bluebg);color:var(--blue)}
-.chip{background:rgba(var(--sp-rgb),.18);color:#d3def4}
-.flag{background:var(--amberbg);color:var(--amber)}
-.legend,details.info{border:1px solid var(--line);border-radius:14px;background:var(--bg2)}
-.legend summary,details.info summary{font-weight:700;color:#d3def4;padding:2px 0;min-height:28px}
-.alert{border-radius:14px}
-
-/* game cards (NBA etc.) */
-.gcard{background:linear-gradient(160deg,rgba(var(--sp-rgb),.12),transparent 50%),var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;margin:0 0 10px;display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:center;box-shadow:0 10px 24px -16px rgba(0,0,0,.9)}
-.gcard h3{margin:0;font-size:19px;font-weight:800;letter-spacing:-.01em}
-.gcard .meta{grid-column:1/-1;font-size:12.5px;color:var(--mut);line-height:1.4}
-.gcard h3+.meta{grid-column:2;grid-row:1;justify-self:end;color:#fff;font-weight:700;background:rgba(var(--sp-rgb),.28);border-radius:999px;padding:3px 11px;white-space:nowrap}
-.gcard .meta:nth-of-type(2){color:#e6edfb;font-size:13.5px;font-weight:600;margin-top:6px}
-.gcard .meta.inj{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer}
-.gcard .meta.inj.open{display:block}
-.gcard .panel{grid-column:1/-1;margin-top:8px;padding:0;max-height:60vh}
-.gcard.tog>h3{cursor:pointer;-webkit-tap-highlight-color:transparent}
-.gcard.tog>h3::after{content:"";display:inline-block;width:8px;height:8px;border-right:2.5px solid var(--sp);border-bottom:2.5px solid var(--sp);transform:rotate(45deg);margin:0 0 3px 10px;transition:transform .18s}
-.gcard.tog.closed>h3::after{transform:rotate(-45deg);margin-bottom:0}
-.gcard.closed>.panel{display:none}
-
-footer.foot,.foot{color:var(--mut);padding:0 16px 32px;font-size:12px}
-@media(min-width:760px){main.wrap{padding:10px 24px 60px}.plays{grid-template-columns:repeat(2,minmax(0,1fr))}#games{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}#games .gcard{margin:0}}
-@media(min-width:1100px){.plays{grid-template-columns:repeat(3,minmax(0,1fr))}}
-
-body[data-sport="nfl"]{--sp:#5b8cff;--sp2:#8b5cf6;--sp-rgb:91,140,255}
-body[data-sport="nfl-props"]{--sp:#33c8ff;--sp2:#5b6bff;--sp-rgb:51,200,255}
-body[data-sport="nfl-td"]{--sp:#ff5fb0;--sp2:#a855f7;--sp-rgb:255,95,176}
-body[data-sport="cfb"]{--sp:#ffc233;--sp2:#ff7a1a;--sp-rgb:255,194,51}
-body[data-sport="nba"]{--sp:#ff7a2f;--sp2:#ff3d6e;--sp-rgb:255,122,47}
-body[data-sport="nba-props"]{--sp:#ff9d4a;--sp2:#ec4899;--sp-rgb:255,157,74}
-body[data-sport="nba-first-basket"]{--sp:#e879f9;--sp2:#7c5cff;--sp-rgb:232,121,249}
-body[data-sport="intl-basketball"]{--sp:#f5b83d;--sp2:#ff5a7a;--sp-rgb:245,184,61}
-body[data-sport="cbb"]{--sp:#6b9bc3;--sp2:#6b9bc3;--sp-rgb:107,155,195}
-body[data-sport="nhl"]{--sp:#22d3ee;--sp2:#3b82f6;--sp-rgb:34,211,238}
-body[data-sport="nhl-props"]{--sp:#2de3c0;--sp2:#06b6d4;--sp-rgb:45,227,192}
-body[data-sport="mlb"]{--sp:#ff5a6e;--sp2:#ffb020;--sp-rgb:255,90,110}
-body[data-sport="tennis"]{--sp:#b6f03c;--sp2:#22d3ee;--sp-rgb:182,240,60}
-nav.sports a{--c:#7d8fb3;--c2:#5b6b90}
-nav.sports a[data-k="nfl"]{--c:#5b8cff;--c2:#8b5cf6}
-nav.sports a[data-k="nfl-props"]{--c:#33c8ff;--c2:#5b6bff}
-nav.sports a[data-k="nfl-td"]{--c:#ff5fb0;--c2:#a855f7}
-nav.sports a[data-k="cfb"]{--c:#ffc233;--c2:#ff7a1a}
-nav.sports a[data-k="nba"]{--c:#ff7a2f;--c2:#ff3d6e}
-nav.sports a[data-k="nba-props"]{--c:#ff9d4a;--c2:#ec4899}
-nav.sports a[data-k="nba-first-basket"]{--c:#e879f9;--c2:#7c5cff}
-nav.sports a[data-k="intl-basketball"]{--c:#f5b83d;--c2:#ff5a7a}
-nav.sports a[data-k="cbb"]{--c:#6b9bc3;--c2:#6b9bc3}
-nav.sports a[data-k="nhl"]{--c:#22d3ee;--c2:#3b82f6}
-nav.sports a[data-k="nhl-props"]{--c:#2de3c0;--c2:#06b6d4}
-nav.sports a[data-k="mlb"]{--c:#ff5a6e;--c2:#ffb020}
-nav.sports a[data-k="tennis"]{--c:#b6f03c;--c2:#22d3ee}
-</style><style id="gd-css">
-/* game detail panels (apply_gamedetail.py): uses the skin variables, falls back to dark defaults */
-.gd-sec .sec-h{cursor:pointer}
-.gd-sec.closed>.sec-b,.gd-sec.closed>.gd-list{display:none}
-.gd-hint{color:var(--mut,#9db0d0);font-size:12.5px;margin:-4px 2px 10px}
-.gd-list{display:flex;flex-direction:column;gap:10px}
-.gd-card{position:relative;background:linear-gradient(160deg,rgba(var(--sp-rgb,91,140,255),.12),transparent 60%),var(--card,#10192e);border:1px solid var(--line,#24345a);border-left:5px solid var(--sp,#5b8cff);border-radius:16px;overflow:hidden;box-shadow:0 10px 24px -16px rgba(0,0,0,.9)}
-.gd-card.open{border-color:rgba(var(--sp-rgb,91,140,255),.7)}
-.gd-head{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:10px;width:100%;padding:12px 12px 12px 12px;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.gd-head:active{background:rgba(255,255,255,.04)}
-.gd-main{flex:1 1 auto;min-width:0}
-.gd-when{font-size:11.5px;color:var(--mut,#9db0d0);display:flex;gap:6px;align-items:center;flex-wrap:wrap}
-.gd-live{background:#ff3d6e;color:#fff;border-radius:6px;padding:0 6px;font-size:10.5px;font-weight:800;letter-spacing:.06em}
-.gd-teams{font-size:16.5px;font-weight:800;letter-spacing:-.01em;line-height:1.25;margin-top:2px;overflow-wrap:anywhere;color:var(--ink,#f3f6fc)}
-.gd-tap{font-size:11.5px;color:var(--sp,#5b8cff);font-weight:700;margin-top:3px}
-.gd-side{flex:0 0 auto;display:flex;align-items:center;gap:8px}
-.gd-sc{display:flex;flex-direction:column;align-items:flex-end;font-variant-numeric:tabular-nums;line-height:1.1}
-.gd-sc b{font-size:17px;font-weight:900;letter-spacing:-.02em;color:#fff}
-.gd-sc i{font-style:normal;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mut,#9db0d0);margin-top:2px}
-.gd-chev{width:9px;height:9px;border-right:3px solid var(--sp,#5b8cff);border-bottom:3px solid var(--sp,#5b8cff);transform:rotate(45deg);margin:-3px 3px 0 2px;transition:transform .18s;flex:0 0 auto}
-.gd-card.open .gd-chev{transform:rotate(-135deg);margin-top:4px}
-.gd-g{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;padding:0 7px;border-radius:8px;font-size:14px;font-weight:900;box-shadow:0 3px 10px -3px rgba(0,0,0,.6)}
-.gd-g.A{background:linear-gradient(135deg,#2ff0a0,#12c27d);color:#022c1a}.gd-g.B{background:linear-gradient(135deg,#5b9bff,#8a63ff);color:#fff}.gd-g.C{background:linear-gradient(135deg,#ffc233,#ff8a1f);color:#3a1c00}
-.gd-body{padding:2px 12px 14px;border-top:1px solid rgba(255,255,255,.07)}
-.gd-card:not(.open) .gd-body{display:none}
-.gd-hero{display:flex;align-items:stretch;gap:8px;margin:12px 0 4px}
-.gd-t{flex:1 1 0;min-width:0;text-align:center;padding:10px 6px;border-radius:14px;background:rgba(255,255,255,.055);border:1px solid transparent}
-.gd-t.win{background:rgba(var(--sp-rgb,91,140,255),.20);border-color:rgba(var(--sp-rgb,91,140,255),.6)}
-.gd-t .n{font-size:12px;font-weight:700;color:#cfdaf1;overflow-wrap:anywhere;line-height:1.2}
-.gd-t .s{font-size:34px;font-weight:900;letter-spacing:-.03em;line-height:1.1;font-variant-numeric:tabular-nums;color:#fff;margin-top:2px}
-.gd-t .p{font-size:12px;color:var(--mut,#9db0d0);font-weight:600}
-.gd-dash{align-self:center;color:var(--mut,#9db0d0);font-weight:800}
-.gd-sub{font-size:12px;color:var(--mut,#9db0d0);text-align:center;margin:6px 0 4px}
-.gd-likely{font-size:13px;font-weight:700;text-align:center;margin:6px 0 2px;color:#fff}
-.gd-grid{display:grid;grid-template-columns:1fr;gap:8px;margin-top:10px}
-.gd-k{background:rgba(255,255,255,.05);border-radius:12px;padding:9px 11px}
-.gd-k h4{margin:0 0 5px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--mut,#9db0d0)}
-.gd-k .r{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;line-height:1.5;font-variant-numeric:tabular-nums}
-.gd-k .r span:first-child{color:#cfdaf1;min-width:0;overflow-wrap:anywhere}.gd-k .r span:last-child{font-weight:800;text-align:right;color:#fff}
-.gd-k .pos{color:#2ff0a0!important}.gd-k .neg{color:#ff6683!important}
-.gd-split{display:flex;height:12px;border-radius:7px;overflow:hidden;margin:3px 0 6px;background:rgba(255,255,255,.08)}
-.gd-split i{display:block;height:100%}.gd-split .a{background:var(--sp2,#8b5cf6)}.gd-split .h{background:var(--sp,#5b8cff)}
-.gd-bars{margin-top:12px}.gd-bars h4{margin:0 0 6px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--mut,#9db0d0)}
-.gd-b{display:flex;align-items:center;gap:8px;margin:4px 0;font-size:12.5px;font-variant-numeric:tabular-nums}
-.gd-b .l{flex:0 0 112px;color:#cfdaf1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.gd-b .t{flex:1 1 auto;height:12px;border-radius:6px;background:rgba(255,255,255,.07);overflow:hidden;min-width:0}
-.gd-b .t i{display:block;height:100%;border-radius:6px;background:#7d8fb3;min-width:2px}
-.gd-b.a .t i{background:var(--sp2,#8b5cf6)}.gd-b.h .t i{background:var(--sp,#5b8cff)}
-.gd-b .v{flex:0 0 42px;text-align:right;font-weight:800;color:#fff}
-.gd-tops{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
-.gd-tops span{background:rgba(255,255,255,.07);border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:700;color:#fff}
-.gd-tops small{color:var(--mut,#9db0d0);font-weight:600;margin-left:4px}
-.gd-facts{margin-top:12px;font-size:13px}
-.gd-facts .r{display:flex;gap:10px;padding:5px 0;border-top:1px solid rgba(255,255,255,.06)}
-.gd-facts .r:first-child{border-top:0}
-.gd-facts .r span:first-child{flex:0 0 108px;color:var(--mut,#9db0d0);font-size:12px}
-.gd-facts .r span:last-child{flex:1 1 auto;min-width:0;overflow-wrap:anywhere;color:#e6edfb}
-.gd-inj{margin-top:8px;font-size:12.5px}.gd-inj summary{cursor:pointer;color:#e6edfb;font-weight:700;padding:4px 0}
-.gd-inj div{color:#cfdaf1;padding:2px 0 2px 10px;border-left:2px solid rgba(255,255,255,.12);margin:3px 0;overflow-wrap:anywhere}
-.gd-picks{margin-top:12px;display:flex;flex-direction:column;gap:6px}
-.gd-picks div{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.05);border-radius:10px;padding:6px 9px;overflow-wrap:anywhere}
-.gd-note{margin-top:12px;font-size:11.5px;line-height:1.4;color:var(--mut,#9db0d0)}
-.gd-more{all:unset;box-sizing:border-box;display:block;width:100%;text-align:center;padding:11px;border-radius:12px;border:1px dashed rgba(var(--sp-rgb,91,140,255),.6);color:#fff;font-weight:700;font-size:13.5px;cursor:pointer;margin-top:2px}
-.gd-more:active{background:rgba(255,255,255,.05)}
-.gd-card,.gd-body,.gd-sec{max-width:100%}
-@media(min-width:560px){.gd-grid{grid-template-columns:1fr 1fr}}
-/* PAST-GAMES */
-.gd-day{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--mut,#9db0d0);margin:12px 2px 6px}
-.gd-dayg:first-of-type .gd-day{margin-top:4px}
-.gd-rec{display:inline-block;font-size:12.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:4px 12px;margin:0 2px 6px}
-.gd-chk{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 6px;border-radius:7px;font-size:12px;font-weight:900;white-space:nowrap}
-.gd-chk.ok{background:rgba(46,204,113,.22);color:#6ff0a4}
-.gd-chk.no{background:rgba(255,92,120,.22);color:#ff8fa5}
-.gd-chk.pu{background:rgba(255,255,255,.12);color:#dfe8ff}
-.gd-res{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);border-radius:12px;padding:10px 12px;margin:0 0 10px}
-.gd-res-h{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
-.gd-res-h b{font-size:15px;font-weight:800;color:#fff}
-.gd-res .gd-sub{margin-top:4px}
-
-/* LIVE-CARDS */
-.gd-livebox .gd-res-h{align-items:center}
-.gd-livebox .gd-sub{font-size:12px}
-
-</style><style id="polish-css">
-/* ===== Model Desk polish v1 : institutional / terminal refinement layer. Loaded LAST. Presentation only. ===== */
-:root{
---bg:#070c16;--bg2:#0b1220;--card:#0f1727;--card2:#151f35;--line:#1f2c47;--line2:#2a3b5e;--ink:#e8eef9;--mut:#8b9bb9;--mut2:#6f7f9d;
---ok:#35e0a1;--okbg:rgba(53,224,161,.12);--warn:#ff6f8a;--warnbg:rgba(255,111,138,.12);--amber:#ffc24a;--amberbg:rgba(255,194,74,.12);--blue:#7eb4ff;--bluebg:rgba(126,180,255,.12);
---gA:linear-gradient(180deg,#3fe8a8,#16b571);--gB:linear-gradient(180deg,#76a8ff,#4f73f2);--gC:linear-gradient(180deg,#ffcf5c,#f39c1c);
---r:12px;--pl-shadow:0 1px 0 rgba(255,255,255,.035) inset,0 10px 24px -16px rgba(0,0,0,.9);
---pl-font:"Inter","SF Pro Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
-body[data-sport="home"]{--sp:#6d8dff;--sp2:#a46bff;--sp-rgb:109,141,255}
-html{-webkit-text-size-adjust:100%;scroll-padding-top:56px}
-body{font-family:var(--pl-font)!important;font-size:14.5px;line-height:1.5;letter-spacing:-.003em;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1,"cv11" 1;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;color:var(--ink);
- background:radial-gradient(560px 260px at 88% -70px,rgba(var(--sp-rgb),.20),transparent 72%),radial-gradient(460px 260px at -12% 14%,rgba(139,92,246,.07),transparent 70%),#070c16;background-repeat:no-repeat;overflow-x:hidden}
-button,input,select,textarea,table,.dtabs a,.dtabs button,nav.sports a,.tabs .tab{font-family:var(--pl-font)!important}
-::selection{background:rgba(var(--sp-rgb),.35)}
-a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--sp);outline-offset:2px;border-radius:6px}
-*{scrollbar-width:thin;scrollbar-color:#2a3b5e transparent}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
-
-/* ---------- header: brand row, title, freshness, pinned nav ---------- */
-.topbar{position:sticky;top:0;z-index:40;padding:0!important;background:linear-gradient(180deg,rgba(var(--sp-rgb),.16),rgba(7,12,22,.96) 78%),#070c16!important;border:0;border-bottom:1px solid var(--line)!important;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
-.topbar::after{height:2px!important;background:linear-gradient(90deg,var(--sp),var(--sp2) 60%,transparent)!important;opacity:.9}
-.topbar .in{padding:10px 16px 4px!important;max-width:1200px;margin:0 auto}
-.pl-brandrow{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 10px;padding:0 0 9px;border-bottom:1px solid rgba(255,255,255,.07)}
-.pl-brand{flex:0 0 auto;white-space:nowrap;display:flex;align-items:center;gap:9px;color:#fff!important;text-decoration:none;min-width:0}
-.pl-brand svg{flex:0 0 auto;display:block;filter:drop-shadow(0 4px 10px rgba(80,120,255,.45))}
-.pl-wm{display:flex;flex-direction:column;line-height:1.05}
-.pl-wm b{font-size:13.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#fff}
-.pl-wm b em{font-style:normal;font-weight:500;color:#9fb3da;margin-left:.35em}
-.pl-wm i{font-style:normal;font-size:9.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mut2);margin-top:3px}
-.pl-fresh{display:flex;align-items:center;gap:8px;padding:5px 10px 5px 9px;border-radius:9px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);flex:0 1 auto;min-width:0;--fc:var(--mut)}
-.pl-fresh[data-s=ok]{--fc:var(--ok)}.pl-fresh[data-s=warn]{--fc:var(--amber)}.pl-fresh[data-s=old]{--fc:var(--warn)}
-.pl-dot{width:8px;height:8px;border-radius:50%;background:var(--fc,var(--mut));box-shadow:0 0 0 3px color-mix(in srgb,var(--fc,#888) 22%,transparent);flex:0 0 auto;display:inline-block}
-.pl-fresh[data-s=ok] .pl-dot{animation:pl-pulse 2.4s ease-in-out infinite}
-@keyframes pl-pulse{0%,100%{box-shadow:0 0 0 3px color-mix(in srgb,var(--fc) 22%,transparent)}50%{box-shadow:0 0 0 6px color-mix(in srgb,var(--fc) 6%,transparent)}}
-.pl-ft{display:flex;flex-direction:column;line-height:1.15;text-align:right}
-.pl-ft b{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--fc,var(--mut))}
-.pl-ft{min-width:0}.pl-ft i{font-style:normal;font-size:11.5px;font-weight:600;color:#cbd6ec;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.brand h1,header h1{font-size:22px;font-weight:750;letter-spacing:-.022em;line-height:1.15;color:#fff!important;background:none!important;-webkit-text-fill-color:#fff!important;margin:0}
-.hmeta{color:var(--mut)!important;font-size:12px!important;line-height:1.45}
-body.pl-js #updated,.pl-hide{display:none!important}
-header.topbar{margin:0}
-header.topbar>nav.sports{max-width:1200px;margin:0 auto}
-nav.sports{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:8px 14px 10px!important}
-nav.sports::-webkit-scrollbar{display:none}
-nav.sports a{flex:0 0 auto;display:flex;align-items:center;gap:7px;padding:6px 11px!important;border-radius:9px!important;background:rgba(255,255,255,.035)!important;border:1px solid rgba(255,255,255,.08)!important;color:#c3d0e8!important;font-size:12.5px!important;font-weight:600!important;letter-spacing:.005em;text-decoration:none;text-shadow:none!important;box-shadow:none!important;transition:background .15s,border-color .15s}
-nav.sports a i{width:6px!important;height:6px!important;border-radius:50%;background:var(--c,#7d8fb3)!important;box-shadow:none!important;flex:0 0 auto}
-nav.sports a.on{background:linear-gradient(135deg,rgba(var(--sp-rgb),.9),var(--c2,var(--sp2)))!important;border-color:transparent!important;color:#fff!important;box-shadow:0 6px 16px -8px var(--c,var(--sp))!important}
-nav.sports a.on i{background:#fff!important}
-nav.sports a[data-k=home] i{background:#9fb3da!important}
-
-/* today / tomorrow */
-.dtabs{margin:12px 14px 0!important;padding:3px!important;background:var(--bg2)!important;border:1px solid var(--line)!important;border-radius:11px!important}
-.dtabs a,.dtabs button{border-radius:8px!important;font-size:13px!important;font-weight:650!important;letter-spacing:0;padding:9px 6px!important}
-.dtabs a.on,.dtabs button.on{background:linear-gradient(135deg,var(--sp),var(--sp2))!important;color:#fff!important;box-shadow:0 4px 12px -6px var(--sp)!important}
-.dnote{border-radius:10px!important;background:rgba(var(--sp-rgb),.09)!important;border:1px solid rgba(var(--sp-rgb),.28)!important;color:#d6e0f4!important;font-size:12.5px!important}
-
-/* ---------- section headers ---------- */
-.sec-h{margin:24px 0 10px!important;padding:0 0 8px 11px!important;border-bottom:1px solid var(--line);font-size:11.5px!important;font-weight:750!important;letter-spacing:.12em!important;text-transform:uppercase;color:#d9e2f4!important;align-items:center}
-.sec-h::before{top:1px!important;bottom:9px!important;width:3px!important;border-radius:2px!important}
-.sec-h small,.sub,.gd-hint,.pd-hint,.rec-sub{color:var(--mut)!important;font-weight:500!important;letter-spacing:0!important;text-transform:none!important;font-size:12.5px}
-.sec-h .cnt{font-size:11px!important;font-weight:650!important;color:var(--mut)!important;background:rgba(255,255,255,.05)!important;border:1px solid var(--line);border-radius:6px!important;padding:1px 8px!important}
-.sec.tog>.sec-h::after{width:7px!important;height:7px!important;border-width:2px!important;border-color:var(--mut)!important}
-
-/* ---------- card system ---------- */
-.play,.gcard,.gd-card,.pd-card,.rec-box,.panel,.box,.legend,details.info,.alert,.empty{border:1px solid var(--line)!important;border-radius:var(--r)!important;box-shadow:var(--pl-shadow)!important}
-.play{background:linear-gradient(160deg,rgba(var(--sp-rgb),.07),transparent 55%),var(--card)!important;border-left:3px solid var(--gc,var(--sp))!important;padding:13px 14px 12px!important}
-.play:has(.grade.A){background:linear-gradient(160deg,rgba(53,224,161,.07),transparent 55%),var(--card)!important;--gc:#35e0a1}
-.play:has(.grade.B){background:linear-gradient(160deg,rgba(118,168,255,.08),transparent 55%),var(--card)!important;--gc:#76a8ff}
-.play:has(.grade.C){background:linear-gradient(160deg,rgba(255,194,74,.07),transparent 55%),var(--card)!important;--gc:#ffc24a}
-.play.gA{--gc:#35e0a1}.play.gB{--gc:#76a8ff}.play.gC{--gc:#ffc24a}
-.gcard,.gd-card,.pd-card,.rec-box{background:linear-gradient(160deg,rgba(var(--sp-rgb),.06),transparent 60%),var(--card)!important}
-.gd-card,.pd-card{border-left:3px solid var(--sp)!important}
-.gd-card.open,.pd-card.open{border-color:rgba(var(--sp-rgb),.55)!important}
-.rec-box{border-top:3px solid var(--sp)!important}
-.panel,.box{background:var(--card)!important;padding:8px 8px 3px!important}
-.legend,details.info{background:var(--bg2)!important}
-.play .pick{font-size:17.5px!important;font-weight:750!important;letter-spacing:-.015em!important}
-.play .game{font-size:12px!important;color:var(--mut)!important}
-.play .nums>span,.play .nums>div,.nums>div{background:rgba(255,255,255,.035)!important;border:1px solid rgba(255,255,255,.05);border-radius:9px!important;font-weight:700!important;font-size:16px!important}
-.play .nums>span:first-child,.nums>div:first-child{background:rgba(var(--sp-rgb),.14)!important;border-color:rgba(var(--sp-rgb),.28)!important;font-size:21px!important;font-weight:750!important}
-.play .nums .k,.nums .k{font-size:9.5px!important;font-weight:700!important;letter-spacing:.1em!important;color:var(--mut)!important}
-.play .nums .bk,.nums small{color:var(--mut)!important;font-weight:550!important}
-.edge{font-weight:750!important;border-radius:999px}
-.play .nums .edge,.edge{border-width:1px!important}
-.gcard h3,.gd-t .n,.pd-name{letter-spacing:-.012em}
-.gcard h3{font-size:17px!important;font-weight:700!important}
-.gcard h3+.meta{background:rgba(var(--sp-rgb),.18)!important;border:1px solid rgba(var(--sp-rgb),.3);font-size:12px!important;font-weight:650!important;border-radius:7px!important;padding:2px 9px!important}
-.gd-head,.pd-head{padding:11px 12px!important}
-.gd-sc b,.pd-big b,.rec-big{font-weight:800!important;letter-spacing:-.025em!important}
-.rec-big{font-size:28px!important}
-.rec-box h4,.gd-k h4,.pd-sh h4,.pd-bars h4{font-size:10.5px!important;font-weight:750!important;letter-spacing:.11em!important;color:var(--mut)!important}
-.rec-d{border-radius:8px!important}
-.gd-live{border-radius:5px!important;background:#ef4468!important}
-
-/* ---------- grade badges: one system (A emerald / B blue / C amber) ---------- */
-.grade,.gd-g,.pd-g{display:inline-flex!important;align-items:center;justify-content:center;min-width:26px;height:26px;padding:0 8px!important;border-radius:8px!important;font-size:13.5px!important;font-weight:850!important;letter-spacing:.01em;line-height:1;border:0!important;cursor:default!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22),0 4px 10px -5px rgba(0,0,0,.7)!important}
-.play .badges .grade,.play .top>.grade{min-width:38px;height:38px;padding:0!important;font-size:19px!important;border-radius:10px!important}
-.grade.A,.gd-g.A,.pd-g.A{background:var(--gA)!important;color:#032a1a!important}
-.grade.B,.gd-g.B,.pd-g.B{background:var(--gB)!important;color:#fff!important}
-.grade.C,.gd-g.C,.pd-g.C{background:var(--gC)!important;color:#3a2000!important}
-.grade.NA{background:transparent!important;color:var(--mut2)!important;box-shadow:inset 0 0 0 1px var(--line)!important}
-
-/* ---------- tables: aligned, tabular, quiet ---------- */
-table{font-size:12.5px!important;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
-th{background:#111a2e!important;color:var(--mut)!important;font-size:10px!important;font-weight:750!important;letter-spacing:.08em!important;text-transform:uppercase;padding:9px 10px!important;border-bottom:1px solid var(--line2)!important;box-shadow:inset 0 -1px 0 rgba(var(--sp-rgb),.5)}
-td{padding:8px 10px!important;border-bottom:1px solid rgba(31,44,71,.8)!important}
-th.pl-n,td.pl-n{text-align:right!important;white-space:nowrap}
-tr:nth-child(even)>td{background:rgba(255,255,255,.022)}
-tr:nth-child(even)>td:first-child{background:#0d1525!important}
-th:first-child{background:#111a2e!important}td:first-child{background:var(--card)}
-tr.bet:hover>td,tr.row:hover>td{background:rgba(var(--sp-rgb),.10)!important}
-.pill{border-radius:6px!important;font-weight:750!important;font-size:11px!important;letter-spacing:.03em}
-.chip{border-radius:6px!important}
-select,input,button{border-radius:8px!important;border-color:var(--line2)!important;background:var(--bg2)!important}
-.tabs{border-radius:10px!important;background:var(--bg2)!important;padding:3px!important}
-.tabs .tab,.tabs button{border-radius:8px!important;font-weight:650!important;font-size:13px!important}
-
-/* ---------- footer ---------- */
-footer.foot,.foot{color:var(--mut2)!important;font-size:11.5px!important;padding:0 16px 8px!important;max-width:1200px;margin:0 auto}
-.pl-foot{max-width:1200px;margin:26px auto 0;padding:18px 16px calc(28px + env(safe-area-inset-bottom));border-top:1px solid var(--line);color:var(--mut2);font-size:11.5px;line-height:1.55}
-.pl-foot .pl-fl{display:flex;align-items:center;gap:8px;color:#cbd6ec;font-size:12px;font-weight:750;letter-spacing:.14em;text-transform:uppercase;margin:0 0 8px}
-.pl-foot .pl-fl span{font-weight:500;color:var(--mut);letter-spacing:.06em;text-transform:none}
-.pl-foot p{margin:0 0 7px;max-width:760px}
-.pl-foot .pl-fm{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;color:var(--mut)}
-.pl-foot .pl-fm .grade{height:18px;min-width:18px;font-size:11px!important;border-radius:5px!important;padding:0 5px!important;vertical-align:middle}
-.pl-foot .pl-fm .pl-dot{margin-right:5px}
-body[data-sport=home]>footer:not(.pl-foot){color:var(--mut2);font-size:11px;text-align:left;max-width:1040px;margin:0 auto;padding:6px 16px 0}
-
-/* ---------- home ---------- */
-body[data-sport=home]{margin:0}
-.pl-homehead{position:relative!important;top:0!important}
-.pl-homehead .in{padding-bottom:10px!important}
-.pl-homehead .legend{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:10px 0 0!important;padding:0!important;border:0!important;background:none!important;box-shadow:none!important;font-size:12px;color:var(--mut)!important}
-.pl-homehead .legend span{display:inline-flex;align-items:center;gap:6px}
-body[data-sport=home] main{max-width:1040px;margin:0 auto;padding:4px 14px 8px}
-body[data-sport=home] h2{margin:24px 2px 10px!important;padding:0 0 8px;border-bottom:1px solid var(--line);font-size:11.5px!important;font-weight:750!important;letter-spacing:.12em!important;color:#d9e2f4!important}
-body[data-sport=home] h2::after{display:none}
-body[data-sport=home] .card{border-radius:var(--r)!important;background:linear-gradient(135deg,rgba(var(--rgb),.10),transparent 60%),var(--card)!important;border:1px solid var(--line)!important;box-shadow:var(--pl-shadow)!important;padding:12px 12px 12px 14px!important;gap:12px}
-body[data-sport=home] .card:hover{border-color:rgba(var(--rgb),.6)!important}
-body[data-sport=home] .card::before{width:3px!important}
-body[data-sport=home] .mono{width:42px!important;height:42px!important;border-radius:10px!important;font-size:12.5px!important;font-weight:800!important;letter-spacing:.04em;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)!important;text-shadow:none!important}
-body[data-sport=home] .t{font-size:16px!important;font-weight:700!important;letter-spacing:-.012em}
-body[data-sport=home] .s{font-size:12px!important;color:var(--mut)!important}
-body[data-sport=home] .m{border-radius:6px!important;background:rgba(255,255,255,.05)!important;border:1px solid rgba(255,255,255,.07);color:#cbd6ec!important;font-size:11px!important;font-weight:600!important;padding:1px 8px!important}
-body[data-sport=home] .u{display:flex;align-items:center;font-size:11px!important;color:var(--mut2)!important}
-body[data-sport=home] .u .pl-dot{width:6px;height:6px;margin-right:6px;box-shadow:none;animation:none}
-body[data-sport=home] .chev{border-width:2px!important;border-color:var(--mut)!important;width:8px!important;height:8px!important}
-
-@media(min-width:760px){.pl-brandrow{margin-bottom:12px}.topbar .in{padding-top:12px!important}}
-
-/* narrow screens: wordmark + freshness chip only; the tagline moves to the footer */
-@media(max-width:460px){.pl-wm i{display:none}.pl-brandrow{gap:8px}}
-/* open game cards: tables scroll inside their panel instead of widening the page */
-.gcard,.gcard>*,.gcard .sec-b,.gcard .panel{min-width:0;max-width:100%}
-.gcard .panel{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.gcard .meta{white-space:normal!important;overflow-wrap:anywhere}
-
-
-</style><style id="pro-theme">
+.gcard h3{margin:0 0 4px;font-size:15px}.gcard .meta{color:var(--mut);font-size:12.5px}.gcard table{margin-top:6px}.mut{color:var(--mut)}</style><style id="pro-theme">
 /* ===== Model Desk "Pro" theme v1: restrained analytics-terminal palette. Loaded AFTER polish. Presentation only; no layout/size rules on cards (keeps the .g card fix intact). =====
    Palette: charcoal-navy surfaces, ONE steel-blue accent, muted green/red only for positive/negative or win/loss values, muted amber only for caution/status. */
 :root,html body,html body[data-sport]{
@@ -644,7 +249,161 @@ body[data-sport=home] .m{background:var(--card2)!important;border:1px solid var(
 body[data-sport=home] .chev{border-color:var(--mut)!important}
 body .pl-homehead .legend{color:var(--mut)!important}
 
-</style><!--pro-v1--></head><body data-sport="nba">
+</style><!--pro-v1--><style id="skin-css">
+/* ===== dashboards skin v1 : override layer, loaded last. Phone-first dark, per-sport accents ===== */
+:root{color-scheme:dark;
+--bg:#060a13;--bg2:#0b1222;--card:#10192e;--card2:#18243f;--line:#24345a;--ink:#f3f6fc;--mut:#9db0d0;--acc:var(--sp,#5b8cff);
+--ok:#2ff0a0;--okbg:rgba(47,240,160,.14);--warn:#ff6683;--warnbg:rgba(255,102,131,.15);--amber:#ffc233;--amberbg:rgba(255,194,51,.15);--blue:#6db6ff;--bluebg:rgba(109,182,255,.15);
+--gA:linear-gradient(135deg,#2ff0a0,#12c27d);--gB:linear-gradient(135deg,#5b9bff,#8a63ff);--gC:linear-gradient(135deg,#ffc233,#ff8a1f);
+--sp:#5b8cff;--sp2:#8b5cf6;--sp-rgb:91,140,255;--r:16px}
+html{scroll-padding-top:70px}
+body{background:radial-gradient(520px 300px at 85% -60px,rgba(var(--sp-rgb),.30),transparent 70%),radial-gradient(420px 260px at -10% 18%,rgba(139,92,246,.10),transparent 70%),#060a13;background-repeat:no-repeat;color:var(--ink);
+ font:15px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh}
+a{color:var(--blue)}
+#slate-line{display:none!important}#slate-line[style*="fde2e1"]{display:block!important}
+
+/* header: gradient, title row scrolls away, sport nav stays pinned */
+.topbar{position:sticky;top:0;z-index:40;background:linear-gradient(135deg,rgba(var(--sp-rgb),.34),rgba(6,10,19,.97) 64%),#060a13;border:0;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.topbar::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--sp),var(--sp2))}
+.topbar .in{padding:12px 16px 4px}
+.brand h1{font-size:23px;font-weight:800;letter-spacing:-.02em;background:linear-gradient(90deg,#fff 20%,var(--sp));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.hmeta{color:#b9c8e4;font-size:12.5px}.hmeta span{display:block}
+nav.sports{padding:8px 14px 11px;gap:7px}
+nav.sports a{display:flex;align-items:center;gap:7px;padding:7px 13px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);color:#d5e0f5;font-size:13.5px;font-weight:600;transition:transform .12s}
+nav.sports a i{width:9px;height:9px;border-radius:50%;background:var(--c);box-shadow:0 0 8px var(--c);flex:0 0 auto}
+nav.sports a.on{background:linear-gradient(135deg,var(--c),var(--c2));border-color:transparent;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35);box-shadow:0 4px 14px -4px var(--c)}
+nav.sports a.on i{background:#fff;box-shadow:none}
+nav.sports a:active{transform:scale(.96)}
+main.wrap{padding:6px 14px 48px}
+
+/* Today / Tomorrow segmented control */
+.dtabs{position:static!important;display:flex!important;gap:0!important;margin:12px 14px 0!important;padding:4px!important;background:var(--bg2)!important;border:1px solid var(--line);border-radius:14px;max-width:1172px}
+.dtabs a{flex:1;text-align:center;padding:11px 6px!important;border-radius:11px!important;background:transparent!important;color:var(--mut)!important;font:700 14.5px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;text-decoration:none}
+.dtabs a.on{background:linear-gradient(135deg,var(--sp),var(--sp2))!important;color:#fff!important;box-shadow:0 4px 16px -6px var(--sp)}
+.dnote{margin:10px 14px 0!important;padding:10px 12px!important;border-radius:12px!important;background:rgba(var(--sp-rgb),.13)!important;border:1px solid rgba(var(--sp-rgb),.38);color:#e6edfb!important;font:500 13px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important}
+@media(min-width:1200px){.dtabs,.dnote{margin-left:auto!important;margin-right:auto!important;max-width:1172px}}
+
+/* sections */
+.sec-h{display:flex;align-items:center;gap:8px;margin:22px 0 10px;padding:0 0 0 12px;position:relative;font-size:13px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#fff}
+.sec-h::before{content:"";position:absolute;left:0;top:2px;bottom:2px;width:4px;border-radius:4px;background:linear-gradient(180deg,var(--sp),var(--sp2))}
+.sec-h small{color:var(--mut);font-weight:500;letter-spacing:0;text-transform:none;flex:1 1 100%;margin-top:-2px}
+.sec-h .cnt{margin-left:auto;font-size:11.5px;font-weight:700;letter-spacing:0;color:var(--mut);background:var(--card2);border-radius:999px;padding:2px 9px;text-transform:none}
+.sec.tog>.sec-h{cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none}
+.sec.tog>.sec-h::after{content:"";width:9px;height:9px;border-right:2.5px solid var(--sp);border-bottom:2.5px solid var(--sp);transform:rotate(45deg);margin:-3px 4px 0 6px;transition:transform .18s;flex:0 0 auto}
+.sec.closed>.sec-h::after{transform:rotate(-45deg);margin-top:0}
+.sec.closed>.sec-b{display:none}
+.sec.tog:not(.closed)>.sec-h .cnt{margin-left:auto}
+
+/* top play cards */
+.plays{gap:12px}
+.play{position:relative;background:linear-gradient(160deg,rgba(var(--sp-rgb),.13),transparent 55%),var(--card);border:1px solid var(--line);border-left:5px solid var(--gc,var(--sp));border-radius:var(--r);padding:14px 14px 13px;box-shadow:0 10px 24px -14px rgba(0,0,0,.8)}
+.play:has(.grade.A){--gc:#2ff0a0;background:linear-gradient(160deg,rgba(47,240,160,.12),transparent 55%),var(--card)}
+.play:has(.grade.B){--gc:#7a8cff;background:linear-gradient(160deg,rgba(122,140,255,.14),transparent 55%),var(--card)}
+.play:has(.grade.C){--gc:#ffb020;background:linear-gradient(160deg,rgba(255,176,32,.11),transparent 55%),var(--card)}
+.play .top{align-items:center;gap:10px}
+.play .pick{font-size:19px;font-weight:800;line-height:1.22;letter-spacing:-.01em}
+.play .game{font-size:12.5px;color:var(--mut);margin-top:3px}
+.play .badges .grade{min-width:40px;height:40px;padding:0;display:flex;align-items:center;justify-content:center;font-size:21px;border-radius:12px}
+.play .nums{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;margin-top:12px;font-size:13px}
+.play .nums>span{display:flex;flex-direction:column;justify-content:center;flex:1 1 auto;min-width:64px;padding:7px 10px;border-radius:11px;background:rgba(255,255,255,.055);font-size:17px;font-weight:800;line-height:1.15;font-variant-numeric:tabular-nums}
+.play .nums>span:first-child{flex:1.4 1 96px;background:rgba(var(--sp-rgb),.20);font-size:24px;letter-spacing:-.02em}
+.play .nums .k{display:block;order:-1;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);margin:0 0 2px}
+.play .nums .bk{font-size:11.5px;font-weight:600;color:#b9c8e4;margin-top:2px}
+.play .nums .edge{flex:0 0 auto;align-self:center;font-size:14px;padding:6px 12px;border-radius:999px;background:var(--okbg);color:var(--ok);border:1px solid rgba(47,240,160,.5);min-width:0}
+.play .nums .edge.neg{background:var(--warnbg);color:var(--warn);border-color:rgba(255,102,131,.5)}
+.play .nums .edge.sus,.play .nums .edge.neu{background:var(--card2);color:var(--mut);border-color:var(--line)}
+.play .note{margin-top:9px;font-size:12px;color:var(--mut)}
+.empty{padding:16px;border:1px dashed rgba(var(--sp-rgb),.5);border-radius:var(--r);background:rgba(var(--sp-rgb),.07);color:#c9d6ee;font-size:13.5px}
+
+/* grade chips: A emerald, B electric blue, C amber (green/red stay reserved for edge and over/under) */
+.grade{display:inline-block;min-width:26px;padding:2px 9px;border-radius:8px;font-size:13px;font-weight:900;text-align:center;border:0!important;letter-spacing:.02em;cursor:help;box-shadow:0 3px 10px -3px rgba(0,0,0,.6)}
+.grade.A{background:var(--gA)!important;color:#022c1a!important}
+.grade.B{background:var(--gB)!important;color:#fff!important}
+.grade.C{background:var(--gC)!important;color:#3a1c00!important}
+.grade.NA{background:transparent!important;color:#6f82a8!important;border:1px dashed var(--line)!important;box-shadow:none}
+.edge{font-weight:800}
+.edge.pos{background:var(--okbg);color:var(--ok)}.edge.neg{background:var(--warnbg);color:var(--warn)}
+.ou{font-weight:800}.ou.over{color:var(--ok)}.ou.under{color:var(--warn)}
+td.sv-pos,.sv-pos{color:var(--ok)!important;font-weight:700}td.sv-neg,.sv-neg{color:var(--warn)!important;font-weight:700}
+.pos{color:var(--ok)}.neg{color:var(--warn)}
+
+/* tabs */
+.tabs{margin:20px 0 10px;padding:4px;background:var(--bg2);border:1px solid var(--line);border-radius:14px;gap:4px}
+.tabs .tab,.tabs button{padding:9px 14px;border-radius:11px;font-size:13.5px;font-weight:600;color:var(--mut)}
+.tabs .tab.on,.tabs button.on{background:linear-gradient(135deg,var(--sp),var(--sp2));color:#fff;box-shadow:0 4px 14px -6px var(--sp)}
+.tabs:empty{display:none}
+
+/* panels, tools, tables: readable on 390px */
+.panel,.box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:10px 10px 4px;overflow:auto;max-height:78vh;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.tools{gap:8px 10px;margin-bottom:10px}
+.tools label{font-size:12px;font-weight:600;color:var(--mut);display:flex;align-items:center;gap:6px}
+select,input,button{font-size:16px;min-height:38px;padding:6px 10px;border-radius:10px;border:1px solid var(--line);background:var(--bg2);color:var(--ink)}
+select:focus,input:focus{outline:2px solid var(--sp);outline-offset:1px}
+input[type=checkbox]{width:20px;height:20px;min-height:0;accent-color:var(--sp)}
+table{font-size:13px;border-collapse:separate;border-spacing:0}
+th,td{padding:9px 10px;border-bottom:1px solid rgba(36,52,90,.7)}
+th{position:sticky;top:0;z-index:3;background:#16213b;color:#b3c3e0;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--sp)}
+th:first-child,td:first-child{position:sticky;left:0;z-index:2;background:var(--card);box-shadow:6px 0 8px -6px rgba(0,0,0,.7)}
+th:first-child{z-index:4;background:#16213b}
+tr:nth-child(even)>td{background:rgba(255,255,255,.03)}tr:nth-child(even)>td:first-child{background:#131d35}
+tr.detail>td:first-child,tr.sub>td:first-child{position:static;box-shadow:none}
+tr.bet:hover>td,tr.row:hover>td{background:rgba(var(--sp-rgb),.14)}
+td:first-child,tr.row>td:first-child,tr.bet>td:first-child{white-space:normal;min-width:112px;max-width:150px}
+td.num{font-weight:600}
+.pill{padding:2px 9px;font-weight:800}
+.pill.ok,.pill.PRICED{background:var(--okbg);color:var(--ok)}.pill.MODEL,.pill.MODEL-ONLY,.pill.NO-MARKET{background:var(--bluebg);color:var(--blue)}
+.chip{background:rgba(var(--sp-rgb),.18);color:#d3def4}
+.flag{background:var(--amberbg);color:var(--amber)}
+.legend,details.info{border:1px solid var(--line);border-radius:14px;background:var(--bg2)}
+.legend summary,details.info summary{font-weight:700;color:#d3def4;padding:2px 0;min-height:28px}
+.alert{border-radius:14px}
+
+/* game cards (NBA etc.) */
+.gcard{background:linear-gradient(160deg,rgba(var(--sp-rgb),.12),transparent 50%),var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;margin:0 0 10px;display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:center;box-shadow:0 10px 24px -16px rgba(0,0,0,.9)}
+.gcard h3{margin:0;font-size:19px;font-weight:800;letter-spacing:-.01em}
+.gcard .meta{grid-column:1/-1;font-size:12.5px;color:var(--mut);line-height:1.4}
+.gcard h3+.meta{grid-column:2;grid-row:1;justify-self:end;color:#fff;font-weight:700;background:rgba(var(--sp-rgb),.28);border-radius:999px;padding:3px 11px;white-space:nowrap}
+.gcard .meta:nth-of-type(2){color:#e6edfb;font-size:13.5px;font-weight:600;margin-top:6px}
+.gcard .meta.inj{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer}
+.gcard .meta.inj.open{display:block}
+.gcard .panel{grid-column:1/-1;margin-top:8px;padding:0;max-height:60vh}
+.gcard.tog>h3{cursor:pointer;-webkit-tap-highlight-color:transparent}
+.gcard.tog>h3::after{content:"";display:inline-block;width:8px;height:8px;border-right:2.5px solid var(--sp);border-bottom:2.5px solid var(--sp);transform:rotate(45deg);margin:0 0 3px 10px;transition:transform .18s}
+.gcard.tog.closed>h3::after{transform:rotate(-45deg);margin-bottom:0}
+.gcard.closed>.panel{display:none}
+
+footer.foot,.foot{color:var(--mut);padding:0 16px 32px;font-size:12px}
+@media(min-width:760px){main.wrap{padding:10px 24px 60px}.plays{grid-template-columns:repeat(2,minmax(0,1fr))}#games{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}#games .gcard{margin:0}}
+@media(min-width:1100px){.plays{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+body[data-sport="nfl"]{--sp:#5b8cff;--sp2:#8b5cf6;--sp-rgb:91,140,255}
+body[data-sport="nfl-props"]{--sp:#33c8ff;--sp2:#5b6bff;--sp-rgb:51,200,255}
+body[data-sport="nfl-td"]{--sp:#ff5fb0;--sp2:#a855f7;--sp-rgb:255,95,176}
+body[data-sport="cfb"]{--sp:#ffc233;--sp2:#ff7a1a;--sp-rgb:255,194,51}
+body[data-sport="nba"]{--sp:#ff7a2f;--sp2:#ff3d6e;--sp-rgb:255,122,47}
+body[data-sport="nba-props"]{--sp:#ff9d4a;--sp2:#ec4899;--sp-rgb:255,157,74}
+body[data-sport="nba-first-basket"]{--sp:#e879f9;--sp2:#7c5cff;--sp-rgb:232,121,249}
+body[data-sport="intl-basketball"]{--sp:#f5b83d;--sp2:#ff5a7a;--sp-rgb:245,184,61}
+body[data-sport="cbb"]{--sp:#6b9bc3;--sp2:#6b9bc3;--sp-rgb:107,155,195}
+body[data-sport="nhl"]{--sp:#22d3ee;--sp2:#3b82f6;--sp-rgb:34,211,238}
+body[data-sport="nhl-props"]{--sp:#2de3c0;--sp2:#06b6d4;--sp-rgb:45,227,192}
+body[data-sport="mlb"]{--sp:#ff5a6e;--sp2:#ffb020;--sp-rgb:255,90,110}
+body[data-sport="tennis"]{--sp:#b6f03c;--sp2:#22d3ee;--sp-rgb:182,240,60}
+nav.sports a{--c:#7d8fb3;--c2:#5b6b90}
+nav.sports a[data-k="nfl"]{--c:#5b8cff;--c2:#8b5cf6}
+nav.sports a[data-k="nfl-props"]{--c:#33c8ff;--c2:#5b6bff}
+nav.sports a[data-k="nfl-td"]{--c:#ff5fb0;--c2:#a855f7}
+nav.sports a[data-k="cfb"]{--c:#ffc233;--c2:#ff7a1a}
+nav.sports a[data-k="nba"]{--c:#ff7a2f;--c2:#ff3d6e}
+nav.sports a[data-k="nba-props"]{--c:#ff9d4a;--c2:#ec4899}
+nav.sports a[data-k="nba-first-basket"]{--c:#e879f9;--c2:#7c5cff}
+nav.sports a[data-k="intl-basketball"]{--c:#f5b83d;--c2:#ff5a7a}
+nav.sports a[data-k="cbb"]{--c:#6b9bc3;--c2:#6b9bc3}
+nav.sports a[data-k="nhl"]{--c:#22d3ee;--c2:#3b82f6}
+nav.sports a[data-k="nhl-props"]{--c:#2de3c0;--c2:#06b6d4}
+nav.sports a[data-k="mlb"]{--c:#ff5a6e;--c2:#ffb020}
+nav.sports a[data-k="tennis"]{--c:#b6f03c;--c2:#22d3ee}
+</style></head><body data-sport="nba">
 <header class="topbar"><div class="in"><div class="brand"><h1 id="title">NBA games</h1><span id="hstatus"></span></div><div class="hmeta"><span id="slate"></span><span id="updated"></span></div></div><nav class="sports" aria-label="Sports"><a href="../../" data-k="home"><i></i>Home</a><a href="../../nfl/" data-k="nfl"><i></i>NFL</a><a href="../../nfl-props/" data-k="nfl-props"><i></i>NFL Props</a><a href="../../nfl-td/" data-k="nfl-td"><i></i>NFL TD</a><a href="../../cfb/" data-k="cfb"><i></i>CFB</a><a href="../../nba/" data-k="nba" class="on" aria-current="page"><i></i>NBA</a><a href="../../nba-props/" data-k="nba-props"><i></i>NBA Props</a><a href="../../nba-first-basket/" data-k="nba-first-basket"><i></i>NBA 1st Bkt</a><a href="../../intl-basketball/" data-k="intl-basketball"><i></i>EuroLeague</a><a href="../../cbb/" data-k="cbb"><i></i>CBB</a><a href="../../nhl/" data-k="nhl"><i></i>NHL</a><a href="../../nhl-props/" data-k="nhl-props"><i></i>NHL Pts</a><a href="../../mlb/" data-k="mlb"><i></i>MLB</a><a href="../../tennis/" data-k="tennis"><i></i>Tennis</a></nav></header>
 <nav class="dtabs" data-dtabs="1"><a href="../" class="">Today · Mon Nov 2</a><a href="../tomorrow/" class="on">Tomorrow · Tue Nov 3</a></nav><div class="dnote">Tomorrow is priced with current game lines (moneyline, spread, total). Injuries firm up on game day.</div>
 <main class="wrap"><div id="alerts"></div><div class="sec-h">Top plays <small>model chance beats the best price's break-even</small></div><div id="top"></div>
@@ -693,7 +452,7 @@ const UI = (() => {
   return { h, lab, labPill, ct, card, plays, head, statusAlert, sortTable, edgeCls, autoReload };
 })();
 
-const P={"generated_utc": "2026-11-02T04:58:49+00:00", "generated_central": "Sun Nov 1, 2026 10:58 PM CT", "slate_date": "2026-11-02", "is_today": false, "n_games": 15, "runtime_s": 7.1, "injury_report": {"official_ok": true, "stamp": "11/01/26 11:45 PM", "not_submitted": ["IND", "LAC", "LAL", "BKN", "ORL", "BOS", "TOR", "GS"], "n_listed": 124}, "status": {"state": "stale", "message": "latest run failed (UnboundLocalError) at 2026-11-02T15:55+00:00"}, "health": {"game lines": "The Odds API [cache] cache hit (0 min old, ttl 240 min); quota remaining 18456 (used 1544, reserve 500)", "player props": "The Odds API: not used", "first basket": "The Odds API: not used", "injuries": "NBA official report 11/01/26 11:45 PM ET; ESPN injuries 95 rows"}, "games": [{"game_id": "401909907", "matchup": "OKC @ CLE", "home": "CLE", "away": "OKC", "start": "2026-11-03T00:00Z", "state": "pre", "detail": "11/2 - 7:00 PM EST", "model_margin": 6.78, "model_total": 228.1, "rest": {"home": {"rest": 2, "b2b": 0, "three": 0, "km": 541.0, "tz": 1.0}, "away": {"rest": 2, "b2b": 0, "three": 0, "km": 1794.0, "tz": 1.0}}, "injuries": {"CLE": ["Peyton Watson (Questionable)", "Jaylon Tyson (Out)"], "OKC": ["Jalen Williams (Out)", "Chet Holmgren (Out)", "Cason Wallace (Out)", "Alex Caruso (Out)", "Nikola Topic (Out)", "Thomas Sorber (Out)"]}, "plays": [], "market": {"spread_home": -4.0, "total": 228.5, "novig_home_ml": 0.6106222869476301, "n_books": 11, "fair_margin": 4.17, "fair_total": 228.5}, "candidates": [{"market": "spread", "pick": "CLE -4", "p": 0.5049266774768648, "dec": 1.95, "book": "Bovada", "novig": 0.49825479930191974, "ev": -0.015392978920113598, "american": -105, "fair_american": -102, "beats_price": false}, {"market": "spread", "pick": "OKC +4", "p": 0.4950733225231352, "dec": 1.94, "book": "LowVig.ag", "novig": 0.5017452006980803, "ev": -0.039557754305117765, "american": -106, "fair_american": 102, "beats_price": false}, {"market": "total", "pick": "Over 228.5", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5006561679790027, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 228.5", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.4993438320209973, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "CLE ML", "p": 0.6173173086519824, "dec": 1.59, "book": "LowVig.ag", "novig": 0.6106222869476301, "ev": -0.01846547924334785, "american": -169, "fair_american": -161, "beats_price": false}, {"market": "moneyline", "pick": "OKC ML", "p": 0.3826826913480176, "dec": 2.56, "book": "FanDuel", "novig": 0.3893777130523699, "ev": -0.020332310149074995, "american": 156, "fair_american": 161, "beats_price": false}]}, {"game_id": "401909908", "matchup": "DET @ CHA", "home": "CHA", "away": "DET", "start": "2026-11-03T00:30Z", "state": "pre", "detail": "11/2 - 7:30 PM EST", "model_margin": -5.09, "model_total": 215.4, "rest": {"home": {"rest": 2, "b2b": 0, "three": 1, "km": 0.0, "tz": 0.0}, "away": {"rest": 3, "b2b": 0, "three": 0, "km": 854.0, "tz": 0.0}}, "injuries": {"CHA": ["Kon Knueppel (Out)", "Grant Williams (Out)"], "DET": ["Elijah Harkless (Questionable)", "Isaiah Joe (Questionable)", "Jalen Duren (Out)", "Ugonna Onyenso (Out)"]}, "plays": [], "market": {"spread_home": 4.0, "total": 211.0, "novig_home_ml": 0.39283275637284626, "n_books": 11, "fair_margin": -4.06, "fair_total": 211.0}, "candidates": [{"market": "spread", "pick": "CHA +4", "p": 0.49806946839686506, "dec": 1.94, "book": "LowVig.ag", "novig": 0.5, "ev": -0.03374523131008178, "american": -106, "fair_american": 101, "beats_price": false}, {"market": "spread", "pick": "DET -4", "p": 0.5019305316031349, "dec": 1.94, "book": "LowVig.ag", "novig": 0.5, "ev": -0.026254768689918273, "american": -106, "fair_american": -101, "beats_price": false}, {"market": "total", "pick": "Over 211", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 211", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "CHA ML", "p": 0.3896955472898655, "dec": 2.5, "book": "LowVig.ag", "novig": 0.39283275637284626, "ev": -0.025761131775336232, "american": 150, "fair_american": 157, "beats_price": false}, {"market": "moneyline", "pick": "DET ML", "p": 0.6103044527101344, "dec": 1.6, "book": "FanDuel", "novig": 0.6071672436271538, "ev": -0.023512875663784794, "american": -167, "fair_american": -157, "beats_price": false}]}, {"game_id": "401909909", "matchup": "ATL @ IND", "home": "IND", "away": "ATL", "start": "2026-11-03T00:30Z", "state": "pre", "detail": "11/2 - 7:30 PM EST", "model_margin": -6.49, "model_total": 233.3, "rest": {"home": {"rest": 1, "b2b": 1, "three": 1, "km": 0.0, "tz": 0.0}, "away": {"rest": 2, "b2b": 0, "three": 0, "km": 1148.0, "tz": 1.0}}, "injuries": {"IND": ["Tyrese Haliburton (Out)", "Ivica Zubac (Out)", "Obi Toppin (Out)", "Ben Sheppard (Out)", "Johnny Furphy (Out)", "T.J. McConnell (Out)"], "ATL": ["Jalen Johnson (Questionable)", "Jalen Wilson (Doubtful)", "Keshon Gilbert (Doubtful)", "Kingston Flemings (Out)", "Jock Landale (Out)", "Mouhamed Gueye (Out)", "Henri Veesaar (Out)"]}, "plays": [], "market": {"spread_home": 4.5, "total": 232.5, "novig_home_ml": 0.3702698306041989, "n_books": 6, "fair_margin": -4.62, "fair_total": 232.5}, "candidates": [{"market": "spread", "pick": "IND +4.5", "p": 0.4964685752141315, "dec": 1.95, "book": "BetMGM", "novig": 0.4908296803213735, "ev": -0.03188627833244362, "american": -105, "fair_american": 101, "beats_price": false}, {"market": "spread", "pick": "ATL -4.5", "p": 0.5035314247858684, "dec": 1.88, "book": "FanDuel", "novig": 0.5091703196786266, "ev": -0.05336092140256743, "american": -114, "fair_american": -101, "beats_price": false}, {"market": "total", "pick": "Over 232.5", "p": 0.5, "dec": 1.91, "book": "DraftKings", "novig": 0.5, "ev": -0.04500000000000004, "american": -110, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 232.5", "p": 0.5, "dec": 1.91, "book": "DraftKings", "novig": 0.5, "ev": -0.04500000000000004, "american": -110, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "IND ML", "p": 0.36585293333398217, "dec": 2.64, "book": "DraftKings", "novig": 0.3702698306041989, "ev": -0.03414825599828708, "american": 164, "fair_american": 173, "beats_price": false}, {"market": "moneyline", "pick": "ATL ML", "p": 0.6341470666660178, "dec": 1.56, "book": "FanDuel", "novig": 0.6297301693958011, "ev": -0.010730576001012126, "american": -179, "fair_american": -173, "beats_price": false}]}, {"game_id": "401909910", "matchup": "BKN @ NY", "home": "NY", "away": "BKN", "start": "2026-11-03T00:30Z", "state": "pre", "detail": "11/2 - 7:30 PM EST", "model_margin": 18.2, "model_total": 216.9, "rest": {"home": {"rest": 3, "b2b": 0, "three": 0, "km": 137.0, "tz": 0.0}, "away": {"rest": 1, "b2b": 1, "three": 1, "km": 1037.0, "tz": 0.0}}, "injuries": {"NY": ["Jose Alvarado (Questionable)"], "BKN": ["Egor Demin (Out)", "Mikel Brown Jr. (Out)", "Ben Saraf (Out)", "Tyler Bilodeau (Out)"]}, "plays": [], "market": {"spread_home": -14.5, "total": 221.5, "novig_home_ml": 0.8639602251821845, "n_books": 11, "fair_margin": 14.72, "fair_total": 221.5}, "candidates": [{"market": "spread", "pick": "NY -14.5", "p": 0.5065611226937368, "dec": 1.91, "book": "DraftKings", "novig": 0.5018010265078122, "ev": -0.03246825565496281, "american": -110, "fair_american": -103, "beats_price": false}, {"market": "spread", "pick": "BKN +14.5", "p": 0.49343887730626323, "dec": 1.95, "book": "Bovada", "novig": 0.4981989734921878, "ev": -0.03779418925278666, "american": -105, "fair_american": 103, "beats_price": false}, {"market": "total", "pick": "Over 221.5", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5013098374602271, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 221.5", "p": 0.5, "dec": 1.95, "book": "DraftKings", "novig": 0.49869016253977294, "ev": -0.025000000000000022, "american": -105, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "NY ML", "p": 0.8681960464169488, "dec": 1.12, "book": "BetOnline.ag", "novig": 0.8639602251821845, "ev": -0.02762042801301723, "american": -833, "fair_american": -659, "beats_price": false}, {"market": "moneyline", "pick": "BKN ML", "p": 0.1318039535830512, "dec": 7.5, "book": "Bovada", "novig": 0.13603977481781548, "ev": -0.011470348127116115, "american": 650, "fair_american": 659, "beats_price": false}]}, {"game_id": "401909911", "matchup": "WSH @ ORL", "home": "ORL", "away": "WSH", "start": "2026-11-03T00:30Z", "state": "pre", "detail": "11/2 - 7:30 PM EST", "model_margin": 0.63, "model_total": 231.9, "rest": {"home": {"rest": 1, "b2b": 1, "three": 1, "km": 0.0, "tz": 0.0}, "away": {"rest": 3, "b2b": 0, "three": 0, "km": 1220.0, "tz": 0.0}}, "injuries": {"ORL": ["Paolo Banchero (Out)", "Jalen Suggs (Out)", "Izaiyah Nelson (Out)", "Noah Penda (Out)"], "WSH": ["Alex Sarr (Questionable)", "Anthony Gill (Questionable)", "Jamir Watkins (Out)", "Justin Champagnie (Out)", "Tristan Vukcevic (Out)"]}, "plays": [], "market": {"spread_home": -2.5, "total": 224.5, "novig_home_ml": 0.5616874341494671, "n_books": 11, "fair_margin": 2.39, "fair_total": 224.5}, "candidates": [{"market": "spread", "pick": "ORL -2.5", "p": 0.49668460597728087, "dec": 1.94, "book": "LowVig.ag", "novig": 0.4986910994764398, "ev": -0.03643186440407509, "american": -106, "fair_american": 101, "beats_price": false}, {"market": "spread", "pick": "WSH +2.5", "p": 0.5033153940227191, "dec": 1.94, "book": "LowVig.ag", "novig": 0.5013089005235603, "ev": -0.023568135595924966, "american": -106, "fair_american": -101, "beats_price": false}, {"market": "total", "pick": "Over 224.5", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 224.5", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "ORL ML", "p": 0.5582602593630136, "dec": 1.74, "book": "DraftKings", "novig": 0.5616874341494671, "ev": -0.028627148708356365, "american": -135, "fair_american": -126, "beats_price": false}, {"market": "moneyline", "pick": "WSH ML", "p": 0.4417397406369864, "dec": 2.25, "book": "BetRivers", "novig": 0.4383125658505329, "ev": -0.0060855835667805724, "american": 125, "fair_american": 126, "beats_price": false}]}, {"game_id": "401909912", "matchup": "CHI @ PHI", "home": "PHI", "away": "CHI", "start": "2026-11-03T00:30Z", "state": "pre", "detail": "11/2 - 7:30 PM EST", "model_margin": 10.65, "model_total": 233.3, "rest": {"home": {"rest": 2, "b2b": 0, "three": 1, "km": 721.0, "tz": 0.0}, "away": {"rest": 3, "b2b": 0, "three": 0, "km": 440.0, "tz": 0.0}}, "injuries": {"PHI": ["Joel Embiid (Questionable)", "Dominick Barlow (Out)"], "CHI": ["Jalen Smith (Probable)", "Tobe Awaka (Probable)", "Dailyn Swain (Day-To-Day)", "Nic Claxton (Doubtful)"]}, "plays": [{"market": "moneyline", "pick": "CHI ML", "p": 0.18739641523977824, "dec": 5.5, "book": "Bovada", "novig": 0.18496506320634143, "ev": 0.030680283818780296, "american": 450, "fair_american": 434, "beats_price": true}], "market": {"spread_home": -11.5, "total": 239.5, "novig_home_ml": 0.8150349367936586, "n_books": 11, "fair_margin": 11.45, "fair_total": 239.5}, "candidates": [{"market": "spread", "pick": "PHI -11.5", "p": 0.498483557988098, "dec": 1.94, "book": "LowVig.ag", "novig": 0.5011634671320535, "ev": -0.032941897503089845, "american": -106, "fair_american": 101, "beats_price": false}, {"market": "spread", "pick": "CHI +11.5", "p": 0.501516442011902, "dec": 1.95, "book": "Fanatics", "novig": 0.4988365328679465, "ev": -0.02204293807679103, "american": -105, "fair_american": -101, "beats_price": false}, {"market": "total", "pick": "Over 239.5", "p": 0.5, "dec": 1.91, "book": "DraftKings", "novig": 0.5, "ev": -0.04500000000000004, "american": -110, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 239.5", "p": 0.5, "dec": 1.91, "book": "DraftKings", "novig": 0.5, "ev": -0.04500000000000004, "american": -110, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "PHI ML", "p": 0.8126035847602218, "dec": 1.19, "book": "BetRivers", "novig": 0.8150349367936586, "ev": -0.033001734135336136, "american": -526, "fair_american": -434, "beats_price": false}, {"market": "moneyline", "pick": "CHI ML", "p": 0.18739641523977824, "dec": 5.5, "book": "Bovada", "novig": 0.18496506320634143, "ev": 0.030680283818780296, "american": 450, "fair_american": 434, "beats_price": true}]}, {"game_id": "401909913", "matchup": "SAC @ DAL", "home": "DAL", "away": "SAC", "start": "2026-11-03T01:00Z", "state": "pre", "detail": "11/2 - 8:00 PM EST", "model_margin": 12.03, "model_total": 235.6, "rest": {"home": {"rest": 3, "b2b": 0, "three": 0, "km": 0.0, "tz": 0.0}, "away": {"rest": 2, "b2b": 0, "three": 0, "km": 676.0, "tz": 0.0}}, "injuries": {"DAL": ["Kyrie Irving (Questionable)", "Santi Aldama (Doubtful)", "Dereck Lively II (Out)", "Sergio de Larrea (Out)", "Tarik Biberovic (Out)"], "SAC": ["Zach LaVine (Questionable)", "Dylan Cardwell (Questionable)", "Keegan Murray (Out)", "Maxime Raynaud (Out)", "Ben Simmons (Out)"]}, "plays": [], "market": {"spread_home": -10.0, "total": 234.5, "novig_home_ml": 0.7672774361374716, "n_books": 10, "fair_margin": 10.12, "fair_total": 234.5}, "candidates": [{"market": "spread", "pick": "DAL -10", "p": 0.5036073202238863, "dec": 1.94, "book": "LowVig.ag", "novig": 0.5, "ev": -0.023001798765660553, "american": -106, "fair_american": -101, "beats_price": false}, {"market": "spread", "pick": "SAC +10", "p": 0.4963926797761137, "dec": 1.94, "book": "LowVig.ag", "novig": 0.5, "ev": -0.0369982012343395, "american": -106, "fair_american": 101, "beats_price": false}, {"market": "total", "pick": "Over 234.5", "p": 0.5, "dec": 1.94, "book": "BetRivers", "novig": 0.5001606065603056, "ev": -0.030000000000000027, "american": -106, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 234.5", "p": 0.5, "dec": 1.95, "book": "FanDuel", "novig": 0.4998393934396944, "ev": -0.025000000000000022, "american": -105, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "DAL ML", "p": 0.7710738749022832, "dec": 1.26, "book": "BetOnline.ag", "novig": 0.7672774361374716, "ev": -0.028446917623123125, "american": -385, "fair_american": -337, "beats_price": false}, {"market": "moneyline", "pick": "SAC ML", "p": 0.22892612509771681, "dec": 4.2, "book": "Caesars", "novig": 0.23272256386252843, "ev": -0.03851027458958933, "american": 320, "fair_american": 337, "beats_price": false}]}, {"game_id": "401909914", "matchup": "NO @ MEM", "home": "MEM", "away": "NO", "start": "2026-11-03T01:00Z", "state": "pre", "detail": "11/2 - 8:00 PM EST", "model_margin": 2.89, "model_total": 235.9, "rest": {"home": {"rest": 2, "b2b": 0, "three": 0, "km": 0.0, "tz": 0.0}, "away": {"rest": 2, "b2b": 0, "three": 0, "km": 577.0, "tz": 0.0}}, "injuries": {"MEM": ["Quinten Post (Questionable)", "Scotty Pippen Jr. (Doubtful)"], "NO": ["Trey Murphy III (Probable)", "Julian Reese (Probable)", "Malik Dia (Doubtful)", "Jaron Pierre Jr. (Doubtful)", "Yves Missi (Out)", "Jordan Poole (Out)"]}, "plays": [{"market": "spread", "pick": "NO +5.5", "p": 0.5046380811421833, "dec": 1.99, "book": "LowVig.ag", "novig": 0.488896119492217, "ev": 0.004229781472944838, "american": -101, "fair_american": -102, "beats_price": true}], "market": {"spread_home": -5.5, "total": 235.0, "novig_home_ml": 0.6608666453446331, "n_books": 11, "fair_margin": 5.34, "fair_total": 235.0}, "candidates": [{"market": "spread", "pick": "MEM -5.5", "p": 0.49536191885781666, "dec": 1.9, "book": "LowVig.ag", "novig": 0.511103880507783, "ev": -0.058812354170148406, "american": -111, "fair_american": 102, "beats_price": false}, {"market": "spread", "pick": "NO +5.5", "p": 0.5046380811421833, "dec": 1.99, "book": "LowVig.ag", "novig": 0.488896119492217, "ev": 0.004229781472944838, "american": -101, "fair_american": -102, "beats_price": true}, {"market": "total", "pick": "Over 235", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 235", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "MEM ML", "p": 0.6549607060731572, "dec": 1.47, "book": "BetOnline.ag", "novig": 0.6608666453446331, "ev": -0.037207762072459016, "american": -213, "fair_american": -190, "beats_price": false}, {"market": "moneyline", "pick": "NO ML", "p": 0.34503929392684285, "dec": 2.88, "book": "BetRivers", "novig": 0.33913335465536687, "ev": -0.006286833490692589, "american": 188, "fair_american": 190, "beats_price": false}]}, {"game_id": "401909915", "matchup": "MIL @ MIN", "home": "MIN", "away": "MIL", "start": "2026-11-03T01:00Z", "state": "pre", "detail": "11/2 - 8:00 PM EST", "model_margin": 11.74, "model_total": 230.4, "rest": {"home": {"rest": 2, "b2b": 0, "three": 1, "km": 1788.0, "tz": 0.0}, "away": {"rest": 2, "b2b": 0, "three": 0, "km": 479.0, "tz": 0.0}}, "injuries": {"MIN": ["Anthony Edwards (Out)", "Donte DiVincenzo (Out)"], "MIL": []}, "plays": [], "market": {"spread_home": -10.5, "total": 233.5, "novig_home_ml": 0.7889865065146441, "n_books": 11, "fair_margin": 10.57, "fair_total": 233.5}, "candidates": [{"market": "spread", "pick": "MIN -10.5", "p": 0.5022063214788263, "dec": 1.94, "book": "LowVig.ag", "novig": 0.502750408816699, "ev": -0.025719736331077048, "american": -106, "fair_american": -101, "beats_price": false}, {"market": "spread", "pick": "MIL +10.5", "p": 0.49779367852117373, "dec": 1.95, "book": "DraftKings", "novig": 0.49724959118330103, "ev": -0.02930232688371126, "american": -105, "fair_american": 101, "beats_price": false}, {"market": "total", "pick": "Over 233.5", "p": 0.5, "dec": 1.95, "book": "FanDuel", "novig": 0.4984293193717278, "ev": -0.025000000000000022, "american": -105, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 233.5", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5015706806282723, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "MIN ML", "p": 0.7903691484721455, "dec": 1.23, "book": "LowVig.ag", "novig": 0.7889865065146441, "ev": -0.02784594737926105, "american": -435, "fair_american": -377, "beats_price": false}, {"market": "moneyline", "pick": "MIL ML", "p": 0.20963085152785454, "dec": 4.7, "book": "DraftKings", "novig": 0.21101349348535592, "ev": -0.014734997819083606, "american": 370, "fair_american": 377, "beats_price": false}]}, {"game_id": "401909916", "matchup": "BOS @ HOU", "home": "HOU", "away": "BOS", "start": "2026-11-03T01:30Z", "state": "pre", "detail": "11/2 - 8:30 PM EST", "model_margin": 4.87, "model_total": 221.8, "rest": {"home": {"rest": 2, "b2b": 0, "three": 1, "km": 0.0, "tz": 0.0}, "away": {"rest": 1, "b2b": 1, "three": 1, "km": 1363.0, "tz": 1.0}}, "injuries": {"HOU": ["Reed Sheppard (Questionable)", "Clint Capela (Questionable)", "Steven Adams (Out)", "Quadir Copeland (Out)"], "BOS": ["Mitchell Robinson (Out)", "Devin Carter (Out)"]}, "plays": [], "market": {"spread_home": -5.0, "total": 219.5, "novig_home_ml": 0.6392996844130759, "n_books": 11, "fair_margin": 4.99, "fair_total": 219.5}, "candidates": [{"market": "spread", "pick": "HOU -5", "p": 0.499775126267175, "dec": 1.94, "book": "LowVig.ag", "novig": 0.5, "ev": -0.03043625504168046, "american": -106, "fair_american": 100, "beats_price": false}, {"market": "spread", "pick": "BOS +5", "p": 0.500224873732825, "dec": 1.94, "book": "LowVig.ag", "novig": 0.5, "ev": -0.029563744958319593, "american": -106, "fair_american": -100, "beats_price": false}, {"market": "total", "pick": "Over 219.5", "p": 0.5, "dec": 1.93, "book": "BetRivers", "novig": 0.5005585034854937, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 219.5", "p": 0.5, "dec": 1.95, "book": "FanDuel", "novig": 0.4994414965145063, "ev": -0.025000000000000022, "american": -105, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "HOU ML", "p": 0.6393402365606419, "dec": 1.51, "book": "DraftKings", "novig": 0.6392996844130759, "ev": -0.034596242793430765, "american": -196, "fair_american": -177, "beats_price": false}, {"market": "moneyline", "pick": "BOS ML", "p": 0.3606597634393581, "dec": 2.75, "book": "BetRivers", "novig": 0.36070031558692406, "ev": -0.008185650541765122, "american": 175, "fair_american": 177, "beats_price": false}]}, {"game_id": "401909917", "matchup": "UTAH @ SA", "home": "SA", "away": "UTAH", "start": "2026-11-03T01:30Z", "state": "pre", "detail": "11/2 - 8:30 PM EST", "model_margin": 16.61, "model_total": 234.6, "rest": {"home": {"rest": 2, "b2b": 0, "three": 0, "km": 0.0, "tz": 0.0}, "away": {"rest": 2, "b2b": 0, "three": 0, "km": 1754.0, "tz": 1.0}}, "injuries": {"SA": ["Tobias Harris (Out)", "Jayden Quaintance (Out)"], "UTAH": ["Jaren Jackson Jr. (Out)", "Jusuf Nurkic (Out)"]}, "plays": [{"market": "moneyline", "pick": "UTAH ML", "p": 0.11395078628140887, "dec": 9.0, "book": "DraftKings", "novig": 0.11419012311226207, "ev": 0.0255570765326798, "american": 800, "fair_american": 778, "beats_price": true}], "market": {"spread_home": -16.5, "total": 231.0, "novig_home_ml": 0.8858098768877379, "n_books": 11, "fair_margin": 16.51, "fair_total": 231.0}, "candidates": [{"market": "spread", "pick": "SA -16.5", "p": 0.5001959819445336, "dec": 1.95, "book": "DraftKings", "novig": 0.49215563934930245, "ev": -0.02461783520815941, "american": -105, "fair_american": -100, "beats_price": false}, {"market": "spread", "pick": "UTAH +16.5", "p": 0.49980401805546637, "dec": 1.91, "book": "Bovada", "novig": 0.5078443606506975, "ev": -0.04537432551405929, "american": -110, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Over 231", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 231", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "SA ML", "p": 0.8860492137185911, "dec": 1.09, "book": "BetOnline.ag", "novig": 0.8858098768877379, "ev": -0.03420635704673558, "american": -1111, "fair_american": -778, "beats_price": false}, {"market": "moneyline", "pick": "UTAH ML", "p": 0.11395078628140887, "dec": 9.0, "book": "DraftKings", "novig": 0.11419012311226207, "ev": 0.0255570765326798, "american": 800, "fair_american": 778, "beats_price": true}]}, {"game_id": "401909918", "matchup": "POR @ DEN", "home": "DEN", "away": "POR", "start": "2026-11-03T02:00Z", "state": "pre", "detail": "11/2 - 9:00 PM EST", "model_margin": 3.73, "model_total": 234.7, "rest": {"home": {"rest": 3, "b2b": 0, "three": 0, "km": 942.0, "tz": 0.0}, "away": {"rest": 2, "b2b": 0, "three": 0, "km": 596.0, "tz": 0.0}}, "injuries": {"DEN": ["Alpha Diallo (Questionable)", "Spencer Jones (Out)", "Julian Strawther (Out)"], "POR": ["Ja Morant (Out)", "Shaedon Sharpe (Out)"]}, "plays": [], "market": {"spread_home": -4.0, "total": 230.0, "novig_home_ml": 0.6072510942529242, "n_books": 11, "fair_margin": 3.98, "fair_total": 230.0}, "candidates": [{"market": "spread", "pick": "DEN -4", "p": 0.4995146992957069, "dec": 1.94, "book": "LowVig.ag", "novig": 0.5, "ev": -0.030941483366328626, "american": -106, "fair_american": 100, "beats_price": false}, {"market": "spread", "pick": "POR +4", "p": 0.5004853007042931, "dec": 1.94, "book": "LowVig.ag", "novig": 0.5, "ev": -0.029058516633671427, "american": -106, "fair_american": -100, "beats_price": false}, {"market": "total", "pick": "Over 230", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 230", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "DEN ML", "p": 0.6072989886211935, "dec": 1.61, "book": "FanDuel", "novig": 0.6072510942529242, "ev": -0.022248628319878505, "american": -164, "fair_american": -155, "beats_price": false}, {"market": "moneyline", "pick": "POR ML", "p": 0.39270101137880653, "dec": 2.5, "book": "LowVig.ag", "novig": 0.39274890574707577, "ev": -0.018247471552983674, "american": 150, "fair_american": 155, "beats_price": false}]}, {"game_id": "401909919", "matchup": "PHX @ GS", "home": "GS", "away": "PHX", "start": "2026-11-03T03:00Z", "state": "pre", "detail": "11/2 - 10:00 PM EST", "model_margin": -0.23, "model_total": 226.8, "rest": {"home": {"rest": 1, "b2b": 1, "three": 1, "km": 0.0, "tz": 0.0}, "away": {"rest": 3, "b2b": 0, "three": 0, "km": 1048.0, "tz": 1.0}}, "injuries": {"GS": ["Stephen Curry (Out)", "Draymond Green (Out)", "Jimmy Butler III (Out)", "Moses Moody (Out)", "Kristaps Porzingis (Out)"], "PHX": ["Mark Williams (Out)", "Drew Timme (Out)"]}, "plays": [], "market": {"spread_home": -4.5, "total": 227.5, "novig_home_ml": 0.6180717056631199, "n_books": 7, "fair_margin": 4.22, "fair_total": 227.5}, "candidates": [{"market": "spread", "pick": "GS -4.5", "p": 0.49159992345275283, "dec": 1.92, "book": "BetRivers", "novig": 0.49943757030371205, "ev": -0.056128146970714554, "american": -109, "fair_american": 103, "beats_price": false}, {"market": "spread", "pick": "PHX +4.5", "p": 0.5084000765472472, "dec": 1.91, "book": "FanDuel", "novig": 0.500562429696288, "ev": -0.028955853794757958, "american": -110, "fair_american": -103, "beats_price": false}, {"market": "total", "pick": "Over 227.5", "p": 0.5, "dec": 1.94, "book": "BetRivers", "novig": 0.5003212131206113, "ev": -0.030000000000000027, "american": -106, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 227.5", "p": 0.5, "dec": 1.95, "book": "FanDuel", "novig": 0.4996787868793887, "ev": -0.025000000000000022, "american": -105, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "GS ML", "p": 0.6084233574489579, "dec": 1.56, "book": "FanDuel", "novig": 0.6180717056631199, "ev": -0.050859562379625634, "american": -179, "fair_american": -155, "beats_price": false}, {"market": "moneyline", "pick": "PHX ML", "p": 0.3915766425510421, "dec": 2.55, "book": "Fanatics", "novig": 0.38192829433688014, "ev": -0.0014795614948427405, "american": 155, "fair_american": 155, "beats_price": false}]}, {"game_id": "401909920", "matchup": "TOR @ LAC", "home": "LAC", "away": "TOR", "start": "2026-11-03T03:00Z", "state": "pre", "detail": "11/2 - 10:00 PM EST", "model_margin": -2.59, "model_total": 223.4, "rest": {"home": {"rest": 1, "b2b": 1, "three": 1, "km": 560.0, "tz": 0.0}, "away": {"rest": 1, "b2b": 1, "three": 1, "km": 13.0, "tz": 0.0}}, "injuries": {"LAC": ["Derrick Jones Jr. (Day-To-Day)", "Brandon Ingram (Out)", "Bradley Beal (Out)", "Max Strus (Out)", "Jordan Miller (Out)", "Yanic Konan Niederhauser (Out)"], "TOR": ["Kawhi Leonard (Out)", "Malachi Smith (Out)", "Jakob Poeltl (Out)", "Nate Bittle (Out)"]}, "plays": [], "market": {"spread_home": 5.0, "total": 220.5, "novig_home_ml": 0.37296052928611917, "n_books": 7, "fair_margin": -4.86, "fair_total": 220.5}, "candidates": [{"market": "spread", "pick": "LAC +5", "p": 0.5042766650078498, "dec": 1.91, "book": "Fanatics", "novig": 0.5, "ev": -0.036831569835006794, "american": -110, "fair_american": -102, "beats_price": false}, {"market": "spread", "pick": "TOR -5", "p": 0.49572333499215016, "dec": 1.91, "book": "Fanatics", "novig": 0.5, "ev": -0.053168430164993286, "american": -110, "fair_american": 102, "beats_price": false}, {"market": "total", "pick": "Over 220.5", "p": 0.5, "dec": 1.91, "book": "DraftKings", "novig": 0.5, "ev": -0.04500000000000004, "american": -110, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 220.5", "p": 0.5, "dec": 1.91, "book": "DraftKings", "novig": 0.5, "ev": -0.04500000000000004, "american": -110, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "LAC ML", "p": 0.37699794040759754, "dec": 2.64, "book": "DraftKings", "novig": 0.37296052928611917, "ev": -0.004725437323942483, "american": 164, "fair_american": 165, "beats_price": false}, {"market": "moneyline", "pick": "TOR ML", "p": 0.6230020595924024, "dec": 1.54, "book": "FanDuel", "novig": 0.6270394707138809, "ev": -0.04057682822770026, "american": -185, "fair_american": -165, "beats_price": false}]}, {"game_id": "401909921", "matchup": "MIA @ LAL", "home": "LAL", "away": "MIA", "start": "2026-11-03T03:00Z", "state": "pre", "detail": "11/2 - 10:00 PM EST", "model_margin": 1.28, "model_total": 238.0, "rest": {"home": {"rest": 1, "b2b": 1, "three": 1, "km": 0.0, "tz": 0.0}, "away": {"rest": 3, "b2b": 0, "three": 0, "km": 3760.0, "tz": 3.0}}, "injuries": {"LAL": ["Ziaire Williams (Out)"], "MIA": ["Tim Hardaway Jr. (Questionable)", "Tre Donaldson (Out)"]}, "plays": [{"market": "moneyline", "pick": "MIA ML", "p": 0.458949770014371, "dec": 2.18, "book": "FanDuel", "novig": 0.45863219862017757, "ev": 0.0005104986313289039, "american": 118, "fair_american": 118, "beats_price": true}], "market": {"spread_home": -2.0, "total": 238.5, "novig_home_ml": 0.5413678013798224, "n_books": 7, "fair_margin": 1.96, "fair_total": 238.5}, "candidates": [{"market": "spread", "pick": "LAL -2", "p": 0.4987183262072359, "dec": 1.91, "book": "Fanatics", "novig": 0.5, "ev": -0.04744799694417945, "american": -110, "fair_american": 101, "beats_price": false}, {"market": "spread", "pick": "MIA +2", "p": 0.5012816737927641, "dec": 1.91, "book": "Fanatics", "novig": 0.5, "ev": -0.04255200305582063, "american": -110, "fair_american": -101, "beats_price": false}, {"market": "total", "pick": "Over 238.5", "p": 0.5, "dec": 1.91, "book": "DraftKings", "novig": 0.5, "ev": -0.04500000000000004, "american": -110, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 238.5", "p": 0.5, "dec": 1.91, "book": "DraftKings", "novig": 0.5, "ev": -0.04500000000000004, "american": -110, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "LAL ML", "p": 0.541050229985629, "dec": 1.82, "book": "BetRivers", "novig": 0.5413678013798224, "ev": -0.01528858142615519, "american": -122, "fair_american": -118, "beats_price": false}, {"market": "moneyline", "pick": "MIA ML", "p": 0.458949770014371, "dec": 2.18, "book": "FanDuel", "novig": 0.45863219862017757, "ev": 0.0005104986313289039, "american": 118, "fair_american": 118, "beats_price": true}]}], "plays": [{"market": "moneyline", "pick": "CHI ML", "p": 0.18739641523977824, "dec": 5.5, "book": "Bovada", "novig": 0.18496506320634143, "ev": 0.030680283818780296, "american": 450, "fair_american": 434, "beats_price": true, "matchup": "CHI @ PHI", "start": "2026-11-03T00:30Z", "game_id": "401909912"}, {"market": "moneyline", "pick": "UTAH ML", "p": 0.11395078628140887, "dec": 9.0, "book": "DraftKings", "novig": 0.11419012311226207, "ev": 0.0255570765326798, "american": 800, "fair_american": 778, "beats_price": true, "matchup": "UTAH @ SA", "start": "2026-11-03T01:30Z", "game_id": "401909917"}, {"market": "spread", "pick": "NO +5.5", "p": 0.5046380811421833, "dec": 1.99, "book": "LowVig.ag", "novig": 0.488896119492217, "ev": 0.004229781472944838, "american": -101, "fair_american": -102, "beats_price": true, "matchup": "NO @ MEM", "start": "2026-11-03T01:00Z", "game_id": "401909914"}, {"market": "moneyline", "pick": "MIA ML", "p": 0.458949770014371, "dec": 2.18, "book": "FanDuel", "novig": 0.45863219862017757, "ev": 0.0005104986313289039, "american": 118, "fair_american": 118, "beats_price": true, "matchup": "MIA @ LAL", "start": "2026-11-03T03:00Z", "game_id": "401909921"}]};const h=UI.h;
+const P={"generated_utc": "2026-11-02T04:58:49+00:00", "generated_central": "Sun Nov 1, 2026 10:58 PM CT", "slate_date": "2026-11-02", "is_today": false, "n_games": 15, "runtime_s": 7.1, "injury_report": {"official_ok": true, "stamp": "11/01/26 11:45 PM", "not_submitted": ["IND", "LAC", "LAL", "BKN", "ORL", "BOS", "TOR", "GS"], "n_listed": 124}, "status": {"state": "stale", "message": "latest run failed (UnboundLocalError) at 2026-11-02T16:55+00:00"}, "health": {"game lines": "The Odds API [cache] cache hit (0 min old, ttl 240 min); quota remaining 18456 (used 1544, reserve 500)", "player props": "The Odds API: not used", "first basket": "The Odds API: not used", "injuries": "NBA official report 11/01/26 11:45 PM ET; ESPN injuries 95 rows"}, "games": [{"game_id": "401909907", "matchup": "OKC @ CLE", "home": "CLE", "away": "OKC", "start": "2026-11-03T00:00Z", "state": "pre", "detail": "11/2 - 7:00 PM EST", "model_margin": 6.78, "model_total": 228.1, "rest": {"home": {"rest": 2, "b2b": 0, "three": 0, "km": 541.0, "tz": 1.0}, "away": {"rest": 2, "b2b": 0, "three": 0, "km": 1794.0, "tz": 1.0}}, "injuries": {"CLE": ["Peyton Watson (Questionable)", "Jaylon Tyson (Out)"], "OKC": ["Jalen Williams (Out)", "Chet Holmgren (Out)", "Cason Wallace (Out)", "Alex Caruso (Out)", "Nikola Topic (Out)", "Thomas Sorber (Out)"]}, "plays": [], "market": {"spread_home": -4.0, "total": 228.5, "novig_home_ml": 0.6106222869476301, "n_books": 11, "fair_margin": 4.17, "fair_total": 228.5}, "candidates": [{"market": "spread", "pick": "CLE -4", "p": 0.5049266774768648, "dec": 1.95, "book": "Bovada", "novig": 0.49825479930191974, "ev": -0.015392978920113598, "american": -105, "fair_american": -102, "beats_price": false}, {"market": "spread", "pick": "OKC +4", "p": 0.4950733225231352, "dec": 1.94, "book": "LowVig.ag", "novig": 0.5017452006980803, "ev": -0.039557754305117765, "american": -106, "fair_american": 102, "beats_price": false}, {"market": "total", "pick": "Over 228.5", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5006561679790027, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 228.5", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.4993438320209973, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "CLE ML", "p": 0.6173173086519824, "dec": 1.59, "book": "LowVig.ag", "novig": 0.6106222869476301, "ev": -0.01846547924334785, "american": -169, "fair_american": -161, "beats_price": false}, {"market": "moneyline", "pick": "OKC ML", "p": 0.3826826913480176, "dec": 2.56, "book": "FanDuel", "novig": 0.3893777130523699, "ev": -0.020332310149074995, "american": 156, "fair_american": 161, "beats_price": false}]}, {"game_id": "401909908", "matchup": "DET @ CHA", "home": "CHA", "away": "DET", "start": "2026-11-03T00:30Z", "state": "pre", "detail": "11/2 - 7:30 PM EST", "model_margin": -5.09, "model_total": 215.4, "rest": {"home": {"rest": 2, "b2b": 0, "three": 1, "km": 0.0, "tz": 0.0}, "away": {"rest": 3, "b2b": 0, "three": 0, "km": 854.0, "tz": 0.0}}, "injuries": {"CHA": ["Kon Knueppel (Out)", "Grant Williams (Out)"], "DET": ["Elijah Harkless (Questionable)", "Isaiah Joe (Questionable)", "Jalen Duren (Out)", "Ugonna Onyenso (Out)"]}, "plays": [], "market": {"spread_home": 4.0, "total": 211.0, "novig_home_ml": 0.39283275637284626, "n_books": 11, "fair_margin": -4.06, "fair_total": 211.0}, "candidates": [{"market": "spread", "pick": "CHA +4", "p": 0.49806946839686506, "dec": 1.94, "book": "LowVig.ag", "novig": 0.5, "ev": -0.03374523131008178, "american": -106, "fair_american": 101, "beats_price": false}, {"market": "spread", "pick": "DET -4", "p": 0.5019305316031349, "dec": 1.94, "book": "LowVig.ag", "novig": 0.5, "ev": -0.026254768689918273, "american": -106, "fair_american": -101, "beats_price": false}, {"market": "total", "pick": "Over 211", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 211", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "CHA ML", "p": 0.3896955472898655, "dec": 2.5, "book": "LowVig.ag", "novig": 0.39283275637284626, "ev": -0.025761131775336232, "american": 150, "fair_american": 157, "beats_price": false}, {"market": "moneyline", "pick": "DET ML", "p": 0.6103044527101344, "dec": 1.6, "book": "FanDuel", "novig": 0.6071672436271538, "ev": -0.023512875663784794, "american": -167, "fair_american": -157, "beats_price": false}]}, {"game_id": "401909909", "matchup": "ATL @ IND", "home": "IND", "away": "ATL", "start": "2026-11-03T00:30Z", "state": "pre", "detail": "11/2 - 7:30 PM EST", "model_margin": -6.49, "model_total": 233.3, "rest": {"home": {"rest": 1, "b2b": 1, "three": 1, "km": 0.0, "tz": 0.0}, "away": {"rest": 2, "b2b": 0, "three": 0, "km": 1148.0, "tz": 1.0}}, "injuries": {"IND": ["Tyrese Haliburton (Out)", "Ivica Zubac (Out)", "Obi Toppin (Out)", "Ben Sheppard (Out)", "Johnny Furphy (Out)", "T.J. McConnell (Out)"], "ATL": ["Jalen Johnson (Questionable)", "Jalen Wilson (Doubtful)", "Keshon Gilbert (Doubtful)", "Kingston Flemings (Out)", "Jock Landale (Out)", "Mouhamed Gueye (Out)", "Henri Veesaar (Out)"]}, "plays": [], "market": {"spread_home": 4.5, "total": 232.5, "novig_home_ml": 0.3702698306041989, "n_books": 6, "fair_margin": -4.62, "fair_total": 232.5}, "candidates": [{"market": "spread", "pick": "IND +4.5", "p": 0.4964685752141315, "dec": 1.95, "book": "BetMGM", "novig": 0.4908296803213735, "ev": -0.03188627833244362, "american": -105, "fair_american": 101, "beats_price": false}, {"market": "spread", "pick": "ATL -4.5", "p": 0.5035314247858684, "dec": 1.88, "book": "FanDuel", "novig": 0.5091703196786266, "ev": -0.05336092140256743, "american": -114, "fair_american": -101, "beats_price": false}, {"market": "total", "pick": "Over 232.5", "p": 0.5, "dec": 1.91, "book": "DraftKings", "novig": 0.5, "ev": -0.04500000000000004, "american": -110, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 232.5", "p": 0.5, "dec": 1.91, "book": "DraftKings", "novig": 0.5, "ev": -0.04500000000000004, "american": -110, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "IND ML", "p": 0.36585293333398217, "dec": 2.64, "book": "DraftKings", "novig": 0.3702698306041989, "ev": -0.03414825599828708, "american": 164, "fair_american": 173, "beats_price": false}, {"market": "moneyline", "pick": "ATL ML", "p": 0.6341470666660178, "dec": 1.56, "book": "FanDuel", "novig": 0.6297301693958011, "ev": -0.010730576001012126, "american": -179, "fair_american": -173, "beats_price": false}]}, {"game_id": "401909910", "matchup": "BKN @ NY", "home": "NY", "away": "BKN", "start": "2026-11-03T00:30Z", "state": "pre", "detail": "11/2 - 7:30 PM EST", "model_margin": 18.2, "model_total": 216.9, "rest": {"home": {"rest": 3, "b2b": 0, "three": 0, "km": 137.0, "tz": 0.0}, "away": {"rest": 1, "b2b": 1, "three": 1, "km": 1037.0, "tz": 0.0}}, "injuries": {"NY": ["Jose Alvarado (Questionable)"], "BKN": ["Egor Demin (Out)", "Mikel Brown Jr. (Out)", "Ben Saraf (Out)", "Tyler Bilodeau (Out)"]}, "plays": [], "market": {"spread_home": -14.5, "total": 221.5, "novig_home_ml": 0.8639602251821845, "n_books": 11, "fair_margin": 14.72, "fair_total": 221.5}, "candidates": [{"market": "spread", "pick": "NY -14.5", "p": 0.5065611226937368, "dec": 1.91, "book": "DraftKings", "novig": 0.5018010265078122, "ev": -0.03246825565496281, "american": -110, "fair_american": -103, "beats_price": false}, {"market": "spread", "pick": "BKN +14.5", "p": 0.49343887730626323, "dec": 1.95, "book": "Bovada", "novig": 0.4981989734921878, "ev": -0.03779418925278666, "american": -105, "fair_american": 103, "beats_price": false}, {"market": "total", "pick": "Over 221.5", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5013098374602271, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 221.5", "p": 0.5, "dec": 1.95, "book": "DraftKings", "novig": 0.49869016253977294, "ev": -0.025000000000000022, "american": -105, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "NY ML", "p": 0.8681960464169488, "dec": 1.12, "book": "BetOnline.ag", "novig": 0.8639602251821845, "ev": -0.02762042801301723, "american": -833, "fair_american": -659, "beats_price": false}, {"market": "moneyline", "pick": "BKN ML", "p": 0.1318039535830512, "dec": 7.5, "book": "Bovada", "novig": 0.13603977481781548, "ev": -0.011470348127116115, "american": 650, "fair_american": 659, "beats_price": false}]}, {"game_id": "401909911", "matchup": "WSH @ ORL", "home": "ORL", "away": "WSH", "start": "2026-11-03T00:30Z", "state": "pre", "detail": "11/2 - 7:30 PM EST", "model_margin": 0.63, "model_total": 231.9, "rest": {"home": {"rest": 1, "b2b": 1, "three": 1, "km": 0.0, "tz": 0.0}, "away": {"rest": 3, "b2b": 0, "three": 0, "km": 1220.0, "tz": 0.0}}, "injuries": {"ORL": ["Paolo Banchero (Out)", "Jalen Suggs (Out)", "Izaiyah Nelson (Out)", "Noah Penda (Out)"], "WSH": ["Alex Sarr (Questionable)", "Anthony Gill (Questionable)", "Jamir Watkins (Out)", "Justin Champagnie (Out)", "Tristan Vukcevic (Out)"]}, "plays": [], "market": {"spread_home": -2.5, "total": 224.5, "novig_home_ml": 0.5616874341494671, "n_books": 11, "fair_margin": 2.39, "fair_total": 224.5}, "candidates": [{"market": "spread", "pick": "ORL -2.5", "p": 0.49668460597728087, "dec": 1.94, "book": "LowVig.ag", "novig": 0.4986910994764398, "ev": -0.03643186440407509, "american": -106, "fair_american": 101, "beats_price": false}, {"market": "spread", "pick": "WSH +2.5", "p": 0.5033153940227191, "dec": 1.94, "book": "LowVig.ag", "novig": 0.5013089005235603, "ev": -0.023568135595924966, "american": -106, "fair_american": -101, "beats_price": false}, {"market": "total", "pick": "Over 224.5", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 224.5", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "ORL ML", "p": 0.5582602593630136, "dec": 1.74, "book": "DraftKings", "novig": 0.5616874341494671, "ev": -0.028627148708356365, "american": -135, "fair_american": -126, "beats_price": false}, {"market": "moneyline", "pick": "WSH ML", "p": 0.4417397406369864, "dec": 2.25, "book": "BetRivers", "novig": 0.4383125658505329, "ev": -0.0060855835667805724, "american": 125, "fair_american": 126, "beats_price": false}]}, {"game_id": "401909912", "matchup": "CHI @ PHI", "home": "PHI", "away": "CHI", "start": "2026-11-03T00:30Z", "state": "pre", "detail": "11/2 - 7:30 PM EST", "model_margin": 10.65, "model_total": 233.3, "rest": {"home": {"rest": 2, "b2b": 0, "three": 1, "km": 721.0, "tz": 0.0}, "away": {"rest": 3, "b2b": 0, "three": 0, "km": 440.0, "tz": 0.0}}, "injuries": {"PHI": ["Joel Embiid (Questionable)", "Dominick Barlow (Out)"], "CHI": ["Jalen Smith (Probable)", "Tobe Awaka (Probable)", "Dailyn Swain (Day-To-Day)", "Nic Claxton (Doubtful)"]}, "plays": [{"market": "moneyline", "pick": "CHI ML", "p": 0.18739641523977824, "dec": 5.5, "book": "Bovada", "novig": 0.18496506320634143, "ev": 0.030680283818780296, "american": 450, "fair_american": 434, "beats_price": true}], "market": {"spread_home": -11.5, "total": 239.5, "novig_home_ml": 0.8150349367936586, "n_books": 11, "fair_margin": 11.45, "fair_total": 239.5}, "candidates": [{"market": "spread", "pick": "PHI -11.5", "p": 0.498483557988098, "dec": 1.94, "book": "LowVig.ag", "novig": 0.5011634671320535, "ev": -0.032941897503089845, "american": -106, "fair_american": 101, "beats_price": false}, {"market": "spread", "pick": "CHI +11.5", "p": 0.501516442011902, "dec": 1.95, "book": "Fanatics", "novig": 0.4988365328679465, "ev": -0.02204293807679103, "american": -105, "fair_american": -101, "beats_price": false}, {"market": "total", "pick": "Over 239.5", "p": 0.5, "dec": 1.91, "book": "DraftKings", "novig": 0.5, "ev": -0.04500000000000004, "american": -110, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 239.5", "p": 0.5, "dec": 1.91, "book": "DraftKings", "novig": 0.5, "ev": -0.04500000000000004, "american": -110, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "PHI ML", "p": 0.8126035847602218, "dec": 1.19, "book": "BetRivers", "novig": 0.8150349367936586, "ev": -0.033001734135336136, "american": -526, "fair_american": -434, "beats_price": false}, {"market": "moneyline", "pick": "CHI ML", "p": 0.18739641523977824, "dec": 5.5, "book": "Bovada", "novig": 0.18496506320634143, "ev": 0.030680283818780296, "american": 450, "fair_american": 434, "beats_price": true}]}, {"game_id": "401909913", "matchup": "SAC @ DAL", "home": "DAL", "away": "SAC", "start": "2026-11-03T01:00Z", "state": "pre", "detail": "11/2 - 8:00 PM EST", "model_margin": 12.03, "model_total": 235.6, "rest": {"home": {"rest": 3, "b2b": 0, "three": 0, "km": 0.0, "tz": 0.0}, "away": {"rest": 2, "b2b": 0, "three": 0, "km": 676.0, "tz": 0.0}}, "injuries": {"DAL": ["Kyrie Irving (Questionable)", "Santi Aldama (Doubtful)", "Dereck Lively II (Out)", "Sergio de Larrea (Out)", "Tarik Biberovic (Out)"], "SAC": ["Zach LaVine (Questionable)", "Dylan Cardwell (Questionable)", "Keegan Murray (Out)", "Maxime Raynaud (Out)", "Ben Simmons (Out)"]}, "plays": [], "market": {"spread_home": -10.0, "total": 234.5, "novig_home_ml": 0.7672774361374716, "n_books": 10, "fair_margin": 10.12, "fair_total": 234.5}, "candidates": [{"market": "spread", "pick": "DAL -10", "p": 0.5036073202238863, "dec": 1.94, "book": "LowVig.ag", "novig": 0.5, "ev": -0.023001798765660553, "american": -106, "fair_american": -101, "beats_price": false}, {"market": "spread", "pick": "SAC +10", "p": 0.4963926797761137, "dec": 1.94, "book": "LowVig.ag", "novig": 0.5, "ev": -0.0369982012343395, "american": -106, "fair_american": 101, "beats_price": false}, {"market": "total", "pick": "Over 234.5", "p": 0.5, "dec": 1.94, "book": "BetRivers", "novig": 0.5001606065603056, "ev": -0.030000000000000027, "american": -106, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 234.5", "p": 0.5, "dec": 1.95, "book": "FanDuel", "novig": 0.4998393934396944, "ev": -0.025000000000000022, "american": -105, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "DAL ML", "p": 0.7710738749022832, "dec": 1.26, "book": "BetOnline.ag", "novig": 0.7672774361374716, "ev": -0.028446917623123125, "american": -385, "fair_american": -337, "beats_price": false}, {"market": "moneyline", "pick": "SAC ML", "p": 0.22892612509771681, "dec": 4.2, "book": "Caesars", "novig": 0.23272256386252843, "ev": -0.03851027458958933, "american": 320, "fair_american": 337, "beats_price": false}]}, {"game_id": "401909914", "matchup": "NO @ MEM", "home": "MEM", "away": "NO", "start": "2026-11-03T01:00Z", "state": "pre", "detail": "11/2 - 8:00 PM EST", "model_margin": 2.89, "model_total": 235.9, "rest": {"home": {"rest": 2, "b2b": 0, "three": 0, "km": 0.0, "tz": 0.0}, "away": {"rest": 2, "b2b": 0, "three": 0, "km": 577.0, "tz": 0.0}}, "injuries": {"MEM": ["Quinten Post (Questionable)", "Scotty Pippen Jr. (Doubtful)"], "NO": ["Trey Murphy III (Probable)", "Julian Reese (Probable)", "Malik Dia (Doubtful)", "Jaron Pierre Jr. (Doubtful)", "Yves Missi (Out)", "Jordan Poole (Out)"]}, "plays": [{"market": "spread", "pick": "NO +5.5", "p": 0.5046380811421833, "dec": 1.99, "book": "LowVig.ag", "novig": 0.488896119492217, "ev": 0.004229781472944838, "american": -101, "fair_american": -102, "beats_price": true}], "market": {"spread_home": -5.5, "total": 235.0, "novig_home_ml": 0.6608666453446331, "n_books": 11, "fair_margin": 5.34, "fair_total": 235.0}, "candidates": [{"market": "spread", "pick": "MEM -5.5", "p": 0.49536191885781666, "dec": 1.9, "book": "LowVig.ag", "novig": 0.511103880507783, "ev": -0.058812354170148406, "american": -111, "fair_american": 102, "beats_price": false}, {"market": "spread", "pick": "NO +5.5", "p": 0.5046380811421833, "dec": 1.99, "book": "LowVig.ag", "novig": 0.488896119492217, "ev": 0.004229781472944838, "american": -101, "fair_american": -102, "beats_price": true}, {"market": "total", "pick": "Over 235", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 235", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "MEM ML", "p": 0.6549607060731572, "dec": 1.47, "book": "BetOnline.ag", "novig": 0.6608666453446331, "ev": -0.037207762072459016, "american": -213, "fair_american": -190, "beats_price": false}, {"market": "moneyline", "pick": "NO ML", "p": 0.34503929392684285, "dec": 2.88, "book": "BetRivers", "novig": 0.33913335465536687, "ev": -0.006286833490692589, "american": 188, "fair_american": 190, "beats_price": false}]}, {"game_id": "401909915", "matchup": "MIL @ MIN", "home": "MIN", "away": "MIL", "start": "2026-11-03T01:00Z", "state": "pre", "detail": "11/2 - 8:00 PM EST", "model_margin": 11.74, "model_total": 230.4, "rest": {"home": {"rest": 2, "b2b": 0, "three": 1, "km": 1788.0, "tz": 0.0}, "away": {"rest": 2, "b2b": 0, "three": 0, "km": 479.0, "tz": 0.0}}, "injuries": {"MIN": ["Anthony Edwards (Out)", "Donte DiVincenzo (Out)"], "MIL": []}, "plays": [], "market": {"spread_home": -10.5, "total": 233.5, "novig_home_ml": 0.7889865065146441, "n_books": 11, "fair_margin": 10.57, "fair_total": 233.5}, "candidates": [{"market": "spread", "pick": "MIN -10.5", "p": 0.5022063214788263, "dec": 1.94, "book": "LowVig.ag", "novig": 0.502750408816699, "ev": -0.025719736331077048, "american": -106, "fair_american": -101, "beats_price": false}, {"market": "spread", "pick": "MIL +10.5", "p": 0.49779367852117373, "dec": 1.95, "book": "DraftKings", "novig": 0.49724959118330103, "ev": -0.02930232688371126, "american": -105, "fair_american": 101, "beats_price": false}, {"market": "total", "pick": "Over 233.5", "p": 0.5, "dec": 1.95, "book": "FanDuel", "novig": 0.4984293193717278, "ev": -0.025000000000000022, "american": -105, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 233.5", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5015706806282723, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "MIN ML", "p": 0.7903691484721455, "dec": 1.23, "book": "LowVig.ag", "novig": 0.7889865065146441, "ev": -0.02784594737926105, "american": -435, "fair_american": -377, "beats_price": false}, {"market": "moneyline", "pick": "MIL ML", "p": 0.20963085152785454, "dec": 4.7, "book": "DraftKings", "novig": 0.21101349348535592, "ev": -0.014734997819083606, "american": 370, "fair_american": 377, "beats_price": false}]}, {"game_id": "401909916", "matchup": "BOS @ HOU", "home": "HOU", "away": "BOS", "start": "2026-11-03T01:30Z", "state": "pre", "detail": "11/2 - 8:30 PM EST", "model_margin": 4.87, "model_total": 221.8, "rest": {"home": {"rest": 2, "b2b": 0, "three": 1, "km": 0.0, "tz": 0.0}, "away": {"rest": 1, "b2b": 1, "three": 1, "km": 1363.0, "tz": 1.0}}, "injuries": {"HOU": ["Reed Sheppard (Questionable)", "Clint Capela (Questionable)", "Steven Adams (Out)", "Quadir Copeland (Out)"], "BOS": ["Mitchell Robinson (Out)", "Devin Carter (Out)"]}, "plays": [], "market": {"spread_home": -5.0, "total": 219.5, "novig_home_ml": 0.6392996844130759, "n_books": 11, "fair_margin": 4.99, "fair_total": 219.5}, "candidates": [{"market": "spread", "pick": "HOU -5", "p": 0.499775126267175, "dec": 1.94, "book": "LowVig.ag", "novig": 0.5, "ev": -0.03043625504168046, "american": -106, "fair_american": 100, "beats_price": false}, {"market": "spread", "pick": "BOS +5", "p": 0.500224873732825, "dec": 1.94, "book": "LowVig.ag", "novig": 0.5, "ev": -0.029563744958319593, "american": -106, "fair_american": -100, "beats_price": false}, {"market": "total", "pick": "Over 219.5", "p": 0.5, "dec": 1.93, "book": "BetRivers", "novig": 0.5005585034854937, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 219.5", "p": 0.5, "dec": 1.95, "book": "FanDuel", "novig": 0.4994414965145063, "ev": -0.025000000000000022, "american": -105, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "HOU ML", "p": 0.6393402365606419, "dec": 1.51, "book": "DraftKings", "novig": 0.6392996844130759, "ev": -0.034596242793430765, "american": -196, "fair_american": -177, "beats_price": false}, {"market": "moneyline", "pick": "BOS ML", "p": 0.3606597634393581, "dec": 2.75, "book": "BetRivers", "novig": 0.36070031558692406, "ev": -0.008185650541765122, "american": 175, "fair_american": 177, "beats_price": false}]}, {"game_id": "401909917", "matchup": "UTAH @ SA", "home": "SA", "away": "UTAH", "start": "2026-11-03T01:30Z", "state": "pre", "detail": "11/2 - 8:30 PM EST", "model_margin": 16.61, "model_total": 234.6, "rest": {"home": {"rest": 2, "b2b": 0, "three": 0, "km": 0.0, "tz": 0.0}, "away": {"rest": 2, "b2b": 0, "three": 0, "km": 1754.0, "tz": 1.0}}, "injuries": {"SA": ["Tobias Harris (Out)", "Jayden Quaintance (Out)"], "UTAH": ["Jaren Jackson Jr. (Out)", "Jusuf Nurkic (Out)"]}, "plays": [{"market": "moneyline", "pick": "UTAH ML", "p": 0.11395078628140887, "dec": 9.0, "book": "DraftKings", "novig": 0.11419012311226207, "ev": 0.0255570765326798, "american": 800, "fair_american": 778, "beats_price": true}], "market": {"spread_home": -16.5, "total": 231.0, "novig_home_ml": 0.8858098768877379, "n_books": 11, "fair_margin": 16.51, "fair_total": 231.0}, "candidates": [{"market": "spread", "pick": "SA -16.5", "p": 0.5001959819445336, "dec": 1.95, "book": "DraftKings", "novig": 0.49215563934930245, "ev": -0.02461783520815941, "american": -105, "fair_american": -100, "beats_price": false}, {"market": "spread", "pick": "UTAH +16.5", "p": 0.49980401805546637, "dec": 1.91, "book": "Bovada", "novig": 0.5078443606506975, "ev": -0.04537432551405929, "american": -110, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Over 231", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 231", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "SA ML", "p": 0.8860492137185911, "dec": 1.09, "book": "BetOnline.ag", "novig": 0.8858098768877379, "ev": -0.03420635704673558, "american": -1111, "fair_american": -778, "beats_price": false}, {"market": "moneyline", "pick": "UTAH ML", "p": 0.11395078628140887, "dec": 9.0, "book": "DraftKings", "novig": 0.11419012311226207, "ev": 0.0255570765326798, "american": 800, "fair_american": 778, "beats_price": true}]}, {"game_id": "401909918", "matchup": "POR @ DEN", "home": "DEN", "away": "POR", "start": "2026-11-03T02:00Z", "state": "pre", "detail": "11/2 - 9:00 PM EST", "model_margin": 3.73, "model_total": 234.7, "rest": {"home": {"rest": 3, "b2b": 0, "three": 0, "km": 942.0, "tz": 0.0}, "away": {"rest": 2, "b2b": 0, "three": 0, "km": 596.0, "tz": 0.0}}, "injuries": {"DEN": ["Alpha Diallo (Questionable)", "Spencer Jones (Out)", "Julian Strawther (Out)"], "POR": ["Ja Morant (Out)", "Shaedon Sharpe (Out)"]}, "plays": [], "market": {"spread_home": -4.0, "total": 230.0, "novig_home_ml": 0.6072510942529242, "n_books": 11, "fair_margin": 3.98, "fair_total": 230.0}, "candidates": [{"market": "spread", "pick": "DEN -4", "p": 0.4995146992957069, "dec": 1.94, "book": "LowVig.ag", "novig": 0.5, "ev": -0.030941483366328626, "american": -106, "fair_american": 100, "beats_price": false}, {"market": "spread", "pick": "POR +4", "p": 0.5004853007042931, "dec": 1.94, "book": "LowVig.ag", "novig": 0.5, "ev": -0.029058516633671427, "american": -106, "fair_american": -100, "beats_price": false}, {"market": "total", "pick": "Over 230", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 230", "p": 0.5, "dec": 1.93, "book": "LowVig.ag", "novig": 0.5, "ev": -0.03500000000000003, "american": -108, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "DEN ML", "p": 0.6072989886211935, "dec": 1.61, "book": "FanDuel", "novig": 0.6072510942529242, "ev": -0.022248628319878505, "american": -164, "fair_american": -155, "beats_price": false}, {"market": "moneyline", "pick": "POR ML", "p": 0.39270101137880653, "dec": 2.5, "book": "LowVig.ag", "novig": 0.39274890574707577, "ev": -0.018247471552983674, "american": 150, "fair_american": 155, "beats_price": false}]}, {"game_id": "401909919", "matchup": "PHX @ GS", "home": "GS", "away": "PHX", "start": "2026-11-03T03:00Z", "state": "pre", "detail": "11/2 - 10:00 PM EST", "model_margin": -0.23, "model_total": 226.8, "rest": {"home": {"rest": 1, "b2b": 1, "three": 1, "km": 0.0, "tz": 0.0}, "away": {"rest": 3, "b2b": 0, "three": 0, "km": 1048.0, "tz": 1.0}}, "injuries": {"GS": ["Stephen Curry (Out)", "Draymond Green (Out)", "Jimmy Butler III (Out)", "Moses Moody (Out)", "Kristaps Porzingis (Out)"], "PHX": ["Mark Williams (Out)", "Drew Timme (Out)"]}, "plays": [], "market": {"spread_home": -4.5, "total": 227.5, "novig_home_ml": 0.6180717056631199, "n_books": 7, "fair_margin": 4.22, "fair_total": 227.5}, "candidates": [{"market": "spread", "pick": "GS -4.5", "p": 0.49159992345275283, "dec": 1.92, "book": "BetRivers", "novig": 0.49943757030371205, "ev": -0.056128146970714554, "american": -109, "fair_american": 103, "beats_price": false}, {"market": "spread", "pick": "PHX +4.5", "p": 0.5084000765472472, "dec": 1.91, "book": "FanDuel", "novig": 0.500562429696288, "ev": -0.028955853794757958, "american": -110, "fair_american": -103, "beats_price": false}, {"market": "total", "pick": "Over 227.5", "p": 0.5, "dec": 1.94, "book": "BetRivers", "novig": 0.5003212131206113, "ev": -0.030000000000000027, "american": -106, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 227.5", "p": 0.5, "dec": 1.95, "book": "FanDuel", "novig": 0.4996787868793887, "ev": -0.025000000000000022, "american": -105, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "GS ML", "p": 0.6084233574489579, "dec": 1.56, "book": "FanDuel", "novig": 0.6180717056631199, "ev": -0.050859562379625634, "american": -179, "fair_american": -155, "beats_price": false}, {"market": "moneyline", "pick": "PHX ML", "p": 0.3915766425510421, "dec": 2.55, "book": "Fanatics", "novig": 0.38192829433688014, "ev": -0.0014795614948427405, "american": 155, "fair_american": 155, "beats_price": false}]}, {"game_id": "401909920", "matchup": "TOR @ LAC", "home": "LAC", "away": "TOR", "start": "2026-11-03T03:00Z", "state": "pre", "detail": "11/2 - 10:00 PM EST", "model_margin": -2.59, "model_total": 223.4, "rest": {"home": {"rest": 1, "b2b": 1, "three": 1, "km": 560.0, "tz": 0.0}, "away": {"rest": 1, "b2b": 1, "three": 1, "km": 13.0, "tz": 0.0}}, "injuries": {"LAC": ["Derrick Jones Jr. (Day-To-Day)", "Brandon Ingram (Out)", "Bradley Beal (Out)", "Max Strus (Out)", "Jordan Miller (Out)", "Yanic Konan Niederhauser (Out)"], "TOR": ["Kawhi Leonard (Out)", "Malachi Smith (Out)", "Jakob Poeltl (Out)", "Nate Bittle (Out)"]}, "plays": [], "market": {"spread_home": 5.0, "total": 220.5, "novig_home_ml": 0.37296052928611917, "n_books": 7, "fair_margin": -4.86, "fair_total": 220.5}, "candidates": [{"market": "spread", "pick": "LAC +5", "p": 0.5042766650078498, "dec": 1.91, "book": "Fanatics", "novig": 0.5, "ev": -0.036831569835006794, "american": -110, "fair_american": -102, "beats_price": false}, {"market": "spread", "pick": "TOR -5", "p": 0.49572333499215016, "dec": 1.91, "book": "Fanatics", "novig": 0.5, "ev": -0.053168430164993286, "american": -110, "fair_american": 102, "beats_price": false}, {"market": "total", "pick": "Over 220.5", "p": 0.5, "dec": 1.91, "book": "DraftKings", "novig": 0.5, "ev": -0.04500000000000004, "american": -110, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 220.5", "p": 0.5, "dec": 1.91, "book": "DraftKings", "novig": 0.5, "ev": -0.04500000000000004, "american": -110, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "LAC ML", "p": 0.37699794040759754, "dec": 2.64, "book": "DraftKings", "novig": 0.37296052928611917, "ev": -0.004725437323942483, "american": 164, "fair_american": 165, "beats_price": false}, {"market": "moneyline", "pick": "TOR ML", "p": 0.6230020595924024, "dec": 1.54, "book": "FanDuel", "novig": 0.6270394707138809, "ev": -0.04057682822770026, "american": -185, "fair_american": -165, "beats_price": false}]}, {"game_id": "401909921", "matchup": "MIA @ LAL", "home": "LAL", "away": "MIA", "start": "2026-11-03T03:00Z", "state": "pre", "detail": "11/2 - 10:00 PM EST", "model_margin": 1.28, "model_total": 238.0, "rest": {"home": {"rest": 1, "b2b": 1, "three": 1, "km": 0.0, "tz": 0.0}, "away": {"rest": 3, "b2b": 0, "three": 0, "km": 3760.0, "tz": 3.0}}, "injuries": {"LAL": ["Ziaire Williams (Out)"], "MIA": ["Tim Hardaway Jr. (Questionable)", "Tre Donaldson (Out)"]}, "plays": [{"market": "moneyline", "pick": "MIA ML", "p": 0.458949770014371, "dec": 2.18, "book": "FanDuel", "novig": 0.45863219862017757, "ev": 0.0005104986313289039, "american": 118, "fair_american": 118, "beats_price": true}], "market": {"spread_home": -2.0, "total": 238.5, "novig_home_ml": 0.5413678013798224, "n_books": 7, "fair_margin": 1.96, "fair_total": 238.5}, "candidates": [{"market": "spread", "pick": "LAL -2", "p": 0.4987183262072359, "dec": 1.91, "book": "Fanatics", "novig": 0.5, "ev": -0.04744799694417945, "american": -110, "fair_american": 101, "beats_price": false}, {"market": "spread", "pick": "MIA +2", "p": 0.5012816737927641, "dec": 1.91, "book": "Fanatics", "novig": 0.5, "ev": -0.04255200305582063, "american": -110, "fair_american": -101, "beats_price": false}, {"market": "total", "pick": "Over 238.5", "p": 0.5, "dec": 1.91, "book": "DraftKings", "novig": 0.5, "ev": -0.04500000000000004, "american": -110, "fair_american": 100, "beats_price": false}, {"market": "total", "pick": "Under 238.5", "p": 0.5, "dec": 1.91, "book": "DraftKings", "novig": 0.5, "ev": -0.04500000000000004, "american": -110, "fair_american": 100, "beats_price": false}, {"market": "moneyline", "pick": "LAL ML", "p": 0.541050229985629, "dec": 1.82, "book": "BetRivers", "novig": 0.5413678013798224, "ev": -0.01528858142615519, "american": -122, "fair_american": -118, "beats_price": false}, {"market": "moneyline", "pick": "MIA ML", "p": 0.458949770014371, "dec": 2.18, "book": "FanDuel", "novig": 0.45863219862017757, "ev": 0.0005104986313289039, "american": 118, "fair_american": 118, "beats_price": true}]}], "plays": [{"market": "moneyline", "pick": "CHI ML", "p": 0.18739641523977824, "dec": 5.5, "book": "Bovada", "novig": 0.18496506320634143, "ev": 0.030680283818780296, "american": 450, "fair_american": 434, "beats_price": true, "matchup": "CHI @ PHI", "start": "2026-11-03T00:30Z", "game_id": "401909912"}, {"market": "moneyline", "pick": "UTAH ML", "p": 0.11395078628140887, "dec": 9.0, "book": "DraftKings", "novig": 0.11419012311226207, "ev": 0.0255570765326798, "american": 800, "fair_american": 778, "beats_price": true, "matchup": "UTAH @ SA", "start": "2026-11-03T01:30Z", "game_id": "401909917"}, {"market": "spread", "pick": "NO +5.5", "p": 0.5046380811421833, "dec": 1.99, "book": "LowVig.ag", "novig": 0.488896119492217, "ev": 0.004229781472944838, "american": -101, "fair_american": -102, "beats_price": true, "matchup": "NO @ MEM", "start": "2026-11-03T01:00Z", "game_id": "401909914"}, {"market": "moneyline", "pick": "MIA ML", "p": 0.458949770014371, "dec": 2.18, "book": "FanDuel", "novig": 0.45863219862017757, "ev": 0.0005104986313289039, "american": 118, "fair_american": 118, "beats_price": true, "matchup": "MIA @ LAL", "start": "2026-11-03T03:00Z", "game_id": "401909921"}]};const h=UI.h;
 const pc=x=>x==null?'':(100*x).toFixed(1)+'%',am=x=>x==null?'':(x>0?'+'+x:''+x),ev=x=>x==null?'':(x>=0?'+':'')+(100*x).toFixed(1)+'%';
 // PICK grade (same rule as /workspace/pickgrade/pick_grade.py on every board): edge = chance - break-even of the best price (pts), EV %.
 const PG={a_pts:4,b_pts:2,a_ev:8,b_ev:4};
@@ -802,333 +561,6 @@ if(window.MutationObserver){
   mo=new MutationObserver(function(){if(busy||pend)return;pend=true;requestAnimationFrame(function(){pend=false;busy=true;try{colourise(D.body)}catch(e){}busy=false})});
   mo.observe(D.body,{childList:true,subtree:true});
 }
-})();
-
-</script><script id="gd-data" type="application/json">{"kind":"nba","games":[{"id":"401909907","a":"OKC","h":"CLE","an":"OKC","hn":"CLE","ts":1793664000.0,"when":"Mon Nov 2, 6:00 PM CT","proj":{"a":110.7,"h":117.4,"total":228.1,"margin":6.8},"rng":{"a":[102,120],"h":[108,126]},"bars":[{"t":"Simulated margin","items":[["CLE by 18+",0.296,"h"],["CLE by 11-17",0.1302,"h"],["CLE by 6-10",0.0993,"h"],["CLE by 1-5",0.0977,"h"],["OKC by 1-5",0.0883,"a"],["OKC by 6-10",0.0758,"a"],["OKC by 11-17",0.0814,"a"],["OKC by 18+",0.1124,"a"]]}],"sp":{"model":-6.8,"mkt":-4.0,"ph":50.5,"pa":49.5},"tot":{"model":228.1,"mkt":228.5,"po":50.0,"pu":50.0,"rng":[216,240]},"win":{"a":38.3,"h":61.7},"ml":{"fa":161,"fh":-161,"ba":156,"bh":-169,"bka":"FanDuel","bkh":"LowVig.ag"},"facts":[["OKC rest","2d rest, 1794 km travel"],["CLE rest","2d rest, 541 km travel"]],"inj":[["CLE",["Peyton Watson (Questionable)","Jaylon Tyson (Out)"]],["OKC",["Jalen Williams (Out)","Chet Holmgren (Out)","Cason Wallace (Out)","Alex Caruso (Out)","Nikola Topic (Out)","Thomas Sorber (Out)"]]],"picks":[],"state":"pre"},{"id":"401909908","a":"DET","h":"CHA","an":"DET","hn":"CHA","ts":1793665800.0,"when":"Mon Nov 2, 6:30 PM CT","proj":{"a":110.2,"h":105.2,"total":215.4,"margin":-5.1},"rng":{"a":[102,119],"h":[97,114]},"bars":[{"t":"Simulated margin","items":[["CHA by 18+",0.1069,"h"],["CHA by 11-17",0.0886,"h"],["CHA by 6-10",0.0846,"h"],["CHA by 1-5",0.0992,"h"],["DET by 1-5",0.1087,"a"],["DET by 6-10",0.108,"a"],["DET by 11-17",0.1356,"a"],["DET by 18+",0.2473,"a"]]}],"sp":{"model":5.1,"mkt":4.0,"ph":49.8,"pa":50.2},"tot":{"model":215.4,"mkt":211.0,"po":50.0,"pu":50.0,"rng":[203,228]},"win":{"a":61.0,"h":39.0},"ml":{"fa":-157,"fh":157,"ba":-167,"bh":150,"bka":"FanDuel","bkh":"LowVig.ag"},"facts":[["DET rest","3d rest, 854 km travel"],["CHA rest","2d rest, 3rd game in 4 nights"]],"inj":[["CHA",["Kon Knueppel (Out)","Grant Williams (Out)"]],["DET",["Elijah Harkless (Questionable)","Isaiah Joe (Questionable)","Jalen Duren (Out)","Ugonna Onyenso (Out)"]]],"picks":[],"state":"pre"},{"id":"401909909","a":"ATL","h":"IND","an":"ATL","hn":"IND","ts":1793665800.0,"when":"Mon Nov 2, 6:30 PM CT","proj":{"a":119.9,"h":113.4,"total":233.3,"margin":-6.5},"rng":{"a":[111,129],"h":[105,122]},"bars":[{"t":"Simulated margin","items":[["IND by 18+",0.1025,"h"],["IND by 11-17",0.0822,"h"],["IND by 6-10",0.0785,"h"],["IND by 1-5",0.0927,"h"],["ATL by 1-5",0.1033,"a"],["ATL by 6-10",0.1047,"a"],["ATL by 11-17",0.1357,"a"],["ATL by 18+",0.2804,"a"]]}],"sp":{"model":6.5,"mkt":4.5,"ph":49.6,"pa":50.4},"tot":{"model":233.3,"mkt":232.5,"po":50.0,"pu":50.0,"rng":[221,245]},"win":{"a":63.4,"h":36.6},"ml":{"fa":-173,"fh":173,"ba":-179,"bh":164,"bka":"FanDuel","bkh":"DraftKings"},"facts":[["ATL rest","2d rest, 1148 km travel"],["IND rest","back-to-back, 3rd game in 4 nights"]],"inj":[["IND",["Tyrese Haliburton (Out)","Ivica Zubac (Out)","Obi Toppin (Out)","Ben Sheppard (Out)","Johnny Furphy (Out)","T.J. McConnell (Out)"]],["ATL",["Jalen Johnson (Questionable)","Jalen Wilson (Doubtful)","Keshon Gilbert (Doubtful)","Kingston Flemings (Out)","Jock Landale (Out)","Mouhamed Gueye (Out)","Henri Veesaar (Out)"]]],"picks":[],"state":"pre"},{"id":"401909910","a":"BKN","h":"NY","an":"BKN","hn":"NY","ts":1793665800.0,"when":"Mon Nov 2, 6:30 PM CT","proj":{"a":99.4,"h":117.5,"total":216.9,"margin":18.2},"rng":{"a":[91,108],"h":[109,126]},"bars":[{"t":"Simulated margin","items":[["NY by 18+",0.5171,"h"],["NY by 11-17",0.1647,"h"],["NY by 6-10",0.1004,"h"],["NY by 1-5",0.0792,"h"],["BKN by 1-5",0.0526,"a"],["BKN by 6-10",0.0338,"a"],["BKN by 11-17",0.0248,"a"],["BKN by 18+",0.0142,"a"]]}],"sp":{"model":-18.2,"mkt":-14.5,"ph":50.7,"pa":49.3},"tot":{"model":216.9,"mkt":221.5,"po":50.0,"pu":50.0,"rng":[205,229]},"win":{"a":13.2,"h":86.8},"ml":{"fa":659,"fh":-659,"ba":650,"bh":-833,"bka":"Bovada","bkh":"BetOnline.ag"},"facts":[["BKN rest","back-to-back, 3rd game in 4 nights, 1037 km travel"],["NY rest","3d rest, 137 km travel"]],"inj":[["NY",["Jose Alvarado (Questionable)"]],["BKN",["Egor Demin (Out)","Mikel Brown Jr. (Out)","Ben Saraf (Out)","Tyler Bilodeau (Out)"]]],"picks":[],"state":"pre"},{"id":"401909911","a":"WSH","h":"ORL","an":"WSH","hn":"ORL","ts":1793665800.0,"when":"Mon Nov 2, 6:30 PM CT","proj":{"a":115.6,"h":116.3,"total":231.9,"margin":0.6},"rng":{"a":[108,123],"h":[109,124]},"bars":[{"t":"Simulated margin","items":[["ORL by 18+",0.1041,"h"],["ORL by 11-17",0.1267,"h"],["ORL by 6-10",0.1274,"h"],["ORL by 1-5",0.1457,"h"],["WSH by 1-5",0.1427,"a"],["WSH by 6-10",0.1206,"a"],["WSH by 11-17",0.1151,"a"],["WSH by 18+",0.0881,"a"]]}],"sp":{"model":-0.6,"mkt":-2.5,"ph":49.7,"pa":50.3},"tot":{"model":231.9,"mkt":224.5,"po":50.0,"pu":50.0,"rng":[220,244]},"win":{"a":44.2,"h":55.8},"ml":{"fa":126,"fh":-126,"ba":125,"bh":-135,"bka":"BetRivers","bkh":"DraftKings"},"facts":[["WSH rest","3d rest, 1220 km travel"],["ORL rest","back-to-back, 3rd game in 4 nights"]],"inj":[["ORL",["Paolo Banchero (Out)","Jalen Suggs (Out)","Izaiyah Nelson (Out)","Noah Penda (Out)"]],["WSH",["Alex Sarr (Questionable)","Anthony Gill (Questionable)","Jamir Watkins (Out)","Justin Champagnie (Out)","Tristan Vukcevic (Out)"]]],"picks":[],"state":"pre"},{"id":"401909912","a":"CHI","h":"PHI","an":"CHI","hn":"PHI","ts":1793665800.0,"when":"Mon Nov 2, 6:30 PM CT","proj":{"a":111.3,"h":122.0,"total":233.3,"margin":10.7},"rng":{"a":[104,119],"h":[115,129]},"bars":[{"t":"Simulated margin","items":[["PHI by 18+",0.284,"h"],["PHI by 11-17",0.2209,"h"],["PHI by 6-10",0.1611,"h"],["PHI by 1-5",0.1351,"h"],["CHI by 1-5",0.0872,"a"],["CHI by 6-10",0.0502,"a"],["CHI by 11-17",0.0295,"a"],["CHI by 18+",0.0095,"a"]]}],"sp":{"model":-10.7,"mkt":-11.5,"ph":49.8,"pa":50.2},"tot":{"model":233.3,"mkt":239.5,"po":50.0,"pu":50.0,"rng":[221,245]},"win":{"a":18.7,"h":81.3},"ml":{"fa":434,"fh":-434,"ba":450,"bh":-526,"bka":"Bovada","bkh":"BetRivers"},"facts":[["CHI rest","3d rest, 440 km travel"],["PHI rest","2d rest, 3rd game in 4 nights, 721 km travel"]],"inj":[["PHI",["Joel Embiid (Questionable)","Dominick Barlow (Out)"]],["CHI",["Jalen Smith (Probable)","Tobe Awaka (Probable)","Dailyn Swain (Day-To-Day)","Nic Claxton (Doubtful)"]]],"picks":[{"g":"C","t":"CHI ML +450 (Bovada)"}],"state":"pre"},{"id":"401909913","a":"SAC","h":"DAL","an":"SAC","hn":"DAL","ts":1793667600.0,"when":"Mon Nov 2, 7:00 PM CT","proj":{"a":111.8,"h":123.8,"total":235.6,"margin":12.0},"rng":{"a":[104,120],"h":[116,132]},"bars":[{"t":"Simulated margin","items":[["DAL by 18+",0.3678,"h"],["DAL by 11-17",0.1698,"h"],["DAL by 6-10",0.1189,"h"],["DAL by 1-5",0.1051,"h"],["SAC by 1-5",0.08,"a"],["SAC by 6-10",0.0575,"a"],["SAC by 11-17",0.048,"a"],["SAC by 18+",0.0342,"a"]]}],"sp":{"model":-12.0,"mkt":-10.0,"ph":50.4,"pa":49.6},"tot":{"model":235.6,"mkt":234.5,"po":50.0,"pu":50.0,"rng":[223,248]},"win":{"a":22.9,"h":77.1},"ml":{"fa":337,"fh":-337,"ba":320,"bh":-385,"bka":"Caesars","bkh":"BetOnline.ag"},"facts":[["SAC rest","2d rest, 676 km travel"],["DAL rest","3d rest"]],"inj":[["DAL",["Kyrie Irving (Questionable)","Santi Aldama (Doubtful)","Dereck Lively II (Out)","Sergio de Larrea (Out)","Tarik Biberovic (Out)"]],["SAC",["Zach LaVine (Questionable)","Dylan Cardwell (Questionable)","Keegan Murray (Out)","Maxime Raynaud (Out)","Ben Simmons (Out)"]]],"picks":[],"state":"pre"},{"id":"401909914","a":"NO","h":"MEM","an":"NO","hn":"MEM","ts":1793667600.0,"when":"Mon Nov 2, 7:00 PM CT","proj":{"a":116.5,"h":119.4,"total":235.9,"margin":2.9},"rng":{"a":[110,123],"h":[113,126]},"bars":[{"t":"Simulated margin","items":[["MEM by 18+",0.0523,"h"],["MEM by 11-17",0.1466,"h"],["MEM by 6-10",0.187,"h"],["MEM by 1-5",0.2188,"h"],["NO by 1-5",0.1776,"a"],["NO by 6-10",0.1072,"a"],["NO by 11-17",0.0567,"a"],["NO by 18+",0.0117,"a"]]}],"sp":{"model":-2.9,"mkt":-5.5,"ph":49.5,"pa":50.5},"tot":{"model":235.9,"mkt":235.0,"po":50.0,"pu":50.0,"rng":[224,248]},"win":{"a":34.5,"h":65.5},"ml":{"fa":190,"fh":-190,"ba":188,"bh":-213,"bka":"BetRivers","bkh":"BetOnline.ag"},"facts":[["NO rest","2d rest, 577 km travel"],["MEM rest","2d rest"]],"inj":[["MEM",["Quinten Post (Questionable)","Scotty Pippen Jr. (Doubtful)"]],["NO",["Trey Murphy III (Probable)","Julian Reese (Probable)","Malik Dia (Doubtful)","Jaron Pierre Jr. (Doubtful)","Yves Missi (Out)","Jordan Poole (Out)"]]],"picks":[{"g":"C","t":"NO +5.5 -101 (LowVig.ag)"}],"state":"pre"},{"id":"401909915","a":"MIL","h":"MIN","an":"MIL","hn":"MIN","ts":1793667600.0,"when":"Mon Nov 2, 7:00 PM CT","proj":{"a":109.3,"h":121.1,"total":230.4,"margin":11.7},"rng":{"a":[102,117],"h":[113,129]},"bars":[{"t":"Simulated margin","items":[["MIN by 18+",0.3459,"h"],["MIN by 11-17",0.188,"h"],["MIN by 6-10",0.1322,"h"],["MIN by 1-5",0.1142,"h"],["MIL by 1-5",0.0821,"a"],["MIL by 6-10",0.0548,"a"],["MIL by 11-17",0.0409,"a"],["MIL by 18+",0.0221,"a"]]}],"sp":{"model":-11.7,"mkt":-10.5,"ph":50.2,"pa":49.8},"tot":{"model":230.4,"mkt":233.5,"po":50.0,"pu":50.0,"rng":[218,243]},"win":{"a":21.0,"h":79.0},"ml":{"fa":377,"fh":-377,"ba":370,"bh":-435,"bka":"DraftKings","bkh":"LowVig.ag"},"facts":[["MIL rest","2d rest, 479 km travel"],["MIN rest","2d rest, 3rd game in 4 nights, 1788 km travel"]],"inj":[["MIN",["Anthony Edwards (Out)","Donte DiVincenzo (Out)"]]],"picks":[],"state":"pre"},{"id":"401909916","a":"BOS","h":"HOU","an":"BOS","hn":"HOU","ts":1793669400.0,"when":"Mon Nov 2, 7:30 PM CT","proj":{"a":108.5,"h":113.3,"total":221.8,"margin":4.9},"rng":{"a":[101,116],"h":[106,121]},"bars":[{"t":"Simulated margin","items":[["HOU by 18+",0.1775,"h"],["HOU by 11-17",0.1626,"h"],["HOU by 6-10",0.1416,"h"],["HOU by 1-5",0.1439,"h"],["BOS by 1-5",0.1233,"a"],["BOS by 6-10",0.0936,"a"],["BOS by 11-17",0.0795,"a"],["BOS by 18+",0.0507,"a"]]}],"sp":{"model":-4.9,"mkt":-5.0,"ph":50.0,"pa":50.0},"tot":{"model":221.8,"mkt":219.5,"po":50.0,"pu":50.0,"rng":[210,234]},"win":{"a":36.1,"h":63.9},"ml":{"fa":177,"fh":-177,"ba":175,"bh":-196,"bka":"BetRivers","bkh":"DraftKings"},"facts":[["BOS rest","back-to-back, 3rd game in 4 nights, 1363 km travel"],["HOU rest","2d rest, 3rd game in 4 nights"]],"inj":[["HOU",["Reed Sheppard (Questionable)","Clint Capela (Questionable)","Steven Adams (Out)","Quadir Copeland (Out)"]],["BOS",["Mitchell Robinson (Out)","Devin Carter (Out)"]]],"picks":[],"state":"pre"},{"id":"401909917","a":"UTAH","h":"SA","an":"UTAH","hn":"SA","ts":1793669400.0,"when":"Mon Nov 2, 7:30 PM CT","proj":{"a":109.0,"h":125.6,"total":234.6,"margin":16.6},"rng":{"a":[101,117],"h":[118,133]},"bars":[{"t":"Simulated margin","items":[["SA by 18+",0.4742,"h"],["SA by 11-17",0.1971,"h"],["SA by 6-10",0.1187,"h"],["SA by 1-5",0.0889,"h"],["UTAH by 1-5",0.0529,"a"],["UTAH by 6-10",0.0297,"a"],["UTAH by 11-17",0.0179,"a"],["UTAH by 18+",0.0066,"a"]]}],"sp":{"model":-16.6,"mkt":-16.5,"ph":50.0,"pa":50.0},"tot":{"model":234.6,"mkt":231.0,"po":50.0,"pu":50.0,"rng":[222,247]},"win":{"a":11.4,"h":88.6},"ml":{"fa":778,"fh":-778,"ba":800,"bh":-1111,"bka":"DraftKings","bkh":"BetOnline.ag"},"facts":[["UTAH rest","2d rest, 1754 km travel"],["SA rest","2d rest"]],"inj":[["SA",["Tobias Harris (Out)","Jayden Quaintance (Out)"]],["UTAH",["Jaren Jackson Jr. (Out)","Jusuf Nurkic (Out)"]]],"picks":[{"g":"C","t":"UTAH ML +800 (DraftKings)"}],"state":"pre"},{"id":"401909918","a":"POR","h":"DEN","an":"POR","hn":"DEN","ts":1793671200.0,"when":"Mon Nov 2, 8:00 PM CT","proj":{"a":115.5,"h":119.2,"total":234.7,"margin":3.7},"rng":{"a":[108,123],"h":[112,127]},"bars":[{"t":"Simulated margin","items":[["DEN by 18+",0.1574,"h"],["DEN by 11-17",0.1532,"h"],["DEN by 6-10",0.138,"h"],["DEN by 1-5",0.1446,"h"],["POR by 1-5",0.1285,"a"],["POR by 6-10",0.1008,"a"],["POR by 11-17",0.0889,"a"],["POR by 18+",0.0606,"a"]]}],"sp":{"model":-3.7,"mkt":-4.0,"ph":50.0,"pa":50.0},"tot":{"model":234.7,"mkt":230.0,"po":50.0,"pu":50.0,"rng":[223,247]},"win":{"a":39.3,"h":60.7},"ml":{"fa":155,"fh":-155,"ba":150,"bh":-164,"bka":"LowVig.ag","bkh":"FanDuel"},"facts":[["POR rest","2d rest, 596 km travel"],["DEN rest","3d rest, 942 km travel"]],"inj":[["DEN",["Alpha Diallo (Questionable)","Spencer Jones (Out)","Julian Strawther (Out)"]],["POR",["Ja Morant (Out)","Shaedon Sharpe (Out)"]]],"picks":[],"state":"pre"},{"id":"401909919","a":"PHX","h":"GS","an":"PHX","hn":"GS","ts":1793674800.0,"when":"Mon Nov 2, 9:00 PM CT","proj":{"a":113.5,"h":113.3,"total":226.8,"margin":-0.2},"rng":{"a":[106,121],"h":[106,121]},"bars":[{"t":"Simulated margin","items":[["GS by 18+",0.0929,"h"],["GS by 11-17",0.1187,"h"],["GS by 6-10",0.1228,"h"],["GS by 1-5",0.1438,"h"],["PHX by 1-5",0.1449,"a"],["PHX by 6-10",0.1253,"a"],["PHX by 11-17",0.123,"a"],["PHX by 18+",0.0988,"a"]]}],"sp":{"model":0.2,"mkt":-4.5,"ph":49.2,"pa":50.8},"tot":{"model":226.8,"mkt":227.5,"po":50.0,"pu":50.0,"rng":[215,239]},"win":{"a":39.2,"h":60.8},"ml":{"fa":155,"fh":-155,"ba":155,"bh":-179,"bka":"Fanatics","bkh":"FanDuel"},"facts":[["PHX rest","3d rest, 1048 km travel"],["GS rest","back-to-back, 3rd game in 4 nights"]],"inj":[["GS",["Stephen Curry (Out)","Draymond Green (Out)","Jimmy Butler III (Out)","Moses Moody (Out)","Kristaps Porzingis (Out)"]],["PHX",["Mark Williams (Out)","Drew Timme (Out)"]]],"picks":[],"state":"pre"},{"id":"401909920","a":"TOR","h":"LAC","an":"TOR","hn":"LAC","ts":1793674800.0,"when":"Mon Nov 2, 9:00 PM CT","proj":{"a":113.0,"h":110.4,"total":223.4,"margin":-2.6},"rng":{"a":[106,120],"h":[104,117]},"bars":[{"t":"Simulated margin","items":[["LAC by 18+",0.0128,"h"],["LAC by 11-17",0.0601,"h"],["LAC by 6-10",0.1114,"h"],["LAC by 1-5",0.1813,"h"],["TOR by 1-5",0.2186,"a"],["TOR by 6-10",0.1835,"a"],["TOR by 11-17",0.1409,"a"],["TOR by 18+",0.0488,"a"]]}],"sp":{"model":2.6,"mkt":5.0,"ph":50.4,"pa":49.6},"tot":{"model":223.4,"mkt":220.5,"po":50.0,"pu":50.0,"rng":[211,236]},"win":{"a":62.3,"h":37.7},"ml":{"fa":-165,"fh":165,"ba":-185,"bh":164,"bka":"FanDuel","bkh":"DraftKings"},"facts":[["TOR rest","back-to-back, 3rd game in 4 nights, 13 km travel"],["LAC rest","back-to-back, 3rd game in 4 nights, 560 km travel"]],"inj":[["LAC",["Derrick Jones Jr. (Day-To-Day)","Brandon Ingram (Out)","Bradley Beal (Out)","Max Strus (Out)","Jordan Miller (Out)","Yanic Konan Niederhauser (Out)"]],["TOR",["Kawhi Leonard (Out)","Malachi Smith (Out)","Jakob Poeltl (Out)","Nate Bittle (Out)"]]],"picks":[],"state":"pre"},{"id":"401909921","a":"MIA","h":"LAL","an":"MIA","hn":"LAL","ts":1793674800.0,"when":"Mon Nov 2, 9:00 PM CT","proj":{"a":118.4,"h":119.6,"total":238.0,"margin":1.3},"rng":{"a":[111,126],"h":[112,127]},"bars":[{"t":"Simulated margin","items":[["LAL by 18+",0.0957,"h"],["LAL by 11-17",0.1332,"h"],["LAL by 6-10",0.1381,"h"],["LAL by 1-5",0.1581,"h"],["MIA by 1-5",0.1505,"a"],["MIA by 6-10",0.1211,"a"],["MIA by 11-17",0.1062,"a"],["MIA by 18+",0.0652,"a"]]}],"sp":{"model":-1.3,"mkt":-2.0,"ph":49.9,"pa":50.1},"tot":{"model":238.0,"mkt":238.5,"po":50.0,"pu":50.0,"rng":[226,250]},"win":{"a":45.9,"h":54.1},"ml":{"fa":118,"fh":-118,"ba":118,"bh":-122,"bka":"FanDuel","bkh":"BetRivers"},"facts":[["MIA rest","3d rest, 3760 km travel"],["LAL rest","back-to-back, 3rd game in 4 nights"]],"inj":[["LAL",["Ziaire Williams (Out)"]],["MIA",["Tim Hardaway Jr. (Questionable)","Tre Donaldson (Out)"]]],"picks":[{"g":"C","t":"MIA ML +118 (FanDuel)"}],"state":"pre"}],"past":[],"v":2}</script><script id="gd-js">
-/* game detail panels: renders the JSON blob computed by apply_gamedetail.py. Additive only; any error leaves the page untouched. */
-(function(){
-'use strict';
-try{
-var D=document,blobEl=D.getElementById('gd-data');if(!blobEl)return;
-var B=JSON.parse(blobEl.textContent),G=B.games||[],PG=B.past||[],kind=B.kind;if(!G.length&&!PG.length)return;
-if(D.getElementById('gd-sec'))return;
-var NOW=Date.now();
-function el(t,c,x){var e=D.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
-function ap(p){for(var i=1;i<arguments.length;i++){if(arguments[i]!=null)p.appendChild(arguments[i])}return p}
-function pc(v,d){return v==null?'-':v.toFixed(d==null?1:d)+'%'}
-function sg(v){return v==null?'-':(v>0?'+':v<0?'\u2212':'')+Math.abs(v).toFixed(1)}
-function ml(v){return v==null?'-':(v>0?'+':'')+v}
-function sk(k,v){try{if(v===undefined)return sessionStorage.getItem('gd:'+location.pathname+':'+k);sessionStorage.setItem('gd:'+location.pathname+':'+k,v)}catch(e){return null}}
-var openSet={};try{openSet=JSON.parse(sk('open')||'{}')}catch(e){}
-function row(a,b,cls){var r=el('div','r');ap(r,el('span',null,a),el('span',cls||null,b));return r}
-function kbox(title){var k=el('div','gd-k');ap(k,el('h4',null,title));return k}
-function lastw(n){var w=String(n).trim().split(/\s+/);return w[w.length-1]}
-function SA(g){return g.tennis?lastw(g.an):g.a}
-function SH(g){return g.tennis?lastw(g.hn):g.h}
-
-function hero(g){
-  var w=el('div','gd-hero');
-  if(g.proj){
-    var ph=g.proj.h,pa=g.proj.a,hw=ph>pa,aw=pa>ph;
-    var A=el('div','gd-t'+(aw?' win':'')),H=el('div','gd-t'+(hw?' win':''));
-    ap(A,el('div','n',g.an),el('div','s',pa.toFixed(1)));
-    ap(H,el('div','n',g.hn),el('div','s',ph.toFixed(1)));
-    if(g.rng){ap(A,el('div','p','likely '+g.rng.a[0]+'\u2013'+g.rng.a[1]));ap(H,el('div','p','likely '+g.rng.h[0]+'\u2013'+g.rng.h[1]))}
-    ap(w,A,el('div','gd-dash','@'),H);
-  }else{
-    var A2=el('div','gd-t'+(g.win&&g.win.a>=g.win.h?' win':'')),H2=el('div','gd-t'+(g.win&&g.win.h>g.win.a?' win':''));
-    ap(A2,el('div','n',g.an),el('div','s',g.win?pc(g.win.a,0):'-'));
-    ap(H2,el('div','n',g.hn),el('div','s',g.win?pc(g.win.h,0):'-'));
-    ap(w,A2,el('div','gd-dash','vs'),H2);
-  }
-  return w;
-}
-function bars(b){
-  var w=el('div','gd-bars');ap(w,el('h4',null,b.t));
-  var mx=0;b.items.forEach(function(i){if(i[1]>mx)mx=i[1]});if(!mx)mx=1;
-  b.items.forEach(function(i){
-    var r=el('div','gd-b '+(i[2]||'n')),t=el('div','t'),f=el('i');f.style.width=Math.max(2,i[1]/mx*100)+'%';t.appendChild(f);
-    ap(r,el('div','l',i[0]),t,el('div','v',pc(i[1]*100,0)));w.appendChild(r)});
-  if(b.line!=null)ap(w,el('div','gd-sub','Market total line: '+b.line+' '+(b.unit||'')));
-  return w;
-}
-function resbox(g){
-  var f=g.fin,r=el('div','gd-res'),h2=el('div','gd-res-h');
-  if(f&&f.txt!=null&&f.a==null){ap(h2,el('b',null,f.txt));if(f.su)ap(h2,el('span','gd-chk '+(f.su==='W'?'ok':'no'),f.su==='W'?'\u2713 projected winner':'\u2717 projected winner'));ap(r,h2);ap(r,el('div','gd-sub','Final result vs the last projection posted before the match.'));return r}
-  if(f){
-    ap(h2,el('b',null,'Final: '+SA(g)+' '+f.a+' @ '+SH(g)+' '+f.h));
-    var w=f.su==='W',l=f.su==='L',pp=f.su==='P';
-    if(f.su)ap(h2,el('span','gd-chk '+(w?'ok':l?'no':'pu'),w?'\u2713 projected winner':l?'\u2717 projected winner':'push'));
-    ap(r,h2);if(f.note)ap(r,el('div','gd-sub',f.note));
-  }else{ap(h2,el('b',null,'Final score pending'));ap(r,h2)}
-  ap(r,el('div','gd-sub','Projection below is the last one posted before '+(g.tennis?'the match':'tip-off / start')+'.'));
-  return r;
-}
-function livebox(g){
-  var l=g.lv,r=el('div','gd-res gd-livebox'),h2=el('div','gd-res-h');
-  ap(h2,el('span','gd-live','LIVE'));
-  if(l&&l.a!=null)ap(h2,el('b',null,SA(g)+' '+l.a+' @ '+SH(g)+' '+l.h));
-  else ap(h2,el('b',null,SA(g)+' @ '+SH(g)));
-  if(l&&l.d)ap(h2,el('span','gd-sub',l.d));
-  ap(r,h2,el('div','gd-sub','In progress. The projection, win chances and prices below are the model\u2019s last numbers posted before '+(g.tennis?'the match':'the game')+' started.'));
-  return r;
-}
-function isLive(g){return !g.past&&(g.lv||(g.state&&/^(in|live|crit)/i.test(g.state)))}
-function body(g){
-  var b=el('div','gd-body');
-  if(g.past)ap(b,resbox(g));
-  else if(isLive(g))ap(b,livebox(g));
-  ap(b,hero(g));
-  if(g.proj){
-    var sub=g.proj.dec?(isLive(g)?'Pre-game projected final (model average)':'Projected final (model average)'):'Projected final from model total '+g.proj.total.toFixed(1)+' and margin '+(g.proj.margin>0?g.hn:g.an)+' by '+Math.abs(g.proj.margin).toFixed(1);
-    ap(b,el('div','gd-sub',sub));
-  }
-  if(g.likely)ap(b,el('div','gd-likely',g.likely));
-  var grid=el('div','gd-grid');
-  if(g.win){
-    var k=kbox('Win probability'),sp2=el('div','gd-split'),ia=el('i','a'),ih=el('i','h');ia.style.width=g.win.a+'%';ih.style.width=g.win.h+'%';ap(sp2,ia,ih);
-    ap(k,sp2,row(SA(g),pc(g.win.a)),row(SH(g),pc(g.win.h)));if(g.winnote)ap(k,el('div','gd-note',g.winnote));grid.appendChild(k);
-  }
-  if(g.ml){
-    var k2=kbox('Moneyline: model fair vs best price');
-    ap(k2,row(SA(g),'fair '+ml(g.ml.fa)+(g.ml.ba!=null?' | best '+ml(g.ml.ba)+(g.ml.bka?' ('+g.ml.bka+')':''):'')),row(SH(g),'fair '+ml(g.ml.fh)+(g.ml.bh!=null?' | best '+ml(g.ml.bh)+(g.ml.bkh?' ('+g.ml.bkh+')':''):'')));grid.appendChild(k2);
-  }
-  if(g.sp&&(g.sp.ph!=null||g.sp.model!=null)){
-    var k3=kbox(g.sp.rl?'Run line (1.5)':'Spread: model vs market');
-    if(g.sp.rl){ap(k3,row(SH(g)+' \u22121.5 covers',pc(g.sp.ph)),row(SA(g)+' \u22121.5 covers',pc(g.sp.pa)))}
-    else{
-      ap(k3,row('Model ('+SH(g)+')',sg(g.sp.model)),row('Market ('+SH(g)+')',sg(g.sp.mkt)));
-      if(g.sp.ph!=null)ap(k3,row(SH(g)+' covers market line',pc(g.sp.ph),g.sp.ph>=52.5?'pos':null),row(SA(g)+' covers market line',pc(g.sp.pa),g.sp.pa>=52.5?'pos':null));
-    }
-    grid.appendChild(k3);
-  }
-  if(g.tot&&!g.nototals){
-    var T=g.tot,k4=kbox(T.games?'Total games: model vs market':'Total: model vs market');
-    if(T.games){
-      ap(k4,row('Model mean (median)',T.model+' ('+T.median+')'));
-      if(T.sd!=null)ap(k4,row('Spread of outcomes','\u00b1'+T.sd));
-      if(T.rng)ap(k4,row('Middle 50% range',T.rng[0]+'\u2013'+T.rng[1]));
-      if(T.line!=null)ap(k4,row('Over '+T.line+' (model line)',pc(T.po_model)));
-      if(T.mkt!=null)ap(k4,row('Market line '+T.mkt+' over',pc(T.po),T.po>=52.5?'pos':null));
-    }else{
-      ap(k4,row('Model',T.model==null?'-':T.model.toFixed(1)),row('Market',T.mkt==null?'-':T.mkt.toFixed(1)));
-      if(T.po!=null)ap(k4,row('Over',pc(T.po),T.po>=52.5?'pos':null),row('Under',pc(T.pu),T.pu>=52.5?'pos':null));
-      if(T.push)ap(k4,row('Push',pc(T.push)));
-      if(T.rng)ap(k4,row('Middle 50% range',T.rng[0]+'\u2013'+T.rng[1]));
-    }
-    grid.appendChild(k4);
-  }
-  b.appendChild(grid);
-  (g.bars||[]).forEach(function(x){b.appendChild(bars(x))});
-  if(g.tops&&g.tops.length){
-    var t=el('div','gd-tops');g.tops.forEach(function(s){var sp=el('span',null,s[0]);sp.appendChild(el('small',null,pc(s[1]*100,1)));t.appendChild(sp)});
-    ap(b,el('div','gd-bars'));b.lastChild.appendChild(el('h4',null,'Most likely scores ('+g.a+'-'+g.h+')'));b.lastChild.appendChild(t);
-  }
-  if(g.picks&&g.picks.length){
-    var pk=el('div','gd-picks');g.picks.forEach(function(p){var d=el('div');ap(d,el('span','gd-g '+p.g,p.g),el('span',null,p.t));pk.appendChild(d)});
-    ap(b,el('h4','gd-sub',isLive(g)?'Pre-game model picks on this game':'Model picks on this game'),pk);
-  }
-  if(g.facts&&g.facts.length){var f=el('div','gd-facts');g.facts.forEach(function(x){f.appendChild(row(x[0],String(x[1])))});
-    f.querySelectorAll('.r').forEach(function(r){r.className='r'});b.appendChild(f)}
-  if(g.inj&&g.inj.length){g.inj.forEach(function(x){var d=el('details','gd-inj'),s=el('summary',null,x[0]+' injuries ('+x[1].length+')');d.appendChild(s);x[1].forEach(function(l){d.appendChild(el('div',null,l))});b.appendChild(d)})}
-  var note={nfl:'Model-simulated from the model\u2019s own projections: a normal spread of outcomes around its margin and total, matched to its win probability.',
-    cfb:'Model-simulated from the model\u2019s own projections: a normal spread of outcomes around its margin and total, matched to its win probability.',
-    nba:'Model-simulated from the model\u2019s own projections: a normal spread of outcomes around its margin and total, matched to its win probability.',
-    nhl:'Model-simulated from the model\u2019s own goal rates using independent Poisson scoring. Win % is the model\u2019s published number.',
-    mlb:'Total-run bars are the model\u2019s own simulated games. Likely scores use independent Poisson scoring from the model\u2019s run rates.',
-    tennis:'Set scores, win % and games are the model\u2019s own simulation outputs.'}[kind];
-  if(note)ap(b,el('div','gd-note',note));
-  return b;
-}
-function card(g,i){
-  var c=el('div','gd-card'),h=el('button','gd-head');h.setAttribute('type','button');h.setAttribute('aria-expanded','false');
-  var m=el('div','gd-main'),w=el('div','gd-when');w.appendChild(el('span',null,g.when||''));
-  if(isLive(g))w.appendChild(el('span','gd-live','LIVE'));
-  if(g.ev)w.appendChild(el('span',null,'\u00b7 '+g.ev));
-  ap(m,w,el('div','gd-teams',g.tennis?g.an+' vs '+g.hn:g.an+' @ '+g.hn),el('div','gd-tap',g.past?(g.proj?'Projected '+g.proj.a.toFixed(g.proj.dec?1:0)+'\u2013'+g.proj.h.toFixed(g.proj.dec?1:0)+' \u00b7 tap for details':'Tap for the saved projection'):(isLive(g)&&g.proj?'Pre-game projection '+g.proj.a.toFixed(g.proj.dec?1:0)+'\u2013'+g.proj.h.toFixed(g.proj.dec?1:0)+' \u00b7 tap for details':'Tap for projected score & details')));
-  var s=el('div','gd-side');
-  if(g.picks&&g.picks.length){var best=g.picks.map(function(p){return p.g}).sort()[0];s.appendChild(el('span','gd-g '+best,best))}
-  var sc=el('div','gd-sc');
-  if(g.past){
-    var f=g.fin;
-    if(f&&f.a!=null){ap(sc,el('b',null,f.a+'\u2013'+f.h),el('i',null,'final'))}
-    else if(f){ap(sc,el('b',null,'Final'),el('i',null,'result'))}
-    else{ap(sc,el('b',null,g.proj?g.proj.a.toFixed(g.proj.dec?1:0)+'\u2013'+g.proj.h.toFixed(g.proj.dec?1:0):'\u2013'),el('i',null,'proj'))}
-    if(f&&f.su)s.insertBefore(el('span','gd-chk '+(f.su==='W'?'ok':f.su==='L'?'no':'pu'),f.su==='W'?'\u2713':f.su==='L'?'\u2717':'P'),s.firstChild);
-  }else if(g.lv&&g.lv.a!=null){ap(sc,el('b',null,g.lv.a+'\u2013'+g.lv.h),el('i',null,g.lv.d||'live'))}
-  else if(g.proj){var f=g.proj.dec?1:0;ap(sc,el('b',null,g.proj.a.toFixed(f)+'\u2013'+g.proj.h.toFixed(f)),el('i',null,'proj'))}
-  else if(g.win){ap(sc,el('b',null,Math.round(g.win.a)+'\u2013'+Math.round(g.win.h)+'%'),el('i',null,'win %'))}
-  ap(s,sc,el('span','gd-chev'));
-  ap(h,m,s);c.appendChild(h);
-  var built=false;
-  function toggle(open){
-    if(open&&!built){c.appendChild(body(g));built=true}
-    c.classList.toggle('open',open);h.setAttribute('aria-expanded',open?'true':'false');
-    if(open)openSet[g.id]=1;else delete openSet[g.id];sk('open',JSON.stringify(openSet));
-  }
-  h.addEventListener('click',function(){toggle(!c.classList.contains('open'))});
-  if(openSet[g.id])toggle(true);
-  return c;
-}
-/* which games to list first */
-var cut=NOW-4*3600*1000;
-var up=G.filter(function(g){return g.ts==null||g.ts*1000>=cut}),old=G.filter(function(g){return !(g.ts==null||g.ts*1000>=cut)});
-function ord(a,b){if(kind==='tennis'&&(!!a.priced!==!!b.priced))return a.priced?-1:1;return (a.ts||0)-(b.ts||0)}
-up.sort(ord);old.sort(function(a,b){return (b.ts||0)-(a.ts||0)});
-if(!up.length){up=old;old=[]}
-var LIM=kind==='cfb'||kind==='tennis'?8:12;
-var all=up.concat(old),sec=el('section','sec tog gd-sec'),hd=el('div','sec-h'),bd=el('div','sec-b');sec.id='gd-sec';
-hd.appendChild(document.createTextNode(kind==='tennis'?'Match projections':'Game projections'));
-var cnt=el('span','cnt',all.length+(kind==='tennis'?' matches':' games'));hd.appendChild(cnt);
-ap(sec,hd,bd);
-ap(bd,el('div','gd-hint',!G.length?'No upcoming games on the board right now. Games that already started or finished are in Past games below.':kind==='tennis'?'Tap a match for win %, set scores and games.':'Tap a game for its model-simulated score, odds and context.'));
-var list=el('div','gd-list');bd.appendChild(list);
-var shown=0,rest=[];
-all.forEach(function(g,i){if(i<LIM||openSet[g.id]){list.appendChild(card(g,i));shown++}else rest.push(g)});
-if(rest.length){
-  var btn=el('button','gd-more','Show '+rest.length+' more '+(kind==='tennis'?'matches':'games'));btn.setAttribute('type','button');
-  btn.addEventListener('click',function(){rest.forEach(function(g,i){list.appendChild(card(g,i))});btn.remove()});
-  bd.appendChild(btn);
-}
-hd.addEventListener('click',function(){sec.classList.toggle('closed')});
-/* PAST-GAMES section: saved last pre-game card of games that have started / finished */
-var psec=null;
-if(PG.length){
-  psec=el('section','sec tog gd-sec gd-past');psec.id='gd-past';
-  var phd=el('div','sec-h'),pbd=el('div','sec-b'),days={},order=[],W=0,Lc=0;
-  PG.forEach(function(g){if(!days[g.d]){days[g.d]=[];order.push(g.d)}days[g.d].push(g);if(g.fin&&g.fin.su){if(g.fin.su==='W')W++;else if(g.fin.su==='L')Lc++}});
-  order.sort().reverse();
-  function dl(d){var x=new Date(d+'T12:00:00');return x.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})}
-  phd.appendChild(document.createTextNode(kind==='tennis'?'Past matches':'Past games'));
-  phd.appendChild(el('span','cnt',PG.length+(kind==='tennis'?' matches':' games')));
-  ap(psec,phd,pbd);
-  ap(pbd,el('div','gd-hint','Saved projections for games that already started or finished (last '+dl(order[order.length-1])+' \u2013 '+dl(order[0])+'). Tap any game to reopen its last pre-game projection.'));
-  if(W+Lc)ap(pbd,el('div','gd-rec','Projected winner '+W+'-'+Lc+' ('+Math.round(100*W/(W+Lc))+'%) on the games below with a final'));
-  var moreDays=[];
-  order.forEach(function(d,i){
-    var box=el('div','gd-dayg');ap(box,el('div','gd-day',dl(d)+' \u00b7 '+days[d].length+(days[d].length===1?' game':' games')));
-    var lst=el('div','gd-list');days[d].sort(function(a,b){return a.ts-b.ts}).forEach(function(g){lst.appendChild(card(g,0))});box.appendChild(lst);
-    if(i<2){pbd.appendChild(box)}else{moreDays.push(box)}
-  });
-  if(moreDays.length){var pb=el('button','gd-more','Show '+moreDays.length+' earlier '+(moreDays.length===1?'day':'days'));pb.setAttribute('type','button');
-    pb.addEventListener('click',function(){moreDays.forEach(function(b){pbd.insertBefore(b,pb)});pb.remove()});pbd.appendChild(pb)}
-  phd.addEventListener('click',function(){psec.classList.toggle('closed')});
-}
-/* placement: right after the Top plays section */
-var main=D.querySelector('main.wrap')||D.querySelector('main')||D.body,anchor=null;
-var secs=main.querySelectorAll(':scope > section.sec');
-if(secs.length)anchor=secs[0];
-else anchor=D.getElementById('plays')||D.getElementById('top');
-if(anchor&&anchor.parentNode===main)main.insertBefore(sec,anchor.nextSibling);
-else if(anchor)anchor.parentNode.insertBefore(sec,anchor.nextSibling);
-else main.insertBefore(sec,main.firstChild);
-if(psec)sec.parentNode.insertBefore(psec,sec.nextSibling);
-}catch(e){if(window.console)console.warn('game detail',e)}
-})();
-
-</script><script id="polish-data" type="application/json">{"pre":"../../","fallback":1793634912,"v":"polish-v1"}</script><script id="polish-js">
-/* Model Desk polish v1: presentation only. Adds brand row + freshness chip, aligns numeric table columns, adds footer text. Never changes data. */
-(function(){
-'use strict';
-var D=document,B=D.body,W=window;
-if(!B||B.classList.contains('pl-js'))return;
-var DATA={};try{var de=D.getElementById('polish-data');if(de)DATA=JSON.parse(de.textContent)||{}}catch(e){}
-var TZ='America/Chicago',MON={jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,oct:9,nov:10,dec:11};
-var PARTS=new Intl.DateTimeFormat('en-US',{timeZone:TZ,hourCycle:'h23',year:'numeric',month:'numeric',day:'numeric',hour:'numeric',minute:'numeric'});
-var TIME=new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit'});
-var DAY=new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short',month:'short',day:'numeric'});
-var YMD=new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'});
-function ctOff(t){var o={};PARTS.formatToParts(new Date(t)).forEach(function(x){o[x.type]=x.value});return Date.UTC(+o.year,+o.month-1,+o.day,+o.hour%24,+o.minute)-Math.floor(t/60000)*60000}
-function ctEpoch(y,mo,d,h,mi){var g=Date.UTC(y,mo,d,h,mi),i;for(i=0;i<3;i++)g=Date.UTC(y,mo,d,h,mi)-ctOff(g);return g}
-function parseUpd(txt){
-  if(!txt)return null;var m,y,h;
-  m=/Updated\s+(?:[A-Za-z]{3},?\s+)?([A-Za-z]{3})[a-z]*\s+(\d{1,2}),?\s+(?:(\d{4}),?\s+)?(\d{1,2}):(\d{2})\s*(AM|PM)/i.exec(txt);
-  if(m){h=(+m[4])%12+(/pm/i.test(m[6])?12:0);y=m[3]?+m[3]:+YMD.format(new Date()).slice(0,4);
-    var e=ctEpoch(y,MON[m[1].toLowerCase()],+m[2],h,+m[5]);if(!m[3]&&e>Date.now()+864e5)e=ctEpoch(y-1,MON[m[1].toLowerCase()],+m[2],h,+m[5]);return e}
-  m=/Updated\s+(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/i.exec(txt);
-  if(m)return ctEpoch(+m[1],+m[2]-1,+m[3],+m[4],+m[5]);
-  return null}
-function ago(ms){var m=Math.max(0,Math.round(ms/6e4));if(m<1)return 'just now';if(m<60)return m+'m ago';var h=Math.floor(m/60);if(h<48)return h+'h '+(m%60)+'m ago';return Math.floor(h/24)+'d ago'}
-function stateOf(ms){var m=ms/6e4;return m<=120?['ok','Fresh']:(m<=360?['warn','Aging']:['old','Stale'])}
-function setT(el,t){if(el&&el.textContent!==t)el.textContent=t}
-function stamp(e){var d=new Date(e),same=Date.now()-e<864e5;return (same?'':DAY.format(d)+' · ')+TIME.format(d)+' CT'}
-
-var LOGO='<svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="plg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d8dff"/><stop offset="1" stop-color="#2de3c0"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#plg)"/><path d="M6 17.5v-4M10.3 17.5V9M14.6 17.5v-3.5M18.4 17.5V6.5" stroke="#07101f" stroke-width="2.1" stroke-linecap="round"/></svg>';
-var home=B.getAttribute('data-sport')==='home';
-var pre=DATA.pre||'';
-
-/* 1. header: make every page share one header shape, add brand row + freshness chip */
-var chip,chipB,chipI,epoch=null;
-function header(){
-  var hd=D.querySelector('header');if(!hd)return;
-  if(!hd.classList.contains('topbar')){           /* e.g. EuroLeague: plain header -> same structure as the other pages */
-    var nav=hd.querySelector('nav.sports'),inn=D.createElement('div'),br=D.createElement('div'),hm=D.createElement('div'),kids=[].slice.call(hd.childNodes);
-    inn.className='in';br.className='brand';hm.className='hmeta';
-    kids.forEach(function(n){if(n===nav)return;if(n.nodeType===1&&n.tagName==='H1')br.appendChild(n);else if(n.nodeType===1)hm.appendChild(n)});
-    inn.appendChild(br);inn.appendChild(hm);hd.insertBefore(inn,nav||null);hd.classList.add('topbar');
-    [].forEach.call(hm.children,function(c){c.classList.remove('meta');c.style.display='block'});
-  }
-  var inn2=hd.querySelector('.in');if(!inn2||inn2.querySelector('.pl-brandrow'))return;
-  var row=D.createElement('div');row.className='pl-brandrow';
-  row.innerHTML='<a class="pl-brand" href="'+(pre||'./')+'" aria-label="Model Desk home">'+LOGO+'<span class="pl-wm"><b>Model<em>Desk</em></b><i>Sports analytics</i></span></a>'+
-    '<div class="pl-fresh" data-s="" role="status" aria-live="off"><span class="pl-dot"></span><span class="pl-ft"><b>Syncing</b><i>&nbsp;</i></span></div>';
-  inn2.insertBefore(row,inn2.firstChild);
-  chip=row.querySelector('.pl-fresh');chipB=chip.querySelector('b');chipI=chip.querySelector('i');
-  [].forEach.call(hd.querySelectorAll('.hmeta span,.hmeta div,.meta'),function(e){if(/^\s*Updated\b/i.test(e.textContent))e.classList.add('pl-hide')});
-}
-function pageEpoch(){
-  var t=[],e;
-  [D.getElementById('updated'),D.getElementById('slate-line'),D.querySelector('header .hmeta'),D.querySelector('header')].forEach(function(x){if(x)t.push(x.textContent)});
-  for(var i=0;i<t.length;i++){e=parseUpd(t[i]);if(e)return e}
-  var eps=[];[].forEach.call(D.querySelectorAll('.card .u'),function(u){var x=parseUpd(u.textContent);if(x)eps.push(x)});
-  if(eps.length)return Math.max.apply(null,eps);
-  return DATA.fallback?DATA.fallback*1000:null}
-function paint(){
-  if(!chip)return;var e=pageEpoch();if(e)epoch=e;if(!epoch)return;
-  var age=Date.now()-epoch,s=stateOf(age);
-  chip.setAttribute('data-s',s[0]);setT(chipB,s[1]);setT(chipI,stamp(epoch)+' · '+ago(age));
-  chip.title='Page data updated '+DAY.format(new Date(epoch))+' '+TIME.format(new Date(epoch))+' CT';
-  var f=D.querySelector('[data-pl-upd]');setT(f,stamp(epoch));
-  /* home cards: per-card freshness dot */
-  if(home)[].forEach.call(D.querySelectorAll('.card .u'),function(u){var x=parseUpd(u.textContent);if(!x)return;var d=u.querySelector('.pl-dot');if(!d){d=D.createElement('span');d.className='pl-dot';u.insertBefore(d,u.firstChild)}
-    var st=stateOf(Date.now()-x)[0];d.style.setProperty('--fc',st==='ok'?'var(--ok)':st==='warn'?'var(--amber)':'var(--warn)');d.style.background='var(--fc)'});
-}
-
-/* 2. numeric columns right-aligned (tabular numerals for odds / percentages) */
-var NUM=/^[+\-\u2212]?\$?\d[\d.,:]*\s*(%|pts?|u|x|m)?$/i;
-function align(){
-  [].forEach.call(D.querySelectorAll('table'),function(t){
-    var rows=t.rows,n=rows.length;if(n<3||t.getAttribute('data-pl')===String(n))return;
-    var head=t.tHead&&t.tHead.rows.length?t.tHead.rows[t.tHead.rows.length-1]:rows[0],nc=head.cells.length,c,r,col=[];
-    for(c=1;c<nc;c++){var tot=0,num=0;for(r=0;r<n&&tot<60;r++){var row=rows[r];if(row===head||row.cells.length!==nc)continue;var tx=row.cells[c].textContent.replace(/\s+/g,' ').trim();if(!tx||tx==='-'||tx==='\u2014')continue;tot++;if(NUM.test(tx))num++}
-      if(tot>=3&&num/tot>=.75)col.push(c)}
-    col.forEach(function(c){for(var r=0;r<n;r++){var row=rows[r];if(row.cells.length===nc)row.cells[c].classList.add('pl-n')}});
-    t.setAttribute('data-pl',String(n));
-  })}
-
-/* 3. footer */
-function footer(){
-  if(D.querySelector('.pl-foot'))return;
-  var f=D.createElement('footer');f.className='pl-foot';
-  f.innerHTML='<div class="pl-fl">'+LOGO.replace('width="24" height="24"','width="18" height="18"').replace('id="plg"','id="plg2"').replace('url(#plg)','url(#plg2)')+'Model Desk <span>Sports analytics</span></div>'+
-   '<p>Probabilities, fair prices and projected scores are model estimates for information and entertainment. They are not financial or betting advice, and no outcome is ever certain. Prices come from public odds feeds, move quickly and can differ at your book, so confirm before you wager.</p>'+
-   '<p>Independent project. Not affiliated with or endorsed by any league, team or sportsbook. Must be 21+ where wagering is legal. Help is available at 1-800-GAMBLER.</p>'+
-   '<div class="pl-fm"><span><i class="pl-dot" style="--fc:var(--ok);background:var(--fc)"></i>Page data <span data-pl-upd>\u2014</span></span><span>Times Central (CT)</span><span><b class="g gA grade A">A</b> strong <b class="g gB grade B">B</b> solid <b class="g gC grade C">C</b> thin pick grade</span></div>';
-  B.appendChild(f);
-  /* keep the footer after the page content, before the scripts */
-  var first=B.querySelector(':scope>script');if(first)B.insertBefore(f,first);
-}
-
-/* 4. keep only the sport nav pinned (title/brand row scrolls away) */
-function pin(){var t=D.querySelector('.topbar'),i=t&&t.querySelector('.in');if(!t||!i||home)return;t.style.top=(-i.offsetHeight)+'px';
-  var a=t.querySelector('nav.sports a.on'),n=t.querySelector('nav.sports');if(a&&n&&!n.dataset.pl){n.dataset.pl=1;n.scrollLeft=Math.max(0,a.offsetLeft-(n.clientWidth-a.offsetWidth)/2)}}
-
-try{header();footer();B.classList.add('pl-js');paint();align();pin()}catch(e){if(W.console)console.warn('polish',e)}
-var tm=null;function later(){clearTimeout(tm);tm=setTimeout(function(){try{header();align();paint();pin()}catch(e){}},250)}
-if(W.MutationObserver)new MutationObserver(later).observe(B,{childList:true,subtree:true});
-[400,1500,4000].forEach(function(ms){setTimeout(function(){try{paint();pin()}catch(e){}},ms)});
-W.addEventListener('load',function(){try{pin();paint()}catch(e){}});W.addEventListener('resize',function(){try{pin()}catch(e){}});
-setInterval(function(){try{paint()}catch(e){}},30000);
 })();
 
 </script></body></html>
