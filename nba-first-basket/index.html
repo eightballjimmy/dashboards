@@ -297,6 +297,28 @@ nav.sports a[data-k="tennis"]{--c:#b6f03c;--c2:#22d3ee}
 .pd-card,.pd-body,.pd-sec{max-width:100%}
 @media(min-width:560px){.pd-sides:not(.cmp){grid-template-columns:1fr 1fr}.pd-keys{grid-template-columns:repeat(4,1fr)}}
 
+/* hit rates (apply_hitrate.py) */
+.pd-hr{font-size:12.5px;color:var(--mut,#9db0d0);margin-top:4px}.pd-hr b{color:var(--ink,#f3f6fc);font-weight:800}
+.pd-hr b.pos,.pd-hrt b.pos,.hr-t .pos,.pd-r .pos{color:#2ff0a0}.pd-hr b.neg,.pd-hrt b.neg,.hr-t .neg{color:#ff6683}
+.pd-hrb{margin:12px 0;padding:12px;border:1px solid var(--line,#24345a);border-radius:12px;background:rgba(255,255,255,.03)}
+.pd-hrb h4,.hr-cb h4{margin:0 0 8px;font-size:13px;color:var(--ink,#f3f6fc)}
+.pd-hrt{display:flex;gap:8px}.pd-hrt .c{flex:1;text-align:center;background:rgba(255,255,255,.05);border-radius:10px;padding:8px 4px}
+.pd-hrt b{display:block;font-size:18px}.pd-hrt span{font-size:11px;color:var(--mut,#9db0d0)}
+.pd-log{position:relative;display:flex;gap:4px;height:120px;margin:14px 0 4px;align-items:stretch}
+.pd-log .bw{position:relative}.pd-log .bw .ln{position:absolute;left:-2px;right:-2px;border-top:1px dashed #c9d4ea}
+.pd-log .g{flex:1;display:flex;flex-direction:column;min-width:0;text-align:center;font-size:10px;color:var(--mut,#9db0d0)}
+.pd-log .bw{flex:1;display:flex;align-items:flex-end;justify-content:center}
+.pd-log .bw i{display:block;width:70%;border-radius:4px 4px 0 0}.pd-log i.w{background:#2ff0a0}.pd-log i.l{background:#ff6683}
+.pd-log .v{color:var(--ink,#f3f6fc);font-weight:800;font-size:11px}.pd-log .d,.pd-log .o{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:9.5px}
+.pd-mr{margin-top:12px}
+.hr-t{width:100%;border-collapse:collapse;font-size:12.5px;margin:6px 0 12px}
+.hr-t th{text-align:left;color:var(--mut,#9db0d0);font-weight:700;padding:5px 4px;border-bottom:1px solid var(--line,#24345a)}
+.hr-t td{padding:6px 4px;border-bottom:1px solid rgba(255,255,255,.05);color:var(--ink,#f3f6fc)}
+.hr-t th:not(:first-child),.hr-t td:not(:first-child){text-align:right}
+.hr-t tr.sm td{color:var(--mut,#9db0d0)}
+.hr-cb{margin-top:10px}
+.hr-sel{display:block;width:100%;max-width:none;margin:10px 0 0}
+
 </style><style id="pg-css">
 /* per-game selector (apply_pergame.py): reads the skin / Pro theme variables, falls back to the same navy palette */
 .pg-bar{margin:0 0 14px;max-width:100%;min-width:0}
@@ -887,10 +909,62 @@ function body(r){
   var sw=el('div','pd-sides'+(any?'':' cmp'));
   var top=null;r.sides.forEach(function(s){if(s.g&&(!top||(s.v||0)>(top.v||0)))top=s});
   r.sides.forEach(function(s){sw.appendChild(sideBox(s,s===top,!any))});b.appendChild(sw);
+  var hb=hrBlock(r);if(hb)b.appendChild(hb);
   if(r.dist)b.appendChild(chart(r.dist));
   if(r.flags&&r.flags.length){var f=el('div','pd-fl');r.flags.forEach(function(x){f.appendChild(el('div',null,x))});b.appendChild(f)}
   if(r.facts&&r.facts.length){var fc=el('div','pd-facts');r.facts.forEach(function(x){var d=el('div','r');ap(d,el('span',null,x[0]),el('span',null,String(x[1])));fc.appendChild(d)});b.appendChild(fc)}
   return b;
+}
+
+/* hit rates (apply_hitrate.py) */
+var HS=B.hrs||null;
+function hfr(a){return a[0]+'/'+a[1]}
+function hcls(a){return a[1]?(a[0]/a[1]>=.5?'pos':'neg'):''}
+function hline(r){var h=r.hr;if(!h)return null;var d=el('div','pd-hr');
+  [['L5',h.l5],['L10',h.l10],['SZN',h.sz]].forEach(function(x,i){if(i)d.appendChild(D.createTextNode(' \u00b7 '));var s=el('span',null,x[0]+' ');s.appendChild(el('b',hcls(x[1]),hfr(x[1])));d.appendChild(s)});
+  return d}
+function wlu(a){return a[0]+'-'+a[1]+(a[2]?'-'+a[2]:'')}
+function hrBlock(r){
+  var h=r.hr,w=el('div','pd-hrb');
+  if(h){
+    var lbl=h.mk==='fb'?'scored first':h.mk==='td'?'scored a TD':(h.s==='o'?'over ':'under ')+h.ln;
+    ap(w,el('h4',null,'Player hit rate \u00b7 '+lbl));
+    var t=el('div','pd-hrt');[['Last 5',h.l5],['Last 10',h.l10],['Season',h.sz]].forEach(function(x){var c=el('div','c');ap(c,el('b',hcls(x[1]),hfr(x[1])),el('span',null,x[0]+(x[1][1]?' \u00b7 '+Math.round(100*x[1][0]/x[1][1])+'%':'')));t.appendChild(c)});w.appendChild(t);
+    var mx=h.ln*1.6;h.log.forEach(function(g){if(g[2]>mx)mx=g[2]});if(!mx)mx=1;
+    var lg=el('div','pd-log');
+    h.log.forEach(function(g){var hit=h.s==='o'?g[2]>h.ln:g[2]<h.ln,c=el('div','g'),bar=el('div','bw'),f=el('i',hit?'w':'l');
+      f.style.height=Math.max(3,g[2]/mx*100)+'%';bar.appendChild(f);var q=el('span','ln');q.style.bottom=(h.ln/mx*100)+'%';bar.appendChild(q);ap(c,el('div','v',String(g[2])),bar,el('div','d',g[0]),el('div','o',g[1]));lg.appendChild(c)});
+    w.appendChild(lg);w.appendChild(el('div','pd-note','Last '+h.log.length+' games played (DNPs excluded) vs the '+(h.mk==='fb'||h.mk==='td'||h.mk==='pts'&&B.page==='nhl-props'?'0.5':h.ln)+' line.'+(h.x?' '+h.x+'.':'')));
+  }
+  var rc=HS&&HS.rec&&r.mt&&HS.rec.by[r.mt],cb=HS&&HS.cal&&r.mt&&HS.cal.by[r.mt];
+  if(rc||cb){var m=el('div','pd-mr');m.appendChild(el('h4',null,'Model hit rate \u00b7 '+r.mt));
+    if(cb){var t2=cb.t;m.appendChild(row('Graded ('+t2.n+')','hit '+pc(t2.act)+' \u00b7 pred '+pc(t2.pred)))}
+    if(rc)m.appendChild(row('Sent plays',wlu(rc)+' \u00b7 '+sg(rc[3],'u')+(rc[4]!=null?' \u00b7 ROI '+sg(rc[4],'%'):''),rc[3]>0?'pos':rc[3]<0?'neg':null));
+    w.appendChild(m)}
+  return w.childNodes.length?w:null;
+}
+function hrSection(){
+  if(!HS||!(HS.cal||HS.rec))return null;
+  var sec=el('section','sec tog pd-sec hr-sec'),hd=el('div','sec-h'),bd=el('div','sec-b');sec.id='hr-sec';
+  hd.appendChild(D.createTextNode('Model hit rate \u00b7 '+(HS.sport||'')));ap(sec,hd,bd);
+  hd.addEventListener('click',function(){sec.classList.toggle('closed')});
+  if(HS.cal){var a=HS.cal.all.t,k=el('div','pd-keys');
+    [['Graded',String(a.n)],['Hit rate',pc(a.act)],['Avg pred',pc(a.pred)],['Play units',a.u==null?'-':sg(a.u,'u')]].forEach(function(x,i){var d=el('div','pd-kv');ap(d,el('span',null,x[0]),el('b',i===3&&a.u!=null?(a.u>0?'pos':'neg'):null,x[1]));k.appendChild(d)});bd.appendChild(k)}
+  if(HS.rec){var t=el('table','hr-t'),th=el('tr');['Sent plays','W-L','Units','ROI'].forEach(function(x){th.appendChild(el('th',null,x))});t.appendChild(th);
+    var rows=[['All',HS.rec.all]];Object.keys(HS.rec.by).forEach(function(k){rows.push([k,HS.rec.by[k]])});
+    rows.forEach(function(x){var tr=el('tr');ap(tr,el('td',null,x[0]),el('td',null,wlu(x[1])),el('td',x[1][3]>0?'pos':x[1][3]<0?'neg':null,sg(x[1][3],'u')),el('td',null,x[1][4]==null?'-':sg(x[1][4],'%')));t.appendChild(tr)});
+    bd.appendChild(t)}
+  function ctab(title,c){var w=el('div','hr-cb');w.appendChild(el('h4',null,title+' \u00b7 '+c.t.n+' graded'+(c.t.u!=null?' \u00b7 board plays '+c.t.pw+'-'+(c.t.pn-c.t.pw)+' '+sg(c.t.u,'u'):'')));
+    var t=el('table','hr-t'),th=el('tr');['Model %','Count','Avg pred','Actual'].forEach(function(x){th.appendChild(el('th',null,x))});t.appendChild(th);
+    c.b.forEach(function(b){var tr=el('tr',b[1]<20?'sm':null);ap(tr,el('td',null,b[0]),el('td',null,String(b[1])),el('td',null,pc(b[2])),el('td',null,pc(b[3])));t.appendChild(tr)});
+    w.appendChild(t);return w}
+  if(HS.cal){var ks=Object.keys(HS.cal.by),hold=el('div');
+    if(ks.length>1){var se=el('select','pd-sel hr-sel');se.setAttribute('aria-label','Prop type');var o=el('option',null,'Calibration \u00b7 all props');o.value='';se.appendChild(o);
+      ks.forEach(function(k){var o2=el('option',null,k+' ('+HS.cal.by[k].t.n+')');o2.value=k;se.appendChild(o2)});bd.appendChild(se);
+      se.addEventListener('change',function(){hold.textContent='';hold.appendChild(se.value?ctab(se.value,HS.cal.by[se.value]):ctab('All props',HS.cal.all))})}
+    hold.appendChild(ctab('All props',HS.cal.all));bd.appendChild(hold)}
+  var mt=HS.meta;bd.appendChild(el('div','pd-note','Graded: last pre-game board snapshot of each prop vs final box scores'+(mt&&mt.through?' through '+mt.through:mt&&mt.through_week?' through week '+mt.through_week:'')+'. Sent plays: nightly ledgers.'));
+  return sec;
 }
 function mline(r){
   var m=el('div','pd-m'),t=r.m||'',mm=/^(Over|Under)\b/.exec(t);
@@ -900,7 +974,7 @@ function mline(r){
 function card(r){
   var c=el('div','pd-card'),h=el('button','pd-head');h.setAttribute('type','button');h.setAttribute('aria-expanded','false');
   var m=el('div','pd-main'),nm=el('div','pd-name',r.n);if(r.tm)nm.appendChild(el('small',null,r.tm));
-  ap(m,el('div','pd-when',r.s||''),nm,mline(r),el('div','pd-tap','Tap for details'));
+  ap(m,el('div','pd-when',r.s||''),nm,mline(r),hline(r),el('div','pd-tap','Tap for details'));
   var s=el('div','pd-side');
   if(r.g)s.appendChild(el('span','pd-g '+r.g,r.g));
   var bg=el('div','pd-big'),bb=el('b',r.big&&r.big[1]==='EV'?'pos':null,r.big?r.big[0]:'-');ap(bg,bb,el('i',null,r.big?r.big[1]:''));
@@ -957,6 +1031,7 @@ if(secs.length)anchor=secs[0];else anchor=D.getElementById('plays')||D.getElemen
 if(anchor&&anchor.parentNode===main)main.insertBefore(sec,anchor.nextSibling);
 else if(anchor)anchor.parentNode.insertBefore(sec,anchor.nextSibling);
 else main.insertBefore(sec,main.firstChild);
+try{var hs=hrSection();if(hs&&!D.getElementById('hr-sec'))sec.parentNode.insertBefore(hs,sec.nextSibling)}catch(e){}
 }catch(e){if(window.console)console.warn('prop detail',e)}
 })();
 
