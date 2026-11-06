@@ -697,7 +697,7 @@ body[data-sport=home] .m{background:var(--card2)!important;border:1px solid var(
 body[data-sport=home] .chev{border-color:var(--mut)!important}
 body .pl-homehead .legend{color:var(--mut)!important}
 
-</style><!--pro-v1--></head><body data-sport="nfl-td"><!--slate-line--><div id="slate-line" style="font:600 14px/1.4 system-ui,sans-serif;padding:6px 12px;background:#e8f4ea;color:#123;border-bottom:1px solid #9994">Slate: Week 9 (2026) | Updated Thu Nov 5, 8:53 PM CT</div><!--/slate-line-->
+</style><!--pro-v1--></head><body data-sport="nfl-td">
 <header class="topbar"><div class="in"><div class="brand"><h1 id="title">NFL anytime TD</h1><span id="hstatus"></span></div><div class="hmeta"><span id="slate"></span><span id="updated"></span></div></div><nav class="sports" aria-label="Sports"><a href="../" data-k="home"><i></i>Home</a><a href="../nfl/" data-k="nfl"><i></i>NFL</a><a href="../nfl-props/" data-k="nfl-props"><i></i>NFL Props</a><a href="../nfl-td/" data-k="nfl-td" class="on" aria-current="page"><i></i>NFL TD</a><a href="../cfb/" data-k="cfb"><i></i>CFB</a><a href="../nba/" data-k="nba"><i></i>NBA</a><a href="../nba-props/" data-k="nba-props"><i></i>NBA Props</a><a href="../nba-first-basket/" data-k="nba-first-basket"><i></i>NBA 1st Bkt</a><a href="../intl-basketball/" data-k="intl-basketball"><i></i>EuroLeague</a><a href="../cbb/" data-k="cbb"><i></i>CBB</a><a href="../nhl/" data-k="nhl"><i></i>NHL</a><a href="../nhl-props/" data-k="nhl-props"><i></i>NHL Pts</a><a href="../mlb/" data-k="mlb"><i></i>MLB</a><a href="../tennis/" data-k="tennis"><i></i>Tennis</a></nav></header>
 <main class="wrap"><div id="banners"></div>
 <div class="sec-h">Top plays <small id="plays-note"></small></div><div id="plays"></div>
@@ -765,15 +765,19 @@ function card(r, two) { const e = two ? r.price2 : r.price, p = two ? r.p2 : r.p
     edge: e ? sgn(e.edge) + ' pts \u00b7 EV ' + (100 * e.ev).toFixed(0) + '%' : 'model', edgeVal: e ? e.edge : null, grade: e ? pickBadge(r, two) : null, label: null,
     notes: [e ? 'No-vig ' + pc(e.novig) + ' \u00b7 model ' + pc(two ? r.p2_model : r.p_model) + ' \u00b7 ' + e.n_books + ' books' : '', r.p_play != null && r.p_play < 0.9 ? 'P(play) ' + pc(r.p_play, 0) : '', (r.flags || [])[0] ? String(r.flags[0]).slice(0, 90) : ''] }; }
 function topPlays() {
-  const ok = r => r.label !== 'CHECK' && !(r.p_play < 0.15) && r.data_grade !== 'C';
-  const val = D.rows.filter(r => r.price && ok(r) && r.price.edge > 0 && r.price.ev > 0).sort((a, b) => b.price.ev - a.price.ev).slice(0, 6);
-  const two = D.rows.filter(r => r.price2 && ok(r) && !r.price2.check && r.price2.edge > 0 && r.price2.ev > 0).sort((a, b) => b.price2.ev - a.price2.ev).slice(0, 6);
+  // okPrice: priced value board (no_market => data_grade C, correctly excluded).
+  // okModel: model-only lists ignore the no_market flag via data_grade_ex_market so a 24h odds window
+  // that has not yet pulled Sunday prices does not blank Top plays / Most likely 2+.
+  const okPrice = r => r.label !== 'CHECK' && !(r.p_play < 0.15) && r.data_grade !== 'C';
+  const okModel = r => r.label !== 'CHECK' && !(r.p_play < 0.15) && (r.data_grade_ex_market || r.data_grade) !== 'C';
+  const val = D.rows.filter(r => r.price && okPrice(r) && r.price.edge > 0 && r.price.ev > 0).sort((a, b) => b.price.ev - a.price.ev).slice(0, 6);
+  const two = D.rows.filter(r => r.price2 && okPrice(r) && !r.price2.check && r.price2.edge > 0 && r.price2.ev > 0).sort((a, b) => b.price2.ev - a.price2.ev).slice(0, 6);
   const P = document.getElementById('plays'); P.textContent = '';
   const a = $('div'), b = $('div'), c = $('div');
-  UI.plays(a, (priced ? val : D.rows.filter(ok).sort((x, y) => y.p - x.p).slice(0, 6)).map(r => card(r, false)), priced ? 'No anytime TD price beats the sharp number right now.' : 'No players on this slate.');
+  UI.plays(a, (priced ? val : D.rows.filter(okModel).sort((x, y) => y.p - x.p).slice(0, 6)).map(r => card(r, false)), priced ? 'No anytime TD price beats the sharp number right now.' : 'No high-confidence players on this slate.');
   UI.plays(b, two.map(r => card(r, true)), 'No 2+ TD price beats the sharp number right now.');
-  UI.plays(c, D.rows.filter(r => ok(r) && (!r.price2 || r.price2.ev > 0)).sort((x, y) => y.p2 - x.p2).slice(0, 6).map(r => card(r, true)), '');
-  document.getElementById('plays-note').textContent = priced ? 'sharp % beats the no-vig price; best price across books, ranked by EV' : 'highest TD %';
+  UI.plays(c, D.rows.filter(r => okModel(r) && (!r.price2 || r.price2.ev > 0)).sort((x, y) => y.p2 - x.p2).slice(0, 6).map(r => card(r, true)), '');
+  document.getElementById('plays-note').textContent = priced ? 'sharp % beats the no-vig price; best price across books, ranked by EV' : 'highest TD % (model; sportsbook prices not in the current odds window yet)';
   P.append(a, $('div', { class: 'sec-h' }, '2+ TD plays ', $('small', { text: 'sharp 2+ % beats the no-vig 2+ price, ranked by EV' })), b,
     $('div', { class: 'sec-h' }, 'Most likely 2+ TD scorers ', $('small', { text: 'by 2+ TD %' })), c);
 }
@@ -1252,7 +1256,7 @@ new MutationObserver(function(){sync()}).observe(bar,{subtree:true,childList:tru
 sync();
 }catch(e){if(window.console)console.warn('first-td',e)}})();
 
-</script><script id="polish-data" type="application/json">{"pre":"../","fallback":1793933589,"v":"polish-v1"}</script><script id="polish-js">
+</script><script id="polish-data" type="application/json">{"pre":"../","fallback":1793936305,"v":"polish-v1"}</script><script id="polish-js">
 /* Model Desk polish v1: presentation only. Adds brand row + freshness chip, aligns numeric table columns, adds footer text. Never changes data. */
 (function(){
 'use strict';
