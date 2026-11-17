@@ -303,6 +303,21 @@ nav.sports a[data-k="tennis"]{--c:#b6f03c;--c2:#22d3ee}
 .gd-livebox .gd-res-h{align-items:center}
 .gd-livebox .gd-sub{font-size:12px}
 
+/* Model vs Market pair (navy/charcoal, muted steel-blue accent on Model) */
+.gd-duo{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:6px 0 8px}
+.gd-tc{background:rgba(255,255,255,.05);border:1px solid var(--line,#24345a);border-radius:10px;padding:7px 5px;text-align:center;min-width:0}
+.gd-tc .k{display:block;font-size:9.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--mut,#9db0d0);margin-bottom:3px}
+.gd-tc b{display:block;font-size:14.5px;font-weight:800;font-variant-numeric:tabular-nums;color:#e8eef8;letter-spacing:-.02em;overflow-wrap:anywhere}
+.gd-tc.model{border-color:rgba(136,160,196,.55)}
+.gd-tc.model b{color:#c5d4ea}
+.gd-g.A,.gd-g.B,.gd-g.C{background:#4d6a8c;color:#e8eef8;background-image:none;box-shadow:none}
+@media(max-width:420px){
+  .gd-duo{gap:5px}
+  .gd-tc{padding:6px 3px}
+  .gd-tc b{font-size:13.5px}
+  .gd-tc .k{font-size:9px;letter-spacing:.05em}
+}
+
 </style><style id="rec-css">
 /* model projected-side record (apply_record.py): uses the skin variables, falls back to dark defaults */
 .rec-sec .sec-h{cursor:pointer}
@@ -924,6 +939,18 @@ function kbox(title){var k=el('div','gd-k');ap(k,el('h4',null,title));return k}
 function lastw(n){var w=String(n).trim().split(/\s+/);return w[w.length-1]}
 function SA(g){return g.tennis?lastw(g.an):g.a}
 function SH(g){return g.tennis?lastw(g.hn):g.h}
+function fmtLine(v,kind){
+  if(v==null||v==='')return '\u2014';
+  if(kind==='pct')return (typeof v==='number'?v.toFixed(1):v)+'%';
+  if(kind==='tot')return (typeof v==='number'?v.toFixed(1):v);
+  return sg(v);
+}
+function duo(raw,mkt,kind){
+  var w=el('div','gd-duo');
+  function cell(lab,v,cls){var c=el('div','gd-tc'+(cls?' '+cls:''));ap(c,el('span','k',lab),el('b',null,fmtLine(v,kind)));return c}
+  ap(w,cell('Model',raw,'model'),cell('Market',mkt,'market'));
+  return w;
+}
 
 function hero(g){
   var w=el('div','gd-hero');
@@ -979,12 +1006,17 @@ function body(g){
   else if(isLive(g))ap(b,livebox(g));
   ap(b,hero(g));
   if(g.proj){
-    var sub=g.proj.dec?(isLive(g)?'Pre-game projected final (model average)':'Projected final (model average)'):'Projected final from model total '+g.proj.total.toFixed(1)+' and margin '+(g.proj.margin>0?g.hn:g.an)+' by '+Math.abs(g.proj.margin).toFixed(1);
+    var sub=g.proj_label||(g.proj.dec?(isLive(g)?'Pre-game projected final (model average)':'Projected final (model average)'):'Projected final from model total '+g.proj.total.toFixed(1)+' and margin '+(g.proj.margin>0?g.hn:g.an)+' by '+Math.abs(g.proj.margin).toFixed(1));
     ap(b,el('div','gd-sub',sub));
   }
   if(g.likely)ap(b,el('div','gd-likely',g.likely));
   var grid=el('div','gd-grid');
-  if(g.win){
+  if(g.win2){
+    var k=kbox('Win probability');
+    ap(k,el('div','gd-sub',SA(g)+' win %'),duo(g.win2.raw_a,g.win2.mkt_a,'pct'));
+    ap(k,el('div','gd-sub',SH(g)+' win %'),duo(g.win2.raw_h,g.win2.mkt_h,'pct'));
+    if(g.winnote)ap(k,el('div','gd-note',g.winnote));grid.appendChild(k);
+  }else if(g.win){
     var k=kbox('Win probability'),sp2=el('div','gd-split'),ia=el('i','a'),ih=el('i','h');ia.style.width=g.win.a+'%';ih.style.width=g.win.h+'%';ap(sp2,ia,ih);
     ap(k,sp2,row(SA(g),pc(g.win.a)),row(SH(g),pc(g.win.h)));if(g.winnote)ap(k,el('div','gd-note',g.winnote));grid.appendChild(k);
   }
@@ -992,26 +1024,29 @@ function body(g){
     var k2=kbox('Moneyline: model fair vs best price');
     ap(k2,row(SA(g),'fair '+ml(g.ml.fa)+(g.ml.ba!=null?' | best '+ml(g.ml.ba)+(g.ml.bka?' ('+g.ml.bka+')':''):'')),row(SH(g),'fair '+ml(g.ml.fh)+(g.ml.bh!=null?' | best '+ml(g.ml.bh)+(g.ml.bkh?' ('+g.ml.bkh+')':''):'')));grid.appendChild(k2);
   }
-  if(g.sp&&(g.sp.ph!=null||g.sp.model!=null)){
-    var k3=kbox(g.sp.rl?'Run line (1.5)':'Spread: model vs market');
+  if(g.sp&&(g.sp.ph!=null||g.sp.model!=null||g.sp.raw!=null)){
+    var k3=kbox(g.sp.rl?'Run line (1.5)':'Spread ('+SH(g)+' line)');
     if(g.sp.rl){ap(k3,row(SH(g)+' \u22121.5 covers',pc(g.sp.ph)),row(SA(g)+' \u22121.5 covers',pc(g.sp.pa)))}
     else{
-      ap(k3,row('Model ('+SH(g)+')',sg(g.sp.model)),row('Market ('+SH(g)+')',sg(g.sp.mkt)));
-      if(g.sp.ph!=null)ap(k3,row(SH(g)+' covers market line',pc(g.sp.ph),g.sp.ph>=52.5?'pos':null),row(SA(g)+' covers market line',pc(g.sp.pa),g.sp.pa>=52.5?'pos':null));
+      var rawS=g.sp.raw!=null?g.sp.raw:g.sp.model;
+      ap(k3,duo(rawS,g.sp.mkt,'sp'));
+      if(g.sp.ph!=null)ap(k3,row(SH(g)+' covers market line',pc(g.sp.ph)),row(SA(g)+' covers market line',pc(g.sp.pa)));
     }
     grid.appendChild(k3);
   }
   if(g.tot&&!g.nototals){
-    var T=g.tot,k4=kbox(T.games?'Total games: model vs market':'Total: model vs market');
+    var T=g.tot,k4=kbox(T.games?'Total games':'Total');
     if(T.games){
-      ap(k4,row('Model mean (median)',T.model+' ('+T.median+')'));
+      ap(k4,duo(T.model,T.mkt,'tot'));
+      if(T.median!=null)ap(k4,row('Model median',String(T.median)));
       if(T.sd!=null)ap(k4,row('Spread of outcomes','\u00b1'+T.sd));
       if(T.rng)ap(k4,row('Middle 50% range',T.rng[0]+'\u2013'+T.rng[1]));
       if(T.line!=null)ap(k4,row('Over '+T.line+' (model line)',pc(T.po_model)));
-      if(T.mkt!=null)ap(k4,row('Market line '+T.mkt+' over',pc(T.po),T.po>=52.5?'pos':null));
+      if(T.mkt!=null&&T.po!=null)ap(k4,row('Market line '+T.mkt+' over',pc(T.po)));
     }else{
-      ap(k4,row('Model',T.model==null?'-':T.model.toFixed(1)),row('Market',T.mkt==null?'-':T.mkt.toFixed(1)));
-      if(T.po!=null)ap(k4,row('Over',pc(T.po),T.po>=52.5?'pos':null),row('Under',pc(T.pu),T.pu>=52.5?'pos':null));
+      var rawT=T.raw!=null?T.raw:T.model;
+      ap(k4,duo(rawT,T.mkt,'tot'));
+      if(T.po!=null)ap(k4,row('Over',pc(T.po)),row('Under',pc(T.pu)));
       if(T.push)ap(k4,row('Push',pc(T.push)));
       if(T.rng)ap(k4,row('Middle 50% range',T.rng[0]+'\u2013'+T.rng[1]));
     }
@@ -1044,7 +1079,9 @@ function card(g,i){
   var m=el('div','gd-main'),w=el('div','gd-when');w.appendChild(el('span',null,g.when||''));
   if(isLive(g))w.appendChild(el('span','gd-live','LIVE'));
   if(g.ev)w.appendChild(el('span',null,'\u00b7 '+g.ev));
-  ap(m,w,el('div','gd-teams',g.tennis?g.an+' vs '+g.hn:g.an+' @ '+g.hn),el('div','gd-tap',g.past?(g.proj?'Projected '+g.proj.a.toFixed(g.proj.dec?1:0)+'\u2013'+g.proj.h.toFixed(g.proj.dec?1:0)+' \u00b7 tap for details':'Tap for the saved projection'):(isLive(g)&&g.proj?'Pre-game projection '+g.proj.a.toFixed(g.proj.dec?1:0)+'\u2013'+g.proj.h.toFixed(g.proj.dec?1:0)+' \u00b7 tap for details':'Tap for projected score & details')));
+  var projTxt=g.proj?(g.proj.a.toFixed(g.proj.dec?1:0)+'\u2013'+g.proj.h.toFixed(g.proj.dec?1:0)):'';
+  var tap=g.past?(g.proj?(g.proj_source==='raw'?'Model score '+projTxt:'Projected '+projTxt)+' \u00b7 tap for details':'Tap for the saved projection'):(isLive(g)&&g.proj?(g.proj_source==='raw'?'Pre-game model score '+projTxt:'Pre-game projection '+projTxt)+' \u00b7 tap for details':(g.proj&&g.proj_source==='raw'?'Model score '+projTxt+' \u00b7 tap for details':'Tap for projected score & details'));
+  ap(m,w,el('div','gd-teams',g.tennis?g.an+' vs '+g.hn:g.an+' @ '+g.hn),el('div','gd-tap',tap));
   var s=el('div','gd-side');
   if(g.picks&&g.picks.length){var best=g.picks.map(function(p){return p.g}).sort()[0];s.appendChild(el('span','gd-g '+best,best))}
   var sc=el('div','gd-sc');
@@ -1080,7 +1117,7 @@ var all=up.concat(old),sec=el('section','sec tog gd-sec'),hd=el('div','sec-h'),b
 hd.appendChild(document.createTextNode(kind==='tennis'?'Match projections':'Game projections'));
 var cnt=el('span','cnt',all.length+(kind==='tennis'?' matches':' games'));hd.appendChild(cnt);
 ap(sec,hd,bd);
-ap(bd,el('div','gd-hint',!G.length?'No upcoming games on the board right now. Games that already started or finished are in Past games below.':kind==='tennis'?'Tap a match for win %, set scores and games.':'Tap a game for its model-simulated score, odds and context.'));
+ap(bd,el('div','gd-hint',!G.length?'No upcoming games on the board right now. Games that already started or finished are in Past games below.':kind==='tennis'?'Tap a match for Model and Market win % plus set scores.':'Tap a game for the raw model score and the market line.'));
 var list=el('div','gd-list');bd.appendChild(list);
 var shown=0,rest=[];
 all.forEach(function(g,i){if(i<LIM||openSet[g.id]){list.appendChild(card(g,i));shown++}else rest.push(g)});
@@ -1125,7 +1162,7 @@ if(psec)sec.parentNode.insertBefore(psec,sec.nextSibling);
 }catch(e){if(window.console)console.warn('game detail',e)}
 })();
 
-</script><script id="rec-data" type="application/json">{"v":1,"sport":"nfl","today":"2026-11-16","generated":"2026-11-16 22:55","rec":{"lines":["SU","ATS","OU"],"graded":87,"since":"2026-10-05","tracked_projections":115,"last7":{"games":14,"SU":{"w":10,"l":4,"p":0,"n":14,"pct":71.4},"ATS":{"w":6,"l":7,"p":0,"n":13,"pct":46.2},"OU":{"w":7,"l":7,"p":0,"n":14,"pct":50.0}},"season":{"games":87,"SU":{"w":63,"l":23,"p":1,"n":87,"pct":73.3},"ATS":{"w":41,"l":43,"p":2,"n":86,"pct":48.8},"OU":{"w":46,"l":40,"p":1,"n":87,"pct":53.5}},"days":{"2026-10-05":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"ATS":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-08":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"ATS":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-11":{"games":13,"SU":{"w":9,"l":3,"p":1,"n":13,"pct":75.0},"ATS":{"w":6,"l":6,"p":1,"n":13,"pct":50.0},"OU":{"w":7,"l":6,"p":0,"n":13,"pct":53.8}},"2026-10-12":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"ATS":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-15":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"ATS":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-10-18":{"games":12,"SU":{"w":7,"l":5,"p":0,"n":12,"pct":58.3},"ATS":{"w":2,"l":9,"p":1,"n":12,"pct":18.2},"OU":{"w":4,"l":7,"p":1,"n":12,"pct":36.4}},"2026-10-19":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"ATS":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-10-22":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"ATS":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-25":{"games":12,"SU":{"w":8,"l":4,"p":0,"n":12,"pct":66.7},"ATS":{"w":7,"l":5,"p":0,"n":12,"pct":58.3},"OU":{"w":8,"l":4,"p":0,"n":12,"pct":66.7}},"2026-10-26":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"ATS":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-10-29":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"ATS":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-11-01":{"games":12,"SU":{"w":10,"l":2,"p":0,"n":12,"pct":83.3},"ATS":{"w":7,"l":5,"p":0,"n":12,"pct":58.3},"OU":{"w":7,"l":5,"p":0,"n":12,"pct":58.3}},"2026-11-02":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"ATS":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-11-05":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"ATS":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-11-08":{"games":13,"SU":{"w":12,"l":1,"p":0,"n":13,"pct":92.3},"ATS":{"w":7,"l":6,"p":0,"n":13,"pct":53.8},"OU":{"w":8,"l":5,"p":0,"n":13,"pct":61.5}},"2026-11-09":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"ATS":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-11-12":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"ATS":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-11-15":{"games":12,"SU":{"w":10,"l":2,"p":0,"n":12,"pct":83.3},"ATS":{"w":6,"l":6,"p":0,"n":12,"pct":50.0},"OU":{"w":6,"l":6,"p":0,"n":12,"pct":50.0}},"2026-11-16":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"ATS":{"w":0,"l":0,"p":0,"n":0,"pct":null},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}}}},"note":"Spread and total sides use the model’s projected margin and total against the last line posted before kickoff; when the published model line sits exactly on the market line, the model’s raw projection is used.","empty":""}</script><script id="rec-js">
+</script><script id="rec-data" type="application/json">{"v":1,"sport":"nfl","today":"2026-11-16","generated":"2026-11-16 23:42","rec":{"lines":["SU","ATS","OU"],"graded":87,"since":"2026-10-05","tracked_projections":115,"last7":{"games":14,"SU":{"w":10,"l":4,"p":0,"n":14,"pct":71.4},"ATS":{"w":6,"l":7,"p":0,"n":13,"pct":46.2},"OU":{"w":7,"l":7,"p":0,"n":14,"pct":50.0}},"season":{"games":87,"SU":{"w":63,"l":23,"p":1,"n":87,"pct":73.3},"ATS":{"w":41,"l":43,"p":2,"n":86,"pct":48.8},"OU":{"w":46,"l":40,"p":1,"n":87,"pct":53.5}},"days":{"2026-10-05":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"ATS":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-08":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"ATS":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-11":{"games":13,"SU":{"w":9,"l":3,"p":1,"n":13,"pct":75.0},"ATS":{"w":6,"l":6,"p":1,"n":13,"pct":50.0},"OU":{"w":7,"l":6,"p":0,"n":13,"pct":53.8}},"2026-10-12":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"ATS":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-15":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"ATS":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-10-18":{"games":12,"SU":{"w":7,"l":5,"p":0,"n":12,"pct":58.3},"ATS":{"w":2,"l":9,"p":1,"n":12,"pct":18.2},"OU":{"w":4,"l":7,"p":1,"n":12,"pct":36.4}},"2026-10-19":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"ATS":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-10-22":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"ATS":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-10-25":{"games":12,"SU":{"w":8,"l":4,"p":0,"n":12,"pct":66.7},"ATS":{"w":7,"l":5,"p":0,"n":12,"pct":58.3},"OU":{"w":8,"l":4,"p":0,"n":12,"pct":66.7}},"2026-10-26":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"ATS":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-10-29":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"ATS":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-11-01":{"games":12,"SU":{"w":10,"l":2,"p":0,"n":12,"pct":83.3},"ATS":{"w":7,"l":5,"p":0,"n":12,"pct":58.3},"OU":{"w":7,"l":5,"p":0,"n":12,"pct":58.3}},"2026-11-02":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"ATS":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}},"2026-11-05":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"ATS":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-11-08":{"games":13,"SU":{"w":12,"l":1,"p":0,"n":13,"pct":92.3},"ATS":{"w":7,"l":6,"p":0,"n":13,"pct":53.8},"OU":{"w":8,"l":5,"p":0,"n":13,"pct":61.5}},"2026-11-09":{"games":1,"SU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0},"ATS":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-11-12":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"ATS":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"OU":{"w":1,"l":0,"p":0,"n":1,"pct":100.0}},"2026-11-15":{"games":12,"SU":{"w":10,"l":2,"p":0,"n":12,"pct":83.3},"ATS":{"w":6,"l":6,"p":0,"n":12,"pct":50.0},"OU":{"w":6,"l":6,"p":0,"n":12,"pct":50.0}},"2026-11-16":{"games":1,"SU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0},"ATS":{"w":0,"l":0,"p":0,"n":0,"pct":null},"OU":{"w":0,"l":1,"p":0,"n":1,"pct":0.0}}}},"note":"Spread and total sides use the model’s projected margin and total against the last line posted before kickoff; when the published model line sits exactly on the market line, the model’s raw projection is used.","empty":""}</script><script id="rec-js">
 /* model projected-side record: renders the JSON blob written by apply_record.py. Additive only; any error leaves the page untouched. */
 (function(){
 'use strict';
@@ -1203,7 +1240,7 @@ if(anchor&&anchor.parentNode)anchor.parentNode.insertBefore(sec,anchor.nextSibli
 }catch(e){if(window.console)console.warn('model record',e)}
 })();
 
-</script><script id="polish-data" type="application/json">{"pre":"../","fallback":1794891160,"v":"polish-v1"}</script><script id="polish-js">
+</script><script id="polish-data" type="application/json">{"pre":"../","fallback":1794893459,"v":"polish-v1"}</script><script id="polish-js">
 /* Model Desk polish v1: presentation only. Adds brand row + freshness chip, aligns numeric table columns, adds footer text. Never changes data. */
 (function(){
 'use strict';
