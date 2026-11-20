@@ -219,6 +219,104 @@ nav.sports a[data-k="nhl"]{--c:#22d3ee;--c2:#3b82f6}
 nav.sports a[data-k="nhl-props"]{--c:#2de3c0;--c2:#06b6d4}
 nav.sports a[data-k="mlb"]{--c:#ff5a6e;--c2:#ffb020}
 nav.sports a[data-k="tennis"]{--c:#b6f03c;--c2:#22d3ee}
+</style><style id="gd-css">
+/* game detail panels (apply_gamedetail.py): uses the skin variables, falls back to dark defaults */
+.gd-sec .sec-h{cursor:pointer}
+.gd-sec.closed>.sec-b,.gd-sec.closed>.gd-list{display:none}
+.gd-hint{color:var(--mut,#9db0d0);font-size:12.5px;margin:-4px 2px 10px}
+.gd-list{display:flex;flex-direction:column;gap:10px}
+.gd-card{position:relative;background:linear-gradient(160deg,rgba(var(--sp-rgb,91,140,255),.12),transparent 60%),var(--card,#10192e);border:1px solid var(--line,#24345a);border-left:5px solid var(--sp,#5b8cff);border-radius:16px;overflow:hidden;box-shadow:0 10px 24px -16px rgba(0,0,0,.9)}
+.gd-card.open{border-color:rgba(var(--sp-rgb,91,140,255),.7)}
+.gd-head{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:10px;width:100%;padding:12px 12px 12px 12px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.gd-head:active{background:rgba(255,255,255,.04)}
+.gd-main{flex:1 1 auto;min-width:0}
+.gd-when{font-size:11.5px;color:var(--mut,#9db0d0);display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.gd-live{background:#ff3d6e;color:#fff;border-radius:6px;padding:0 6px;font-size:10.5px;font-weight:800;letter-spacing:.06em}
+.gd-teams{font-size:16.5px;font-weight:800;letter-spacing:-.01em;line-height:1.25;margin-top:2px;overflow-wrap:anywhere;color:var(--ink,#f3f6fc)}
+.gd-tap{font-size:11.5px;color:var(--sp,#5b8cff);font-weight:700;margin-top:3px}
+.gd-side{flex:0 0 auto;display:flex;align-items:center;gap:8px}
+.gd-sc{display:flex;flex-direction:column;align-items:flex-end;font-variant-numeric:tabular-nums;line-height:1.1}
+.gd-sc b{font-size:17px;font-weight:900;letter-spacing:-.02em;color:#fff}
+.gd-sc i{font-style:normal;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--mut,#9db0d0);margin-top:2px}
+.gd-chev{width:9px;height:9px;border-right:3px solid var(--sp,#5b8cff);border-bottom:3px solid var(--sp,#5b8cff);transform:rotate(45deg);margin:-3px 3px 0 2px;transition:transform .18s;flex:0 0 auto}
+.gd-card.open .gd-chev{transform:rotate(-135deg);margin-top:4px}
+.gd-g{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;padding:0 7px;border-radius:8px;font-size:14px;font-weight:900;box-shadow:0 3px 10px -3px rgba(0,0,0,.6)}
+.gd-g.A{background:linear-gradient(135deg,#2ff0a0,#12c27d);color:#022c1a}.gd-g.B{background:linear-gradient(135deg,#5b9bff,#8a63ff);color:#fff}.gd-g.C{background:linear-gradient(135deg,#ffc233,#ff8a1f);color:#3a1c00}
+.gd-body{padding:2px 12px 14px;border-top:1px solid rgba(255,255,255,.07)}
+.gd-card:not(.open) .gd-body{display:none}
+.gd-hero{display:flex;align-items:stretch;gap:8px;margin:12px 0 4px}
+.gd-t{flex:1 1 0;min-width:0;text-align:center;padding:10px 6px;border-radius:14px;background:rgba(255,255,255,.055);border:1px solid transparent}
+.gd-t.win{background:rgba(var(--sp-rgb,91,140,255),.20);border-color:rgba(var(--sp-rgb,91,140,255),.6)}
+.gd-t .n{font-size:12px;font-weight:700;color:#cfdaf1;overflow-wrap:anywhere;line-height:1.2}
+.gd-t .s{font-size:34px;font-weight:900;letter-spacing:-.03em;line-height:1.1;font-variant-numeric:tabular-nums;color:#fff;margin-top:2px}
+.gd-t .p{font-size:12px;color:var(--mut,#9db0d0);font-weight:600}
+.gd-dash{align-self:center;color:var(--mut,#9db0d0);font-weight:800}
+.gd-sub{font-size:12px;color:var(--mut,#9db0d0);text-align:center;margin:6px 0 4px}
+.gd-likely{font-size:13px;font-weight:700;text-align:center;margin:6px 0 2px;color:#fff}
+.gd-grid{display:grid;grid-template-columns:1fr;gap:8px;margin-top:10px}
+.gd-k{background:rgba(255,255,255,.05);border-radius:12px;padding:9px 11px}
+.gd-k h4{margin:0 0 5px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--mut,#9db0d0)}
+.gd-k .r{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;line-height:1.5;font-variant-numeric:tabular-nums}
+.gd-k .r span:first-child{color:#cfdaf1;min-width:0;overflow-wrap:anywhere}.gd-k .r span:last-child{font-weight:800;text-align:right;color:#fff}
+.gd-k .pos{color:#2ff0a0!important}.gd-k .neg{color:#ff6683!important}
+.gd-split{display:flex;height:12px;border-radius:7px;overflow:hidden;margin:3px 0 6px;background:rgba(255,255,255,.08)}
+.gd-split i{display:block;height:100%}.gd-split .a{background:var(--sp2,#8b5cf6)}.gd-split .h{background:var(--sp,#5b8cff)}
+.gd-bars{margin-top:12px}.gd-bars h4{margin:0 0 6px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--mut,#9db0d0)}
+.gd-b{display:flex;align-items:center;gap:8px;margin:4px 0;font-size:12.5px;font-variant-numeric:tabular-nums}
+.gd-b .l{flex:0 0 112px;color:#cfdaf1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gd-b .t{flex:1 1 auto;height:12px;border-radius:6px;background:rgba(255,255,255,.07);overflow:hidden;min-width:0}
+.gd-b .t i{display:block;height:100%;border-radius:6px;background:#7d8fb3;min-width:2px}
+.gd-b.a .t i{background:var(--sp2,#8b5cf6)}.gd-b.h .t i{background:var(--sp,#5b8cff)}
+.gd-b .v{flex:0 0 42px;text-align:right;font-weight:800;color:#fff}
+.gd-tops{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.gd-tops span{background:rgba(255,255,255,.07);border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:700;color:#fff}
+.gd-tops small{color:var(--mut,#9db0d0);font-weight:600;margin-left:4px}
+.gd-facts{margin-top:12px;font-size:13px}
+.gd-facts .r{display:flex;gap:10px;padding:5px 0;border-top:1px solid rgba(255,255,255,.06)}
+.gd-facts .r:first-child{border-top:0}
+.gd-facts .r span:first-child{flex:0 0 108px;color:var(--mut,#9db0d0);font-size:12px}
+.gd-facts .r span:last-child{flex:1 1 auto;min-width:0;overflow-wrap:anywhere;color:#e6edfb}
+.gd-inj{margin-top:8px;font-size:12.5px}.gd-inj summary{cursor:pointer;color:#e6edfb;font-weight:700;padding:4px 0}
+.gd-inj div{color:#cfdaf1;padding:2px 0 2px 10px;border-left:2px solid rgba(255,255,255,.12);margin:3px 0;overflow-wrap:anywhere}
+.gd-picks{margin-top:12px;display:flex;flex-direction:column;gap:6px}
+.gd-picks div{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.05);border-radius:10px;padding:6px 9px;overflow-wrap:anywhere}
+.gd-note{margin-top:12px;font-size:11.5px;line-height:1.4;color:var(--mut,#9db0d0)}
+.gd-more{all:unset;box-sizing:border-box;display:block;width:100%;text-align:center;padding:11px;border-radius:12px;border:1px dashed rgba(var(--sp-rgb,91,140,255),.6);color:#fff;font-weight:700;font-size:13.5px;cursor:pointer;margin-top:2px}
+.gd-more:active{background:rgba(255,255,255,.05)}
+.gd-card,.gd-body,.gd-sec{max-width:100%}
+@media(min-width:560px){.gd-grid{grid-template-columns:1fr 1fr}}
+/* PAST-GAMES */
+.gd-day{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--mut,#9db0d0);margin:12px 2px 6px}
+.gd-dayg:first-of-type .gd-day{margin-top:4px}
+.gd-rec{display:inline-block;font-size:12.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:4px 12px;margin:0 2px 6px}
+.gd-chk{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 6px;border-radius:7px;font-size:12px;font-weight:900;white-space:nowrap}
+.gd-chk.ok{background:rgba(46,204,113,.22);color:#6ff0a4}
+.gd-chk.no{background:rgba(255,92,120,.22);color:#ff8fa5}
+.gd-chk.pu{background:rgba(255,255,255,.12);color:#dfe8ff}
+.gd-res{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);border-radius:12px;padding:10px 12px;margin:0 0 10px}
+.gd-res-h{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
+.gd-res-h b{font-size:15px;font-weight:800;color:#fff}
+.gd-res .gd-sub{margin-top:4px}
+
+/* LIVE-CARDS */
+.gd-livebox .gd-res-h{align-items:center}
+.gd-livebox .gd-sub{font-size:12px}
+
+/* Model vs Market pair (navy/charcoal, muted steel-blue accent on Model) */
+.gd-duo{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:6px 0 8px}
+.gd-tc{background:rgba(255,255,255,.05);border:1px solid var(--line,#24345a);border-radius:10px;padding:7px 5px;text-align:center;min-width:0}
+.gd-tc .k{display:block;font-size:9.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--mut,#9db0d0);margin-bottom:3px}
+.gd-tc b{display:block;font-size:14.5px;font-weight:800;font-variant-numeric:tabular-nums;color:#e8eef8;letter-spacing:-.02em;overflow-wrap:anywhere}
+.gd-tc.model{border-color:rgba(136,160,196,.55)}
+.gd-tc.model b{color:#c5d4ea}
+.gd-g.A,.gd-g.B,.gd-g.C{background:#4d6a8c;color:#e8eef8;background-image:none;box-shadow:none}
+@media(max-width:420px){
+  .gd-duo{gap:5px}
+  .gd-tc{padding:6px 3px}
+  .gd-tc b{font-size:13.5px}
+  .gd-tc .k{font-size:9px;letter-spacing:.05em}
+}
+
 </style><style id="polish-css">
 /* ===== Model Desk polish v1 : institutional / terminal refinement layer. Loaded LAST. Presentation only. ===== */
 :root{
@@ -561,7 +659,7 @@ body[data-sport=home] .m{background:var(--card2)!important;border:1px solid var(
 body[data-sport=home] .chev{border-color:var(--mut)!important}
 body .pl-homehead .legend{color:var(--mut)!important}
 
-</style><!--pro-v1--></head><body data-sport="nhl"><!--slate-line--><div id="slate-line" style="font:600 14px/1.4 system-ui,sans-serif;padding:6px 12px;background:#e8f4ea;color:#123;border-bottom:1px solid #9994">Slate: Fri Nov 20 | Updated Thu Nov 19, 10:58 PM CT</div><!--/slate-line-->
+</style><!--pro-v1--></head><body data-sport="nhl"><!--slate-line--><div id="slate-line" style="font:600 14px/1.4 system-ui,sans-serif;padding:6px 12px;background:#e8f4ea;color:#123;border-bottom:1px solid #9994">Slate: Sat Nov 21 | Updated Fri Nov 20, 12:58 AM CT</div><!--/slate-line-->
 <header class="topbar"><div class="in"><div class="brand"><h1 id="title">NHL</h1><span id="hstatus"></span></div><div class="hmeta"><span id="slate"></span><span id="updated"></span></div></div><nav class="sports" aria-label="Sports"><a href="../../" data-k="home"><i></i>Home</a><a href="../../nfl/" data-k="nfl"><i></i>NFL</a><a href="../../nfl-props/" data-k="nfl-props"><i></i>NFL Props</a><a href="../../nfl-td/" data-k="nfl-td"><i></i>NFL TD</a><a href="../../cfb/" data-k="cfb"><i></i>CFB</a><a href="../../nba/" data-k="nba"><i></i>NBA</a><a href="../../nba-props/" data-k="nba-props"><i></i>NBA Props</a><a href="../../nba-first-basket/" data-k="nba-first-basket"><i></i>NBA 1st Bkt</a><a href="../../intl-basketball/" data-k="intl-basketball"><i></i>EuroLeague</a><a href="../../cbb/" data-k="cbb"><i></i>CBB</a><a href="../../nhl/" data-k="nhl" class="on" aria-current="page"><i></i>NHL</a><a href="../../nhl-props/" data-k="nhl-props"><i></i>NHL Pts</a><a href="../../mlb/" data-k="mlb"><i></i>MLB</a><a href="../../tennis/" data-k="tennis"><i></i>Tennis</a></nav></header>
 <nav class="dtabs" data-dtabs="1"><a href="../" class="">Today · Fri Nov 20</a><a href="../tomorrow/" class="on">Tomorrow · Sat Nov 21</a></nav><div class="dnote">Tomorrow is priced with current game lines (moneyline, spread, total). Goalies/injuries firm up on game day.</div>
 <main class="wrap"><div id="status"></div><div id="meta"></div>
@@ -575,8 +673,8 @@ body .pl-homehead .legend{color:var(--mut)!important}
 <div id="t-health" hidden class="box"></div>
 <section id="live" aria-label="Live games"><div class="sec-h">Live / in progress <small id="live-upd"></small></div><div id="live-body" class="box"></div></section>
 </main>
-<script id="payload" type="application/json">{"status": {"state": "ok"}, "label_help": {"STANDARD": "Model-vs-market gap; inputs look complete.", "LOWCONF": "Model-vs-market gap, but an input is unconfirmed (lineup, starter, goalie or injury status). Verify before relying on it.", "SUSPECT": "Gap is unusually large: more likely a data/input error than value. Verify inputs."}, "grade_help": {"A": "Both starting goalies confirmed (DailyFaceoff 'Confirmed').", "B": "Exactly one goalie confirmed; the other is only 'Likely' or unconfirmed.", "C": "Neither goalie confirmed (both likely / unconfirmed), or a goalie is unknown. A late goalie change would move the numbers a lot."}, "generated_utc": "2026-11-20T04:58:32+00:00", "date": "2026-11-20", "meta": {"date": "2026-11-20", "n_games": 0, "regular_season_start": "2026-09-29", "preseason_start": "2026-09-19", "n_sims": 0, "next_game_date": "2026-11-21", "slate_date": "2026-11-20", "today": "2026-11-20", "odds_api": {"status": "skipped_nogames", "note": "no icehockey_nhl games in the next 36h: API not called (0 credits)", "remaining": 6898, "used": 13102, "cost": 0, "age_min": null, "fetched_utc": null, "n_events": 0, "sport": "icehockey_nhl", "n_games_window": 0, "warn": null, "reserve": 500}}, "health": {"sources": {"nhl_history": "ok (6915 regular-season games through 2026-11-19)", "nhl_schedule": "ok (0 games on 2026-11-20)", "nhl_rosters": "ok (goalie ids for 0/0 teams)", "dailyfaceoff_goalies": "ok (page date 2026-11-19, 12 games)", "espn_scoreboard": "ok (0 events)", "the_odds_api": "skipped: The Odds API [skipped_nogames] no icehockey_nhl games in the next 36h: API not called (0 credits); quota remaining 6898 (used 13102, reserve 500) - ESPN prices used", "model": "ok (0 games)"}, "warnings": ["no NHL games on 2026-11-20; next game date 2026-11-21", "DailyFaceoff page is for 2026-11-19, not 2026-11-20: confirmed-goalie info not available for this date; using projections", "no simulatable (pre-game) games on this date"]}, "bets": [], "games": [], "generated_ct": "Thu Nov 19 10:58 PM CT", "pick_help": {"A": "Strong play: model beats the break-even of the best price by 4+ pts, or 8%+ expected return.", "B": "Solid play: 2-4 pts over break-even, or 4-8% expected return.", "C": "Thin play: positive edge under 2 pts and under 4% expected return."}}</script>
-<script id="livedata" type="application/json">{"date": "2026-11-20", "updated_utc": "2026-11-20T04:58:30Z", "updated_ct": "Thu Nov 19, 10:58 PM CT", "source": "ESPN scoreboard (free)", "live": [], "final": [], "error": null}</script>
+<script id="payload" type="application/json">{"status": {"state": "ok"}, "label_help": {"STANDARD": "Model-vs-market gap; inputs look complete.", "LOWCONF": "Model-vs-market gap, but an input is unconfirmed (lineup, starter, goalie or injury status). Verify before relying on it.", "SUSPECT": "Gap is unusually large: more likely a data/input error than value. Verify inputs."}, "grade_help": {"A": "Both starting goalies confirmed (DailyFaceoff 'Confirmed').", "B": "Exactly one goalie confirmed; the other is only 'Likely' or unconfirmed.", "C": "Neither goalie confirmed (both likely / unconfirmed), or a goalie is unknown. A late goalie change would move the numbers a lot."}, "generated_utc": "2026-11-20T06:58:17+00:00", "date": "2026-11-21", "meta": {"date": "2026-11-21", "n_games": 14, "regular_season_start": "2026-09-29", "preseason_start": "2026-09-19", "n_sims": 0, "next_game_date": null, "slate_date": "2026-11-21", "today": "2026-11-21", "odds_api": {"status": "skipped_nogames", "note": "no icehockey_nhl games in the next 36h: API not called (0 credits)", "remaining": 6887, "used": 13113, "cost": 0, "age_min": null, "fetched_utc": null, "n_events": 0, "sport": "icehockey_nhl", "n_games_window": 0, "warn": null, "reserve": 500}}, "health": {"sources": {"nhl_history": "ok (6429 regular-season games through 2026-11-19)", "nhl_schedule": "ok (14 games on 2026-11-21)", "nhl_rosters": "ok (goalie ids for 28/28 teams)", "dailyfaceoff_goalies": "ok (page date 2026-11-20, 0 games)", "espn_scoreboard": "ok (14 events)", "the_odds_api": "skipped: The Odds API [skipped_nogames] no icehockey_nhl games in the next 36h: API not called (0 credits); quota remaining 6887 (used 13113, reserve 500) - ESPN prices used", "model": "ok (14 games)"}, "warnings": []}, "bets": [], "games": [{"id": 2026020359, "status": "FUT", "start": "2026-11-21T18:00:00Z", "away": "EDM", "home": "CAR", "away_name": "Edmonton Oilers", "home_name": "Carolina Hurricanes", "game_type": 2, "venue": "Lenovo Center", "goalies": {"away": {"id": 8482221, "name": "Devon Levi", "status": "Projected", "source": "policy", "rest": 2, "match": "policy"}, "home": {"id": 8481611, "name": "Pyotr Kochetkov", "status": "Projected", "source": "policy", "rest": 2, "match": "policy"}}, "goalie_state": {"away": "unconfirmed", "home": "unconfirmed"}, "data_grade": "C", "model": {"home_win": 0.7069530469490033, "exp_home": 3.2499951578173194, "exp_away": 2.0193393417520853, "exp_total": 5.373164068473295, "p_reg_tie": 0.1535422289433444, "home_minus1_5": 0.44281298720869205, "away_minus1_5": 0.121112006274712, "total_dist": [0.0022, 0.0369, 0.0533, 0.1526, 0.1255, 0.2011, 0.1198, 0.1351, 0.0647, 0.0568, 0.0232, 0.0168, 0.0061, 0.0037, 0.0012, 0.0007]}, "flags": ["away goalie NOT CONFIRMED: projected Devon Levi by last-starter policy (54% accurate historically)", "home goalie NOT CONFIRMED: projected Pyotr Kochetkov by last-starter policy (54% accurate historically)", "no market moneyline found (Odds API / ESPN): model-only probabilities"], "confidence": "low", "start_ct": "Sat Nov 21 12:00 PM CT", "chips": [["away goalie unconfirmed", "away goalie is unconfirmed (DailyFaceoff status / policy projection)"], ["home goalie unconfirmed", "home goalie is unconfirmed (DailyFaceoff status / policy projection)"]]}, {"id": 2026020360, "status": "FUT", "start": "2026-11-21T20:30:00Z", "away": "CHI", "home": "CGY", "away_name": "Chicago Blackhawks", "home_name": "Calgary Flames", "game_type": 2, "venue": "Scotiabank Saddledome", "goalies": {"away": {"id": 8481519, "name": "Spencer Knight", "status": "Projected", "source": "policy", "rest": 2, "match": "policy"}, "home": {"id": 8481692, "name": "Dustin Wolf", "status": "Projected", "source": "policy", "rest": 2, "match": "policy"}}, "goalie_state": {"away": "unconfirmed", "home": "unconfirmed"}, "data_grade": "C", "model": {"home_win": 0.6140637037654594, "exp_home": 2.9092842139187343, "exp_away": 2.2656826079551933, "exp_total": 5.288887853878954, "p_reg_tie": 0.1684452608507299, "home_minus1_5": 0.3493223804041947, "away_minus1_5": 0.1771918935351063, "total_dist": [0.0024, 0.0393, 0.0551, 0.1594, 0.1255, 0.2054, 0.1157, 0.1347, 0.0603, 0.0552, 0.0208, 0.0158, 0.0052, 0.0034, 0.001, 0.0006]}, "flags": ["away goalie NOT CONFIRMED: projected Spencer Knight by last-starter policy (54% accurate historically)", "home goalie NOT CONFIRMED: projected Dustin Wolf by last-starter policy (54% accurate historically)", "no market moneyline found (Odds API / ESPN): model-only probabilities"], "confidence": "low", "start_ct": "Sat Nov 21 2:30 PM CT", "chips": [["away goalie unconfirmed", "away goalie is unconfirmed (DailyFaceoff status / policy projection)"], ["home goalie unconfirmed", "home goalie is unconfirmed (DailyFaceoff status / policy projection)"]]}, {"id": 2026020361, "status": "FUT", "start": "2026-11-21T23:00:00Z", "away": "BUF", "home": "FLA", "away_name": "Buffalo Sabres", "home_name": "Florida Panthers", "game_type": 2, "venue": "Amerant Bank Arena", "goalies": {"away": {"id": 8480045, "name": "Ukko-Pekka Luukkonen", "status": "Projected", "source": "policy", "rest": 2, "match": "policy"}, "home": {"id": 8474593, "name": "Jacob Markstrom", "status": "Projected", "source": "policy", "rest": 4, "match": "policy"}}, "goalie_state": {"away": "unconfirmed", "home": "unconfirmed"}, "data_grade": "C", "model": {"home_win": 0.593985760301087, "exp_home": 2.931652655740031, "exp_away": 2.39693777097338, "exp_total": 5.441748536004685, "p_reg_tie": 0.1673181076112018, "home_minus1_5": 0.33553877355045225, "away_minus1_5": 0.19355544427346294, "total_dist": [0.0021, 0.035, 0.0504, 0.1496, 0.121, 0.2034, 0.1176, 0.1408, 0.0646, 0.0608, 0.0234, 0.0184, 0.0062, 0.0042, 0.0013, 0.0008]}, "flags": ["away goalie NOT CONFIRMED: projected Ukko-Pekka Luukkonen by last-starter policy (54% accurate historically)", "home goalie NOT CONFIRMED: projected Jacob Markstrom by last-starter policy (54% accurate historically)", "no market moneyline found (Odds API / ESPN): model-only probabilities"], "confidence": "low", "start_ct": "Sat Nov 21 5:00 PM CT", "chips": [["away goalie unconfirmed", "away goalie is unconfirmed (DailyFaceoff status / policy projection)"], ["home goalie unconfirmed", "home goalie is unconfirmed (DailyFaceoff status / policy projection)"]]}, {"id": 2026020362, "status": "FUT", "start": "2026-11-21T23:00:00Z", "away": "PIT", "home": "NSH", "away_name": "Pittsburgh Penguins", "home_name": "Nashville Predators", "game_type": 2, "venue": "Bridgestone Arena", "goalies": {"away": {"id": 8481668, "name": "Arturs Silovs", "status": "Projected", "source": "policy", "rest": 2, "match": "policy"}, "home": {"id": 8477424, "name": "Juuse Saros", "status": "Projected", "source": "policy", "rest": 4, "match": "policy"}}, "goalie_state": {"away": "unconfirmed", "home": "unconfirmed"}, "data_grade": "C", "model": {"home_win": 0.5576194053746909, "exp_home": 3.1461902084182687, "exp_away": 2.803952301088649, "exp_total": 6.057667297242141, "p_reg_tie": 0.15900165514621936, "home_minus1_5": 0.31860223638249735, "away_minus1_5": 0.2308058166042753, "total_dist": [0.0012, 0.0219, 0.0351, 0.1137, 0.1027, 0.1882, 0.1215, 0.1587, 0.0811, 0.0835, 0.0359, 0.0308, 0.0115, 0.0085, 0.0029, 0.0019]}, "flags": ["away goalie NOT CONFIRMED: projected Arturs Silovs by last-starter policy (54% accurate historically)", "home goalie NOT CONFIRMED: projected Juuse Saros by last-starter policy (54% accurate historically)", "no market moneyline found (Odds API / ESPN): model-only probabilities"], "confidence": "low", "start_ct": "Sat Nov 21 5:00 PM CT", "chips": [["away goalie unconfirmed", "away goalie is unconfirmed (DailyFaceoff status / policy projection)"], ["home goalie unconfirmed", "home goalie is unconfirmed (DailyFaceoff status / policy projection)"]]}, {"id": 2026020363, "status": "FUT", "start": "2026-11-22T00:00:00Z", "away": "WSH", "home": "BOS", "away_name": "Washington Capitals", "home_name": "Boston Bruins", "game_type": 2, "venue": "TD Garden", "goalies": {"away": {"id": 8479292, "name": "Charlie Lindgren", "status": "Projected", "source": "policy", "rest": 2, "match": "policy"}, "home": {"id": 8480280, "name": "Jeremy Swayman", "status": "Projected", "source": "policy", "rest": 3, "match": "policy"}}, "goalie_state": {"away": "unconfirmed", "home": "unconfirmed"}, "data_grade": "C", "model": {"home_win": 0.5675538321538705, "exp_home": 2.8688504654421734, "exp_away": 2.489704875196078, "exp_total": 5.472535519569108, "p_reg_tie": 0.16853230414508, "home_minus1_5": 0.31335104953952037, "away_minus1_5": 0.21263381502953888, "total_dist": [0.002, 0.0342, 0.0495, 0.1478, 0.1199, 0.2033, 0.1177, 0.1422, 0.0652, 0.0621, 0.0239, 0.019, 0.0064, 0.0044, 0.0013, 0.0008]}, "flags": ["away goalie NOT CONFIRMED: projected Charlie Lindgren by last-starter policy (54% accurate historically)", "home goalie NOT CONFIRMED: projected Jeremy Swayman by last-starter policy (54% accurate historically)", "no market moneyline found (Odds API / ESPN): model-only probabilities"], "confidence": "low", "start_ct": "Sat Nov 21 6:00 PM CT", "chips": [["away goalie unconfirmed", "away goalie is unconfirmed (DailyFaceoff status / policy projection)"], ["home goalie unconfirmed", "home goalie is unconfirmed (DailyFaceoff status / policy projection)"]]}, {"id": 2026020364, "status": "FUT", "start": "2026-11-22T00:00:00Z", "away": "CBJ", "home": "TOR", "away_name": "Columbus Blue Jackets", "home_name": "Toronto Maple Leafs", "game_type": 2, "venue": "Scotiabank Arena", "goalies": {"away": {"id": 8475660, "name": "Cam Talbot", "status": "Projected", "source": "policy", "rest": 2, "match": "policy"}, "home": {"id": 8476932, "name": "Anthony Stolarz", "status": "Projected", "source": "policy", "rest": 2, "match": "policy"}}, "goalie_state": {"away": "unconfirmed", "home": "unconfirmed"}, "data_grade": "C", "model": {"home_win": 0.5623367887886342, "exp_home": 2.714765363443372, "exp_away": 2.377477073617306, "exp_total": 5.209866497433191, "p_reg_tie": 0.17391706067688834, "home_minus1_5": 0.3020388584997569, "away_minus1_5": 0.21094740850388047, "total_dist": [0.0026, 0.0418, 0.0573, 0.165, 0.1268, 0.2072, 0.1135, 0.1324, 0.0574, 0.0528, 0.0192, 0.0147, 0.0047, 0.0031, 0.0009, 0.0005]}, "flags": ["away goalie NOT CONFIRMED: projected Cam Talbot by last-starter policy (54% accurate historically)", "home goalie NOT CONFIRMED: projected Anthony Stolarz by last-starter policy (54% accurate historically)", "no market moneyline found (Odds API / ESPN): model-only probabilities"], "confidence": "low", "start_ct": "Sat Nov 21 6:00 PM CT", "chips": [["away goalie unconfirmed", "away goalie is unconfirmed (DailyFaceoff status / policy projection)"], ["home goalie unconfirmed", "home goalie is unconfirmed (DailyFaceoff status / policy projection)"]]}, {"id": 2026020365, "status": "FUT", "start": "2026-11-22T00:00:00Z", "away": "PHI", "home": "MTL", "away_name": "Philadelphia Flyers", "home_name": "Montr\u00e9al Canadiens", "game_type": 2, "venue": "Centre Bell", "goalies": {"away": {"id": 8479361, "name": "Joseph Woll", "status": "Projected", "source": "policy", "rest": 2, "match": "policy"}, "home": {"id": 8482487, "name": "Jakub Dobes", "status": "Projected", "source": "policy", "rest": 2, "match": "policy"}}, "goalie_state": {"away": "unconfirmed", "home": "unconfirmed"}, "data_grade": "C", "model": {"home_win": 0.5588110338163804, "exp_home": 2.7248415866273077, "exp_away": 2.406236273806272, "exp_total": 5.248299086998412, "p_reg_tie": 0.17332164512665973, "home_minus1_5": 0.3001264088702061, "away_minus1_5": 0.21426551898377724, "total_dist": [0.0025, 0.0406, 0.0561, 0.1625, 0.1258, 0.2068, 0.1142, 0.134, 0.0585, 0.0541, 0.0198, 0.0153, 0.0049, 0.0033, 0.0009, 0.0006]}, "flags": ["away goalie NOT CONFIRMED: projected Joseph Woll by last-starter policy (54% accurate historically)", "home goalie NOT CONFIRMED: projected Jakub Dobes by last-starter policy (54% accurate historically)", "no market moneyline found (Odds API / ESPN): model-only probabilities"], "confidence": "low", "start_ct": "Sat Nov 21 6:00 PM CT", "chips": [["away goalie unconfirmed", "away goalie is unconfirmed (DailyFaceoff status / policy projection)"], ["home goalie unconfirmed", "home goalie is unconfirmed (DailyFaceoff status / policy projection)"]]}, {"id": 2026020366, "status": "FUT", "start": "2026-11-22T00:00:00Z", "away": "LAK", "home": "OTT", "away_name": "Los Angeles Kings", "home_name": "Ottawa Senators", "game_type": 2, "venue": "Canadian Tire Centre", "goalies": {"away": {"id": 8475311, "name": "Darcy Kuemper", "status": "Projected", "source": "policy", "rest": 2, "match": "policy"}, "home": {"id": 8481035, "name": "Samuel Ersson", "status": "Projected", "source": "policy", "rest": 2, "match": "policy"}}, "goalie_state": {"away": "unconfirmed", "home": "unconfirmed"}, "data_grade": "C", "model": {"home_win": 0.5166975263369743, "exp_home": 2.611140439887857, "exp_away": 2.5334941166034026, "exp_total": 5.262528453671822, "p_reg_tie": 0.17431561686452912, "home_minus1_5": 0.2664095142812407, "away_minus1_5": 0.24546998441749945, "total_dist": [0.0024, 0.0402, 0.0556, 0.1616, 0.1252, 0.207, 0.1141, 0.1348, 0.0587, 0.0548, 0.02, 0.0156, 0.0049, 0.0033, 0.0009, 0.0006]}, "flags": ["away goalie NOT CONFIRMED: projected Darcy Kuemper by last-starter policy (54% accurate historically)", "home goalie NOT CONFIRMED: projected Samuel Ersson by last-starter policy (54% accurate historically)", "no market moneyline found (Odds API / ESPN): model-only probabilities"], "confidence": "low", "start_ct": "Sat Nov 21 6:00 PM CT", "chips": [["away goalie unconfirmed", "away goalie is unconfirmed (DailyFaceoff status / policy projection)"], ["home goalie unconfirmed", "home goalie is unconfirmed (DailyFaceoff status / policy projection)"]]}, {"id": 2026020367, "status": "FUT", "start": "2026-11-22T00:00:00Z", "away": "NYI", "home": "DET", "away_name": "New York Islanders", "home_name": "Detroit Red Wings", "game_type": 2, "venue": "Little Caesars Arena", "goalies": {"away": {"id": 8473575, "name": "Semyon Varlamov", "status": "Projected", "source": "policy", "rest": 2, "match": "policy"}, "home": {"id": 8480193, "name": "Daniil Tarasov", "status": "Projected", "source": "policy", "rest": 3, "match": "policy"}}, "goalie_state": {"away": "unconfirmed", "home": "unconfirmed"}, "data_grade": "C", "model": {"home_win": 0.5629518017363166, "exp_home": 2.730426708160568, "exp_away": 2.388489613199308, "exp_total": 5.236159772156432, "p_reg_tie": 0.17335452698652334, "home_minus1_5": 0.3032642787363805, "away_minus1_5": 0.2110706219988216, "total_dist": [0.0025, 0.041, 0.0565, 0.1633, 0.1262, 0.2069, 0.114, 0.1334, 0.0581, 0.0537, 0.0196, 0.0151, 0.0048, 0.0032, 0.0009, 0.0005]}, "flags": ["away goalie NOT CONFIRMED: projected Semyon Varlamov by last-starter policy (54% accurate historically)", "home goalie NOT CONFIRMED: projected Daniil Tarasov by last-starter policy (54% accurate historically)", "no market moneyline found (Odds API / ESPN): model-only probabilities"], "confidence": "low", "start_ct": "Sat Nov 21 6:00 PM CT", "chips": [["away goalie unconfirmed", "away goalie is unconfirmed (DailyFaceoff status / policy projection)"], ["home goalie unconfirmed", "home goalie is unconfirmed (DailyFaceoff status / policy projection)"]]}, {"id": 2026020368, "status": "FUT", "start": "2026-11-22T00:00:00Z", "away": "NJD", "home": "STL", "away_name": "New Jersey Devils", "home_name": "St. Louis Blues", "game_type": 2, "venue": "Enterprise Center", "goalies": {"away": {"id": 8476945, "name": "Connor Hellebuyck", "status": "Projected", "source": "policy", "rest": 3, "match": "policy"}, "home": {"id": 8480981, "name": "Joel Hofer", "status": "Projected", "source": "policy", "rest": 2, "match": "policy"}}, "goalie_state": {"away": "unconfirmed", "home": "unconfirmed"}, "data_grade": "C", "model": {"home_win": 0.3960016271344525, "exp_home": 2.3323752520414582, "exp_away": 2.959784359420497, "exp_total": 5.404851472990586, "p_reg_tie": 0.16662943800151142, "home_minus1_5": 0.18210335724602644, "away_minus1_5": 0.3487828244276853, "total_dist": [0.0021, 0.036, 0.0516, 0.1519, 0.1223, 0.2038, 0.1174, 0.1392, 0.0637, 0.0593, 0.0229, 0.0177, 0.006, 0.004, 0.0012, 0.0007]}, "flags": ["away goalie NOT CONFIRMED: projected Connor Hellebuyck by last-starter policy (54% accurate historically)", "home goalie NOT CONFIRMED: projected Joel Hofer by last-starter policy (54% accurate historically)", "no market moneyline found (Odds API / ESPN): model-only probabilities"], "confidence": "low", "start_ct": "Sat Nov 21 6:00 PM CT", "chips": [["away goalie unconfirmed", "away goalie is unconfirmed (DailyFaceoff status / policy projection)"], ["home goalie unconfirmed", "home goalie is unconfirmed (DailyFaceoff status / policy projection)"]]}, {"id": 2026020369, "status": "FUT", "start": "2026-11-22T00:00:00Z", "away": "VGK", "home": "WPG", "away_name": "Vegas Golden Knights", "home_name": "Winnipeg Jets", "game_type": 2, "venue": "Canada Life Centre", "goalies": {"away": {"id": 8478499, "name": "Adin Hill", "status": "Projected", "source": "policy", "rest": 2, "match": "policy"}, "home": {"id": 8482076, "name": "Nico Daws", "status": "Projected", "source": "policy", "rest": 2, "match": "policy"}}, "goalie_state": {"away": "unconfirmed", "home": "unconfirmed"}, "data_grade": "C", "model": {"home_win": 0.4687273908483486, "exp_home": 2.5257248612469114, "exp_away": 2.724339325056896, "exp_total": 5.366285063700278, "p_reg_tie": 0.17184302402312704, "home_minus1_5": 0.2323313159933896, "away_minus1_5": 0.2855248436026569, "total_dist": [0.0022, 0.0371, 0.0525, 0.1548, 0.1226, 0.2054, 0.1159, 0.1387, 0.0619, 0.0584, 0.0218, 0.0172, 0.0056, 0.0038, 0.0011, 0.0007]}, "flags": ["away goalie NOT CONFIRMED: projected Adin Hill by last-starter policy (54% accurate historically)", "home goalie NOT CONFIRMED: projected Nico Daws by last-starter policy (54% accurate historically)", "no market moneyline found (Odds API / ESPN): model-only probabilities"], "confidence": "low", "start_ct": "Sat Nov 21 6:00 PM CT", "chips": [["away goalie unconfirmed", "away goalie is unconfirmed (DailyFaceoff status / policy projection)"], ["home goalie unconfirmed", "home goalie is unconfirmed (DailyFaceoff status / policy projection)"]]}, {"id": 2026020370, "status": "FUT", "start": "2026-11-22T02:00:00Z", "away": "ANA", "home": "UTA", "away_name": "Anaheim Ducks", "home_name": "Utah Mammoth", "game_type": 2, "venue": "Delta Center", "goalies": {"away": {"id": 8480843, "name": "Lukas Dostal", "status": "Projected", "source": "policy", "rest": 2, "match": "policy"}, "home": {"id": 8482657, "name": "Sebastian Cossa", "status": "Projected", "source": "policy", "rest": 3, "match": "policy"}}, "goalie_state": {"away": "unconfirmed", "home": "unconfirmed"}, "data_grade": "C", "model": {"home_win": 0.5610367124979323, "exp_home": 2.93038497265713, "exp_away": 2.583622027485081, "exp_total": 5.626323044610467, "p_reg_tie": 0.16607385198653626, "home_minus1_5": 0.3116192789739726, "away_minus1_5": 0.22032677723311836, "total_dist": [0.0018, 0.0304, 0.0453, 0.1383, 0.1155, 0.2001, 0.1193, 0.1474, 0.0696, 0.0678, 0.0268, 0.0218, 0.0075, 0.0053, 0.0016, 0.001]}, "flags": ["away goalie NOT CONFIRMED: projected Lukas Dostal by last-starter policy (54% accurate historically)", "home goalie NOT CONFIRMED: projected Sebastian Cossa by last-starter policy (54% accurate historically)", "no market moneyline found (Odds API / ESPN): model-only probabilities"], "confidence": "low", "start_ct": "Sat Nov 21 8:00 PM CT", "chips": [["away goalie unconfirmed", "away goalie is unconfirmed (DailyFaceoff status / policy projection)"], ["home goalie unconfirmed", "home goalie is unconfirmed (DailyFaceoff status / policy projection)"]]}, {"id": 2026020371, "status": "FUT", "start": "2026-11-22T03:00:00Z", "away": "MIN", "home": "VAN", "away_name": "Minnesota Wild", "home_name": "Vancouver Canucks", "game_type": 2, "venue": "Rogers Arena", "goalies": {"away": {"id": 8482661, "name": "Jesper Wallstedt", "status": "Projected", "source": "policy", "rest": 2, "match": "policy"}, "home": {"id": 8482447, "name": "Leevi Merilainen", "status": "Projected", "source": "policy", "rest": 2, "match": "policy"}}, "goalie_state": {"away": "unconfirmed", "home": "unconfirmed"}, "data_grade": "C", "model": {"home_win": 0.2716083430655451, "exp_home": 2.0087276984124056, "exp_away": 3.4458982517928582, "exp_total": 5.552707369458639, "p_reg_tie": 0.14506800946977008, "home_minus1_5": 0.10842839510353133, "away_minus1_5": 0.4769588821488482, "total_dist": [0.0019, 0.0322, 0.0483, 0.1409, 0.1212, 0.1968, 0.1231, 0.1402, 0.0708, 0.0626, 0.0271, 0.0196, 0.0075, 0.0047, 0.0016, 0.0009]}, "flags": ["away goalie NOT CONFIRMED: projected Jesper Wallstedt by last-starter policy (54% accurate historically)", "home goalie NOT CONFIRMED: projected Leevi Merilainen by last-starter policy (54% accurate historically)", "no market moneyline found (Odds API / ESPN): model-only probabilities"], "confidence": "low", "start_ct": "Sat Nov 21 9:00 PM CT", "chips": [["away goalie unconfirmed", "away goalie is unconfirmed (DailyFaceoff status / policy projection)"], ["home goalie unconfirmed", "home goalie is unconfirmed (DailyFaceoff status / policy projection)"]]}, {"id": 2026020372, "status": "FUT", "start": "2026-11-22T03:00:00Z", "away": "SEA", "home": "SJS", "away_name": "Seattle Kraken", "home_name": "San Jose Sharks", "game_type": 2, "venue": "SAP Center at San Jose", "goalies": {"away": {"id": 8475831, "name": "Philipp Grubauer", "status": "Projected", "source": "policy", "rest": 2, "match": "policy"}, "home": {"id": 8482137, "name": "Yaroslav Askarov", "status": "Projected", "source": "policy", "rest": 4, "match": "policy"}}, "goalie_state": {"away": "unconfirmed", "home": "unconfirmed"}, "data_grade": "C", "model": {"home_win": 0.5042137387124338, "exp_home": 2.8975350122128685, "exp_away": 2.8894739393171243, "exp_total": 5.897139172937158, "p_reg_tie": 0.16284533793566758, "home_minus1_5": 0.2709287015617523, "away_minus1_5": 0.2688369836287824, "total_dist": [0.0014, 0.0247, 0.0386, 0.1225, 0.1073, 0.1933, 0.1208, 0.1553, 0.0768, 0.0779, 0.0323, 0.0273, 0.0099, 0.0072, 0.0023, 0.0015]}, "flags": ["away goalie NOT CONFIRMED: projected Philipp Grubauer by last-starter policy (54% accurate historically)", "home goalie NOT CONFIRMED: projected Yaroslav Askarov by last-starter policy (54% accurate historically)", "no market moneyline found (Odds API / ESPN): model-only probabilities"], "confidence": "low", "start_ct": "Sat Nov 21 9:00 PM CT", "chips": [["away goalie unconfirmed", "away goalie is unconfirmed (DailyFaceoff status / policy projection)"], ["home goalie unconfirmed", "home goalie is unconfirmed (DailyFaceoff status / policy projection)"]]}], "generated_ct": "Fri Nov 20 12:58 AM CT", "pick_help": {"A": "Strong play: model beats the break-even of the best price by 4+ pts, or 8%+ expected return.", "B": "Solid play: 2-4 pts over break-even, or 4-8% expected return.", "C": "Thin play: positive edge under 2 pts and under 4% expected return."}}</script>
+<script id="livedata" type="application/json">{"date": "2026-11-21", "updated_utc": "2026-11-20T06:58:16Z", "updated_ct": "Fri Nov 20, 12:58 AM CT", "source": "ESPN scoreboard (free)", "live": [], "final": [], "error": null}</script>
 <script>
 "use strict";
 
@@ -795,7 +893,251 @@ if(window.MutationObserver){
 }
 })();
 
-</script><script id="polish-data" type="application/json">{"pre":"../../","fallback":1795157896,"v":"polish-v1"}</script><script id="polish-js">
+</script><script id="gd-data" type="application/json">{"kind":"nhl","games":[{"id":"2026020359","a":"EDM","h":"CAR","an":"Edmonton Oilers","hn":"Carolina Hurricanes","ts":1795284000.0,"when":"Sat Nov 21 12:00 PM CT","proj":{"a":2.02,"h":3.25,"margin":1.23,"dec":2,"total":5.37},"proj_label":"Model expected goals (raw simulation).","proj_source":"raw","tot":{"raw":5.37,"model":5.37,"mkt":null},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["CAR by 2+",0.4443,"h"],["CAR by 1",0.178,"h"],["Tied after 60",0.1566,"n"],["EDM by 1",0.1106,"a"],["EDM by 2+",0.1104,"a"]]}],"tops":[["2-3",0.06],["1-3",0.0595],["2-2",0.0554],["1-2",0.0549]],"win":{"a":29.3,"h":70.7},"win2":{"raw_h":null,"mkt_h":null,"raw_a":null,"mkt_a":null},"ml":{"fa":241,"fh":-241,"ba":null,"bh":null,"bka":null,"bkh":null},"winnote":"Includes overtime and shootout","facts":[["EDM goalie","Devon Levi (projected), 2d rest"],["CAR goalie","Pyotr Kochetkov (projected), 2d rest"],["Venue","Lenovo Center"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Devon Levi by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Pyotr Kochetkov by last-starter policy (54% accurate historically)"]],"picks":[],"state":"FUT"},{"id":"2026020360","a":"CHI","h":"CGY","an":"Chicago Blackhawks","hn":"Calgary Flames","ts":1795293000.0,"when":"Sat Nov 21 2:30 PM CT","proj":{"a":2.27,"h":2.91,"margin":0.64,"dec":2,"total":5.29},"proj_label":"Model expected goals (raw simulation).","proj_source":"raw","tot":{"raw":5.29,"model":5.29,"mkt":null},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["CGY by 2+",0.3453,"h"],["CGY by 1",0.1766,"h"],["Tied after 60",0.1738,"n"],["CHI by 1",0.1375,"a"],["CHI by 2+",0.1667,"a"]]}],"tops":[["2-2",0.0614],["2-3",0.0596],["1-2",0.0542],["1-3",0.0526]],"win":{"a":38.6,"h":61.4},"win2":{"raw_h":null,"mkt_h":null,"raw_a":null,"mkt_a":null},"ml":{"fa":159,"fh":-159,"ba":null,"bh":null,"bka":null,"bkh":null},"winnote":"Includes overtime and shootout","facts":[["CHI goalie","Spencer Knight (projected), 2d rest"],["CGY goalie","Dustin Wolf (projected), 2d rest"],["Venue","Scotiabank Saddledome"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Spencer Knight by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Dustin Wolf by last-starter policy (54% accurate historically)"]],"picks":[],"state":"FUT"},{"id":"2026020361","a":"BUF","h":"FLA","an":"Buffalo Sabres","hn":"Florida Panthers","ts":1795302000.0,"when":"Sat Nov 21 5:00 PM CT","proj":{"a":2.4,"h":2.93,"margin":0.53,"dec":2,"total":5.44},"proj_label":"Model expected goals (raw simulation).","proj_source":"raw","tot":{"raw":5.44,"model":5.44,"mkt":null},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["FLA by 2+",0.3305,"h"],["FLA by 1",0.1724,"h"],["Tied after 60",0.1732,"n"],["BUF by 1",0.1409,"a"],["BUF by 2+",0.183,"a"]]}],"tops":[["2-2",0.0599],["2-3",0.0585],["1-2",0.05],["1-3",0.0488]],"win":{"a":40.6,"h":59.4},"win2":{"raw_h":null,"mkt_h":null,"raw_a":null,"mkt_a":null},"ml":{"fa":146,"fh":-146,"ba":null,"bh":null,"bka":null,"bkh":null},"winnote":"Includes overtime and shootout","facts":[["BUF goalie","Ukko-Pekka Luukkonen (projected), 2d rest"],["FLA goalie","Jacob Markstrom (projected), 4d rest"],["Venue","Amerant Bank Arena"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Ukko-Pekka Luukkonen by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Jacob Markstrom by last-starter policy (54% accurate historically)"]],"picks":[],"state":"FUT"},{"id":"2026020362","a":"PIT","h":"NSH","an":"Pittsburgh Penguins","hn":"Nashville Predators","ts":1795302000.0,"when":"Sat Nov 21 5:00 PM CT","proj":{"a":2.8,"h":3.15,"margin":0.34,"dec":2,"total":6.06},"proj_label":"Model expected goals (raw simulation).","proj_source":"raw","tot":{"raw":6.06,"model":6.06,"mkt":null},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["NSH by 2+",0.3115,"h"],["NSH by 1",0.1602,"h"],["Tied after 60",0.1659,"n"],["PIT by 1",0.1427,"a"],["PIT by 2+",0.2197,"a"]]}],"tops":[["2-3",0.0532],["2-2",0.0507],["3-3",0.0497],["3-2",0.0474]],"win":{"a":44.2,"h":55.8},"win2":{"raw_h":null,"mkt_h":null,"raw_a":null,"mkt_a":null},"ml":{"fa":126,"fh":-126,"ba":null,"bh":null,"bka":null,"bkh":null},"winnote":"Includes overtime and shootout","facts":[["PIT goalie","Arturs Silovs (projected), 2d rest"],["NSH goalie","Juuse Saros (projected), 4d rest"],["Venue","Bridgestone Arena"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Arturs Silovs by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Juuse Saros by last-starter policy (54% accurate historically)"]],"picks":[],"state":"FUT"},{"id":"2026020363","a":"WSH","h":"BOS","an":"Washington Capitals","hn":"Boston Bruins","ts":1795305600.0,"when":"Sat Nov 21 6:00 PM CT","proj":{"a":2.49,"h":2.87,"margin":0.38,"dec":2,"total":5.47},"proj_label":"Model expected goals (raw simulation).","proj_source":"raw","tot":{"raw":5.47,"model":5.47,"mkt":null},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["BOS by 2+",0.3071,"h"],["BOS by 1",0.169,"h"],["Tied after 60",0.1748,"n"],["WSH by 1",0.1467,"a"],["WSH by 2+",0.2024,"a"]]}],"tops":[["2-2",0.06],["2-3",0.0574],["3-2",0.0498],["1-2",0.0482]],"win":{"a":43.2,"h":56.8},"win2":{"raw_h":null,"mkt_h":null,"raw_a":null,"mkt_a":null},"ml":{"fa":131,"fh":-131,"ba":null,"bh":null,"bka":null,"bkh":null},"winnote":"Includes overtime and shootout","facts":[["WSH goalie","Charlie Lindgren (projected), 2d rest"],["BOS goalie","Jeremy Swayman (projected), 3d rest"],["Venue","TD Garden"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Charlie Lindgren by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Jeremy Swayman by last-starter policy (54% accurate historically)"]],"picks":[],"state":"FUT"},{"id":"2026020364","a":"CBJ","h":"TOR","an":"Columbus Blue Jackets","hn":"Toronto Maple Leafs","ts":1795305600.0,"when":"Sat Nov 21 6:00 PM CT","proj":{"a":2.38,"h":2.71,"margin":0.34,"dec":2,"total":5.21},"proj_label":"Model expected goals (raw simulation).","proj_source":"raw","tot":{"raw":5.21,"model":5.21,"mkt":null},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["TOR by 2+",0.2958,"h"],["TOR by 1",0.1721,"h"],["Tied after 60",0.18,"n"],["CBJ by 1",0.1508,"a"],["CBJ by 2+",0.2013,"a"]]}],"tops":[["2-2",0.064],["2-3",0.0579],["1-2",0.0538],["3-2",0.0507]],"win":{"a":43.8,"h":56.2},"win2":{"raw_h":null,"mkt_h":null,"raw_a":null,"mkt_a":null},"ml":{"fa":128,"fh":-128,"ba":null,"bh":null,"bka":null,"bkh":null},"winnote":"Includes overtime and shootout","facts":[["CBJ goalie","Cam Talbot (projected), 2d rest"],["TOR goalie","Anthony Stolarz (projected), 2d rest"],["Venue","Scotiabank Arena"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Cam Talbot by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Anthony Stolarz by last-starter policy (54% accurate historically)"]],"picks":[],"state":"FUT"},{"id":"2026020365","a":"PHI","h":"MTL","an":"Philadelphia Flyers","hn":"Montréal Canadiens","ts":1795305600.0,"when":"Sat Nov 21 6:00 PM CT","proj":{"a":2.41,"h":2.72,"margin":0.32,"dec":2,"total":5.25},"proj_label":"Model expected goals (raw simulation).","proj_source":"raw","tot":{"raw":5.25,"model":5.25,"mkt":null},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["MTL by 2+",0.2937,"h"],["MTL by 1",0.1711,"h"],["Tied after 60",0.1794,"n"],["PHI by 1",0.1511,"a"],["PHI by 2+",0.2046,"a"]]}],"tops":[["2-2",0.0635],["2-3",0.0577],["1-2",0.0528],["3-2",0.0509]],"win":{"a":44.1,"h":55.9},"win2":{"raw_h":null,"mkt_h":null,"raw_a":null,"mkt_a":null},"ml":{"fa":127,"fh":-127,"ba":null,"bh":null,"bka":null,"bkh":null},"winnote":"Includes overtime and shootout","facts":[["PHI goalie","Joseph Woll (projected), 2d rest"],["MTL goalie","Jakub Dobes (projected), 2d rest"],["Venue","Centre Bell"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Joseph Woll by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Jakub Dobes by last-starter policy (54% accurate historically)"]],"picks":[],"state":"FUT"},{"id":"2026020366","a":"LAK","h":"OTT","an":"Los Angeles Kings","hn":"Ottawa Senators","ts":1795305600.0,"when":"Sat Nov 21 6:00 PM CT","proj":{"a":2.53,"h":2.61,"margin":0.08,"dec":2,"total":5.26},"proj_label":"Model expected goals (raw simulation).","proj_source":"raw","tot":{"raw":5.26,"model":5.26,"mkt":null},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["OTT by 2+",0.2585,"h"],["OTT by 1",0.1645,"h"],["Tied after 60",0.1807,"n"],["LAK by 1",0.1596,"a"],["LAK by 2+",0.2368,"a"]]}],"tops":[["2-2",0.0638],["2-3",0.0555],["3-2",0.0539],["1-2",0.0504]],"win":{"a":48.3,"h":51.7},"win2":{"raw_h":null,"mkt_h":null,"raw_a":null,"mkt_a":null},"ml":{"fa":107,"fh":-107,"ba":null,"bh":null,"bka":null,"bkh":null},"winnote":"Includes overtime and shootout","facts":[["LAK goalie","Darcy Kuemper (projected), 2d rest"],["OTT goalie","Samuel Ersson (projected), 2d rest"],["Venue","Canadian Tire Centre"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Darcy Kuemper by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Samuel Ersson by last-starter policy (54% accurate historically)"]],"picks":[],"state":"FUT"},{"id":"2026020367","a":"NYI","h":"DET","an":"New York Islanders","hn":"Detroit Red Wings","ts":1795305600.0,"when":"Sat Nov 21 6:00 PM CT","proj":{"a":2.39,"h":2.73,"margin":0.34,"dec":2,"total":5.24},"proj_label":"Model expected goals (raw simulation).","proj_source":"raw","tot":{"raw":5.24,"model":5.24,"mkt":null},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["DET by 2+",0.297,"h"],["DET by 1",0.1718,"h"],["Tied after 60",0.1794,"n"],["NYI by 1",0.1503,"a"],["NYI by 2+",0.2014,"a"]]}],"tops":[["2-2",0.0636],["2-3",0.0579],["1-2",0.0533],["3-2",0.0506]],"win":{"a":43.7,"h":56.3},"win2":{"raw_h":null,"mkt_h":null,"raw_a":null,"mkt_a":null},"ml":{"fa":129,"fh":-129,"ba":null,"bh":null,"bka":null,"bkh":null},"winnote":"Includes overtime and shootout","facts":[["NYI goalie","Semyon Varlamov (projected), 2d rest"],["DET goalie","Daniil Tarasov (projected), 3d rest"],["Venue","Little Caesars Arena"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Semyon Varlamov by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Daniil Tarasov by last-starter policy (54% accurate historically)"]],"picks":[],"state":"FUT"},{"id":"2026020368","a":"NJD","h":"STL","an":"New Jersey Devils","hn":"St. Louis Blues","ts":1795305600.0,"when":"Sat Nov 21 6:00 PM CT","proj":{"a":2.96,"h":2.33,"margin":-0.63,"dec":2,"total":5.4},"proj_label":"Model expected goals (raw simulation).","proj_source":"raw","tot":{"raw":5.4,"model":5.4,"mkt":null},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["STL by 2+",0.1714,"h"],["STL by 1",0.1374,"h"],["Tied after 60",0.1722,"n"],["NJD by 1",0.1744,"a"],["NJD by 2+",0.3446,"a"]]}],"tops":[["2-2",0.0599],["3-2",0.0591],["2-1",0.0514],["3-1",0.0507]],"win":{"a":60.4,"h":39.6},"win2":{"raw_h":null,"mkt_h":null,"raw_a":null,"mkt_a":null},"ml":{"fa":-153,"fh":153,"ba":null,"bh":null,"bka":null,"bkh":null},"winnote":"Includes overtime and shootout","facts":[["NJD goalie","Connor Hellebuyck (projected), 3d rest"],["STL goalie","Joel Hofer (projected), 2d rest"],["Venue","Enterprise Center"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Connor Hellebuyck by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Joel Hofer by last-starter policy (54% accurate historically)"]],"picks":[],"state":"FUT"},{"id":"2026020369","a":"VGK","h":"WPG","an":"Vegas Golden Knights","hn":"Winnipeg Jets","ts":1795305600.0,"when":"Sat Nov 21 6:00 PM CT","proj":{"a":2.72,"h":2.53,"margin":-0.2,"dec":2,"total":5.37},"proj_label":"Model expected goals (raw simulation).","proj_source":"raw","tot":{"raw":5.37,"model":5.37,"mkt":null},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["WPG by 2+",0.2229,"h"],["WPG by 1",0.1542,"h"],["Tied after 60",0.1782,"n"],["VGK by 1",0.1664,"a"],["VGK by 2+",0.2782,"a"]]}],"tops":[["2-2",0.0621],["3-2",0.0564],["2-3",0.0523],["2-1",0.0492]],"win":{"a":53.1,"h":46.9},"win2":{"raw_h":null,"mkt_h":null,"raw_a":null,"mkt_a":null},"ml":{"fa":-113,"fh":113,"ba":null,"bh":null,"bka":null,"bkh":null},"winnote":"Includes overtime and shootout","facts":[["VGK goalie","Adin Hill (projected), 2d rest"],["WPG goalie","Nico Daws (projected), 2d rest"],["Venue","Canada Life Centre"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Adin Hill by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Nico Daws by last-starter policy (54% accurate historically)"]],"picks":[],"state":"FUT"},{"id":"2026020370","a":"ANA","h":"UTA","an":"Anaheim Ducks","hn":"Utah Mammoth","ts":1795312800.0,"when":"Sat Nov 21 8:00 PM CT","proj":{"a":2.58,"h":2.93,"margin":0.35,"dec":2,"total":5.63},"proj_label":"Model expected goals (raw simulation).","proj_source":"raw","tot":{"raw":5.63,"model":5.63,"mkt":null},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["UTA by 2+",0.305,"h"],["UTA by 1",0.1661,"h"],["Tied after 60",0.1725,"n"],["ANA by 1",0.1464,"a"],["ANA by 2+",0.2099,"a"]]}],"tops":[["2-2",0.0577],["2-3",0.0564],["3-2",0.0497],["3-3",0.0486]],"win":{"a":43.9,"h":56.1},"win2":{"raw_h":null,"mkt_h":null,"raw_a":null,"mkt_a":null},"ml":{"fa":128,"fh":-128,"ba":null,"bh":null,"bka":null,"bkh":null},"winnote":"Includes overtime and shootout","facts":[["ANA goalie","Lukas Dostal (projected), 2d rest"],["UTA goalie","Sebastian Cossa (projected), 3d rest"],["Venue","Delta Center"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Lukas Dostal by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Sebastian Cossa by last-starter policy (54% accurate historically)"]],"picks":[],"state":"FUT"},{"id":"2026020371","a":"MIN","h":"VAN","an":"Minnesota Wild","hn":"Vancouver Canucks","ts":1795316400.0,"when":"Sat Nov 21 9:00 PM CT","proj":{"a":3.45,"h":2.01,"margin":-1.44,"dec":2,"total":5.55},"proj_label":"Model expected goals (raw simulation).","proj_source":"raw","tot":{"raw":5.55,"model":5.55,"mkt":null},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["VAN by 2+",0.0976,"h"],["VAN by 1",0.1011,"h"],["Tied after 60",0.1473,"n"],["MIN by 1",0.1735,"a"],["MIN by 2+",0.4804,"a"]]}],"tops":[["3-2",0.0588],["3-1",0.0586],["2-2",0.0512],["2-1",0.051]],"win":{"a":72.8,"h":27.2},"win2":{"raw_h":null,"mkt_h":null,"raw_a":null,"mkt_a":null},"ml":{"fa":-268,"fh":268,"ba":null,"bh":null,"bka":null,"bkh":null},"winnote":"Includes overtime and shootout","facts":[["MIN goalie","Jesper Wallstedt (projected), 2d rest"],["VAN goalie","Leevi Merilainen (projected), 2d rest"],["Venue","Rogers Arena"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Jesper Wallstedt by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Leevi Merilainen by last-starter policy (54% accurate historically)"]],"picks":[],"state":"FUT"},{"id":"2026020372","a":"SEA","h":"SJS","an":"Seattle Kraken","hn":"San Jose Sharks","ts":1795316400.0,"when":"Sat Nov 21 9:00 PM CT","proj":{"a":2.89,"h":2.9,"margin":0.01,"dec":2,"total":5.9},"proj_label":"Model expected goals (raw simulation).","proj_source":"raw","tot":{"raw":5.9,"model":5.9,"mkt":null},"bars":[{"t":"Simulated 60-minute result (Poisson from goal rates)","items":[["SJS by 2+",0.2618,"h"],["SJS by 1",0.1546,"h"],["Tied after 60",0.1699,"n"],["SEA by 1",0.1542,"a"],["SEA by 2+",0.2596,"a"]]}],"tops":[["2-2",0.0537],["2-3",0.0519],["3-2",0.0518],["3-3",0.05]],"win":{"a":49.6,"h":50.4},"win2":{"raw_h":null,"mkt_h":null,"raw_a":null,"mkt_a":null},"ml":{"fa":102,"fh":-102,"ba":null,"bh":null,"bka":null,"bkh":null},"winnote":"Includes overtime and shootout","facts":[["SEA goalie","Philipp Grubauer (projected), 2d rest"],["SJS goalie","Yaroslav Askarov (projected), 4d rest"],["Venue","SAP Center at San Jose"],["Confidence","low"],["Note","away goalie NOT CONFIRMED: projected Philipp Grubauer by last-starter policy (54% accurate historically)"],["Note","home goalie NOT CONFIRMED: projected Yaroslav Askarov by last-starter policy (54% accurate historically)"]],"picks":[],"state":"FUT"}],"past":[],"v":2}</script><script id="gd-js">
+/* game detail panels: renders the JSON blob computed by apply_gamedetail.py. Additive only; any error leaves the page untouched. */
+(function(){
+'use strict';
+try{
+var D=document,blobEl=D.getElementById('gd-data');if(!blobEl)return;
+var B=JSON.parse(blobEl.textContent),G=B.games||[],PG=B.past||[],kind=B.kind;if(!G.length&&!PG.length)return;
+if(D.getElementById('gd-sec'))return;
+var NOW=Date.now();
+function el(t,c,x){var e=D.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function ap(p){for(var i=1;i<arguments.length;i++){if(arguments[i]!=null)p.appendChild(arguments[i])}return p}
+function pc(v,d){return v==null?'-':v.toFixed(d==null?1:d)+'%'}
+function sg(v){return v==null?'-':(v>0?'+':v<0?'\u2212':'')+Math.abs(v).toFixed(1)}
+function ml(v){return v==null?'-':(v>0?'+':'')+v}
+function sk(k,v){try{if(v===undefined)return sessionStorage.getItem('gd:'+location.pathname+':'+k);sessionStorage.setItem('gd:'+location.pathname+':'+k,v)}catch(e){return null}}
+var openSet={};try{openSet=JSON.parse(sk('open')||'{}')}catch(e){}
+function row(a,b,cls){var r=el('div','r');ap(r,el('span',null,a),el('span',cls||null,b));return r}
+function kbox(title){var k=el('div','gd-k');ap(k,el('h4',null,title));return k}
+function lastw(n){var w=String(n).trim().split(/\s+/);return w[w.length-1]}
+function SA(g){return g.tennis?lastw(g.an):g.a}
+function SH(g){return g.tennis?lastw(g.hn):g.h}
+function fmtLine(v,kind){
+  if(v==null||v==='')return '\u2014';
+  if(kind==='pct')return (typeof v==='number'?v.toFixed(1):v)+'%';
+  if(kind==='tot')return (typeof v==='number'?v.toFixed(1):v);
+  return sg(v);
+}
+function duo(raw,mkt,kind){
+  var w=el('div','gd-duo');
+  function cell(lab,v,cls){var c=el('div','gd-tc'+(cls?' '+cls:''));ap(c,el('span','k',lab),el('b',null,fmtLine(v,kind)));return c}
+  ap(w,cell('Model',raw,'model'),cell('Market',mkt,'market'));
+  return w;
+}
+
+function hero(g){
+  var w=el('div','gd-hero');
+  if(g.proj){
+    var ph=g.proj.h,pa=g.proj.a,hw=ph>pa,aw=pa>ph;
+    var A=el('div','gd-t'+(aw?' win':'')),H=el('div','gd-t'+(hw?' win':''));
+    ap(A,el('div','n',g.an),el('div','s',pa.toFixed(1)));
+    ap(H,el('div','n',g.hn),el('div','s',ph.toFixed(1)));
+    if(g.rng){ap(A,el('div','p','likely '+g.rng.a[0]+'\u2013'+g.rng.a[1]));ap(H,el('div','p','likely '+g.rng.h[0]+'\u2013'+g.rng.h[1]))}
+    ap(w,A,el('div','gd-dash','@'),H);
+  }else{
+    var A2=el('div','gd-t'+(g.win&&g.win.a>=g.win.h?' win':'')),H2=el('div','gd-t'+(g.win&&g.win.h>g.win.a?' win':''));
+    ap(A2,el('div','n',g.an),el('div','s',g.win?pc(g.win.a,0):'-'));
+    ap(H2,el('div','n',g.hn),el('div','s',g.win?pc(g.win.h,0):'-'));
+    ap(w,A2,el('div','gd-dash','vs'),H2);
+  }
+  return w;
+}
+function bars(b){
+  var w=el('div','gd-bars');ap(w,el('h4',null,b.t));
+  var mx=0;b.items.forEach(function(i){if(i[1]>mx)mx=i[1]});if(!mx)mx=1;
+  b.items.forEach(function(i){
+    var r=el('div','gd-b '+(i[2]||'n')),t=el('div','t'),f=el('i');f.style.width=Math.max(2,i[1]/mx*100)+'%';t.appendChild(f);
+    ap(r,el('div','l',i[0]),t,el('div','v',pc(i[1]*100,0)));w.appendChild(r)});
+  if(b.line!=null)ap(w,el('div','gd-sub','Market total line: '+b.line+' '+(b.unit||'')));
+  return w;
+}
+function resbox(g){
+  var f=g.fin,r=el('div','gd-res'),h2=el('div','gd-res-h');
+  if(f&&f.txt!=null&&f.a==null){ap(h2,el('b',null,f.txt));if(f.su)ap(h2,el('span','gd-chk '+(f.su==='W'?'ok':'no'),f.su==='W'?'\u2713 projected winner':'\u2717 projected winner'));ap(r,h2);ap(r,el('div','gd-sub','Final result vs the last projection posted before the match.'));return r}
+  if(f){
+    ap(h2,el('b',null,'Final: '+SA(g)+' '+f.a+' @ '+SH(g)+' '+f.h));
+    var w=f.su==='W',l=f.su==='L',pp=f.su==='P';
+    if(f.su)ap(h2,el('span','gd-chk '+(w?'ok':l?'no':'pu'),w?'\u2713 projected winner':l?'\u2717 projected winner':'push'));
+    ap(r,h2);if(f.note)ap(r,el('div','gd-sub',f.note));
+  }else{ap(h2,el('b',null,'Final score pending'));ap(r,h2)}
+  ap(r,el('div','gd-sub','Projection below is the last one posted before '+(g.tennis?'the match':'tip-off / start')+'.'));
+  return r;
+}
+function livebox(g){
+  var l=g.lv,r=el('div','gd-res gd-livebox'),h2=el('div','gd-res-h');
+  ap(h2,el('span','gd-live','LIVE'));
+  if(l&&l.a!=null)ap(h2,el('b',null,SA(g)+' '+l.a+' @ '+SH(g)+' '+l.h));
+  else ap(h2,el('b',null,SA(g)+' @ '+SH(g)));
+  if(l&&l.d)ap(h2,el('span','gd-sub',l.d));
+  ap(r,h2,el('div','gd-sub','In progress. The projection, win chances and prices below are the model\u2019s last numbers posted before '+(g.tennis?'the match':'the game')+' started.'));
+  return r;
+}
+function isLive(g){return !g.past&&(g.lv||(g.state&&/^(in|live|crit)/i.test(g.state)))}
+function body(g){
+  var b=el('div','gd-body');
+  if(g.past)ap(b,resbox(g));
+  else if(isLive(g))ap(b,livebox(g));
+  ap(b,hero(g));
+  if(g.proj){
+    var sub=g.proj_label||(g.proj.dec?(isLive(g)?'Pre-game projected final (model average)':'Projected final (model average)'):'Projected final from model total '+g.proj.total.toFixed(1)+' and margin '+(g.proj.margin>0?g.hn:g.an)+' by '+Math.abs(g.proj.margin).toFixed(1));
+    ap(b,el('div','gd-sub',sub));
+  }
+  if(g.likely)ap(b,el('div','gd-likely',g.likely));
+  var grid=el('div','gd-grid');
+  if(g.win2){
+    var k=kbox('Win probability');
+    ap(k,el('div','gd-sub',SA(g)+' win %'),duo(g.win2.raw_a,g.win2.mkt_a,'pct'));
+    ap(k,el('div','gd-sub',SH(g)+' win %'),duo(g.win2.raw_h,g.win2.mkt_h,'pct'));
+    if(g.winnote)ap(k,el('div','gd-note',g.winnote));grid.appendChild(k);
+  }else if(g.win){
+    var k=kbox('Win probability'),sp2=el('div','gd-split'),ia=el('i','a'),ih=el('i','h');ia.style.width=g.win.a+'%';ih.style.width=g.win.h+'%';ap(sp2,ia,ih);
+    ap(k,sp2,row(SA(g),pc(g.win.a)),row(SH(g),pc(g.win.h)));if(g.winnote)ap(k,el('div','gd-note',g.winnote));grid.appendChild(k);
+  }
+  if(g.ml){
+    var k2=kbox('Moneyline: model fair vs best price');
+    ap(k2,row(SA(g),'fair '+ml(g.ml.fa)+(g.ml.ba!=null?' | best '+ml(g.ml.ba)+(g.ml.bka?' ('+g.ml.bka+')':''):'')),row(SH(g),'fair '+ml(g.ml.fh)+(g.ml.bh!=null?' | best '+ml(g.ml.bh)+(g.ml.bkh?' ('+g.ml.bkh+')':''):'')));grid.appendChild(k2);
+  }
+  if(g.sp&&(g.sp.ph!=null||g.sp.model!=null||g.sp.raw!=null)){
+    var k3=kbox(g.sp.rl?'Run line (1.5)':'Spread ('+SH(g)+' line)');
+    if(g.sp.rl){ap(k3,row(SH(g)+' \u22121.5 covers',pc(g.sp.ph)),row(SA(g)+' \u22121.5 covers',pc(g.sp.pa)))}
+    else{
+      var rawS=g.sp.raw!=null?g.sp.raw:g.sp.model;
+      ap(k3,duo(rawS,g.sp.mkt,'sp'));
+      if(g.sp.ph!=null)ap(k3,row(SH(g)+' covers market line',pc(g.sp.ph)),row(SA(g)+' covers market line',pc(g.sp.pa)));
+    }
+    grid.appendChild(k3);
+  }
+  if(g.tot&&!g.nototals){
+    var T=g.tot,k4=kbox(T.games?'Total games':'Total');
+    if(T.games){
+      ap(k4,duo(T.model,T.mkt,'tot'));
+      if(T.median!=null)ap(k4,row('Model median',String(T.median)));
+      if(T.sd!=null)ap(k4,row('Spread of outcomes','\u00b1'+T.sd));
+      if(T.rng)ap(k4,row('Middle 50% range',T.rng[0]+'\u2013'+T.rng[1]));
+      if(T.line!=null)ap(k4,row('Over '+T.line+' (model line)',pc(T.po_model)));
+      if(T.mkt!=null&&T.po!=null)ap(k4,row('Market line '+T.mkt+' over',pc(T.po)));
+    }else{
+      var rawT=T.raw!=null?T.raw:T.model;
+      ap(k4,duo(rawT,T.mkt,'tot'));
+      if(T.po!=null)ap(k4,row('Over',pc(T.po)),row('Under',pc(T.pu)));
+      if(T.push)ap(k4,row('Push',pc(T.push)));
+      if(T.rng)ap(k4,row('Middle 50% range',T.rng[0]+'\u2013'+T.rng[1]));
+    }
+    grid.appendChild(k4);
+  }
+  b.appendChild(grid);
+  (g.bars||[]).forEach(function(x){b.appendChild(bars(x))});
+  if(g.tops&&g.tops.length){
+    var t=el('div','gd-tops');g.tops.forEach(function(s){var sp=el('span',null,s[0]);sp.appendChild(el('small',null,pc(s[1]*100,1)));t.appendChild(sp)});
+    ap(b,el('div','gd-bars'));b.lastChild.appendChild(el('h4',null,'Most likely scores ('+g.a+'-'+g.h+')'));b.lastChild.appendChild(t);
+  }
+  if(g.picks&&g.picks.length){
+    var pk=el('div','gd-picks');g.picks.forEach(function(p){var d=el('div');ap(d,el('span','gd-g '+p.g,p.g),el('span',null,p.t));pk.appendChild(d)});
+    ap(b,el('h4','gd-sub',isLive(g)?'Pre-game model picks on this game':'Model picks on this game'),pk);
+  }
+  if(g.facts&&g.facts.length){var f=el('div','gd-facts');g.facts.forEach(function(x){f.appendChild(row(x[0],String(x[1])))});
+    f.querySelectorAll('.r').forEach(function(r){r.className='r'});b.appendChild(f)}
+  if(g.inj&&g.inj.length){g.inj.forEach(function(x){var d=el('details','gd-inj'),s=el('summary',null,x[0]+' injuries ('+x[1].length+')');d.appendChild(s);x[1].forEach(function(l){d.appendChild(el('div',null,l))});b.appendChild(d)})}
+  var note={nfl:'Model-simulated from the model\u2019s own projections: a normal spread of outcomes around its margin and total, matched to its win probability.',
+    cfb:'Model-simulated from the model\u2019s own projections: a normal spread of outcomes around its margin and total, matched to its win probability.',
+    nba:'Model-simulated from the model\u2019s own projections: a normal spread of outcomes around its margin and total, matched to its win probability.',
+    nhl:'Model-simulated from the model\u2019s own goal rates using independent Poisson scoring. Win % is the model\u2019s published number.',
+    mlb:'Total-run bars are the model\u2019s own simulated games. Likely scores use independent Poisson scoring from the model\u2019s run rates.',
+    tennis:'Set scores, win % and games are the model\u2019s own simulation outputs.'}[kind];
+  if(note)ap(b,el('div','gd-note',note));
+  return b;
+}
+function card(g,i){
+  var c=el('div','gd-card'),h=el('button','gd-head');h.setAttribute('type','button');h.setAttribute('aria-expanded','false');
+  var m=el('div','gd-main'),w=el('div','gd-when');w.appendChild(el('span',null,g.when||''));
+  if(isLive(g))w.appendChild(el('span','gd-live','LIVE'));
+  if(g.ev)w.appendChild(el('span',null,'\u00b7 '+g.ev));
+  var projTxt=g.proj?(g.proj.a.toFixed(g.proj.dec?1:0)+'\u2013'+g.proj.h.toFixed(g.proj.dec?1:0)):'';
+  var tap=g.past?(g.proj?(g.proj_source==='raw'?'Model score '+projTxt:'Projected '+projTxt)+' \u00b7 tap for details':'Tap for the saved projection'):(isLive(g)&&g.proj?(g.proj_source==='raw'?'Pre-game model score '+projTxt:'Pre-game projection '+projTxt)+' \u00b7 tap for details':(g.proj&&g.proj_source==='raw'?'Model score '+projTxt+' \u00b7 tap for details':'Tap for projected score & details'));
+  ap(m,w,el('div','gd-teams',g.tennis?g.an+' vs '+g.hn:g.an+' @ '+g.hn),el('div','gd-tap',tap));
+  var s=el('div','gd-side');
+  if(g.picks&&g.picks.length){var best=g.picks.map(function(p){return p.g}).sort()[0];s.appendChild(el('span','gd-g '+best,best))}
+  var sc=el('div','gd-sc');
+  if(g.past){
+    var f=g.fin;
+    if(f&&f.a!=null){ap(sc,el('b',null,f.a+'\u2013'+f.h),el('i',null,'final'))}
+    else if(f){ap(sc,el('b',null,'Final'),el('i',null,'result'))}
+    else{ap(sc,el('b',null,g.proj?g.proj.a.toFixed(g.proj.dec?1:0)+'\u2013'+g.proj.h.toFixed(g.proj.dec?1:0):'\u2013'),el('i',null,'proj'))}
+    if(f&&f.su)s.insertBefore(el('span','gd-chk '+(f.su==='W'?'ok':f.su==='L'?'no':'pu'),f.su==='W'?'\u2713':f.su==='L'?'\u2717':'P'),s.firstChild);
+  }else if(g.lv&&g.lv.a!=null){ap(sc,el('b',null,g.lv.a+'\u2013'+g.lv.h),el('i',null,g.lv.d||'live'))}
+  else if(g.proj){var f=g.proj.dec?1:0;ap(sc,el('b',null,g.proj.a.toFixed(f)+'\u2013'+g.proj.h.toFixed(f)),el('i',null,'proj'))}
+  else if(g.win){ap(sc,el('b',null,Math.round(g.win.a)+'\u2013'+Math.round(g.win.h)+'%'),el('i',null,'win %'))}
+  ap(s,sc,el('span','gd-chev'));
+  ap(h,m,s);c.appendChild(h);
+  var built=false;
+  function toggle(open){
+    if(open&&!built){c.appendChild(body(g));built=true}
+    c.classList.toggle('open',open);h.setAttribute('aria-expanded',open?'true':'false');
+    if(open)openSet[g.id]=1;else delete openSet[g.id];sk('open',JSON.stringify(openSet));
+  }
+  h.addEventListener('click',function(){toggle(!c.classList.contains('open'))});
+  if(openSet[g.id])toggle(true);
+  return c;
+}
+/* which games to list first */
+var cut=NOW-4*3600*1000;
+var up=G.filter(function(g){return g.ts==null||g.ts*1000>=cut}),old=G.filter(function(g){return !(g.ts==null||g.ts*1000>=cut)});
+function ord(a,b){if(kind==='tennis'&&(!!a.priced!==!!b.priced))return a.priced?-1:1;return (a.ts||0)-(b.ts||0)}
+up.sort(ord);old.sort(function(a,b){return (b.ts||0)-(a.ts||0)});
+if(!up.length){up=old;old=[]}
+var LIM=kind==='cfb'||kind==='tennis'?8:12;
+var all=up.concat(old),sec=el('section','sec tog gd-sec'),hd=el('div','sec-h'),bd=el('div','sec-b');sec.id='gd-sec';
+hd.appendChild(document.createTextNode(kind==='tennis'?'Match projections':'Game projections'));
+var cnt=el('span','cnt',all.length+(kind==='tennis'?' matches':' games'));hd.appendChild(cnt);
+ap(sec,hd,bd);
+ap(bd,el('div','gd-hint',!G.length?'No upcoming games on the board right now. Games that already started or finished are in Past games below.':kind==='tennis'?'Tap a match for Model and Market win % plus set scores.':'Tap a game for the raw model score and the market line.'));
+var list=el('div','gd-list');bd.appendChild(list);
+var shown=0,rest=[];
+all.forEach(function(g,i){if(i<LIM||openSet[g.id]){list.appendChild(card(g,i));shown++}else rest.push(g)});
+if(rest.length){
+  var btn=el('button','gd-more','Show '+rest.length+' more '+(kind==='tennis'?'matches':'games'));btn.setAttribute('type','button');
+  btn.addEventListener('click',function(){rest.forEach(function(g,i){list.appendChild(card(g,i))});btn.remove()});
+  bd.appendChild(btn);
+}
+hd.addEventListener('click',function(){sec.classList.toggle('closed')});
+/* PAST-GAMES section: saved last pre-game card of games that have started / finished */
+var psec=null;
+if(PG.length){
+  psec=el('section','sec tog gd-sec gd-past');psec.id='gd-past';
+  var phd=el('div','sec-h'),pbd=el('div','sec-b'),days={},order=[],W=0,Lc=0;
+  PG.forEach(function(g){if(!days[g.d]){days[g.d]=[];order.push(g.d)}days[g.d].push(g);if(g.fin&&g.fin.su){if(g.fin.su==='W')W++;else if(g.fin.su==='L')Lc++}});
+  order.sort().reverse();
+  function dl(d){var x=new Date(d+'T12:00:00');return x.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})}
+  phd.appendChild(document.createTextNode(kind==='tennis'?'Past matches':'Past games'));
+  phd.appendChild(el('span','cnt',PG.length+(kind==='tennis'?' matches':' games')));
+  ap(psec,phd,pbd);
+  ap(pbd,el('div','gd-hint','Saved projections for games that already started or finished (last '+dl(order[order.length-1])+' \u2013 '+dl(order[0])+'). Tap any game to reopen its last pre-game projection.'));
+  if(W+Lc)ap(pbd,el('div','gd-rec','Projected winner '+W+'-'+Lc+' ('+Math.round(100*W/(W+Lc))+'%) on the games below with a final'));
+  var moreDays=[];
+  order.forEach(function(d,i){
+    var box=el('div','gd-dayg');ap(box,el('div','gd-day',dl(d)+' \u00b7 '+days[d].length+(days[d].length===1?' game':' games')));
+    var lst=el('div','gd-list');days[d].sort(function(a,b){return a.ts-b.ts}).forEach(function(g){lst.appendChild(card(g,0))});box.appendChild(lst);
+    if(i<2){pbd.appendChild(box)}else{moreDays.push(box)}
+  });
+  if(moreDays.length){var pb=el('button','gd-more','Show '+moreDays.length+' earlier '+(moreDays.length===1?'day':'days'));pb.setAttribute('type','button');
+    pb.addEventListener('click',function(){moreDays.forEach(function(b){pbd.insertBefore(b,pb)});pb.remove()});pbd.appendChild(pb)}
+  phd.addEventListener('click',function(){psec.classList.toggle('closed')});
+}
+/* placement: right after the Top plays section */
+var main=D.querySelector('main.wrap')||D.querySelector('main')||D.body,anchor=null;
+var secs=main.querySelectorAll(':scope > section.sec');
+if(secs.length)anchor=secs[0];
+else anchor=D.getElementById('plays')||D.getElementById('top');
+if(anchor&&anchor.parentNode===main)main.insertBefore(sec,anchor.nextSibling);
+else if(anchor)anchor.parentNode.insertBefore(sec,anchor.nextSibling);
+else main.insertBefore(sec,main.firstChild);
+if(psec)sec.parentNode.insertBefore(psec,sec.nextSibling);
+}catch(e){if(window.console)console.warn('game detail',e)}
+})();
+
+</script><script id="polish-data" type="application/json">{"pre":"../../","fallback":1795158218,"v":"polish-v1"}</script><script id="polish-js">
 /* Model Desk polish v1: presentation only. Adds brand row + freshness chip, aligns numeric table columns, adds footer text. Never changes data. */
 (function(){
 'use strict';
